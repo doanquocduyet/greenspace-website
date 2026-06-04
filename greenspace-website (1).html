@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenSpace — Quản lý Tài sản Bất động sản tại Lâm Đồng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0A1628;
+            --primary-gold: #8B6914;
+            --primary-green: #2D5A4D;
+            --light-green: #EBF7F1;
+            --text-dark: #1E2535;
+            --text-muted: #5A6074;
+            --border-light: #D8DCE6;
+            --white: #FFFFFF;
+            --bg-light: #F8F9FC;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin: 0 24px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-cta {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-gold);
+            transform: translateY(-2px);
+        }
+
+        body {
+            padding-top: 64px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a2a3a 100%);
+            color: var(--white);
+            padding: 80px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 105, 20, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Georgia', serif;
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background: #a8861f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SECTION STYLES */
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 32px;
+        }
+
+        section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 42px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        section > p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(10, 22, 40, 0.08);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* PROCESS SECTION */
+        .process {
+            background: var(--light-green);
+        }
+
+        .process h2 {
+            color: var(--primary-green);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .process-step {
+            background: var(--white);
+            border-left: 4px solid var(--primary-gold);
+            padding: 32px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background: var(--primary-gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .process-step h3 {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            background: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .price-card {
+            background: var(--white);
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary-gold);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(139, 105, 20, 0.15);
+        }
+
+        .price-card.featured::before {
+            content: 'PHỔ BIẾN NHẤT';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .price-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .price-card .description {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        .price {
+            font-size: 48px;
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .price-unit {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 32px;
+        }
+
+        .price-features {
+            text-align: left;
+            margin-bottom: 32px;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 24px 0;
+        }
+
+        .price-features li {
+            list-style: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        /* BLOG SECTION */
+        .blog {
+            background: var(--bg-light);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-4px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 60px;
+        }
+
+        .blog-content {
+            padding: 32px;
+        }
+
+        .blog-date {
+            color: var(--primary-gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .blog-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .blog-read-more {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-read-more:hover {
+            color: var(--primary-dark);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .contact h2 {
+            color: var(--white);
+        }
+
+        .contact p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .contact-item {
+            margin-bottom: 32px;
+        }
+
+        .contact-item h4 {
+            color: var(--primary-gold);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .contact-item p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 14px;
+            transition: border 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-submit {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background: #a8861f;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050d15;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 32px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col a,
+        .footer-col p {
+            font-size: 13px;
+            line-height: 2;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav a {
+                margin: 8px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .service-card {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">GREEN<span>SPACE</span></div>
+            <div>
+                <a href="#services">Dịch vụ</a>
+                <a href="#process">Quy trình</a>
+                <a href="#pricing">Giá</a>
+                <a href="#blog">Blog</a>
+                <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Liên hệ</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Đất của bạn <span>được canh chừng</span> 24/7</h1>
+            <p>Quản lý tài sản bất động sản từ xa không bao giờ dễ dàng đến vậy. Kiểm tra định kỳ, báo cáo chi tiết, yên tâm tuyệt đối.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Tư vấn miễn phí</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('process').scrollIntoView({behavior: 'smooth'})">Xem quy trình</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <p>Giải pháp quản lý tài sản bất động sản toàn diện cho chủ sở hữu ở xa</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📍</div>
+                <h3>Kiểm tra thực địa</h3>
+                <p>Tối thiểu 1 lần/tháng, chúng tôi lên thực địa kiểm tra tình trạng tài sản, chụp ảnh GPS, phát hiện bất thường.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Báo cáo chi tiết</h3>
+                <p>Báo cáo ảnh, GPS tọa độ, mô tả tình trạng đầy đủ được gửi hàng tháng. Bạn biết rõ đất đang ra sao.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚠️</div>
+                <h3>Cảnh báo kịp thời</h3>
+                <p>Phát hiện xâm phạm, lấn chiếm, tranh chấp — thông báo ngay trong vòng 24 giờ để bạn xử lý kịp thời.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <h2>Quy trình làm việc</h2>
+        <p>4 bước đơn giản để bắt đầu quản lý tài sản của bạn</p>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Liên hệ & tư vấn</h3>
+                <p>Bạn liên hệ với chúng tôi, chúng tôi hiểu rõ tình huống tài sản và nhu cầu của bạn.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Ký hợp đồng</h3>
+                <p>Chúng tôi gửi hợp đồng ủy quyền quản lý (minh bạch, rõ ràng). Bạn ký và gửi lại.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Kiểm tra đầu tiên</h3>
+                <p>Trong tuần đầu, chúng tôi lên kiểm tra tài sản, lập báo cáo baseline chi tiết.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Báo cáo hàng tháng</h3>
+                <p>Mỗi tháng bạn nhận báo cáo ảnh + tình trạng. Bất kỳ vấn đề nào cũng được thông báo ngay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <h2>Bảng giá dịch vụ</h2>
+        <p>Giá rõ ràng, không có chi phí ẩn. Tất cả đều minh bạch từ đầu.</p>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Gói Cơ bản</h3>
+                <p class="description">Phù hợp nhất cho hầu hết chủ sở hữu</p>
+                <div class="price">3.000.000 đ</div>
+                <div class="price-unit">/ tháng</div>
+                <ul class="price-features">
+                    <li>Kiểm tra 1 lần/tháng</li>
+                    <li>Ảnh + GPS + báo cáo</li>
+                    <li>Cảnh báo kịp thời (24 giờ)</li>
+                    <li>Email hỗ trợ</li>
+                </ul>
+                <button class="btn btn-primary">Chọn gói này</button>
+            </div>
+
+            <div class="price-card featured">
+                <h3>Gói Chuyên nghiệp</h3>
+                <p class="description">Giám sát liên tục, hỗ trợ tối đa</p>
+                <div class="price">5.500.000 đ</div>
+                <div class="price-unit">/ tháng</div>
+                <ul class="price-features">
+                    <li>Kiểm tra 2 lần/tháng</li>
+                    <li>Báo cáo chi tiết + phân tích</li>
+                    <li>Theo dõi quy hoạch & pháp lý</li>
+                    <li>Hỗ trợ thủ tục hành chính</li>
+                    <li>Hotline ưu tiên</li>
+                </ul>
+                <button class="btn btn-primary">Chọn gói này</button>
+            </div>
+
+            <div class="price-card">
+                <h3>Gói Tối ưu</h3>
+                <p class="description">Nhiều lô đất — giá ưu đãi</p>
+                <div class="price">2.500.000 đ</div>
+                <div class="price-unit">/ tháng / lô (từ 3 lô trở lên)</div>
+                <ul class="price-features">
+                    <li>Kiểm tra 1-2 lần/tháng</li>
+                    <li>Báo cáo đầy đủ</li>
+                    <li>Cảnh báo 24/7</li>
+                    <li>Giảm giá hoa hồng giới thiệu</li>
+                </ul>
+                <button class="btn btn-primary">Liên hệ để tư vấn</button>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 13px;">
+            💡 Bạn muốn bán? Chúng tôi giới thiệu người mua với mức giá tốt. Hoa hồng chỉ tính khi giao dịch thành công (1,5% giá trị).
+        </p>
+    </section>
+
+    <!-- BLOG -->
+    <section class="blog" id="blog">
+        <h2>Hiên — Quan sát từ Nam Ban</h2>
+        <p>Bài viết thực từ người ở đây, không phải từ internet</p>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">🌅</div>
+                <div class="blog-content">
+                    <div class="blog-date">Tháng 1, 2025</div>
+                    <h3>Tại sao tôi quyết định ở lại Nam Ban</h3>
+                    <p>Một cơ hội ở Sài Gòn có lương cao và tên tuổi, nhưng tôi từ chối. Đây là lý do thực...</p>
+                    <a href="#" class="blog-read-more">Đọc tiếp →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🏘️</div>
+                <div class="blog-content">
+                    <div class="blog-date">Tháng 1, 2025</div>
+                    <h3>3 điều về đất Lâm Đồng mà người mua thường không được nói</h3>
+                    <p>Từ quan sát thực tế 6 tháng qua, tôi nhận ra 3 điều quan trọng mà ít ai cảnh báo cho bạn...</p>
+                    <a href="#" class="blog-read-more">Đọc tiếp →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">⚠️</div>
+                <div class="blog-content">
+                    <div class="blog-date">Tháng 12, 2024</div>
+                    <h3>Tôi đã sai về điều này khi mới lên Lâm Đồng</h3>
+                    <p>Bài học từ sai lầm thực của mình và cách nó thay đổi cách tôi nhìn thị trường đất...</p>
+                    <a href="#" class="blog-read-more">Đọc tiếp →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>Liên hệ với chúng tôi</h2>
+        <p>Hãy cho chúng tôi biết về tài sản của bạn. Chúng tôi sẽ tư vấn miễn phí.</p>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>GreenSpace</h3>
+                
+                <div class="contact-item">
+                    <h4>📍 Địa chỉ</h4>
+                    <p>Nam Ban, Lâm Hà, Lâm Đồng</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>📞 Điện thoại</h4>
+                    <p>+84 (0)xxx xxxx xxx</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p>hello@greenspace.vn</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>💬 Zalo / Messenger</h4>
+                    <p>Hỗ trợ trực tiếp qua Zalo (ưu tiên)</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Họ và tên *</label>
+                    <input type="text" id="name" required placeholder="Nhập họ tên của bạn">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại *</label>
+                    <input type="tel" id="phone" required placeholder="Ví dụ: 0901234567">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Ví dụ: abc@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Vị trí đất (xã/phường)</label>
+                    <input type="text" id="location" placeholder="Ví dụ: Lâm Hà, Lâm Đồng">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mô tả vắn tắt về tài sản *</label>
+                    <textarea id="message" rows="4" required placeholder="Diện tích, loại đất, tình huống hiện tại..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Gửi yêu cầu tư vấn</button>
+                <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 12px;">
+                    ✓ Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>GreenSpace</h4>
+                <p>Quản lý tài sản bất động sản tại Lâm Đồng. Yên tâm, chuyên nghiệp, minh bạch.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Dịch vụ</h4>
+                <a href="#services">Dịch vụ quản lý</a>
+                <a href="#pricing">Bảng giá</a>
+                <a href="#process">Quy trình</a>
+            </div>
+            <div class="footer-col">
+                <h4>Về chúng tôi</h4>
+                <a href="#blog">Blog Hiên</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Pháp lý</h4>
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Hợp đồng mẫu</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 GreenSpace. Tất cả quyền được bảo lưu. | Phát triển với ❤️ tại Nam Ban, Lâm Đồng</p>
+        </div>
+    </footer>
+
+    <!-- ZALO CHAT WIDGET -->
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+    <script>
+        // Initialize Zalo Chat
+        window.ZaloSocialSDK = window.ZaloSocialSDK || {};
+        window.ZaloSocialSDK.onLoad = function(sdk) {
+            sdk.decorate();
+        };
+    </script>
+
+    <!-- FACEBOOK MESSENGER CHAT PLUGIN -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0" nonce="abcdef123456"></script>
+
+    <!-- CHATBOT POPUP -->
+    <div id="chatbot-widget" style="position: fixed; bottom: 80px; right: 20px; z-index: 999; display: none;">
+        <div style="background: var(--primary-dark); color: white; border-radius: 12px; width: 320px; max-width: 90vw; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;">
+            <div style="background: var(--primary-gold); padding: 16px; color: var(--primary-dark); font-weight: 700;">
+                🤖 GreenSpace Bot
+            </div>
+            <div style="padding: 20px; font-size: 14px; line-height: 1.6;">
+                <p style="margin-bottom: 16px;"><strong>Xin chào! 👋</strong></p>
+                <p style="margin-bottom: 20px;">Mình là bot tư vấn của GreenSpace. Bạn cần giúp gì về quản lý bất động sản?</p>
+                <div style="display: flex; gap: 8px;">
+                    <button onclick="openZalo()" style="flex: 1; padding: 10px; background: var(--primary-gold); color: var(--primary-dark); border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">💬 Chat Zalo</button>
+                    <button onclick="closeBot()" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.2); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 998; display: flex; flex-direction: column; gap: 12px;">
+        <!-- Zalo Button -->
+        <a href="https://zalo.me/0978758788" target="_blank" style="width: 56px; height: 56px; background: #0084ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Chat Zalo">
+            Z
+        </a>
+        <!-- Facebook Button -->
+        <a href="https://m.me/doanquocduyet" target="_blank" style="width: 56px; height: 56px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Chat Facebook">
+            f
+        </a>
+        <!-- Chat Bot Button -->
+        <button onclick="toggleBot()" style="width: 56px; height: 56px; background: var(--primary-gold); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-dark); font-size: 28px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s; font-weight: 700;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.style.transform='scale(1)'" title="Chatbot">
+            💬
+        </button>
+    </div>
+
+    <script>
+        // CHATBOT FUNCTIONS
+        function toggleBot() {
+            const bot = document.getElementById('chatbot-widget');
+            bot.style.display = bot.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function closeBot() {
+            document.getElementById('chatbot-widget').style.display = 'none';
+        }
+
+        function openZalo() {
+            window.open('https://zalo.me/0978758788', '_blank');
+            closeBot();
+        }
+
+        // Show bot tự động sau 3 giây nếu user chưa interact
+        let botShown = false;
+        setTimeout(() => {
+            if (!botShown) {
+                document.getElementById('chatbot-widget').style.display = 'block';
+                botShown = true;
+            }
+        }, 3000);
+
+        // FORM SUBMIT HANDLER
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const location = document.getElementById('location').value;
+            const message = document.getElementById('message').value;
+            
+            // Tạo tin nhắn cho Zalo
+            const zaloMessage = `Xin chào! Mình là ${name}. 
+Số điện thoại: ${phone}
+Vị trí đất: ${location}
+Mô tả: ${message}
+
+Mình muốn tư vấn về dịch vụ quản lý bất động sản của GreenSpace.`;
+            
+            // Reset form
+            document.querySelector('form').reset();
+            
+            // Show thông báo & auto open Zalo
+            showSuccessModal(name, phone, zaloMessage);
+        }
+
+        function showSuccessModal(name, phone, zaloMessage) {
+            // Tạo modal thông báo thành công
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 12px; padding: 32px; max-width: 400px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                    <div style="font-size: 48px; margin-bottom: 16px;">✅</div>
+                    <h3 style="font-family: Georgia, serif; font-size: 24px; color: var(--primary-dark); margin-bottom: 8px; font-weight: 400;">Cảm ơn ${name}!</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px; line-height: 1.6;">
+                        Chúng tôi đã nhận yêu cầu tư vấn của bạn. 
+                        <br><br>
+                        Hãy nhắn tin Zalo ngay để được tư vấn nhanh nhất! 
+                        <br>
+                        <strong>Chúng tôi sẽ trả lời trong 24 giờ.</strong>
+                    </p>
+                    <div style="display: flex; gap: 12px;">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove(); window.open('https://zalo.me/0978758788', '_blank');" style="flex: 1; padding: 12px; background: #0084ff; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
+                            💬 Nhắn tin Zalo ngay
+                        </button>
+                        <button onclick="this.parentElement.parentElement.parentElement.remove();" style="flex: 1; padding: 12px; background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-light); border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
+                            Đóng
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+
+        // Smooth scroll cho tất cả anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Prevent form submit button từ tự động scroll
+        document.querySelector('form').addEventListener('submit', function(e) {
+            if (e.target.tagName === 'FORM') {
+                e.preventDefault();
+                handleSubmit(e);
+            }
+        });
+    </script>
+</body>
+</html>
