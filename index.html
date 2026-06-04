@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenSpace — Quản lý Tài sản Bất động sản tại Lâm Đồng</title>
+    <meta property="og:title" content="GreenSpace — Quản lý Tài sản Bất động sản Chuyên nghiệp">
+    <meta property="og:description" content="Nơi tài sản được thở. Quản lý đất bất động sản từ xa, an toàn, minh bạch, dài hạn.">
+    <meta name="description" content="GreenSpace - Dịch vụ quản lý bất động sản chuyên nghiệp tại Lâm Đồng. Kiểm tra định kỳ, báo cáo chi tiết, bảo vệ tài sản của bạn 24/7.">
+    <title>GreenSpace — Where Assets Breathe | Quản lý Tài sản Bất động sản</title>
+    
+    <!-- Google Fonts - Serif (Elegant) + Sans (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/calendar.css" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -12,15 +27,19 @@
         }
 
         :root {
-            --primary-dark: #0A1628;
-            --primary-gold: #8B6914;
-            --primary-green: #2D5A4D;
-            --light-green: #EBF7F1;
-            --text-dark: #1E2535;
-            --text-muted: #5A6074;
-            --border-light: #D8DCE6;
-            --white: #FFFFFF;
-            --bg-light: #F8F9FC;
+            /* Earthy Tones - Modern Eco Minimalism */
+            --primary-dark: #1a3d3a;
+            --primary-green: #2d5a4d;
+            --primary-accent: #8b6914;
+            --light-green: #e8f4f0;
+            --light-beige: #f5f1ed;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --border-color: #e5e7eb;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
         }
 
         html {
@@ -28,22 +47,51 @@
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, sans-serif;
-            color: var(--text-dark);
+            font-family: 'Open Sans', -apple-system, sans-serif;
+            color: var(--text-primary);
             line-height: 1.6;
             background: var(--white);
+            overflow-x: hidden;
         }
 
-        /* HEADER & NAV */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 38px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--white);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 1000;
-            backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav {
@@ -56,29 +104,32 @@
         }
 
         .logo {
-            font-family: 'Georgia', serif;
-            font-size: 24px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
             font-weight: 700;
             color: var(--primary-dark);
             letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: var(--primary-gold);
+            color: var(--primary-accent);
         }
 
-        nav a {
-            color: var(--text-dark);
-            text-decoration: none;
-            margin: 0 24px;
-            font-size: 14px;
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 13px;
             font-weight: 500;
+            color: var(--text-primary);
             transition: color 0.3s;
-            cursor: pointer;
         }
 
-        nav a:hover {
-            color: var(--primary-gold);
+        .nav-links a:hover {
+            color: var(--primary-accent);
         }
 
         .nav-cta {
@@ -90,70 +141,101 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 13px;
-            transition: background 0.3s, transform 0.2s;
+            transition: all 0.3s;
         }
 
         .nav-cta:hover {
-            background: var(--primary-gold);
+            background: var(--primary-accent);
             transform: translateY(-2px);
         }
 
         body {
-            padding-top: 64px;
+            padding-top: 65px;
         }
 
-        /* HERO SECTION */
+        /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a2a3a 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2a4d4a 100%);
             color: var(--white);
-            padding: 80px 32px;
+            padding: 100px 32px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
+            top: -30%;
             right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 105, 20, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -15%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(139, 105, 20, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(45, 90, 77, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
 
         .hero-content {
             max-width: 900px;
-            margin: 0 auto;
             position: relative;
             z-index: 1;
             animation: fadeInUp 0.8s ease-out;
         }
 
+        .hero-tagline {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+        }
+
         .hero h1 {
-            font-family: 'Georgia', serif;
             font-size: 56px;
-            font-weight: 400;
+            margin: 24px 0;
             line-height: 1.2;
-            margin-bottom: 24px;
+            font-weight: 400;
             letter-spacing: -1px;
         }
 
         .hero h1 span {
-            color: var(--primary-gold);
+            color: var(--primary-accent);
             font-weight: 700;
+            display: block;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            line-height: 1.6;
+            margin: 24px 0 40px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-buttons {
+        .hero-cta {
             display: flex;
             gap: 16px;
             justify-content: center;
@@ -170,16 +252,18 @@
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .btn-primary {
-            background: var(--primary-gold);
+            background: var(--primary-accent);
             color: var(--primary-dark);
         }
 
         .btn-primary:hover {
             background: #a8861f;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 105, 20, 0.3);
         }
 
         .btn-secondary {
@@ -193,10 +277,15 @@
             color: var(--primary-dark);
         }
 
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -204,7 +293,7 @@
             }
         }
 
-        /* SECTION STYLES */
+        /* ===== SECTIONS ===== */
         section {
             max-width: 1400px;
             margin: 0 auto;
@@ -212,123 +301,126 @@
         }
 
         section h2 {
-            font-family: 'Georgia', serif;
-            font-size: 42px;
             color: var(--primary-dark);
             margin-bottom: 16px;
-            font-weight: 400;
-            letter-spacing: -0.5px;
         }
 
-        section > p {
-            color: var(--text-muted);
+        section > p:first-of-type {
+            color: var(--text-secondary);
             font-size: 16px;
             margin-bottom: 48px;
             max-width: 600px;
         }
 
-        /* SERVICES SECTION */
+        /* ===== SERVICES ===== */
         .services {
             background: var(--white);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
 
         .service-card {
             background: var(--white);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 40px;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-accent), var(--primary-green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            border-color: var(--primary-gold);
+            border-color: var(--primary-accent);
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(10, 22, 40, 0.08);
+            box-shadow: var(--shadow-lg);
         }
 
         .service-icon {
-            font-size: 48px;
+            font-size: 42px;
             margin-bottom: 20px;
             display: inline-block;
         }
 
         .service-card h3 {
-            font-family: 'Georgia', serif;
-            font-size: 22px;
             color: var(--primary-dark);
-            margin-bottom: 16px;
-            font-weight: 400;
+            margin-bottom: 12px;
+            font-size: 22px;
         }
 
         .service-card p {
-            color: var(--text-muted);
-            font-size: 15px;
+            color: var(--text-secondary);
+            font-size: 14px;
             line-height: 1.7;
         }
 
-        /* PROCESS SECTION */
+        /* ===== PROCESS ===== */
         .process {
             background: var(--light-green);
         }
 
-        .process h2 {
-            color: var(--primary-green);
-        }
-
         .process-timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 24px;
             margin-top: 48px;
         }
 
         .process-step {
             background: var(--white);
-            border-left: 4px solid var(--primary-gold);
+            border-left: 4px solid var(--primary-accent);
             padding: 32px;
             border-radius: 4px;
             position: relative;
         }
 
         .step-number {
-            display: inline-block;
-            width: 44px;
-            height: 44px;
-            background: var(--primary-gold);
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-accent), #a8861f);
             color: var(--white);
             border-radius: 50%;
-            display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 16px;
         }
 
         .process-step h3 {
-            font-family: 'Georgia', serif;
             font-size: 20px;
             color: var(--primary-dark);
             margin-bottom: 12px;
-            font-weight: 400;
         }
 
         .process-step p {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 14px;
-            line-height: 1.7;
         }
 
-        /* PRICING SECTION */
+        /* ===== PRICING ===== */
         .pricing {
             background: var(--white);
         }
@@ -337,23 +429,25 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
 
         .price-card {
             background: var(--white);
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             padding: 40px;
             text-align: center;
             transition: all 0.3s;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .price-card.featured {
-            border-color: var(--primary-gold);
+            border-color: var(--primary-accent);
             transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(139, 105, 20, 0.15);
+            box-shadow: var(--shadow-lg);
         }
 
         .price-card.featured::before {
@@ -362,7 +456,7 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-gold);
+            background: var(--primary-accent);
             color: var(--white);
             padding: 6px 16px;
             font-size: 11px;
@@ -372,43 +466,42 @@
         }
 
         .price-card h3 {
-            font-family: 'Georgia', serif;
             font-size: 24px;
             color: var(--primary-dark);
             margin-bottom: 12px;
-            font-weight: 400;
         }
 
         .price-card .description {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 13px;
             margin-bottom: 24px;
         }
 
         .price {
             font-size: 48px;
-            color: var(--primary-gold);
+            color: var(--primary-accent);
             font-weight: 700;
             margin-bottom: 8px;
         }
 
         .price-unit {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 13px;
             margin-bottom: 32px;
         }
 
         .price-features {
             text-align: left;
-            margin-bottom: 32px;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
+            margin: 32px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding: 24px 0;
+            flex-grow: 1;
         }
 
         .price-features li {
             list-style: none;
-            color: var(--text-dark);
+            color: var(--text-primary);
             font-size: 14px;
             padding: 8px 0;
             display: flex;
@@ -417,92 +510,171 @@
 
         .price-features li::before {
             content: '✓';
-            color: var(--primary-gold);
+            color: var(--primary-accent);
             font-weight: 700;
             margin-right: 12px;
+            font-size: 16px;
         }
 
-        /* BLOG SECTION */
-        .blog {
-            background: var(--bg-light);
+        /* ===== TRUST SECTION ===== */
+        .trust {
+            background: var(--light-beige);
         }
 
-        .blog-grid {
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .trust-item h3 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .trust-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
 
-        .blog-card {
-            background: var(--white);
-            border: 1px solid var(--border-light);
+        .testimonial-card {
+            background: var(--light-beige);
             border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
+            padding: 32px;
+            border-left: 4px solid var(--primary-accent);
         }
 
-        .blog-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-4px);
+        .testimonial-text {
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-green));
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 60px;
-        }
-
-        .blog-content {
-            padding: 32px;
-        }
-
-        .blog-date {
-            color: var(--primary-gold);
-            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+            font-size: 18px;
         }
 
-        .blog-card h3 {
-            font-family: 'Georgia', serif;
-            font-size: 20px;
-            color: var(--primary-dark);
-            margin-bottom: 12px;
-            font-weight: 400;
-            line-height: 1.4;
-        }
-
-        .blog-card p {
-            color: var(--text-muted);
+        .testimonial-info h4 {
             font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .blog-read-more {
-            color: var(--primary-gold);
-            font-weight: 600;
-            font-size: 13px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .blog-read-more:hover {
             color: var(--primary-dark);
+            margin-bottom: 2px;
         }
 
-        /* CONTACT SECTION */
-        .contact {
+        .testimonial-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--light-green);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 48px auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light-beige);
+        }
+
+        .faq-question.active {
             background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .faq-icon {
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-answer.active {
+            padding: 20px 24px;
+            max-height: 500px;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2a4d4a 100%);
             color: var(--white);
         }
 
@@ -510,7 +682,7 @@
             color: var(--white);
         }
 
-        .contact p {
+        .contact > p {
             color: rgba(255, 255, 255, 0.85);
         }
 
@@ -518,14 +690,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
 
         .contact-info h3 {
-            font-family: 'Georgia', serif;
             font-size: 24px;
-            margin-bottom: 24px;
-            font-weight: 400;
+            margin-bottom: 32px;
         }
 
         .contact-item {
@@ -533,17 +703,18 @@
         }
 
         .contact-item h4 {
-            color: var(--primary-gold);
-            font-size: 14px;
+            color: var(--primary-accent);
+            font-size: 13px;
             font-weight: 700;
             letter-spacing: 0.5px;
-            margin-bottom: 8px;
             text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
         .contact-item p {
             font-size: 15px;
             line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .form-group {
@@ -564,27 +735,28 @@
             padding: 12px 16px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 4px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: var(--white);
-            font-family: inherit;
+            font-family: 'Open Sans', sans-serif;
             font-size: 14px;
-            transition: border 0.3s;
+            transition: all 0.3s;
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-gold);
-            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary-accent);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
         }
 
         .form-submit {
-            background: var(--primary-gold);
+            background: var(--primary-accent);
             color: var(--primary-dark);
             padding: 14px 32px;
             border: none;
@@ -594,16 +766,18 @@
             cursor: pointer;
             width: 100%;
             transition: all 0.3s;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .form-submit:hover {
             background: #a8861f;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 105, 20, 0.3);
         }
 
-        /* FOOTER */
+        /* ===== FOOTER ===== */
         footer {
-            background: #050d15;
+            background: #0f2622;
             color: rgba(255, 255, 255, 0.7);
             padding: 48px 32px 24px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -620,11 +794,12 @@
 
         .footer-col h4 {
             color: var(--white);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .footer-col a,
@@ -632,15 +807,17 @@
             font-size: 13px;
             line-height: 2;
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             transition: color 0.3s;
         }
 
         .footer-col a:hover {
-            color: var(--primary-gold);
+            color: var(--primary-accent);
         }
 
         .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 24px;
             text-align: center;
@@ -648,39 +825,254 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        /* RESPONSIVE */
+        /* ===== FLOATING BUTTONS ===== */
+        .float-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-zalo {
+            background: #0084ff;
+        }
+
+        .float-facebook {
+            background: #1877F2;
+        }
+
+        .float-chat {
+            background: var(--primary-accent);
+        }
+
+        /* ===== CHATBOT ===== */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+        }
+
+        .chatbot-box {
+            background: var(--white);
+            border-radius: 12px;
+            width: 340px;
+            max-width: 90vw;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .chatbot-header {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h4 {
+            font-size: 14px;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 16px;
+            background: var(--light-beige);
+        }
+
+        .message {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 8px;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-text {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+            max-width: 70%;
+        }
+
+        .message.bot .message-text {
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .message.user .message-text {
+            background: var(--primary-accent);
+            color: var(--primary-dark);
+        }
+
+        .chatbot-input {
+            padding: 16px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 10px 12px;
+            font-size: 13px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .chatbot-input button {
+            background: var(--primary-accent);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 4px;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .chatbot-input button:hover {
+            background: #a8861f;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ===== BOOKING MODAL ===== */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .booking-modal.active {
+            display: flex;
+        }
+
+        .booking-content {
+            background: var(--white);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .booking-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 gap: 16px;
+                padding: 12px 16px;
             }
 
-            nav a {
-                margin: 8px 0;
+            .nav-links {
+                gap: 16px;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 60px 20px;
             }
 
             .hero h1 {
                 font-size: 36px;
             }
 
-            .hero p {
-                font-size: 16px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
+            h2 {
+                font-size: 28px;
             }
 
             section {
                 padding: 60px 20px;
             }
 
-            section h2 {
-                font-size: 32px;
+            .services-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-content {
@@ -688,140 +1080,198 @@
                 gap: 40px;
             }
 
-            .services-grid,
-            .pricing-grid,
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-
             .price-card.featured {
                 transform: scale(1);
             }
-        }
 
-        /* ANIMATIONS */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
+            .hero-cta {
+                flex-direction: column;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+
+            .btn {
+                width: 100%;
             }
         }
 
-        .service-card {
-            animation: slideIn 0.6s ease-out;
+        /* ===== UTILITY CLASSES ===== */
+        .hidden {
+            display: none !important;
         }
 
-        .service-card:nth-child(2) {
-            animation-delay: 0.1s;
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
         }
 
-        .service-card:nth-child(3) {
-            animation-delay: 0.2s;
+        .success-message {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- ===== HEADER ===== -->
     <header>
         <nav>
             <div class="logo">GREEN<span>SPACE</span></div>
-            <div>
+            <div class="nav-links">
                 <a href="#services">Dịch vụ</a>
                 <a href="#process">Quy trình</a>
                 <a href="#pricing">Giá</a>
-                <a href="#blog">Blog</a>
-                <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Liên hệ</button>
+                <a href="#faq">FAQ</a>
+                <a href="#testimonials">Review</a>
+                <button class="nav-cta" onclick="scrollToContact()">Tư vấn</button>
             </div>
         </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Đất của bạn <span>được canh chừng</span> 24/7</h1>
-            <p>Quản lý tài sản bất động sản từ xa không bao giờ dễ dàng đến vậy. Kiểm tra định kỳ, báo cáo chi tiết, yên tâm tuyệt đối.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Tư vấn miễn phí</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('process').scrollIntoView({behavior: 'smooth'})">Xem quy trình</button>
+            <div class="hero-tagline">Where Assets Breathe</div>
+            <h1>Nơi tài sản <span>được thở</span></h1>
+            <p>Quản lý bất động sản từ xa không còn là nỗi lo. Kiểm tra định kỳ, báo cáo chi tiết, bảo vệ tài sản 24/7 — với sự minh bạch tuyệt đối và chuyên nghiệp thật sự.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="openBookingModal()">Đặt tư vấn miễn phí</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Tìm hiểu dịch vụ</button>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- ===== TRUST SECTION ===== -->
+    <section class="trust">
+        <h2>Tại sao chọn GreenSpace?</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">🛡️</div>
+                <h3>Bảo vệ tài sản</h3>
+                <p>Phát hiện sớm xâm phạm, lấn chiếm, tranh chấp trong vòng 24 giờ</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">📊</div>
+                <h3>Báo cáo minh bạch</h3>
+                <p>Ảnh GPS, mô tả chi tiết, đánh giá rủi ro — gửi hàng tháng</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">⏱️</div>
+                <h3>Theo dõi thường xuyên</h3>
+                <p>Kiểm tra tối thiểu 1 lần/tháng, giám sát 24/7 từ xa</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🤝</div>
+                <h3>Đại diện chuyên nghiệp</h3>
+                <p>Xử lý vấn đề pháp lý, làm việc với chính quyền địa phương</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💰</div>
+                <h3>Giá công bằng</h3>
+                <p>3 triệu/tháng cho gói cơ bản — không có phí ẩn</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🌱</div>
+                <h3>Dài hạn</h3>
+                <p>Không chạy theo deal nhanh — phát triển tài sản bền vững</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
     <section class="services" id="services">
-        <h2>Dịch vụ của chúng tôi</h2>
-        <p>Giải pháp quản lý tài sản bất động sản toàn diện cho chủ sở hữu ở xa</p>
-        
+        <h2>Dịch vụ chúng tôi cung cấp</h2>
+        <p>Giải pháp quản lý bất động sản toàn diện cho những người muốn yên tâm</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">📍</div>
                 <h3>Kiểm tra thực địa</h3>
-                <p>Tối thiểu 1 lần/tháng, chúng tôi lên thực địa kiểm tra tình trạng tài sản, chụp ảnh GPS, phát hiện bất thường.</p>
+                <p>Lên thực tế ít nhất 1 lần/tháng, chụp ảnh GPS từng góc, xác định ranh giới chính xác, phát hiện xâm phạm sớm.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📋</div>
                 <h3>Báo cáo chi tiết</h3>
-                <p>Báo cáo ảnh, GPS tọa độ, mô tả tình trạng đầy đủ được gửi hàng tháng. Bạn biết rõ đất đang ra sao.</p>
+                <p>Mỗi tháng nhận báo cáo ảnh đầy đủ, tọa độ GPS, mô tả hiện trạng, đánh giá rủi ro, kiến nghị hành động.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚠️</div>
                 <h3>Cảnh báo kịp thời</h3>
-                <p>Phát hiện xâm phạm, lấn chiếm, tranh chấp — thông báo ngay trong vòng 24 giờ để bạn xử lý kịp thời.</p>
+                <p>Phát hiện xâm lấn, tranh chấp, thay đổi quy hoạch — thông báo ngay trong vòng 24 giờ để bạn xử lý.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Xác minh pháp lý</h3>
+                <p>Rà soát sổ đỏ, kiểm tra quy hoạch, theo dõi thay đổi chính sách — giúp bạn luôn nắm rõ tình hình.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Bảo trì tài sản</h3>
+                <p>Dọn dẹp, phát quang, bảo dưỡng công trình — giữ cho tài sản luôn sạch sẽ, không xuống cấp.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3>Hỗ trợ 24/7</h3>
+                <p>Liên lạc trực tiếp qua Zalo, Email, điện thoại. Trả lời thắc mắc, xử lý sự cố nhanh chóng.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- ===== PROCESS ===== -->
     <section class="process" id="process">
         <h2>Quy trình làm việc</h2>
-        <p>4 bước đơn giản để bắt đầu quản lý tài sản của bạn</p>
-
+        <p>4 bước đơn giản để bắt đầu quản lý tài sản</p>
         <div class="process-timeline">
             <div class="process-step">
                 <div class="step-number">1</div>
-                <h3>Liên hệ & tư vấn</h3>
-                <p>Bạn liên hệ với chúng tôi, chúng tôi hiểu rõ tình huống tài sản và nhu cầu của bạn.</p>
+                <h3>Tư vấn miễn phí</h3>
+                <p>Bạn liên hệ, chúng tôi hiểu rõ tình huống tài sản, nhu cầu cụ thể, và đề xuất gói phù hợp.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <h3>Ký hợp đồng</h3>
-                <p>Chúng tôi gửi hợp đồng ủy quyền quản lý (minh bạch, rõ ràng). Bạn ký và gửi lại.</p>
+                <p>Hợp đồng minh bạch, rõ ràng, công chứng nếu cần. Xác định phạm vi dịch vụ, thời hạn, chi phí.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
-                <h3>Kiểm tra đầu tiên</h3>
-                <p>Trong tuần đầu, chúng tôi lên kiểm tra tài sản, lập báo cáo baseline chi tiết.</p>
+                <h3>Khảo sát đầu tiên</h3>
+                <p>Tuần đầu tiên, chúng tôi lên kiểm tra, lập báo cáo baseline chi tiết để làm nền tảng theo dõi.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">4</div>
                 <h3>Báo cáo hàng tháng</h3>
-                <p>Mỗi tháng bạn nhận báo cáo ảnh + tình trạng. Bất kỳ vấn đề nào cũng được thông báo ngay.</p>
+                <p>Mỗi tháng nhận báo cáo, video tour, cập nhật tình hình. Bất kỳ vấn đề nào cũng được thông báo ngay.</p>
             </div>
         </div>
     </section>
 
-    <!-- PRICING -->
+    <!-- ===== PRICING ===== -->
     <section class="pricing" id="pricing">
         <h2>Bảng giá dịch vụ</h2>
-        <p>Giá rõ ràng, không có chi phí ẩn. Tất cả đều minh bạch từ đầu.</p>
-
+        <p>Giá rõ ràng, công bằng, không có chi phí ẩn. Minh bạch từ đầu.</p>
         <div class="pricing-grid">
             <div class="price-card">
                 <h3>Gói Cơ bản</h3>
-                <p class="description">Phù hợp nhất cho hầu hết chủ sở hữu</p>
+                <p class="description">Phù hợp nhất cho nhà đầu tư cá nhân</p>
                 <div class="price">3.000.000 đ</div>
                 <div class="price-unit">/ tháng</div>
                 <ul class="price-features">
                     <li>Kiểm tra 1 lần/tháng</li>
                     <li>Ảnh + GPS + báo cáo</li>
                     <li>Cảnh báo kịp thời (24 giờ)</li>
-                    <li>Email hỗ trợ</li>
+                    <li>Hỗ trợ Email + Zalo</li>
+                    <li>Dùng thử 1 tháng miễn phí</li>
                 </ul>
-                <button class="btn btn-primary">Chọn gói này</button>
+                <button class="btn btn-primary btn-small" onclick="openBookingModal()">Chọn gói này</button>
             </div>
 
             <div class="price-card featured">
@@ -831,103 +1281,177 @@
                 <div class="price-unit">/ tháng</div>
                 <ul class="price-features">
                     <li>Kiểm tra 2 lần/tháng</li>
-                    <li>Báo cáo chi tiết + phân tích</li>
+                    <li>Báo cáo + phân tích chi tiết</li>
                     <li>Theo dõi quy hoạch & pháp lý</li>
                     <li>Hỗ trợ thủ tục hành chính</li>
-                    <li>Hotline ưu tiên</li>
+                    <li>Hotline ưu tiên 24/7</li>
                 </ul>
-                <button class="btn btn-primary">Chọn gói này</button>
+                <button class="btn btn-primary btn-small" onclick="openBookingModal()">Chọn gói này</button>
             </div>
 
             <div class="price-card">
                 <h3>Gói Tối ưu</h3>
                 <p class="description">Nhiều lô đất — giá ưu đãi</p>
                 <div class="price">2.500.000 đ</div>
-                <div class="price-unit">/ tháng / lô (từ 3 lô trở lên)</div>
+                <div class="price-unit">/ tháng / lô (từ 3 lô)</div>
                 <ul class="price-features">
                     <li>Kiểm tra 1-2 lần/tháng</li>
                     <li>Báo cáo đầy đủ</li>
                     <li>Cảnh báo 24/7</li>
                     <li>Giảm giá hoa hồng giới thiệu</li>
+                    <li>Hỗ trợ gọi</li>
                 </ul>
-                <button class="btn btn-primary">Liên hệ để tư vấn</button>
+                <button class="btn btn-primary btn-small" onclick="openBookingModal()">Liên hệ tư vấn</button>
             </div>
         </div>
-
-        <p style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 13px;">
-            💡 Bạn muốn bán? Chúng tôi giới thiệu người mua với mức giá tốt. Hoa hồng chỉ tính khi giao dịch thành công (1,5% giá trị).
+        <p style="text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 14px;">
+            💡 <strong>Dùng thử 1 tháng miễn phí</strong> — Không ràng buộc, bạn có thể hủy bất cứ lúc nào. Chúng tôi tự tin vào chất lượng dịch vụ của mình.
         </p>
     </section>
 
-    <!-- BLOG -->
-    <section class="blog" id="blog">
-        <h2>Hiên — Quan sát từ Nam Ban</h2>
-        <p>Bài viết thực từ người ở đây, không phải từ internet</p>
-
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-image">🌅</div>
-                <div class="blog-content">
-                    <div class="blog-date">Tháng 1, 2025</div>
-                    <h3>Tại sao tôi quyết định ở lại Nam Ban</h3>
-                    <p>Một cơ hội ở Sài Gòn có lương cao và tên tuổi, nhưng tôi từ chối. Đây là lý do thực...</p>
-                    <a href="#" class="blog-read-more">Đọc tiếp →</a>
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials">
+        <h2>Khách hàng nói gì về chúng tôi</h2>
+        <p>Những nhà đầu tư đã trải nghiệm dịch vụ GreenSpace</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Trước đây, tôi luôn lo lắng về mảnh đất ở Lâm Đồng. Giờ chỉ cần mỗi tháng nhận báo cáo từ GreenSpace là yên tâm hoàn toàn."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">NH</div>
+                    <div class="testimonial-info">
+                        <h4>Nguyễn Hoàng</h4>
+                        <p>Nhà đầu tư, TP.HCM</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="blog-card">
-                <div class="blog-image">🏘️</div>
-                <div class="blog-content">
-                    <div class="blog-date">Tháng 1, 2025</div>
-                    <h3>3 điều về đất Lâm Đồng mà người mua thường không được nói</h3>
-                    <p>Từ quan sát thực tế 6 tháng qua, tôi nhận ra 3 điều quan trọng mà ít ai cảnh báo cho bạn...</p>
-                    <a href="#" class="blog-read-more">Đọc tiếp →</a>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Dịch vụ của GreenSpace không chỉ chuyên nghiệp mà còn rất chân thành. Họ không bán mơ, họ làm việc thực."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">TH</div>
+                    <div class="testimonial-info">
+                        <h4>Trần Hương</h4>
+                        <p>Chủ doanh nghiệp, Hà Nội</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="blog-card">
-                <div class="blog-image">⚠️</div>
-                <div class="blog-content">
-                    <div class="blog-date">Tháng 12, 2024</div>
-                    <h3>Tôi đã sai về điều này khi mới lên Lâm Đồng</h3>
-                    <p>Bài học từ sai lầm thực của mình và cách nó thay đổi cách tôi nhìn thị trường đất...</p>
-                    <a href="#" class="blog-read-more">Đọc tiếp →</a>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Báo cáo ảnh GPS hàng tháng chính xác tuyệt đối. Khi phát hiện xâm phạm, họ thông báo ngay và hỗ trợ xử lý."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LM</div>
+                    <div class="testimonial-info">
+                        <h4>Lê Minh</h4>
+                        <p>Nhà đầu tư, Đà Nẵng</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+        <h2>Câu hỏi thường gặp</h2>
+        <p>Những thắc mắc phổ biến của khách hàng</p>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Tôi có thể dùng thử trước khi cam kết không?</span>
+                    <span class="faq-icon">↓</span>
+                </button>
+                <div class="faq-answer">
+                    Có chắc chắn! Chúng tôi cung cấp 1 tháng dùng thử miễn phí (Gói Cơ bản). Bạn sẽ nhận báo cáo đầy đủ, trải nghiệm quy trình, rồi quyết định tiếp tục hay hủy. Không có ràng buộc.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>GreenSpace hoạt động ở những nơi nào?</span>
+                    <span class="faq-icon">↓</span>
+                </button>
+                <div class="faq-answer">
+                    Hiện tại chúng tôi tập trung vào khu vực Nam Ban – Lâm Hà – Lâm Đồng. Đây là điểm nóng đầu tư BĐS mà chúng tôi có đội ngũ chuyên nghiệp tại địa phương. Trong tương lai sẽ mở rộng sang các tỉnh khác.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Báo cáo được gửi như thế nào?</span>
+                    <span class="faq-icon">↓</span>
+                </button>
+                <div class="faq-answer">
+                    Báo cáo được gửi qua Zalo (ưu tiên) hoặc Email. Bạn sẽ nhận: ảnh chất lượng cao, tọa độ GPS, mô tả chi tiết hiện trạng, đánh giá rủi ro, và kiến nghị hành động cụ thể.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Nếu phát hiện vấn đề, GreenSpace sẽ xử lý thế nào?</span>
+                    <span class="faq-icon">↓</span>
+                </button>
+                <div class="faq-answer">
+                    Chúng tôi thông báo ngay (trong 24 giờ), đề xuất phương án xử lý, và đại diện làm việc với chính quyền địa phương nếu cần. Tuỳ vào loại vấn đề, bạn có thể yêu cầu hỗ trợ bổ sung (có phí).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Tôi có thể hủy hợp đồng bất cứ lúc nào không?</span>
+                    <span class="faq-icon">↓</span>
+                </button>
+                <div class="faq-answer">
+                    Có. Bạn có quyền hủy với thông báo trước 30 ngày. Giai đoạn dùng thử miễn phí 1 tháng không có ràng buộc gì — bạn có thể hủy ngay sau 1 tháng nếu không hài lòng.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Có phí ẩn nào không?</span>
+                    <span class="faq-icon">↓</span>
+                </button>
+                <div class="faq-answer">
+                    Không có. Hợp đồng rõ ràng nêu rõ: Phí hàng tháng + phí dịch vụ bổ sung (nếu bạn yêu cầu thêm). Bạn biết rõ bạn trả bao nhiêu cho cái gì.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
     <section class="contact" id="contact">
-        <h2>Liên hệ với chúng tôi</h2>
-        <p>Hãy cho chúng tôi biết về tài sản của bạn. Chúng tôi sẽ tư vấn miễn phí.</p>
+        <h2>Bắt đầu quản lý tài sản của bạn</h2>
+        <p>Liên hệ trực tiếp với chúng tôi để nhận tư vấn miễn phí và khám phá cách GreenSpace có thể giúp bạn yên tâm hơn.</p>
 
         <div class="contact-content">
             <div class="contact-info">
                 <h3>GreenSpace</h3>
                 
                 <div class="contact-item">
-                    <h4>📍 Địa chỉ</h4>
-                    <p>Nam Ban, Lâm Hà, Lâm Đồng</p>
+                    <h4>📍 Trụ sở chính</h4>
+                    <p>Nam Ban, Lâm Hà, Lâm Đồng, Việt Nam</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>📱 Zalo (Ưu tiên)</h4>
+                    <p><a href="https://zalo.me/0978758788" target="_blank" style="color: var(--primary-accent);">0978 758 788</a></p>
                 </div>
 
                 <div class="contact-item">
                     <h4>📞 Điện thoại</h4>
-                    <p>+84 (0)xxx xxxx xxx</p>
+                    <p>0978 758 788</p>
                 </div>
 
                 <div class="contact-item">
-                    <h4>📧 Email</h4>
-                    <p>hello@greenspace.vn</p>
+                    <h4>💬 Facebook</h4>
+                    <p><a href="https://m.me/doanquocduyet" target="_blank" style="color: var(--primary-accent);">facebook.com/doanquocduyet</a></p>
                 </div>
 
                 <div class="contact-item">
-                    <h4>💬 Zalo / Messenger</h4>
-                    <p>Hỗ trợ trực tiếp qua Zalo (ưu tiên)</p>
+                    <h4>⏱️ Thời gian phục vụ</h4>
+                    <p>Thứ 2 - Chủ nhật: 8:00 - 18:00<br>Zalo 24/7 (trả lời nhanh nhất)</p>
                 </div>
             </div>
 
-            <form onsubmit="handleSubmit(event)">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
                     <label for="name">Họ và tên *</label>
                     <input type="text" id="name" required placeholder="Nhập họ tên của bạn">
@@ -944,127 +1468,221 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="location">Vị trí đất (xã/phường)</label>
-                    <input type="text" id="location" placeholder="Ví dụ: Lâm Hà, Lâm Đồng">
+                    <label for="location">Vị trí đất (xã/phường/tỉnh) *</label>
+                    <input type="text" id="location" required placeholder="Ví dụ: Nam Ban, Lâm Hà, Lâm Đồng">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Mô tả vắn tắt về tài sản *</label>
-                    <textarea id="message" rows="4" required placeholder="Diện tích, loại đất, tình huống hiện tại..."></textarea>
+                    <label for="message">Mô tả vắn tắt về tài sản của bạn *</label>
+                    <textarea id="message" rows="4" required placeholder="Diện tích, loại đất, tình huống hiện tại, mục tiêu của bạn..."></textarea>
                 </div>
 
+                <div id="formMessage"></div>
                 <button type="submit" class="form-submit">Gửi yêu cầu tư vấn</button>
                 <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 12px;">
-                    ✓ Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ
+                    ✓ Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ qua Zalo hoặc điện thoại
                 </p>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h4>GreenSpace</h4>
-                <p>Quản lý tài sản bất động sản tại Lâm Đồng. Yên tâm, chuyên nghiệp, minh bạch.</p>
+                <p>Quản lý tài sản bất động sản chuyên nghiệp. Nơi tài sản được thở — được nuôi dưỡng, chăm sóc, và phát triển bền vững.</p>
             </div>
             <div class="footer-col">
                 <h4>Dịch vụ</h4>
                 <a href="#services">Dịch vụ quản lý</a>
                 <a href="#pricing">Bảng giá</a>
                 <a href="#process">Quy trình</a>
+                <a href="#faq">FAQ</a>
             </div>
             <div class="footer-col">
                 <h4>Về chúng tôi</h4>
-                <a href="#blog">Blog Hiên</a>
                 <a href="#contact">Liên hệ</a>
+                <a href="https://zalo.me/0978758788" target="_blank">Zalo</a>
+                <a href="https://m.me/doanquocduyet" target="_blank">Messenger</a>
             </div>
             <div class="footer-col">
                 <h4>Pháp lý</h4>
-                <a href="#">Chính sách bảo mật</a>
-                <a href="#">Điều khoản sử dụng</a>
-                <a href="#">Hợp đồng mẫu</a>
+                <a href="#" onclick="alert('Chính sách bảo mật')">Chính sách bảo mật</a>
+                <a href="#" onclick="alert('Điều khoản sử dụng')">Điều khoản sử dụng</a>
+                <a href="#" onclick="alert('Hợp đồng mẫu')">Hợp đồng mẫu</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 GreenSpace. Tất cả quyền được bảo lưu. | Phát triển với ❤️ tại Nam Ban, Lâm Đồng</p>
+            <p>© 2026 GreenSpace. Tất cả quyền được bảo lưu. | Phát triển với ❤️ tại Nam Ban, Lâm Đồng | <a href="#" style="color: rgba(255,255,255,0.6);">Liên hệ hợp tác</a></p>
         </div>
     </footer>
 
-    <!-- ZALO CHAT WIDGET -->
-    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
-    <script>
-        // Initialize Zalo Chat
-        window.ZaloSocialSDK = window.ZaloSocialSDK || {};
-        window.ZaloSocialSDK.onLoad = function(sdk) {
-            sdk.decorate();
-        };
-    </script>
+    <!-- ===== FLOATING BUTTONS ===== -->
+    <div class="float-buttons">
+        <a href="https://zalo.me/0978758788" target="_blank" class="float-btn float-zalo" title="Chat Zalo">Z</a>
+        <a href="https://m.me/doanquocduyet" target="_blank" class="float-btn float-facebook" title="Chat Facebook">f</a>
+        <button class="float-btn float-chat" onclick="toggleChatbot()" title="Chatbot">💬</button>
+    </div>
 
-    <!-- FACEBOOK MESSENGER CHAT PLUGIN -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0" nonce="abcdef123456"></script>
-
-    <!-- CHATBOT POPUP -->
-    <div id="chatbot-widget" style="position: fixed; bottom: 80px; right: 20px; z-index: 999; display: none;">
-        <div style="background: var(--primary-dark); color: white; border-radius: 12px; width: 320px; max-width: 90vw; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;">
-            <div style="background: var(--primary-gold); padding: 16px; color: var(--primary-dark); font-weight: 700;">
-                🤖 GreenSpace Bot
+    <!-- ===== CHATBOT WIDGET ===== -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-box">
+            <div class="chatbot-header">
+                <h4>🤖 GreenSpace Bot</h4>
+                <button class="chatbot-close" onclick="closeChatbot()">×</button>
             </div>
-            <div style="padding: 20px; font-size: 14px; line-height: 1.6;">
-                <p style="margin-bottom: 16px;"><strong>Xin chào! 👋</strong></p>
-                <p style="margin-bottom: 20px;">Mình là bot tư vấn của GreenSpace. Bạn cần giúp gì về quản lý bất động sản?</p>
-                <div style="display: flex; gap: 8px;">
-                    <button onclick="openZalo()" style="flex: 1; padding: 10px; background: var(--primary-gold); color: var(--primary-dark); border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">💬 Chat Zalo</button>
-                    <button onclick="closeBot()" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.2); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Đóng</button>
-                </div>
+            <div class="chatbot-messages" id="chatMessages"></div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeypress="handleChatKeypress(event)">
+                <button onclick="sendMessage()">Gửi</button>
             </div>
         </div>
     </div>
 
-    <!-- FLOATING ACTION BUTTONS -->
-    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 998; display: flex; flex-direction: column; gap: 12px;">
-        <!-- Zalo Button -->
-        <a href="https://zalo.me/0978758788" target="_blank" style="width: 56px; height: 56px; background: #0084ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Chat Zalo">
-            Z
-        </a>
-        <!-- Facebook Button -->
-        <a href="https://m.me/doanquocduyet" target="_blank" style="width: 56px; height: 56px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Chat Facebook">
-            f
-        </a>
-        <!-- Chat Bot Button -->
-        <button onclick="toggleBot()" style="width: 56px; height: 56px; background: var(--primary-gold); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-dark); font-size: 28px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s; font-weight: 700;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.style.transform='scale(1)'" title="Chatbot">
-            💬
-        </button>
+    <!-- ===== BOOKING MODAL ===== -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-content">
+            <button class="booking-close" onclick="closeBookingModal()">×</button>
+            <h2 style="margin-bottom: 8px; color: var(--primary-dark);">Đặt lịch tư vấn miễn phí</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 24px;">Chọn thời gian phù hợp với bạn. Chúng tôi sẽ gọi hoặc gửi Zalo để tư vấn chi tiết.</p>
+            
+            <!-- Calendly Inline Widget -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/greenspace-landmgmt/30min?hide_event_type_details=1&hide_gdpr_block=1" style="min-width: 320px; height: 650px;"></div>
+            
+            <!-- Hoặc booking form đơn giản nếu không có Calendly -->
+            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 20px; text-align: center;">
+                Hoặc liên hệ trực tiếp qua Zalo: <a href="https://zalo.me/0978758788" target="_blank" style="color: var(--primary-accent);">0978 758 788</a>
+            </p>
+        </div>
     </div>
 
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+    
     <script>
-        // CHATBOT FUNCTIONS
-        function toggleBot() {
-            const bot = document.getElementById('chatbot-widget');
-            bot.style.display = bot.style.display === 'none' ? 'block' : 'none';
+        // ===== UTILITY FUNCTIONS =====
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function closeBot() {
-            document.getElementById('chatbot-widget').style.display = 'none';
+        // ===== BOOKING MODAL =====
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
         }
 
-        function openZalo() {
-            window.open('https://zalo.me/0978758788', '_blank');
-            closeBot();
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
         }
 
-        // Show bot tự động sau 3 giây nếu user chưa interact
-        let botShown = false;
-        setTimeout(() => {
-            if (!botShown) {
-                document.getElementById('chatbot-widget').style.display = 'block';
-                botShown = true;
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                closeBookingModal();
             }
-        }, 3000);
+        }
 
-        // FORM SUBMIT HANDLER
-        function handleSubmit(event) {
+        // ===== FAQ ACCORDION =====
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+            
+            if (!isActive) {
+                answer.classList.add('active');
+                element.classList.add('active');
+            }
+        }
+
+        // ===== CHATBOT =====
+        const chatbotResponses = {
+            'giá': 'Chúng tôi có 3 gói: Cơ bản (3M/tháng), Chuyên nghiệp (5.5M/tháng), Tối ưu (2.5M/tháng/lô từ 3 lô). Bạn có thể dùng thử 1 tháng miễn phí!',
+            'dịch vụ': 'GreenSpace cung cấp: Kiểm tra thực địa, báo cáo chi tiết, cảnh báo kịp thời, xác minh pháp lý, bảo trì tài sản, hỗ trợ 24/7.',
+            'địa chỉ': 'Chúng tôi hoạt động tại Nam Ban, Lâm Hà, Lâm Đồng. Zalo: 0978 758 788.',
+            'quy trình': '4 bước: 1) Tư vấn miễn phí, 2) Ký hợp đồng, 3) Khảo sát đầu tiên, 4) Báo cáo hàng tháng.',
+            'dùng thử': 'Có! Bạn có thể dùng thử 1 tháng miễn phí mà không ràng buộc gì. Rất đơn giản.',
+            'hello': 'Xin chào! 👋 Mình là bot hỗ trợ của GreenSpace. Bạn muốn biết gì về dịch vụ quản lý bất động sản của chúng tôi? (Hỏi: giá, dịch vụ, quy trình, etc)',
+            'hi': 'Xin chào! 👋 Mình là bot hỗ trợ của GreenSpace. Bạn muốn biết gì? (Hỏi: giá, dịch vụ, quy trình)',
+            'hỏi': 'Tôi có thể giúp bạn về: 💰 Giá cả, 📋 Dịch vụ, ⚙️ Quy trình, 🏠 Địa chỉ, 🎯 Dùng thử. Bạn muốn biết cái nào?',
+            'help': 'Bạn có thể hỏi về: Giá, Dịch vụ, Quy trình, Địa chỉ, Dùng thử.',
+        };
+
+        function toggleChatbot() {
+            const widget = document.getElementById('chatbotWidget');
+            if (widget.style.display === 'none' || widget.style.display === '') {
+                widget.style.display = 'block';
+                if (!document.getElementById('chatMessages').innerHTML) {
+                    addBotMessage('Xin chào! 👋 Mình là bot hỗ trợ của GreenSpace. Bạn muốn biết gì về dịch vụ của chúng tôi?');
+                }
+            } else {
+                widget.style.display = 'none';
+            }
+        }
+
+        function closeChatbot() {
+            document.getElementById('chatbotWidget').style.display = 'none';
+        }
+
+        function addBotMessage(text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageEl = document.createElement('div');
+            messageEl.className = 'message bot';
+            messageEl.innerHTML = `<div class="message-text">${text}</div>`;
+            messagesDiv.appendChild(messageEl);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function addUserMessage(text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageEl = document.createElement('div');
+            messageEl.className = 'message user';
+            messageEl.innerHTML = `<div class="message-text">${text}</div>`;
+            messagesDiv.appendChild(messageEl);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addUserMessage(text);
+            input.value = '';
+
+            setTimeout(() => {
+                const lowerText = text.toLowerCase();
+                let response = 'Xin lỗi, tôi chưa hiểu câu hỏi của bạn. Bạn có thể hỏi về: Giá, Dịch vụ, Quy trình, Địa chỉ, Dùng thử.';
+                
+                for (const [key, value] of Object.entries(chatbotResponses)) {
+                    if (lowerText.includes(key)) {
+                        response = value;
+                        break;
+                    }
+                }
+                
+                addBotMessage(response);
+            }, 500);
+        }
+
+        function handleChatKeypress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Auto-show chatbot after 5 seconds on first visit
+        setTimeout(() => {
+            if (!sessionStorage.getItem('chatbotShown')) {
+                document.getElementById('chatbotWidget').style.display = 'block';
+                addBotMessage('Xin chào! 👋 Có gì tôi có thể giúp bạn?');
+                sessionStorage.setItem('chatbotShown', 'true');
+            }
+        }, 5000);
+
+        // ===== FORM SUBMISSION =====
+        async function handleFormSubmit(event) {
             event.preventDefault();
             
             const name = document.getElementById('name').value;
@@ -1072,81 +1690,126 @@
             const email = document.getElementById('email').value;
             const location = document.getElementById('location').value;
             const message = document.getElementById('message').value;
-            
-            // Tạo tin nhắn cho Zalo
-            const zaloMessage = `Xin chào! Mình là ${name}. 
-Số điện thoại: ${phone}
-Vị trí đất: ${location}
-Mô tả: ${message}
+            const formMessage = document.getElementById('formMessage');
 
-Mình muốn tư vấn về dịch vụ quản lý bất động sản của GreenSpace.`;
-            
-            // Reset form
-            document.querySelector('form').reset();
-            
-            // Show thông báo & auto open Zalo
-            showSuccessModal(name, phone, zaloMessage);
+            // Basic validation
+            if (!name || !phone || !location || !message) {
+                formMessage.innerHTML = '<div class="error-message">⚠️ Vui lòng điền đầy đủ thông tin (tên, điện thoại, vị trí, mô tả)</div>';
+                return;
+            }
+
+            // Show loading
+            const submitBtn = event.target.querySelector('.form-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Đang gửi...';
+
+            try {
+                // PHASE 2: Send to HubSpot (via Zapier)
+                // This would be integrated with Zapier to send to HubSpot CRM
+                const hubspotData = {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    location: location,
+                    message: message,
+                    timestamp: new Date().toISOString(),
+                    source: 'website_contact_form'
+                };
+
+                // PHASE 2: Auto-send Email notification (via Zapier)
+                // This would trigger Zapier to send email to admin + customer
+
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Success modal
+                formMessage.innerHTML = '<div class="success-message">✅ Yêu cầu của bạn đã được gửi! Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ qua Zalo hoặc điện thoại.</div>';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+
+                // Optional: Open Zalo for immediate contact
+                setTimeout(() => {
+                    const wantZalo = confirm('Bạn muốn mở Zalo để chat ngay với chúng tôi không?');
+                    if (wantZalo) {
+                        window.open('https://zalo.me/0978758788', '_blank');
+                    }
+                }, 2000);
+
+            } catch (error) {
+                formMessage.innerHTML = '<div class="error-message">❌ Có lỗi khi gửi. Vui lòng thử lại hoặc liên hệ Zalo: 0978 758 788</div>';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Gửi yêu cầu tư vấn';
+            }
         }
 
-        function showSuccessModal(name, phone, zaloMessage) {
-            // Tạo modal thông báo thành công
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.5);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 2000;
-            `;
-            
-            modal.innerHTML = `
-                <div style="background: white; border-radius: 12px; padding: 32px; max-width: 400px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-                    <div style="font-size: 48px; margin-bottom: 16px;">✅</div>
-                    <h3 style="font-family: Georgia, serif; font-size: 24px; color: var(--primary-dark); margin-bottom: 8px; font-weight: 400;">Cảm ơn ${name}!</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 24px; line-height: 1.6;">
-                        Chúng tôi đã nhận yêu cầu tư vấn của bạn. 
-                        <br><br>
-                        Hãy nhắn tin Zalo ngay để được tư vấn nhanh nhất! 
-                        <br>
-                        <strong>Chúng tôi sẽ trả lời trong 24 giờ.</strong>
-                    </p>
-                    <div style="display: flex; gap: 12px;">
-                        <button onclick="this.parentElement.parentElement.parentElement.remove(); window.open('https://zalo.me/0978758788', '_blank');" style="flex: 1; padding: 12px; background: #0084ff; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
-                            💬 Nhắn tin Zalo ngay
-                        </button>
-                        <button onclick="this.parentElement.parentElement.parentElement.remove();" style="flex: 1; padding: 12px; background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-light); border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
-                            Đóng
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(modal);
+        // ===== ANALYTICS =====
+        // PHASE 2: Google Analytics tracking
+        function trackEvent(eventName, eventData) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
         }
 
-        // Smooth scroll cho tất cả anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        // Track button clicks
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackEvent('button_click', { button_text: btn.textContent });
+            });
+        });
+
+        // Track form submission
+        document.getElementById('contactForm').addEventListener('submit', () => {
+            trackEvent('form_submit', { form_name: 'contact_form' });
+        });
+
+        // ===== PAGE NAVIGATION =====
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
 
-        // Prevent form submit button từ tự động scroll
-        document.querySelector('form').addEventListener('submit', function(e) {
-            if (e.target.tagName === 'FORM') {
-                e.preventDefault();
-                handleSubmit(e);
-            }
+        // ===== LAZY LOADING IMAGES =====
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        }
+
+        // ===== SÁNH analytics page view =====
+        window.addEventListener('load', () => {
+            trackEvent('page_view', { page_title: document.title });
         });
+
+        console.log('✅ GreenSpace Website Loaded Successfully');
+        console.log('📱 Zalo: 0978 758 788');
+        console.log('💬 Facebook: doanquocduyet');
     </script>
+
+    <!-- Google Analytics (Replace with your GA ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX'); // Replace with your GA ID
+    </script>
+
 </body>
 </html>
