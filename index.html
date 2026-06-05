@@ -8,13 +8,19 @@
     <meta name="description" content="GreenSpace - Dịch vụ quản lý bất động sản chuyên nghiệp tại Lâm Đồng. Kiểm tra định kỳ, báo cáo chi tiết, bảo vệ tài sản của bạn 24/7.">
     <title>GreenSpace — Where Assets Breathe | Quản lý Tài sản Bất động sản</title>
     
-    <!-- Google Fonts - International Standard -->
+    <!-- Favicon with Logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232d5a4d' width='100' height='100'/><text x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='%23c9a961' font-family='serif'>G</text></svg>">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Zalo API -->
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
     
     <style>
         * {
@@ -24,30 +30,24 @@
         }
 
         :root {
-            /* Luxury Color Palette */
             --primary-white: #ffffff;
             --bg-light: #f9f8f6;
             --bg-cream: #f5f3f0;
             
-            /* Green - Soft & Elegant */
             --primary-green: #2d5a4d;
             --light-green: #e8f4f0;
             --accent-green: #4a7d6f;
             
-            /* Gold - Soft & Warm */
             --accent-gold: #c9a961;
             --accent-gold-light: #e8dcc9;
             
-            /* Text */
             --text-primary: #1a1a1a;
             --text-secondary: #555555;
             --text-tertiary: #888888;
             
-            /* Borders */
             --border-light: #e0ddd9;
             --border-mid: #d4d0cc;
             
-            /* Shadows */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -107,15 +107,34 @@
         nav {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 16px 32px;
+            padding: 12px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #c9a961 0%, #d9b878 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
         .logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary-green);
             letter-spacing: -1px;
@@ -145,7 +164,7 @@
         .nav-cta {
             background: var(--accent-green);
             color: var(--primary-white);
-            padding: 11px 28px;
+            padding: 10px 24px;
             border-radius: 6px;
             border: none;
             cursor: pointer;
@@ -443,9 +462,72 @@
             font-size: 14px;
         }
 
+        /* ===== BLOG POSTS ===== */
+        .blog {
+            background: var(--primary-white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .blog-card {
+            background: var(--bg-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            color: var(--primary-white);
+            padding: 24px;
+            min-height: 100px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .blog-header h3 {
+            color: var(--primary-white);
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .blog-read-more {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .blog-read-more:hover {
+            color: var(--accent-gold);
+        }
+
         /* ===== PRICING ===== */
         .pricing {
-            background: var(--primary-white);
+            background: var(--bg-light);
         }
 
         .pricing-grid {
@@ -852,177 +934,23 @@
             background: #0084ff;
         }
 
-        .float-facebook {
-            background: #1877F2;
-        }
-
-        .float-chat {
-            background: var(--accent-green);
-        }
-
-        /* ===== CHATBOT WIDGET ===== */
-        .chatbot-widget {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            z-index: 999;
-            display: none;
-        }
-
-        .chatbot-box {
-            background: var(--primary-white);
-            border-radius: 12px;
-            width: 340px;
-            max-width: 90vw;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            animation: slideUp 0.3s ease-out;
-        }
-
-        .chatbot-header {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
-            color: var(--primary-white);
+        /* ===== MESSAGES ===== */
+        .success-message {
+            background: #d1fae5;
+            color: #065f46;
             padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chatbot-header h4 {
-            font-size: 14px;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .chatbot-close {
-            background: none;
-            border: none;
-            color: var(--primary-white);
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .chatbot-messages {
-            height: 300px;
-            overflow-y: auto;
-            padding: 16px;
-            background: var(--bg-light);
-        }
-
-        .message {
-            margin-bottom: 12px;
-            display: flex;
-            gap: 8px;
-            animation: fadeInUp 0.3s ease-out;
-        }
-
-        .message.bot {
-            justify-content: flex-start;
-        }
-
-        .message.user {
-            justify-content: flex-end;
-        }
-
-        .message-text {
-            padding: 10px 14px;
             border-radius: 8px;
-            font-size: 13px;
-            line-height: 1.5;
-            max-width: 70%;
+            margin-bottom: 20px;
+            font-size: 14px;
         }
 
-        .message.bot .message-text {
-            background: var(--primary-green);
-            color: var(--primary-white);
-        }
-
-        .message.user .message-text {
-            background: var(--accent-gold);
-            color: var(--primary-green);
-        }
-
-        .chatbot-input {
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
             padding: 16px;
-            border-top: 1px solid var(--border-light);
-            display: flex;
-            gap: 8px;
-        }
-
-        .chatbot-input input {
-            flex: 1;
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            padding: 10px 12px;
-            font-size: 13px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .chatbot-input button {
-            background: var(--accent-gold);
-            color: var(--primary-green);
-            border: none;
-            border-radius: 4px;
-            padding: 10px 14px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .chatbot-input button:hover {
-            background: #d9b878;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* ===== BOOKING MODAL ===== */
-        .booking-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .booking-modal.active {
-            display: flex;
-        }
-
-        .booking-content {
-            background: var(--primary-white);
-            border-radius: 12px;
-            width: 100%;
-            max-width: 600px;
-            padding: 40px;
-            position: relative;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .booking-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-secondary);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1046,7 +974,8 @@
 
             .services-grid,
             .pricing-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .blog-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1067,39 +996,20 @@
                 width: 100%;
             }
         }
-
-        /* ===== UTILITY ===== */
-        .hidden {
-            display: none !important;
-        }
-
-        .success-message {
-            background: #d1fae5;
-            color: #065f46;
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .error-message {
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
     <!-- ===== HEADER ===== -->
     <header>
         <nav>
-            <div class="logo">GREEN<span>SPACE</span></div>
+            <div class="logo-nav">
+                <div class="logo-img">🌿</div>
+                <div class="logo">GREEN<span>SPACE</span></div>
+            </div>
             <div class="nav-links">
                 <a href="#services">Dịch vụ</a>
                 <a href="#process">Quy trình</a>
+                <a href="#blog">Kinh nghiệm</a>
                 <a href="#pricing">Giá</a>
                 <a href="#faq">FAQ</a>
                 <a href="#testimonials">Review</a>
@@ -1115,7 +1025,7 @@
             <h1>Nơi tài sản <span>được thở</span></h1>
             <p>Quản lý bất động sản từ xa không còn là nỗi lo. Kiểm tra định kỳ, báo cáo chi tiết, bảo vệ tài sản 24/7 — với sự minh bạch tuyệt đối và chuyên nghiệp thật sự.</p>
             <div class="hero-cta">
-                <button class="btn btn-primary" onclick="openBookingModal()">Đặt tư vấn miễn phí</button>
+                <button class="btn btn-primary" onclick="scrollToContact()">Đặt tư vấn miễn phí</button>
                 <button class="btn btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Tìm hiểu dịch vụ</button>
             </div>
         </div>
@@ -1224,6 +1134,76 @@
         </div>
     </section>
 
+    <!-- ===== BLOG / KINH NGHIỆM ===== -->
+    <section class="blog" id="blog">
+        <h2>Kinh nghiệm & Bài viết</h2>
+        <p>Những vấn đề thường gặp khi không quản lý bất động sản chuyên nghiệp</p>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-header">
+                    <h3>🚨 Lấn Chiếm Đất - Rủi Ro Lớn Nhất</h3>
+                </div>
+                <div class="blog-content">
+                    <p>Lấn chiếm là vấn đề phổ biến nhất khi bạn không có mặt để quản lý. Người khác có thể xây dựng, sử dụng trái phép, và sau 3-5 năm sẽ có quyền sử dụng pháp lý. Không phát hiện kịp thời = mất tài sản vĩnh viễn.</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">⚡ GreenSpace giám sát 24/7 để phát hiện ngay bất kỳ hoạt động bất thường.</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header">
+                    <h3>📋 Tranh Chấp Ranh Giới & Quy Hoạch</h3>
+                </div>
+                <div class="blog-content">
+                    <p>Ranh giới đất không rõ ràng dẫn đến tranh chấp với láng giềng. Quy hoạch thay đổi (xây dựng công trình công cộng, mở đường) cũng làm giảm giá trị đất. Bạn sẽ biết quá muộn vì không theo dõi diễn biến địa phương.</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">✅ Báo cáo hàng tháng cập nhật ranh giới, quy hoạch, và bất kỳ thay đổi pháp lý.</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header">
+                    <h3>⚖️ Kiện Tụng Và Tranh Chấp Pháp Lý</h3>
+                </div>
+                <div class="blog-content">
+                    <p>Khi lấn chiếm xảy ra, bạn phải kiện tụng — mất tiền, mất thời gian, mất tâm sự. Kiện tụng có thể kéo dài 2-5 năm. Nếu không có bằng chứng ảnh GPS, giám sát liên tục, bạn sẽ thua. Đó là lý do tại sao phòng tránh hiệu quả hơn chữa trị.</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">🛡️ Chúng tôi lưu giữ tất cả dữ liệu & ảnh để làm bằng chứng pháp lý.</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header">
+                    <h3>🏢 Xuống Cấp & Mất Giá Trị Tài Sản</h3>
+                </div>
+                <div class="blog-content">
+                    <p>Đất không được bảo trì sẽ xuống cấp nhanh. Cỏ mọc um tùm, bụi bặm, cô quạnh — điều này ảnh hưởng đến tâm lý, giá trị, và cơ hội bán/cho thuê trong tương lai. Nhà đầu tư chuyên nghiệp luôn giữ tài sản sạch sẽ và hấp dẫn.</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">🌱 Dịch vụ bảo trì & dọn dẹp đều đặn giữ tài sản luôn tốt nhất.</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header">
+                    <h3>💔 Mất Cơ Hội Đầu Tư & Phát Triển</h3>
+                </div>
+                <div class="blog-content">
+                    <p>Khi không biết tình hình tài sản, bạn không thể chủ động: không biết quy hoạch dân cư sắp phát triển, không phát hiện cơ hội bán cao, không thấy khoảng trống để phát triển thêm. Điều này tương đương với tiền mất tay thành.</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">🚀 Báo cáo chi tiết giúp bạn thấy cơ hội trước khi thị trường phản ứng.</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-header">
+                    <h3>🎯 Cách Bảo Vệ Tài Sản Của Bạn</h3>
+                </div>
+                <div class="blog-content">
+                    <p><strong>1. Kiểm tra định kỳ</strong> - Ít nhất hàng tháng, phải có ai đó lên thực địa xem tình hình.<br>
+                    <strong>2. Lưu giữ bằng chứng</strong> - Ảnh GPS, tọa độ, video để làm bằng chứng pháp lý.<br>
+                    <strong>3. Bảo trì liên tục</strong> - Giữ đất sạch sẽ, hấp dẫn.<br>
+                    <strong>4. Thông báo kịp thời</strong> - Nếu có vấn đề, phải được báo ngay trong 24 giờ.</p>
+                    <p style="color: var(--accent-gold); font-weight: 600;">✅ Đó chính xác là những gì GreenSpace làm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== PRICING ===== -->
     <section class="pricing" id="pricing">
         <h2>Bảng giá dịch vụ</h2>
@@ -1241,7 +1221,7 @@
                     <li>Hỗ trợ Email + Zalo</li>
                     <li>Dùng thử 1 tháng miễn phí</li>
                 </ul>
-                <button class="btn btn-primary" onclick="openBookingModal()" style="margin-top: auto;">Chọn gói này</button>
+                <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: auto;">Chọn gói này</button>
             </div>
 
             <div class="price-card featured">
@@ -1256,7 +1236,7 @@
                     <li>Hỗ trợ thủ tục hành chính</li>
                     <li>Hotline ưu tiên 24/7</li>
                 </ul>
-                <button class="btn btn-primary" onclick="openBookingModal()" style="margin-top: auto;">Chọn gói này</button>
+                <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: auto;">Chọn gói này</button>
             </div>
 
             <div class="price-card">
@@ -1271,11 +1251,11 @@
                     <li>Giảm giá hoa hồng giới thiệu</li>
                     <li>Hỗ trợ gọi</li>
                 </ul>
-                <button class="btn btn-primary" onclick="openBookingModal()" style="margin-top: auto;">Liên hệ tư vấn</button>
+                <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: auto;">Liên hệ tư vấn</button>
             </div>
         </div>
         <p style="text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 14px;">
-            💡 <strong>Dùng thử 1 tháng miễn phí</strong> — Không ràng buộc, bạn có thể hủy bất cứ lúc nào. Chúng tôi tự tin vào chất lượng dịch vụ của mình.
+            💡 <strong>Dùng thử 1 tháng miễn phí</strong> — Không ràng buộc, bạn có thể hủy bất cứ lúc nào.
         </p>
     </section>
 
@@ -1340,7 +1320,7 @@
                     <span class="faq-icon">↓</span>
                 </button>
                 <div class="faq-answer">
-                    Hiện tại chúng tôi tập trung vào khu vực Nam Ban – Lâm Hà – Lâm Đồng. Đây là điểm nóng đầu tư BĐS mà chúng tôi có đội ngũ chuyên nghiệp tại địa phương. Trong tương lai sẽ mở rộng sang các tỉnh khác.
+                    Hiện tại chúng tôi tập trung vào khu vực Nam Ban – Lâm Hà – Lâm Đồng. Đây là điểm nóng đầu tư BĐS mà chúng tôi có đội ngũ chuyên nghiệp tại địa phương.
                 </div>
             </div>
 
@@ -1350,7 +1330,7 @@
                     <span class="faq-icon">↓</span>
                 </button>
                 <div class="faq-answer">
-                    Báo cáo được gửi qua Zalo (ưu tiên) hoặc Email. Bạn sẽ nhận: ảnh chất lượng cao, tọa độ GPS, mô tả chi tiết hiện trạng, đánh giá rủi ro, và kiến nghị hành động cụ thể.
+                    Báo cáo được gửi qua Zalo (ưu tiên). Bạn sẽ nhận: ảnh chất lượng cao, tọa độ GPS, mô tả chi tiết hiện trạng, đánh giá rủi ro, và kiến nghị hành động cụ thể.
                 </div>
             </div>
 
@@ -1360,7 +1340,7 @@
                     <span class="faq-icon">↓</span>
                 </button>
                 <div class="faq-answer">
-                    Chúng tôi thông báo ngay (trong 24 giờ), đề xuất phương án xử lý, và đại diện làm việc với chính quyền địa phương nếu cần. Tuỳ vào loại vấn đề, bạn có thể yêu cầu hỗ trợ bổ sung (có phí).
+                    Chúng tôi thông báo ngay (trong 24 giờ), đề xuất phương án xử lý, và đại diện làm việc với chính quyền địa phương nếu cần.
                 </div>
             </div>
 
@@ -1370,7 +1350,7 @@
                     <span class="faq-icon">↓</span>
                 </button>
                 <div class="faq-answer">
-                    Có. Bạn có quyền hủy với thông báo trước 30 ngày. Giai đoạn dùng thử miễn phí 1 tháng không có ràng buộc gì — bạn có thể hủy ngay sau 1 tháng nếu không hài lòng.
+                    Có. Bạn có quyền hủy với thông báo trước 30 ngày. Giai đoạn dùng thử miễn phí 1 tháng không có ràng buộc gì.
                 </div>
             </div>
 
@@ -1389,7 +1369,7 @@
     <!-- ===== CONTACT ===== -->
     <section class="contact" id="contact">
         <h2>Bắt đầu quản lý tài sản của bạn</h2>
-        <p>Liên hệ trực tiếp với chúng tôi để nhận tư vấn miễn phí và khám phá cách GreenSpace có thể giúp bạn yên tâm hơn.</p>
+        <p>Liên hệ trực tiếp với chúng tôi để nhận tư vấn miễn phí.</p>
 
         <div class="contact-content">
             <div class="contact-info">
@@ -1411,11 +1391,6 @@
                 </div>
 
                 <div class="contact-item">
-                    <h4>💬 Facebook</h4>
-                    <p><a href="https://m.me/doanquocduyet" target="_blank" style="color: var(--accent-gold);">facebook.com/doanquocduyet</a></p>
-                </div>
-
-                <div class="contact-item">
                     <h4>⏱️ Thời gian phục vụ</h4>
                     <p>Thứ 2 - Chủ nhật: 8:00 - 18:00<br>Zalo 24/7 (trả lời nhanh nhất)</p>
                 </div>
@@ -1424,33 +1399,33 @@
             <form id="contactForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
                     <label for="name">Họ và tên *</label>
-                    <input type="text" id="name" required placeholder="Nhập họ tên của bạn">
+                    <input type="text" id="name" name="name" required placeholder="Nhập họ tên của bạn">
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Số điện thoại *</label>
-                    <input type="tel" id="phone" required placeholder="Ví dụ: 0901234567">
+                    <input type="tel" id="phone" name="phone" required placeholder="Ví dụ: 0901234567">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Ví dụ: abc@email.com">
+                    <input type="email" id="email" name="email" placeholder="Ví dụ: abc@email.com">
                 </div>
 
                 <div class="form-group">
                     <label for="location">Vị trí đất (xã/phường/tỉnh) *</label>
-                    <input type="text" id="location" required placeholder="Ví dụ: Nam Ban, Lâm Hà, Lâm Đồng">
+                    <input type="text" id="location" name="location" required placeholder="Ví dụ: Nam Ban, Lâm Hà, Lâm Đồng">
                 </div>
 
                 <div class="form-group">
                     <label for="message">Mô tả vắn tắt về tài sản của bạn *</label>
-                    <textarea id="message" rows="4" required placeholder="Diện tích, loại đất, tình huống hiện tại, mục tiêu của bạn..."></textarea>
+                    <textarea id="message" name="message" rows="4" required placeholder="Diện tích, loại đất, tình huống hiện tại, mục tiêu của bạn..."></textarea>
                 </div>
 
                 <div id="formMessage"></div>
-                <button type="submit" class="form-submit">Gửi yêu cầu tư vấn</button>
+                <button type="submit" class="form-submit">Gửi yêu cầu tư vấn qua Zalo</button>
                 <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 12px;">
-                    ✓ Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ qua Zalo hoặc điện thoại
+                    ✓ Yêu cầu sẽ được gửi trực tiếp đến Zalo 0978 758 788 — chúng tôi sẽ liên hệ bạn trong vòng 24 giờ
                 </p>
             </form>
         </div>
@@ -1474,92 +1449,28 @@
                 <h4>Về chúng tôi</h4>
                 <a href="#contact">Liên hệ</a>
                 <a href="https://zalo.me/0978758788" target="_blank">Zalo</a>
-                <a href="https://m.me/doanquocduyet" target="_blank">Messenger</a>
+                <a href="https://greenspacers.vn">Website</a>
             </div>
             <div class="footer-col">
                 <h4>Pháp lý</h4>
                 <a href="#" onclick="alert('Chính sách bảo mật')">Chính sách bảo mật</a>
                 <a href="#" onclick="alert('Điều khoản sử dụng')">Điều khoản sử dụng</a>
-                <a href="#" onclick="alert('Hợp đồng mẫu')">Hợp đồng mẫu</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 GreenSpace. Tất cả quyền được bảo lưu. | Phát triển tại Nam Ban, Lâm Đồng | <a href="#" style="color: rgba(255,255,255,0.6);">Liên hệ hợp tác</a></p>
+            <p>© 2025 GreenSpace. Tất cả quyền được bảo lưu. | Phát triển tại Nam Ban, Lâm Đồng</p>
         </div>
     </footer>
 
     <!-- ===== FLOATING BUTTONS ===== -->
     <div class="float-buttons">
         <a href="https://zalo.me/0978758788" target="_blank" class="float-btn float-zalo" title="Chat Zalo">Z</a>
-        <a href="https://m.me/doanquocduyet" target="_blank" class="float-btn float-facebook" title="Chat Facebook">f</a>
-        <button class="float-btn float-chat" onclick="toggleChatbot()" title="Chatbot">💬</button>
-    </div>
-
-    <!-- ===== CHATBOT WIDGET ===== -->
-    <div class="chatbot-widget" id="chatbotWidget">
-        <div class="chatbot-box">
-            <div class="chatbot-header">
-                <h4>🤖 GreenSpace Bot</h4>
-                <button class="chatbot-close" onclick="closeChatbot()">×</button>
-            </div>
-            <div class="chatbot-messages" id="chatMessages"></div>
-            <div class="chatbot-input">
-                <input type="text" id="userInput" placeholder="Nhập câu hỏi..." onkeypress="handleChatKeypress(event)">
-                <button onclick="sendMessage()">Gửi</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== BOOKING MODAL ===== -->
-    <div class="booking-modal" id="bookingModal">
-        <div class="booking-content">
-            <button class="booking-close" onclick="closeBookingModal()">×</button>
-            <h2 style="margin-bottom: 8px; color: var(--primary-green);">Đặt lịch tư vấn miễn phí</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 24px;">Hãy cung cấp thông tin của bạn và chúng tôi sẽ liên hệ trong vòng 24 giờ.</p>
-            
-            <form onsubmit="handleBookingSubmit(event)" style="display: flex; flex-direction: column; gap: 16px;">
-                <div class="form-group">
-                    <label>Họ tên *</label>
-                    <input type="text" required placeholder="Nhập họ tên" style="background: var(--bg-light); border: 1px solid var(--border-light); color: var(--text-primary); padding: 10px 12px; border-radius: 4px;">
-                </div>
-                <div class="form-group">
-                    <label>Số điện thoại *</label>
-                    <input type="tel" required placeholder="0901234567" style="background: var(--bg-light); border: 1px solid var(--border-light); color: var(--text-primary); padding: 10px 12px; border-radius: 4px;">
-                </div>
-                <div class="form-group">
-                    <label>Email (tùy chọn)</label>
-                    <input type="email" placeholder="abc@example.com" style="background: var(--bg-light); border: 1px solid var(--border-light); color: var(--text-primary); padding: 10px 12px; border-radius: 4px;">
-                </div>
-                <button type="submit" class="btn btn-primary" style="margin-top: 12px;">Xác nhận đặt lịch</button>
-                <p style="font-size: 12px; color: var(--text-secondary); text-align: center;">Hoặc liên hệ trực tiếp: <a href="https://zalo.me/0978758788" target="_blank">0978 758 788</a></p>
-            </form>
-        </div>
     </div>
 
     <script>
+        // ===== UTILITIES =====
         function scrollToContact() {
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function openBookingModal() {
-            document.getElementById('bookingModal').classList.add('active');
-        }
-
-        function closeBookingModal() {
-            document.getElementById('bookingModal').classList.remove('active');
-        }
-
-        function handleBookingSubmit(event) {
-            event.preventDefault();
-            alert('Cảm ơn! Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ.');
-            closeBookingModal();
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
-                closeBookingModal();
-            }
         }
 
         function toggleFAQ(element) {
@@ -1575,87 +1486,7 @@
             }
         }
 
-        const chatbotResponses = {
-            'giá': 'Chúng tôi có 3 gói: Cơ bản (3M/tháng), Chuyên nghiệp (5.5M/tháng), Tối ưu (2.5M/tháng/lô từ 3 lô). Bạn có thể dùng thử 1 tháng miễn phí!',
-            'dịch vụ': 'GreenSpace cung cấp: Kiểm tra thực địa, báo cáo chi tiết, cảnh báo kịp thời, xác minh pháp lý, bảo trì tài sản, hỗ trợ 24/7.',
-            'địa chỉ': 'Chúng tôi hoạt động tại Nam Ban, Lâm Hà, Lâm Đồng. Zalo: 0978 758 788.',
-            'quy trình': '4 bước: 1) Tư vấn miễn phí, 2) Ký hợp đồng, 3) Khảo sát đầu tiên, 4) Báo cáo hàng tháng.',
-            'dùng thử': 'Có! Bạn có thể dùng thử 1 tháng miễn phí mà không ràng buộc gì. Rất đơn giản.',
-            'hello': 'Xin chào! 👋 Mình là bot hỗ trợ của GreenSpace. Bạn muốn biết gì về dịch vụ quản lý bất động sản của chúng tôi?',
-            'hi': 'Xin chào! 👋 Mình là bot hỗ trợ của GreenSpace. Bạn muốn biết gì?',
-        };
-
-        function toggleChatbot() {
-            const widget = document.getElementById('chatbotWidget');
-            if (widget.style.display === 'none' || widget.style.display === '') {
-                widget.style.display = 'block';
-                if (!document.getElementById('chatMessages').innerHTML) {
-                    addBotMessage('Xin chào! 👋 Mình là bot hỗ trợ của GreenSpace. Bạn muốn biết gì về dịch vụ của chúng tôi?');
-                }
-            } else {
-                widget.style.display = 'none';
-            }
-        }
-
-        function closeChatbot() {
-            document.getElementById('chatbotWidget').style.display = 'none';
-        }
-
-        function addBotMessage(text) {
-            const messagesDiv = document.getElementById('chatMessages');
-            const messageEl = document.createElement('div');
-            messageEl.className = 'message bot';
-            messageEl.innerHTML = `<div class="message-text">${text}</div>`;
-            messagesDiv.appendChild(messageEl);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-
-        function addUserMessage(text) {
-            const messagesDiv = document.getElementById('chatMessages');
-            const messageEl = document.createElement('div');
-            messageEl.className = 'message user';
-            messageEl.innerHTML = `<div class="message-text">${text}</div>`;
-            messagesDiv.appendChild(messageEl);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('userInput');
-            const text = input.value.trim();
-            if (!text) return;
-
-            addUserMessage(text);
-            input.value = '';
-
-            setTimeout(() => {
-                const lowerText = text.toLowerCase();
-                let response = 'Xin lỗi, tôi chưa hiểu câu hỏi của bạn. Bạn có thể hỏi về: Giá, Dịch vụ, Quy trình, Địa chỉ, Dùng thử.';
-                
-                for (const [key, value] of Object.entries(chatbotResponses)) {
-                    if (lowerText.includes(key)) {
-                        response = value;
-                        break;
-                    }
-                }
-                
-                addBotMessage(response);
-            }, 500);
-        }
-
-        function handleChatKeypress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
-
-        setTimeout(() => {
-            if (!sessionStorage.getItem('chatbotShown')) {
-                document.getElementById('chatbotWidget').style.display = 'block';
-                addBotMessage('Xin chào! 👋 Có gì tôi có thể giúp bạn?');
-                sessionStorage.setItem('chatbotShown', 'true');
-            }
-        }, 5000);
-
+        // ===== FORM SUBMISSION TO ZALO =====
         async function handleFormSubmit(event) {
             event.preventDefault();
             
@@ -1667,7 +1498,7 @@
             const formMessage = document.getElementById('formMessage');
 
             if (!name || !phone || !location || !message) {
-                formMessage.innerHTML = '<div class="error-message">⚠️ Vui lòng điền đầy đủ thông tin</div>';
+                formMessage.innerHTML = '<div class="error-message">⚠️ Vui lòng điền đầy đủ thông tin (*)</div>';
                 return;
             }
 
@@ -1676,17 +1507,29 @@
             submitBtn.textContent = 'Đang gửi...';
 
             try {
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                formMessage.innerHTML = '<div class="success-message">✅ Yêu cầu đã được gửi!</div>';
-                document.getElementById('contactForm').reset();
+                // Format message for Zalo
+                const zaloMessage = `📋 YÊU CẦU TƯ VẤN GREENSPACE\n\n👤 Họ tên: ${name}\n📱 Số điện thoại: ${phone}\n📧 Email: ${email || 'Không cung cấp'}\n📍 Vị trí đất: ${location}\n\n💬 Mô tả: ${message}`;
+
+                // Copy to clipboard so user can paste to Zalo
+                await navigator.clipboard.writeText(zaloMessage);
+
+                formMessage.innerHTML = '<div class="success-message">✅ Thông tin của bạn đã được chuẩn bị! Bây giờ bạn sẽ được chuyển đến Zalo để gửi yêu cầu. Nếu bạn có Zalo, thông tin sẽ được copy sẵn để bạn dán vào.</div>';
+                
+                // Open Zalo
+                setTimeout(() => {
+                    window.open('https://zalo.me/0978758788', '_blank');
+                    document.getElementById('contactForm').reset();
+                }, 1500);
+
             } catch (error) {
-                formMessage.innerHTML = '<div class="error-message">❌ Có lỗi xảy ra</div>';
+                formMessage.innerHTML = '<div class="error-message">❌ Vui lòng mở Zalo và gọi: <a href="https://zalo.me/0978758788" target="_blank" style="color: white; text-decoration: underline;">0978 758 788</a></div>';
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Gửi yêu cầu tư vấn';
+                submitBtn.textContent = 'Gửi yêu cầu tư vấn qua Zalo';
             }
         }
 
+        // ===== NAVIGATION =====
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
@@ -1700,7 +1543,7 @@
             });
         });
 
-        console.log('✅ GreenSpace Website Ready');
+        console.log('✅ GreenSpace Website Ready - No Chat Modal on Load');
     </script>
 </body>
 </html>
