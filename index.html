@@ -845,6 +845,19 @@
     <h2>Những Rủi Ro Khi Sở Hữu Đất Ở Xa Mà Bạn Chưa Nhận Ra</h2>
     <p>Bạn đã bao giờ tự hỏi: Mảnh đất ở Nam Ban của tôi bây giờ ra sao?</p>
     
+    
+    <div class="risks-banner">
+        <div class="risks-banner-content">
+            <h3>Biết Rủi Ro Mình Đang Đối Mặt?</h3>
+            <p>Khi không có người trông nom, đất của bạn dần dần bị lấn chiếm, xuống cấp, hoặc mất giá trị. Nhưng không phải lúc nào cũng như vậy.</p>
+        </div>
+        <div class="risks-banner-image">
+            <img src="https://images.unsplash.com/photo-1500595046891-ffc1a64e479b?w=800&q=80"
+                 alt="Overgrown land showing neglect and deterioration"
+                 loading="lazy">
+        </div>
+    </div>
+
     <div class="risks-grid">
         <div class="risk-card">
             <div class="risk-number">01</div>
@@ -1334,7 +1347,144 @@
             padding: 24px;
         }
     }
-</style>
+
+    /* ===== IMAGE SECTIONS ===== */
+    .hero-image-right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(74, 125, 111, 0.2) 0%, rgba(201, 169, 97, 0.1) 100%);
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .hero-image-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+    }
+
+    .trust-with-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+        margin-top: 48px;
+    }
+
+    .trust-content {
+        flex: 1;
+    }
+
+    .trust-image-side {
+        flex: 1;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+    }
+
+    .trust-image-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .risks-banner {
+        background: linear-gradient(135deg, rgba(45, 90, 77, 0.95) 0%, rgba(74, 125, 111, 0.95) 100%);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        min-height: 320px;
+    }
+
+    .risks-banner-content {
+        color: white;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .risks-banner-content h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 32px;
+        margin-bottom: 16px;
+        color: white;
+    }
+
+    .risks-banner-content p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .risks-banner-image {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .risks-banner-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+
+    .contact-image-side {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-image-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    @media (max-width: 1024px) {
+        .trust-with-images {
+            grid-template-columns: 1fr;
+        }
+
+        .risks-banner {
+            grid-template-columns: 1fr;
+        }
+
+        .risks-banner-content {
+            padding: 32px;
+        }
+
+        .risks-banner-image {
+            max-height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-image-right {
+            display: none;
+        }
+
+        .trust-with-images {
+            grid-template-columns: 1fr;
+        }
+
+        .trust-image-side {
+            max-height: 300px;
+        }
+    }
+
+    </style>
 
 <script>
     // Interactive map hover effect
@@ -1480,6 +1630,12 @@
                     ✓ Yêu cầu sẽ được lưu trực tuyến và chúng tôi sẽ liên hệ bạn trong vòng 24 giờ
                 </p>
             </form>
+
+            <div class="contact-image-side">
+                <img src="https://images.unsplash.com/photo-1500382017468-f049863256d3?w=600&q=80"
+                     alt="Beautiful farmland landscape at golden hour"
+                     loading="lazy">
+            </div>
         </div>
     </section>
 
