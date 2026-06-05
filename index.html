@@ -840,6 +840,189 @@
         </div>
     </section>
 
+<!-- ===== RISKS SECTION ===== -->
+<section class="risks">
+    <h2>Những Rủi Ro Khi Sở Hữu Đất Ở Xa Mà Bạn Chưa Nhận Ra</h2>
+    <p>Bạn đã bao giờ tự hỏi: Mảnh đất ở Nam Ban của tôi bây giờ ra sao?</p>
+    
+    <div class="risks-grid">
+        <div class="risk-card">
+            <div class="risk-number">01</div>
+            <h3>Xâm Phạm Im Lặng</h3>
+            <p>Rào đất bị cạo, mặt bằng bị lấn chiếm dần. Bạn không biết cho đến khi quá muộn — ranh giới đã mất.</p>
+        </div>
+
+        <div class="risk-card">
+            <div class="risk-number">02</div>
+            <h3>Quy Hoạch Thay Đổi</h3>
+            <p>Chính quyền thay đổi zoning, từ đất ở thành đất công cộng. Giá trị đất tụt dốc không phanh.</p>
+        </div>
+
+        <div class="risk-card">
+            <div class="risk-number">03</div>
+            <h3>Không Ai Trông Nom</h3>
+            <p>Tìm người đáng tin cậy ở địa phương = cực kỳ khó. Người này có thực sự bảo vệ quyền lợi bạn?</p>
+        </div>
+
+        <div class="risk-card">
+            <div class="risk-number">04</div>
+            <h3>Tranh Chấp Bất Ngờ</h3>
+            <p>Người hàng xóm tuyên bố đất của họ vượt ranh. Bạn ở TP.HCM, không thể lên đó xử lý ngay.</p>
+        </div>
+
+        <div class="risk-card">
+            <div class="risk-number">05</div>
+            <h3>Tình Trạng Đất Xuống Cấp</h3>
+            <p>Không dọn dẹp, phát quang định kỳ. Mặt bằng bị ngập nước, rơm rác tích tụ. Giá trị mài mòn từng tháng.</p>
+        </div>
+
+        <div class="risk-card">
+            <div class="risk-number">06</div>
+            <h3>Thông Tin Muộn Màng</h3>
+            <p>Biết được tin xấu (xâm lấn, quy hoạch) quá lâu sau khi xảy ra. Cơ hội cứu chữa đã mất.</p>
+        </div>
+    </div>
+
+    <div class="risks-cta">
+        <h3>Đây Chính Là Lý Do Bạn Cần GreenSpace</h3>
+        <p>Không phải tìm người, không phải lo lắng. Chúng tôi sẽ theo dõi, báo cáo, và bảo vệ tài sản của bạn — từ xa, minh bạch, uy tín.</p>
+        <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: 20px;">
+            Trao Quyền Cho GreenSpace
+        </button>
+    </div>
+</section>
+
+<style>
+    /* ===== RISKS SECTION ===== */
+    .risks {
+        background: linear-gradient(135deg, rgba(45, 90, 77, 0.05) 0%, rgba(201, 169, 97, 0.05) 100%);
+        border-top: 3px solid var(--accent-gold);
+    }
+
+    .risks h2 {
+        color: var(--primary-green);
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        max-width: 800px;
+    }
+
+    .risks > p {
+        color: var(--accent-gold);
+        font-size: clamp(14px, 1.8vw, 16px);
+        font-weight: 500;
+        margin-bottom: 48px;
+        font-style: italic;
+    }
+
+    .risks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    .risk-card {
+        background: var(--primary-white);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 32px;
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .risk-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-gold), var(--primary-green));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .risk-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .risk-card:hover {
+        border-color: var(--accent-gold);
+        box-shadow: 0 12px 32px rgba(201, 169, 97, 0.15);
+        transform: translateY(-4px);
+    }
+
+    .risk-number {
+        display: inline-flex;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, var(--accent-gold), #d9b878);
+        color: var(--primary-white);
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 16px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .risk-card h3 {
+        color: var(--primary-green);
+        font-size: clamp(16px, 2.5vw, 20px);
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    .risk-card p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .risks-cta {
+        background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+        color: var(--primary-white);
+        padding: 48px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .risks-cta h3 {
+        color: var(--primary-white);
+        font-size: clamp(20px, 3vw, 28px);
+        margin-bottom: 16px;
+    }
+
+    .risks-cta p {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: clamp(14px, 1.8vw, 16px);
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .risks-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .risks-cta {
+            padding: 32px 20px;
+        }
+
+        .risk-card {
+            padding: 24px;
+        }
+    }
+</style>
+
     <!-- ===== SERVICES ===== -->
     <section class="services" id="services">
         <h2>Dịch vụ chúng tôi cung cấp</h2>
