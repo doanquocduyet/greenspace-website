@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="GreenSpace — Quản lý Tài sản Bất động sản Chuyên nghiệp">
     <meta property="og:description" content="Nơi tài sản được thở. Quản lý đất bất động sản từ xa, an toàn, minh bạch, dài hạn.">
-    <meta name="description" content="GreenSpace - Dịch vụ quản lý bất động sản chuyên nghiệp tại Lâm Đồng. Kiểm tra định kỳ, báo cáo chi tiết, bảo vệ tài sản của bạn 24/7.">
     <title>GreenSpace — Where Assets Breathe | Quản lý Tài sản Bất động sản</title>
     
     <!-- Favicon -->
@@ -18,6 +17,10 @@
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js"></script>
     
     <style>
         * {
@@ -414,51 +417,6 @@
             line-height: 1.7;
         }
 
-        /* ===== PROCESS ===== */
-        .process {
-            background: var(--light-green);
-        }
-
-        .process-timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .process-step {
-            background: var(--primary-white);
-            border-left: 4px solid var(--accent-gold);
-            padding: 32px;
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .step-number {
-            display: inline-flex;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent-gold), #d9b878);
-            color: var(--primary-white);
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .process-step h3 {
-            font-size: clamp(18px, 2.5vw, 20px);
-            color: var(--primary-green);
-            margin-bottom: 12px;
-        }
-
-        .process-step p {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
         /* ===== PRICING ===== */
         .pricing {
             background: var(--bg-light);
@@ -553,130 +511,6 @@
             font-weight: 700;
             margin-right: 12px;
             font-size: 16px;
-        }
-
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            background: var(--primary-white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-cream);
-            border-radius: 8px;
-            padding: 32px;
-            border-left: 4px solid var(--accent-gold);
-        }
-
-        .testimonial-text {
-            color: var(--text-primary);
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-green));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-white);
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .testimonial-info h4 {
-            font-size: 14px;
-            color: var(--primary-green);
-            margin-bottom: 2px;
-        }
-
-        .testimonial-info p {
-            font-size: 12px;
-            color: var(--text-tertiary);
-        }
-
-        /* ===== FAQ ===== */
-        .faq {
-            background: var(--light-green);
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 48px auto 0;
-        }
-
-        .faq-item {
-            background: var(--primary-white);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--primary-white);
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary-green);
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: var(--bg-light);
-        }
-
-        .faq-question.active {
-            background: var(--primary-green);
-            color: var(--primary-white);
-        }
-
-        .faq-icon {
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 24px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .faq-answer.active {
-            padding: 20px 24px;
-            max-height: 500px;
         }
 
         /* ===== CONTACT ===== */
@@ -916,8 +750,7 @@
             }
 
             .services-grid,
-            .pricing-grid,
-            .testimonials-grid {
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -950,10 +783,8 @@
             </div>
             <div class="nav-links">
                 <a href="#services">Dịch vụ</a>
-                <a href="#process">Quy trình</a>
                 <a href="#pricing">Giá</a>
-                <a href="#faq">FAQ</a>
-                <a href="#testimonials">Review</a>
+                <a href="#contact">Liên hệ</a>
                 <button class="nav-cta" onclick="scrollToContact()">Tư vấn</button>
             </div>
         </nav>
@@ -1047,34 +878,6 @@
         </div>
     </section>
 
-    <!-- ===== PROCESS ===== -->
-    <section class="process" id="process">
-        <h2>Quy trình làm việc</h2>
-        <p>4 bước đơn giản để bắt đầu quản lý tài sản</p>
-        <div class="process-timeline">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h3>Tư vấn miễn phí</h3>
-                <p>Bạn liên hệ, chúng tôi hiểu rõ tình huống tài sản, nhu cầu cụ thể, và đề xuất gói phù hợp.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h3>Ký hợp đồng</h3>
-                <p>Hợp đồng minh bạch, rõ ràng, công chứng nếu cần. Xác định phạm vi dịch vụ, thời hạn, chi phí.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h3>Khảo sát đầu tiên</h3>
-                <p>Tuần đầu tiên, chúng tôi lên kiểm tra, lập báo cáo baseline chi tiết để làm nền tảng theo dõi.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h3>Báo cáo hàng tháng</h3>
-                <p>Mỗi tháng nhận báo cáo, video tour, cập nhật tình hình. Bất kỳ vấn đề nào cũng được thông báo ngay.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== PRICING ===== -->
     <section class="pricing" id="pricing">
         <h2>Bảng giá dịch vụ</h2>
@@ -1123,116 +926,6 @@
                     <li>Quản lý tập trung</li>
                 </ul>
                 <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: auto;">Liên hệ tư vấn</button>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 14px;">
-            💡 <strong>Dùng thử 1 tháng miễn phí</strong> — Không ràng buộc, bạn có thể hủy bất cứ lúc nào.
-        </p>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials" id="testimonials">
-        <h2>Khách hàng nói gì về chúng tôi</h2>
-        <p>Những nhà đầu tư đã trải nghiệm dịch vụ GreenSpace</p>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-text">"Trước đây, tôi luôn lo lắng về mảnh đất ở Lâm Đồng. Giờ chỉ cần mỗi tháng nhận báo cáo từ GreenSpace là yên tâm hoàn toàn."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">NH</div>
-                    <div class="testimonial-info">
-                        <h4>Nguyễn Hoàng</h4>
-                        <p>Nhà đầu tư, TP.HCM</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-text">"Dịch vụ của GreenSpace không chỉ chuyên nghiệp mà còn rất chân thành. Họ không bán mơ, họ làm việc thực."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">TH</div>
-                    <div class="testimonial-info">
-                        <h4>Trần Hương</h4>
-                        <p>Chủ doanh nghiệp, Hà Nội</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-text">"Báo cáo ảnh GPS hàng tháng chính xác tuyệt đối. Khi phát hiện xâm phạm, họ thông báo ngay và hỗ trợ xử lý."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">LM</div>
-                    <div class="testimonial-info">
-                        <h4>Lê Minh</h4>
-                        <p>Nhà đầu tư, Đà Nẵng</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FAQ ===== -->
-    <section class="faq" id="faq">
-        <h2>Câu hỏi thường gặp</h2>
-        <p>Những thắc mắc phổ biến của khách hàng</p>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Tôi có thể dùng thử trước khi cam kết không?</span>
-                    <span class="faq-icon">↓</span>
-                </button>
-                <div class="faq-answer">
-                    Có chắc chắn! Chúng tôi cung cấp 1 tháng dùng thử miễn phí (Gói Cơ bản). Bạn sẽ nhận báo cáo đầy đủ, trải nghiệm quy trình, rồi quyết định tiếp tục hay hủy. Không có ràng buộc.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ(this)">
-                    <span>GreenSpace hoạt động ở những nơi nào?</span>
-                    <span class="faq-icon">↓</span>
-                </button>
-                <div class="faq-answer">
-                    Hiện tại chúng tôi tập trung vào khu vực Nam Ban – Lâm Hà – Lâm Đồng. Đây là điểm nóng đầu tư BĐS mà chúng tôi có đội ngũ chuyên nghiệp tại địa phương.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Báo cáo được gửi như thế nào?</span>
-                    <span class="faq-icon">↓</span>
-                </button>
-                <div class="faq-answer">
-                    Báo cáo được gửi qua Zalo (ưu tiên). Bạn sẽ nhận: ảnh chất lượng cao, tọa độ GPS, mô tả chi tiết hiện trạng, đánh giá rủi ro, và kiến nghị hành động cụ thể.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Nếu phát hiện vấn đề, GreenSpace sẽ xử lý thế nào?</span>
-                    <span class="faq-icon">↓</span>
-                </button>
-                <div class="faq-answer">
-                    Chúng tôi thông báo ngay (trong 24 giờ), đề xuất phương án xử lý, và đại diện làm việc với chính quyền địa phương nếu cần.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Tôi có thể hủy hợp đồng bất cứ lúc nào không?</span>
-                    <span class="faq-icon">↓</span>
-                </button>
-                <div class="faq-answer">
-                    Có. Bạn có quyền hủy với thông báo trước 30 ngày. Giai đoạn dùng thử miễn phí 1 tháng không có ràng buộc gì.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Có phí ẩn nào không?</span>
-                    <span class="faq-icon">↓</span>
-                </button>
-                <div class="faq-answer">
-                    Không có. Hợp đồng rõ ràng nêu rõ: Phí hàng tháng + phí dịch vụ bổ sung (nếu bạn yêu cầu thêm). Bạn biết rõ bạn trả bao nhiêu cho cái gì.
-                </div>
             </div>
         </div>
     </section>
@@ -1296,7 +989,7 @@
                 <div id="formMessage"></div>
                 <button type="submit" class="form-submit">Gửi yêu cầu tư vấn</button>
                 <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 12px;">
-                    ✓ Yêu cầu của bạn sẽ được lưu và chúng tôi sẽ liên hệ trong vòng 24 giờ
+                    ✓ Yêu cầu sẽ được lưu trực tuyến và chúng tôi sẽ liên hệ bạn trong vòng 24 giờ
                 </p>
             </form>
         </div>
@@ -1313,19 +1006,12 @@
                 <h4>Dịch vụ</h4>
                 <a href="#services">Dịch vụ quản lý</a>
                 <a href="#pricing">Bảng giá</a>
-                <a href="#process">Quy trình</a>
-                <a href="#faq">FAQ</a>
+                <a href="#contact">Liên hệ</a>
             </div>
             <div class="footer-col">
                 <h4>Về chúng tôi</h4>
-                <a href="#contact">Liên hệ</a>
                 <a href="https://zalo.me/0978758788" target="_blank">Zalo</a>
                 <a href="https://greenspacers.vn">Website</a>
-            </div>
-            <div class="footer-col">
-                <h4>Pháp lý</h4>
-                <a href="#" onclick="alert('Chính sách bảo mật')">Chính sách bảo mật</a>
-                <a href="#" onclick="alert('Điều khoản sử dụng')">Điều khoản sử dụng</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1340,22 +1026,28 @@
     </div>
 
     <script>
+        // ===== FIREBASE SETUP =====
+        const firebaseConfig = {
+            apiKey: "AIzaSyAQNSfm0Rq1K5Z-yJ3v7bQ1W2d4m9pL3t5",
+            authDomain: "greenspace-5dbea.firebaseapp.com",
+            projectId: "greenspace-5dbea",
+            storageBucket: "greenspace-5dbea.appspot.com",
+            messagingSenderId: "317634285978",
+            appId: "1:317634285978:web:a6d4e2f1c9b8h7g6f5k4"
+        };
+
+        let db = null;
+        try {
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+            console.log('✅ Firebase initialized successfully');
+        } catch (e) {
+            console.error('Firebase initialization error:', e);
+        }
+
         // ===== UTILITIES =====
         function scrollToContact() {
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const isActive = answer.classList.contains('active');
-            
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-            
-            if (!isActive) {
-                answer.classList.add('active');
-                element.classList.add('active');
-            }
         }
 
         // ===== FORM SUBMISSION =====
@@ -1379,36 +1071,24 @@
             submitBtn.textContent = 'Đang gửi...';
 
             try {
-                // Save to localStorage
-                const formData = {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    location: location,
-                    message: message,
-                    timestamp: new Date().toLocaleString('vi-VN'),
-                    id: Date.now()
-                };
-
-                let submissions = JSON.parse(localStorage.getItem('greenspace_submissions') || '[]');
-                submissions.push(formData);
-                localStorage.setItem('greenspace_submissions', JSON.stringify(submissions));
-
-                // Also send to a Google Form or your server if needed
-                const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSc_PLACEHOLDER/formResponse';
-                const formDataToSend = new FormData();
-                formDataToSend.append('entry.XXXXX', name);
-                formDataToSend.append('entry.YYYYY', phone);
-                formDataToSend.append('entry.ZZZZZ', email);
-
-                // Optional: Send to Google Form
-                // fetch(googleFormURL, { method: 'POST', body: formDataToSend });
+                if (db) {
+                    await db.collection('submissions').add({
+                        name: name,
+                        phone: phone,
+                        email: email,
+                        location: location,
+                        message: message,
+                        timestamp: new Date()
+                    });
+                    console.log('✅ Data saved to Firebase');
+                }
 
                 formMessage.innerHTML = '<div class="success-message">✅ Yêu cầu của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ.</div>';
                 document.getElementById('contactForm').reset();
 
             } catch (error) {
-                formMessage.innerHTML = '<div class="error-message">❌ Có lỗi xảy ra. Vui lòng thử lại.</div>';
+                console.error('Error:', error);
+                formMessage.innerHTML = '<div class="error-message">❌ Có lỗi xảy ra. Vui lòng thử lại hoặc gọi 0978758788</div>';
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Gửi yêu cầu tư vấn';
