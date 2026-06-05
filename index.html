@@ -8,8 +8,8 @@
     <meta name="description" content="GreenSpace - Dịch vụ quản lý bất động sản chuyên nghiệp tại Lâm Đồng. Kiểm tra định kỳ, báo cáo chi tiết, bảo vệ tài sản của bạn 24/7.">
     <title>GreenSpace — Where Assets Breathe | Quản lý Tài sản Bất động sản</title>
     
-    <!-- Favicon with Logo -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232d5a4d' width='100' height='100'/><text x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='%23c9a961' font-family='serif'>G</text></svg>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23c9a961;stop-opacity:1' /><stop offset='100%' style='stop-color:%238b6914;stop-opacity:1' /></linearGradient></defs><rect fill='%232d5a4d' width='200' height='200'/><g transform='translate(50,50)'><path d='M50,20 L60,35 L50,50 L40,35 Z' fill='url(%23grad)' stroke='%23c9a961' stroke-width='2'/><path d='M60,55 Q75,55 80,65 Q75,75 60,75 Q45,75 40,65 Q45,55 60,55' fill='%23c9a961' opacity='0.7'/><path d='M60,80 Q75,80 82,95 Q75,110 60,110 Q45,110 38,95 Q45,80 60,80' fill='%23c9a961' opacity='0.5'/></g></svg>">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +18,6 @@
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Zalo API -->
-    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
     
     <style>
         * {
@@ -122,12 +119,12 @@
         .logo-img {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #c9a961 0%, #d9b878 100%);
+            background: linear-gradient(135deg, #2d5a4d 0%, #4a7d6f 100%);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #c9a961;
             font-weight: 700;
             font-size: 24px;
         }
@@ -462,69 +459,6 @@
             font-size: 14px;
         }
 
-        /* ===== BLOG POSTS ===== */
-        .blog {
-            background: var(--primary-white);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .blog-card {
-            background: var(--bg-cream);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .blog-header {
-            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
-            color: var(--primary-white);
-            padding: 24px;
-            min-height: 100px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .blog-header h3 {
-            color: var(--primary-white);
-            font-size: 18px;
-            margin: 0;
-        }
-
-        .blog-content {
-            padding: 24px;
-        }
-
-        .blog-content p {
-            color: var(--text-secondary);
-            font-size: 13px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .blog-read-more {
-            color: var(--accent-green);
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .blog-read-more:hover {
-            color: var(--accent-gold);
-        }
-
         /* ===== PRICING ===== */
         .pricing {
             background: var(--bg-light);
@@ -756,7 +690,8 @@
         }
 
         .contact > p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
         }
 
         .contact-content {
@@ -917,13 +852,13 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 24px;
             text-decoration: none;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-weight: 700;
+            font-size: 24px;
         }
 
         .float-btn:hover {
@@ -931,7 +866,15 @@
         }
 
         .float-zalo {
-            background: #0084ff;
+            background: linear-gradient(135deg, #c9a961 0%, #d9b878 100%);
+            color: #2d5a4d;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .float-call {
+            background: #25a145;
         }
 
         /* ===== MESSAGES ===== */
@@ -974,8 +917,7 @@
 
             .services-grid,
             .pricing-grid,
-            .testimonials-grid,
-            .blog-grid {
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1009,7 +951,6 @@
             <div class="nav-links">
                 <a href="#services">Dịch vụ</a>
                 <a href="#process">Quy trình</a>
-                <a href="#blog">Kinh nghiệm</a>
                 <a href="#pricing">Giá</a>
                 <a href="#faq">FAQ</a>
                 <a href="#testimonials">Review</a>
@@ -1058,7 +999,7 @@
             <div class="trust-item">
                 <div class="trust-icon">💰</div>
                 <h3>Giá công bằng</h3>
-                <p>3 triệu/tháng cho gói cơ bản — không có phí ẩn</p>
+                <p>1.5 triệu/tháng cho gói cơ bản — không có phí ẩn</p>
             </div>
             <div class="trust-item">
                 <div class="trust-icon">🌱</div>
@@ -1134,76 +1075,6 @@
         </div>
     </section>
 
-    <!-- ===== BLOG / KINH NGHIỆM ===== -->
-    <section class="blog" id="blog">
-        <h2>Kinh nghiệm & Bài viết</h2>
-        <p>Những vấn đề thường gặp khi không quản lý bất động sản chuyên nghiệp</p>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-header">
-                    <h3>🚨 Lấn Chiếm Đất - Rủi Ro Lớn Nhất</h3>
-                </div>
-                <div class="blog-content">
-                    <p>Lấn chiếm là vấn đề phổ biến nhất khi bạn không có mặt để quản lý. Người khác có thể xây dựng, sử dụng trái phép, và sau 3-5 năm sẽ có quyền sử dụng pháp lý. Không phát hiện kịp thời = mất tài sản vĩnh viễn.</p>
-                    <p style="color: var(--accent-gold); font-weight: 600;">⚡ GreenSpace giám sát 24/7 để phát hiện ngay bất kỳ hoạt động bất thường.</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <div class="blog-header">
-                    <h3>📋 Tranh Chấp Ranh Giới & Quy Hoạch</h3>
-                </div>
-                <div class="blog-content">
-                    <p>Ranh giới đất không rõ ràng dẫn đến tranh chấp với láng giềng. Quy hoạch thay đổi (xây dựng công trình công cộng, mở đường) cũng làm giảm giá trị đất. Bạn sẽ biết quá muộn vì không theo dõi diễn biến địa phương.</p>
-                    <p style="color: var(--accent-gold); font-weight: 600;">✅ Báo cáo hàng tháng cập nhật ranh giới, quy hoạch, và bất kỳ thay đổi pháp lý.</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <div class="blog-header">
-                    <h3>⚖️ Kiện Tụng Và Tranh Chấp Pháp Lý</h3>
-                </div>
-                <div class="blog-content">
-                    <p>Khi lấn chiếm xảy ra, bạn phải kiện tụng — mất tiền, mất thời gian, mất tâm sự. Kiện tụng có thể kéo dài 2-5 năm. Nếu không có bằng chứng ảnh GPS, giám sát liên tục, bạn sẽ thua. Đó là lý do tại sao phòng tránh hiệu quả hơn chữa trị.</p>
-                    <p style="color: var(--accent-gold); font-weight: 600;">🛡️ Chúng tôi lưu giữ tất cả dữ liệu & ảnh để làm bằng chứng pháp lý.</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <div class="blog-header">
-                    <h3>🏢 Xuống Cấp & Mất Giá Trị Tài Sản</h3>
-                </div>
-                <div class="blog-content">
-                    <p>Đất không được bảo trì sẽ xuống cấp nhanh. Cỏ mọc um tùm, bụi bặm, cô quạnh — điều này ảnh hưởng đến tâm lý, giá trị, và cơ hội bán/cho thuê trong tương lai. Nhà đầu tư chuyên nghiệp luôn giữ tài sản sạch sẽ và hấp dẫn.</p>
-                    <p style="color: var(--accent-gold); font-weight: 600;">🌱 Dịch vụ bảo trì & dọn dẹp đều đặn giữ tài sản luôn tốt nhất.</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <div class="blog-header">
-                    <h3>💔 Mất Cơ Hội Đầu Tư & Phát Triển</h3>
-                </div>
-                <div class="blog-content">
-                    <p>Khi không biết tình hình tài sản, bạn không thể chủ động: không biết quy hoạch dân cư sắp phát triển, không phát hiện cơ hội bán cao, không thấy khoảng trống để phát triển thêm. Điều này tương đương với tiền mất tay thành.</p>
-                    <p style="color: var(--accent-gold); font-weight: 600;">🚀 Báo cáo chi tiết giúp bạn thấy cơ hội trước khi thị trường phản ứng.</p>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <div class="blog-header">
-                    <h3>🎯 Cách Bảo Vệ Tài Sản Của Bạn</h3>
-                </div>
-                <div class="blog-content">
-                    <p><strong>1. Kiểm tra định kỳ</strong> - Ít nhất hàng tháng, phải có ai đó lên thực địa xem tình hình.<br>
-                    <strong>2. Lưu giữ bằng chứng</strong> - Ảnh GPS, tọa độ, video để làm bằng chứng pháp lý.<br>
-                    <strong>3. Bảo trì liên tục</strong> - Giữ đất sạch sẽ, hấp dẫn.<br>
-                    <strong>4. Thông báo kịp thời</strong> - Nếu có vấn đề, phải được báo ngay trong 24 giờ.</p>
-                    <p style="color: var(--accent-gold); font-weight: 600;">✅ Đó chính xác là những gì GreenSpace làm.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== PRICING ===== -->
     <section class="pricing" id="pricing">
         <h2>Bảng giá dịch vụ</h2>
@@ -1212,7 +1083,7 @@
             <div class="price-card">
                 <h3>Gói Cơ bản</h3>
                 <p class="description">Phù hợp nhất cho nhà đầu tư cá nhân</p>
-                <div class="price">3.000.000 đ</div>
+                <div class="price">1.500.000 đ</div>
                 <div class="price-unit">/ tháng</div>
                 <ul class="price-features">
                     <li>Kiểm tra 1 lần/tháng</li>
@@ -1227,13 +1098,13 @@
             <div class="price-card featured">
                 <h3>Gói Chuyên nghiệp</h3>
                 <p class="description">Giám sát liên tục, hỗ trợ tối đa</p>
-                <div class="price">5.500.000 đ</div>
+                <div class="price">2.500.000 đ</div>
                 <div class="price-unit">/ tháng</div>
                 <ul class="price-features">
                     <li>Kiểm tra 2 lần/tháng</li>
                     <li>Báo cáo + phân tích chi tiết</li>
                     <li>Theo dõi quy hoạch & pháp lý</li>
-                    <li>Hỗ trợ thủ tục hành chính</li>
+                    <li>Hỗ trợ tư vấn các thủ tục hành chính</li>
                     <li>Hotline ưu tiên 24/7</li>
                 </ul>
                 <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: auto;">Chọn gói này</button>
@@ -1242,14 +1113,14 @@
             <div class="price-card">
                 <h3>Gói Tối ưu</h3>
                 <p class="description">Nhiều lô đất — giá ưu đãi</p>
-                <div class="price">2.500.000 đ</div>
+                <div class="price">2.000.000 đ</div>
                 <div class="price-unit">/ tháng / lô (từ 3 lô)</div>
                 <ul class="price-features">
                     <li>Kiểm tra 1-2 lần/tháng</li>
                     <li>Báo cáo đầy đủ</li>
                     <li>Cảnh báo 24/7</li>
-                    <li>Giảm giá hoa hồng giới thiệu</li>
-                    <li>Hỗ trợ gọi</li>
+                    <li>Hỗ trợ tư vấn</li>
+                    <li>Quản lý tập trung</li>
                 </ul>
                 <button class="btn btn-primary" onclick="scrollToContact()" style="margin-top: auto;">Liên hệ tư vấn</button>
             </div>
@@ -1369,7 +1240,7 @@
     <!-- ===== CONTACT ===== -->
     <section class="contact" id="contact">
         <h2>Bắt đầu quản lý tài sản của bạn</h2>
-        <p>Liên hệ trực tiếp với chúng tôi để nhận tư vấn miễn phí.</p>
+        <p>Liên hệ trực tiếp với chúng tôi để nhận tư vấn miễn phí</p>
 
         <div class="contact-content">
             <div class="contact-info">
@@ -1423,9 +1294,9 @@
                 </div>
 
                 <div id="formMessage"></div>
-                <button type="submit" class="form-submit">Gửi yêu cầu tư vấn qua Zalo</button>
+                <button type="submit" class="form-submit">Gửi yêu cầu tư vấn</button>
                 <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 12px;">
-                    ✓ Yêu cầu sẽ được gửi trực tiếp đến Zalo 0978 758 788 — chúng tôi sẽ liên hệ bạn trong vòng 24 giờ
+                    ✓ Yêu cầu của bạn sẽ được lưu và chúng tôi sẽ liên hệ trong vòng 24 giờ
                 </p>
             </form>
         </div>
@@ -1464,7 +1335,8 @@
 
     <!-- ===== FLOATING BUTTONS ===== -->
     <div class="float-buttons">
-        <a href="https://zalo.me/0978758788" target="_blank" class="float-btn float-zalo" title="Chat Zalo">Z</a>
+        <a href="https://zalo.me/0978758788" target="_blank" class="float-btn float-zalo" title="Chat Zalo">G</a>
+        <a href="tel:0978758788" class="float-btn float-call" title="Gọi ngay"><i class="fas fa-phone"></i></a>
     </div>
 
     <script>
@@ -1486,7 +1358,7 @@
             }
         }
 
-        // ===== FORM SUBMISSION TO ZALO =====
+        // ===== FORM SUBMISSION =====
         async function handleFormSubmit(event) {
             event.preventDefault();
             
@@ -1507,25 +1379,39 @@
             submitBtn.textContent = 'Đang gửi...';
 
             try {
-                // Format message for Zalo
-                const zaloMessage = `📋 YÊU CẦU TƯ VẤN GREENSPACE\n\n👤 Họ tên: ${name}\n📱 Số điện thoại: ${phone}\n📧 Email: ${email || 'Không cung cấp'}\n📍 Vị trí đất: ${location}\n\n💬 Mô tả: ${message}`;
+                // Save to localStorage
+                const formData = {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    location: location,
+                    message: message,
+                    timestamp: new Date().toLocaleString('vi-VN'),
+                    id: Date.now()
+                };
 
-                // Copy to clipboard so user can paste to Zalo
-                await navigator.clipboard.writeText(zaloMessage);
+                let submissions = JSON.parse(localStorage.getItem('greenspace_submissions') || '[]');
+                submissions.push(formData);
+                localStorage.setItem('greenspace_submissions', JSON.stringify(submissions));
 
-                formMessage.innerHTML = '<div class="success-message">✅ Thông tin của bạn đã được chuẩn bị! Bây giờ bạn sẽ được chuyển đến Zalo để gửi yêu cầu. Nếu bạn có Zalo, thông tin sẽ được copy sẵn để bạn dán vào.</div>';
-                
-                // Open Zalo
-                setTimeout(() => {
-                    window.open('https://zalo.me/0978758788', '_blank');
-                    document.getElementById('contactForm').reset();
-                }, 1500);
+                // Also send to a Google Form or your server if needed
+                const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSc_PLACEHOLDER/formResponse';
+                const formDataToSend = new FormData();
+                formDataToSend.append('entry.XXXXX', name);
+                formDataToSend.append('entry.YYYYY', phone);
+                formDataToSend.append('entry.ZZZZZ', email);
+
+                // Optional: Send to Google Form
+                // fetch(googleFormURL, { method: 'POST', body: formDataToSend });
+
+                formMessage.innerHTML = '<div class="success-message">✅ Yêu cầu của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ bạn trong vòng 24 giờ.</div>';
+                document.getElementById('contactForm').reset();
 
             } catch (error) {
-                formMessage.innerHTML = '<div class="error-message">❌ Vui lòng mở Zalo và gọi: <a href="https://zalo.me/0978758788" target="_blank" style="color: white; text-decoration: underline;">0978 758 788</a></div>';
+                formMessage.innerHTML = '<div class="error-message">❌ Có lỗi xảy ra. Vui lòng thử lại.</div>';
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Gửi yêu cầu tư vấn qua Zalo';
+                submitBtn.textContent = 'Gửi yêu cầu tư vấn';
             }
         }
 
@@ -1543,7 +1429,7 @@
             });
         });
 
-        console.log('✅ GreenSpace Website Ready - No Chat Modal on Load');
+        console.log('✅ GreenSpace Website Ready');
     </script>
 </body>
 </html>
