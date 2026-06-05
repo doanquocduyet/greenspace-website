@@ -1512,109 +1512,66 @@
     }
 
     
-    /* Image backgrounds using CSS gradients + patterns */
+    
+
+    
+    /* Image Sections - Simple Colors with Height */
     .hero-image-right {
-        background: linear-gradient(135deg, #4a7d6f 0%, #2d5a4d 100%);
-        background-attachment: fixed;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(135deg, #2d5a4d 0%, #4a7d6f 100%);
         position: relative;
-    }
-
-    .hero-image-right::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            radial-gradient(circle at 20% 50%, rgba(232, 244, 240, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.05) 0%, transparent 50%);
-        animation: drift 20s ease-in-out infinite;
-    }
-
-    @keyframes drift {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(20px, 10px); }
     }
 
     .trust-image-side {
-        background: linear-gradient(135deg, #5a8a78 0%, #3d6b5c 100%);
-        position: relative;
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #4a7d6f 0%, #2d5a4d 100%);
+        border-radius: 12px;
         overflow: hidden;
-    }
-
-    .trust-image-side::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            linear-gradient(45deg, transparent 25%, rgba(255,255,255,.05) 25%, rgba(255,255,255,.05) 50%, transparent 50%, transparent 75%, rgba(255,255,255,.05) 75%, rgba(255,255,255,.05)),
-            radial-gradient(circle at 30% 40%, rgba(232, 244, 240, 0.15) 0%, transparent 50%);
-        background-size: 40px 40px, 100% 100%;
-        animation: pattern-shift 15s linear infinite;
-    }
-
-    @keyframes pattern-shift {
-        0% { background-position: 0 0; }
-        100% { background-position: 40px 40px; }
     }
 
     .risks-banner-image {
-        background: linear-gradient(135deg, #5a8a78 0%, #4a7d6f 50%, #3d6b5c 100%);
-        position: relative;
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #5a8a78 0%, #3d6b5c 100%);
         overflow: hidden;
-    }
-
-    .risks-banner-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px),
-            repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px),
-            radial-gradient(ellipse at 70% 50%, rgba(232, 244, 240, 0.1) 0%, transparent 60%);
-        animation: pulse-bg 20s ease-in-out infinite;
-    }
-
-    @keyframes pulse-bg {
-        0%, 100% { opacity: 0.8; }
-        50% { opacity: 1; }
     }
 
     .contact-image-side {
-        background: linear-gradient(135deg, #c9a961 0%, #8b6914 50%, #5a8a78 100%);
-        position: relative;
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #c9a961 0%, #4a7d6f 100%);
+        border-radius: 12px;
         overflow: hidden;
     }
 
-    .contact-image-side::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            linear-gradient(45deg, transparent 30%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.1) 70%, transparent 70%),
-            radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0%, transparent 50%);
-        background-size: 60px 60px, 100% 100%;
+    @media (max-width: 1024px) {
+        .hero-image-right {
+            display: none;
+        }
+
+        .trust-image-side {
+            height: 250px;
+        }
+
+        .risks-banner-image {
+            height: 250px;
+        }
     }
 
-    .contact-image-side::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(180deg, transparent 0%, rgba(45, 90, 77, 0.2) 100%);
-        pointer-events: none;
+    @media (max-width: 768px) {
+        .contact-image-side {
+            display: none;
+        }
+
+        .trust-image-side {
+            height: 200px;
+        }
+
+        .risks-banner-image {
+            height: 200px;
+        }
     }
 
     </style>
