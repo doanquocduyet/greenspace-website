@@ -72,12 +72,12 @@
             letter-spacing: -0.5px;
         }
 
-        h1 { font-size: clamp(32px, 5vw, 56px); }
-        h2 { font-size: clamp(28px, 4vw, 42px); }
-        h3 { font-size: clamp(20px, 3vw, 28px); }
+        h1 { font-size: clamp(48px, 6vw, 72px); }
+        h2 { font-size: clamp(36px, 5vw, 56px); }
+        h3 { font-size: clamp(24px, 4vw, 36px); }
 
         p {
-            font-size: clamp(14px, 1.8vw, 16px);
+            font-size: clamp(15px, 2vw, 18px);
             line-height: 1.7;
             color: var(--text-secondary);
         }
@@ -187,7 +187,7 @@
         .hero {
             background: linear-gradient(135deg, rgba(45, 90, 77, 0.95) 0%, rgba(74, 125, 111, 0.95) 100%);
             color: var(--primary-white);
-            padding: clamp(60px, 10vw, 120px) 32px;
+            padding: clamp(40px, 8vw, 80px) 32px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -258,7 +258,7 @@
         }
 
         .btn {
-            padding: 13px 32px;
+            padding: 14px 36px;
             border: none;
             border-radius: 6px;
             font-size: 13px;
@@ -307,7 +307,7 @@
         section {
             max-width: 1400px;
             margin: 0 auto;
-            padding: clamp(60px, 10vw, 100px) 32px;
+            padding: clamp(50px, 8vw, 80px) 32px;
         }
 
         section h2 {
@@ -330,7 +330,7 @@
         .trust-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            gap: 24px;
             margin-top: 48px;
         }
 
@@ -362,7 +362,7 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+            gap: 24px;
             margin-top: 48px;
         }
 
@@ -425,7 +425,7 @@
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+            gap: 24px;
             margin-top: 48px;
         }
 
@@ -1023,7 +1023,7 @@
     @media (max-width: 768px) {
         .risks-grid {
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 16px;
         }
 
         .risks-cta {
@@ -1569,6 +1569,101 @@
         .risks-banner-image {
             height: 200px;
         }
+    }
+
+    
+    /* Enhanced Card Styling */
+    .service-card {
+        padding: 40px;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .risk-card {
+        padding: 36px;
+        min-height: 300px;
+    }
+
+    .price-card {
+        min-height: 480px;
+    }
+
+    .stat-card {
+        padding: 32px;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .trust-item {
+        padding: 24px;
+    }
+
+    .trust-item h3 {
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .trust-item p {
+        font-size: clamp(14px, 1.8vw, 16px);
+        line-height: 1.8;
+    }
+
+    
+    /* Enhanced Hero Typography */
+    .hero-tagline {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-weight: 400;
+        line-height: 1.25;
+        margin: 32px 0;
+    }
+
+    .hero h1 span {
+        font-weight: 700;
+        display: block;
+        margin-top: 8px;
+    }
+
+    .hero p {
+        font-size: clamp(15px, 2vw, 18px);
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+    }
+
+    .hero-cta {
+        margin-top: 32px;
+        gap: 20px;
+    }
+
+    
+    /* Section Headers - More Powerful */
+    section h2 {
+        font-weight: 600;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+    }
+
+    section > p:first-of-type {
+        font-size: clamp(15px, 1.9vw, 17px);
+        margin-bottom: 48px;
+        line-height: 1.7;
+    }
+
+    .map-header h2 {
+        margin-bottom: 8px;
+    }
+
+    .map-header p {
+        font-size: clamp(14px, 1.8vw, 16px);
+        margin-bottom: 40px;
     }
 
     </style>
