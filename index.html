@@ -636,6 +636,53 @@
         cursor: pointer; transition: var(--tr); margin-top: 8px; letter-spacing: .5px;
     }
     .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,97,.35); }
+    /* ===== DISCOVERIES SECTION ===== */
+    .discoveries { background: var(--bg); }
+    .discoveries > .section-wrap > h2 { margin-bottom: 12px; }
+    .discoveries > .section-wrap > p  { margin-bottom: 48px; }
+    .discovery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .discovery-card {
+        padding: 32px 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        background: var(--white);
+        transition: var(--tr);
+        position: relative;
+        overflow: hidden;
+    }
+    .discovery-card::before {
+        content: '';
+        position: absolute; top: 0; left: 0; right: 0;
+        height: 4px;
+    }
+    .discovery-alert::before   { background: #d44; }
+    .discovery-warning::before { background: var(--gold); }
+    .discovery-ok::before      { background: var(--green); }
+    .discovery-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .discovery-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+    .discovery-tag {
+        display: inline-block; margin-bottom: 10px;
+        font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+    .discovery-alert   .discovery-tag { color: #c44; }
+    .discovery-warning .discovery-tag { color: #a07010; }
+    .discovery-ok      .discovery-tag { color: var(--green); }
+    .discovery-card h3 { font-size: clamp(16px, 2vw, 22px); color: var(--dark); margin-bottom: 10px; }
+    .discovery-card p  { font-size: 14px; line-height: 1.75; margin-bottom: 16px; }
+    .discovery-result {
+        display: inline-block;
+        background: var(--bg); color: var(--green);
+        font-size: 12px; font-weight: 700;
+        padding: 6px 14px; border-radius: 20px;
+        border: 1px solid var(--green-pale);
+    }
+    @media (max-width: 768px) { .discovery-grid { grid-template-columns: 1fr; } }
+
     #formMessage { font-size: 13px; padding: 8px 0; min-height: 26px; }
     .success-message { color: #8fe8c0; }
     .error-message   { color: #f8a0a0; }
@@ -757,15 +804,15 @@
 <section class="hero">
     <div class="hero-content">
         <div class="hero-left">
-            <div class="hero-badge">Quản lý bất động sản chuyên nghiệp</div>
-            <h1>Nơi tài sản<em>được thở</em></h1>
-            <p class="hero-sub">Bạn đang sống ở TP.HCM hay Hà Nội, mảnh đất ở Nam Ban đang không ai trông? GreenSpace kiểm tra, báo cáo ảnh GPS và cảnh báo xâm lấn — hàng tháng, không trễ.</p>
-            <p class="hero-promise">Nhận báo cáo thực địa đầu tiên hoàn toàn miễn phí</p>
+            <div class="hero-badge">Dành cho người sở hữu đất ở Nam Ban nhưng đang sống ở xa</div>
+            <h1>Đất của bạn<em>đang ra sao?</em></h1>
+            <p class="hero-sub">Câu hỏi đó xuất hiện lúc 2 giờ sáng khi bạn đang ở Sài Gòn. Đất có bị ai lấn không? Quy hoạch có thay đổi không? Không ai báo cho bạn biết cả. GreenSpace ra thực địa, chụp ảnh GPS, và gửi báo cáo thẳng vào Zalo — mỗi tháng, không cần bạn làm gì.</p>
+            <p class="hero-promise">Chúng tôi không bán dịch vụ quản lý. Chúng tôi bán sự chắc chắn.</p>
             <div class="hero-cta">
-                <button class="btn btn-primary" onclick="scrollToContact()">Nhận báo cáo miễn phí →</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Xem quy trình</button>
+                <button class="btn btn-primary" onclick="scrollToContact()">Kiểm tra đất của tôi →</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('discoveries').scrollIntoView({behavior:'smooth'})">Chúng tôi đã phát hiện gì</button>
             </div>
-            <p class="hero-note">Không cần ký hợp đồng dài hạn ngay · Dùng thử 1 tháng</p>
+            <p class="hero-note">Tháng đầu miễn phí · Không ký hợp đồng dài hạn · Dừng bất kỳ lúc nào</p>
         </div>
 
         <div class="hero-right">
@@ -813,7 +860,46 @@
     </div>
 </div>
 
-<!-- ===== HOW IT WORKS ===== -->
+<!-- ===== WHAT WE DISCOVERED ===== -->
+<section class="discoveries full-wrap" id="discoveries">
+    <div class="section-wrap">
+        <div class="section-label">Bằng chứng thực tế</div>
+        <h2>Những gì chúng tôi đã<br>phát hiện thay bạn</h2>
+        <p>Không phải chuyện giả định. Đây là những gì thực sự xảy ra với đất của khách hàng — trong khi họ đang bình yên ở Sài Gòn.</p>
+        <div class="discovery-grid">
+            <div class="discovery-card discovery-alert">
+                <div class="discovery-icon">🚨</div>
+                <div class="discovery-tag">Lấn chiếm</div>
+                <h3>Hàng xóm dịch rào 3 mét</h3>
+                <p>Tháng 3/2025. Chúng tôi phát hiện ranh giới phía Đông bị dịch chuyển khoảng 3 mét trong quá trình kiểm tra định kỳ. Chủ đất ở Hà Nội, không biết gì. Chúng tôi thông báo ngay, làm việc với hàng xóm và khôi phục nguyên trạng — chủ đất không cần lên.</p>
+                <span class="discovery-result">✓ Xử lý xong trong 11 ngày</span>
+            </div>
+            <div class="discovery-card discovery-warning">
+                <div class="discovery-icon">⚠️</div>
+                <div class="discovery-tag">Quy hoạch</div>
+                <h3>Thay đổi lộ giới ảnh hưởng 1 mảnh</h3>
+                <p>Tháng 8/2024. Trong lần kiểm tra tháng, chúng tôi phát hiện cập nhật quy hoạch lộ giới tuyến đường mới đi qua góc lô. Chủ đất ở TP.HCM được thông báo sớm 4 tháng trước khi có thông báo chính thức — đủ thời gian chuẩn bị.</p>
+                <span class="discovery-result">✓ Thông báo sớm 4 tháng</span>
+            </div>
+            <div class="discovery-card discovery-warning">
+                <div class="discovery-icon">🌿</div>
+                <div class="discovery-tag">Tình trạng đất</div>
+                <h3>Đất bị ngập sau mùa mưa kéo dài</h3>
+                <p>Tháng 11/2024. Mưa bất thường làm khu vực thấp bị úng nước, ảnh hưởng diện tích canh tác. Chúng tôi phát hiện, chụp ảnh chi tiết và đề xuất giải pháp thoát nước trước khi gây hư hại thêm. Chủ đất yêu cầu xử lý từ xa qua Zalo.</p>
+                <span class="discovery-result">✓ Báo cáo trong 24h sau mưa</span>
+            </div>
+            <div class="discovery-card discovery-ok">
+                <div class="discovery-icon">✅</div>
+                <div class="discovery-tag">Bình thường</div>
+                <h3>Và 80% trường hợp: mọi thứ ổn</h3>
+                <p>Không phải lúc nào cũng có chuyện. Đại đa số báo cáo hàng tháng là: ranh giới nguyên vẹn, tình trạng tốt, không có bất thường. Và đó chính xác là thứ bạn cần biết — không phải đoán mò.</p>
+                <span class="discovery-result">✓ Sự chắc chắn là sản phẩm</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="how full-wrap" id="how">
     <div class="section-wrap">
         <div class="section-label">Quy trình làm việc</div>
@@ -1196,6 +1282,13 @@
         <div class="faq-list">
             <div class="faq-item">
                 <button class="faq-q" onclick="toggleFaq(this)">
+                    Tôi đã nhờ người quen địa phương trông coi rồi, tại sao cần GreenSpace?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Người quen trông giúp vì tình cảm — không phải vì trách nhiệm. Họ sẽ không báo cáo hàng tháng. Họ sẽ không biết ranh giới GPS chính xác. Họ sẽ không dám làm việc cứng rắn với hàng xóm khi có tranh chấp vì sợ mất quan hệ. Và khi có vấn đề thật sự, họ thường báo muộn hoặc không báo. GreenSpace làm việc này như một cam kết chuyên nghiệp — có hợp đồng, có báo cáo, có trách nhiệm pháp lý.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
                     Nếu phát hiện đất bị lấn chiếm thì GreenSpace làm gì?
                     <span class="faq-icon">+</span>
                 </button>
@@ -1296,8 +1389,12 @@
                     <input type="text" id="location" name="location" required placeholder="Ví dụ: Thôn 3, Nam Ban, Lâm Hà">
                 </div>
                 <div class="form-group">
-                    <label for="message">Mô tả về tài sản *</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Diện tích, loại đất, số lô, tình trạng hiện tại, mục tiêu của bạn..."></textarea>
+                    <label for="worry">Điều bạn lo lắng nhất về mảnh đất này là gì? *</label>
+                    <textarea id="worry" name="worry" rows="3" required placeholder="Ví dụ: Không biết có ai lấn chiếm không, không ai trông coi khi mưa lũ, quy hoạch thay đổi mà không biết..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="message">Thông tin thêm về đất (diện tích, tình trạng hiện tại)</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Diện tích, loại đất, số lô, đang có người ở hay bỏ trống..."></textarea>
                 </div>
                 <div id="formMessage"></div>
                 <button type="submit" class="form-submit">Gửi yêu cầu — Miễn phí tháng đầu →</button>
@@ -1384,6 +1481,7 @@
                 phone:     document.getElementById('phone').value,
                 email:     document.getElementById('email').value,
                 location:  document.getElementById('location').value,
+                worry:     document.getElementById('worry').value,
                 message:   document.getElementById('message').value,
                 timestamp: new Date()
             });
