@@ -128,7 +128,6 @@
  }
  .nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(45,90,77,.3); }
 
-
  .logo-mark {
  width: 36px;
  height: 36px;
@@ -281,7 +280,7 @@
  .section-label {
  display: inline-block;
  font-size: 11px; font-weight: 700; letter-spacing: 3px;
- text-transform: uppercase; color: var(--gold);
+ text-transform: uppercase; color: var(--green-mid);
  margin-bottom: 16px;
  }
  .trust > .section-wrap > h2 { margin-bottom: 12px; }
@@ -313,7 +312,7 @@
  .trust-item p { font-size: 14px; margin: 0; }
 
  /* ===== HOW IT WORKS ===== */
- .how { background: var(--bg); }
+ .how { background: var(--white); }
  .how > .section-wrap > h2 { margin-bottom: 12px; }
  .how > .section-wrap > p { margin-bottom: 56px; }
  .steps {
@@ -349,51 +348,16 @@
  }
 
  /* ===== RISKS SECTION ===== */
- .risks { background: var(--white); }
+ .risks { background: var(--bg); }
  .risks > .section-wrap > h2 { margin-bottom: 12px; }
  .risks > .section-wrap > .intro { margin-bottom: 48px; }
- .risks-banner {
- border-radius: var(--radius-lg);
- overflow: hidden;
- display: grid; grid-template-columns: 1.1fr 1fr;
- margin-bottom: 48px;
- background: var(--green);
- min-height: 260px;
- }
- .risks-banner-content {
- padding: 48px 44px;
- display: flex; flex-direction: column; justify-content: center;
- }
- .risks-banner-content h3 { color: var(--white); margin-bottom: 14px; font-size: clamp(22px, 3vw, 34px); }
- .risks-banner-content p { color: rgba(255,255,255,.8); font-size: 15px; margin: 0; max-width: 380px; }
- .risks-banner-image {
- background: linear-gradient(135deg, #4a8a76, #2d6055);
- display: flex; align-items: center; justify-content: center;
- flex-direction: column; gap: 12px;
- color: rgba(255,255,255,.5); font-size: 12px; text-align: center;
- padding: 24px; position: relative;
- }
  .risks-banner-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
  .risks-banner-image .placeholder-icon { font-size: 36px; opacity: .4; }
- .risks-grid {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 20px; margin-bottom: 48px;
- }
- .risk-card {
- padding: 28px 24px;
- background: var(--bg);
- border-radius: var(--radius); border: 1px solid var(--border);
- transition: var(--tr);
- }
- .risk-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: rgba(201,169,97,.3); }
  .risk-number {
  font-family: 'Cormorant Garamond', serif;
  font-size: 40px; font-weight: 700;
  color: var(--gold); line-height: 1; display: block; margin-bottom: 12px;
  }
- .risk-card h3 { font-size: clamp(16px, 2vw, 21px); color: var(--dark); margin-bottom: 10px; }
- .risk-card p { font-size: 13px; margin: 0; }
  .risks-cta {
  background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%);
  border-radius: var(--radius-lg);
@@ -407,21 +371,10 @@
  .services { background: var(--bg); }
  .services > .section-wrap > h2 { margin-bottom: 12px; }
  .services > .section-wrap > p { margin-bottom: 48px; }
- .services-grid {
- display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
- }
- .service-card {
- padding: 32px 28px; background: var(--white);
- border-radius: var(--radius); border: 1px solid var(--border);
- transition: var(--tr);
- }
- .service-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); border-color: var(--gold); }
  .service-icon { font-size: 28px; margin-bottom: 16px; display: block; }
- .service-card h3 { font-size: clamp(15px, 1.9vw, 21px); color: var(--green); margin-bottom: 10px; }
- .service-card p { font-size: 13px; margin: 0; }
 
  /* ===== SAMPLE REPORT (Photo Placeholder) ===== */
- .sample { background: var(--white); }
+ .sample { background: var(--bg); }
  .sample > .section-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
  .sample-text .section-label { display: block; }
  .sample-text h2 { margin-bottom: 16px; }
@@ -460,7 +413,7 @@
 
  /* ===== TESTIMONIALS ===== */
  .testimonials { background: var(--green-dark); }
- .testimonials > .section-wrap > .section-label { color: var(--gold); }
+ .testimonials > .section-wrap > .section-label { color: var(--green-mid); }
  .testimonials > .section-wrap > h2 { color: var(--white); margin-bottom: 12px; }
  .testimonials > .section-wrap > p { color: rgba(255,255,255,.65); margin-bottom: 52px; }
  .testimonials-grid {
@@ -504,7 +457,7 @@
  }
 
  /* ===== PRICING SECTION ===== */
- .pricing { background: var(--bg); }
+ .pricing { background: var(--white); }
  .pricing > .section-wrap > h2 { margin-bottom: 10px; }
  .pricing > .section-wrap > p { margin-bottom: 48px; }
  .pricing-grid {
@@ -551,7 +504,7 @@
  .price-card .btn { width: 100%; }
 
  /* ===== FAQ ===== */
- .faq { background: var(--white); }
+ .faq { background: var(--bg); }
  .faq > .section-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
  .faq-left .section-label { display: block; margin-bottom: 16px; }
  .faq-left h2 { margin-bottom: 16px; }
@@ -649,17 +602,85 @@
  @keyframes recoFade { to { opacity: 1; } }
  .price-roi { font-size: 12px; color: var(--grey-light); font-style: italic; margin-top: 4px; }
 
- /* ===== CLEAN NUMBERED ICONS ===== */
- .discovery-num, .service-num {
-     font-family: 'Cormorant Garamond', serif;
-     font-size: 28px; font-weight: 600;
-     color: var(--green); opacity: .4;
-     margin-bottom: 12px; display: block;
+ /* ===== VISUAL HIERARCHY RESTRUCTURE ===== */
+
+ /* DISCOVERIES — featured (climax) + small grid */
+ .discovery-featured {
+     display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;
+     background: var(--white); border-radius: var(--radius-lg);
+     overflow: hidden; box-shadow: 0 16px 50px rgba(26,24,21,.10);
+     margin-bottom: 28px; border: 1px solid var(--border);
  }
+ .discovery-featured-text { padding: clamp(32px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; }
+ .discovery-featured-text .discovery-tag { color: #c44; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+ .discovery-featured-text h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3.2vw, 38px); font-weight: 600; line-height: 1.25; color: var(--dark); margin-bottom: 18px; }
+ .discovery-featured-text p { font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 22px; }
+ .discovery-featured-img {
+     background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+     display: flex; align-items: center; justify-content: center; min-height: 280px;
+ }
+ .img-pending { color: rgba(255,255,255,.4); font-size: 13px; letter-spacing: 1px; font-style: italic; }
+ .discovery-featured .discovery-result {
+     align-self: flex-start; background: var(--green); color: white;
+     font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 24px; border: none;
+ }
+
+ .discovery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+ .discovery-card {
+     padding: 28px 24px; border-radius: var(--radius); background: var(--white);
+     border: 1px solid var(--border); position: relative; transition: var(--tr);
+ }
+ .discovery-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+ .discovery-warning::before { background: var(--gold); }
+ .discovery-ok::before { background: var(--green); }
+ .discovery-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+ .discovery-card .discovery-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; display: block; margin-bottom: 8px; }
+ .discovery-warning .discovery-tag { color: #a07010; }
+ .discovery-ok .discovery-tag { color: var(--green); }
+ .discovery-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+ .discovery-card p { font-size: 13.5px; line-height: 1.7; color: #666; margin-bottom: 14px; }
+ .discovery-card .discovery-result { font-size: 11px; font-weight: 600; color: var(--green); }
+
+ /* RISKS — compact vertical list (light) */
+ .risks-list { max-width: 720px; margin: 0 auto; }
+ .risk-row {
+     display: flex; gap: 24px; align-items: baseline;
+     padding: 24px 0; border-bottom: 1px solid var(--border);
+ }
+ .risk-row:last-child { border-bottom: none; }
+ .risk-row .risk-number {
+     font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600;
+     color: var(--green); opacity: .35; flex-shrink: 0; min-width: 36px;
+ }
+ .risk-row h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+ .risk-row p { font-size: 14px; line-height: 1.7; color: #666; }
+
+ /* SERVICES — light 2-col list */
+ .services-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 48px; max-width: 900px; margin: 0 auto; }
+ .service-row {
+     display: flex; gap: 18px; align-items: baseline;
+     padding: 22px 0; border-bottom: 1px solid var(--border);
+ }
+ .service-row .service-num {
+     font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600;
+     color: var(--gold); opacity: .7; flex-shrink: 0; min-width: 28px;
+ }
+ .service-row h3 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 5px; }
+ .service-row p { font-size: 13px; line-height: 1.65; color: #777; }
+
+ @media (max-width: 768px) {
+     .discovery-featured { grid-template-columns: 1fr; }
+     .discovery-featured-img { min-height: 180px; order: -1; }
+     .discovery-grid { grid-template-columns: 1fr; }
+     .services-list { grid-template-columns: 1fr; gap: 0; }
+     .risk-row { gap: 16px; }
+ }
+
+ /* ===== CLEAN NUMBERED ICONS ===== */
  .service-num { font-size: 24px; margin-bottom: 14px; }
 
  /* ===== DISCOVERIES SECTION ===== */
- .discoveries { background: var(--bg); }
+ .discoveries { background: var(--white); }
  .discoveries > .section-wrap > h2 { margin-bottom: 12px; }
  .discoveries > .section-wrap > p { margin-bottom: 48px; }
  .discovery-grid {
@@ -818,8 +839,6 @@
  .steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
  .steps::before { display: none; }
  .trust-grid { grid-template-columns: repeat(2, 1fr); }
- .risks-grid { grid-template-columns: repeat(2, 1fr); }
- .services-grid { grid-template-columns: repeat(2, 1fr); }
  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
  .contact-content { grid-template-columns: 1fr; gap: 40px; }
@@ -841,10 +860,6 @@
  .hero-cta .btn { width: 100%; }
  .hero-stats { grid-template-columns: repeat(3, 1fr); }
  .trust-grid { grid-template-columns: 1fr; }
- .risks-banner { grid-template-columns: 1fr; }
- .risks-banner-image { min-height: 120px; }
- .risks-grid { grid-template-columns: 1fr; }
- .services-grid { grid-template-columns: 1fr; }
  .map-stats { grid-template-columns: repeat(2, 1fr); }
  .pricing-grid { max-width: 100%; }
  .price-card.featured { transform: scale(1); }
@@ -861,7 +876,13 @@
  .hero-stats { grid-template-columns: 1fr; gap: 1px; }
  .hero-stat-num { font-size: 28px; }
  }
- </style>
+ 
+ /* SPACING HIERARCHY */
+ .discoveries.full-wrap { padding-top: clamp(80px, 11vw, 130px); padding-bottom: clamp(80px, 11vw, 130px); }
+ .risks.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
+ .services.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
+ .faq.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
+</style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"Tôi có đất ở Nam Ban nhưng sống ở Sài Gòn, ai trông coi cho tôi?","acceptedAnswer":{"@type":"Answer","text":"GreenSpace kiểm tra thực địa hàng tháng, chụp ảnh GPS từng góc, gửi báo cáo qua Zalo. Bạn biết tình trạng đất mà không cần lên tận nơi."}},
@@ -989,47 +1010,39 @@
  <h2>Những chuyện thường xảy ra<br>khi đất không có người trông</h2>
  <p class="intro">Không phải chuyện hiếm. Đây là những tình huống thực tế mà chúng tôi gặp mỗi tháng khi kiểm tra đất cho khách hàng.</p>
 
- <div class="risks-banner">
- <div class="risks-banner-content">
- <h3>Không phải để lo —<br>mà để biết</h3>
- <p>Hầu hết mọi thứ đều ổn. Nhưng khi có chuyện, bạn cần biết sớm — không phải sau 6 tháng khi tình cờ có người báo.</p>
- </div>
- <div class="risks-banner-image">
- 
- <p style="color:rgba(255,255,255,.5);font-size:12px;margin:0;">Ảnh thực địa sẽ được thêm vào</p>
- </div>
- </div>
-
- <div class="risks-grid">
- <div class="risk-card">
+ <div class="risks-list">
+ <div class="risk-row">
  <span class="risk-number">01</span>
+ <div>
  <h3>Ranh giới bị dịch mà không ai hay</h3>
- <p>Hàng rào lùi vào vài tấc mỗi năm. Chuyện nhỏ — cho đến khi bạn mất cả chục mét vuông mà không hề biết.</p>
+ <p>Hàng rào lùi vào vài tấc mỗi năm — cho đến khi bạn mất cả chục mét vuông mà không hề biết.</p>
  </div>
- <div class="risk-card">
+ </div>
+ <div class="risk-row">
  <span class="risk-number">02</span>
+ <div>
  <h3>Quy hoạch đổi, giá đất đổi theo</h3>
- <p>Lộ giới mở rộng, đường mới cắt qua — thông tin này thường đến trễ vài tháng với người ở xa. Đến khi biết thì đã muộn.</p>
+ <p>Lộ giới mở rộng, đường mới cắt qua — thông tin đến trễ vài tháng với người ở xa.</p>
  </div>
- <div class="risk-card">
+ </div>
+ <div class="risk-row">
  <span class="risk-number">03</span>
+ <div>
  <h3>Nhờ người quen — nhưng ai chịu trách nhiệm?</h3>
- <p>Người quen trông giúp vì tình cảm, không phải trách nhiệm. Khi có tranh chấp thật sự, họ thường ngại xử lý — và bạn là người chịu thiệt.</p>
+ <p>Người quen trông giúp vì tình cảm, không phải trách nhiệm. Có tranh chấp, họ thường ngại xử lý.</p>
  </div>
- <div class="risk-card">
+ </div>
+ <div class="risk-row">
  <span class="risk-number">04</span>
+ <div>
  <h3>Bạn biết tin khi mọi thứ đã xảy ra</h3>
- <p>Đất ngập, rào hỏng, có người dựng tạm — bạn chỉ biết khi tình cờ ai đó báo. Lúc đó chi phí xử lý đã gấp nhiều lần.</p>
+ <p>Đất ngập, rào hỏng, có người dựng tạm — bạn chỉ biết khi tình cờ ai đó báo. Lúc đó chi phí đã gấp nhiều lần.</p>
  </div>
  </div>
-
- <div class="risks-cta">
- <h3>Để bạn không phải lo, chúng tôi lo thay</h3>
- <p>Mỗi tháng, một báo cáo ảnh thực địa gửi qua Zalo. Có chuyện — bạn biết ngay. Không có chuyện — bạn yên tâm. Đơn giản vậy thôi.</p>
- <button class="btn btn-gold" onclick="scrollToContact()" style="margin-top:4px;">Đăng ký ngay</button>
  </div>
  </div>
 </section>
+
 
 
 <!-- ===== WHAT WE DISCOVERED ===== -->
@@ -1038,34 +1051,37 @@
  <div class="section-label">Chuyện thật từ thực địa</div>
  <h2>Những chuyện đã xảy ra<br>với đất không ai trông</h2>
  <p>Không phải chuyện giả định. Đây là những gì thực sự xảy ra — trong khi chủ đất đang bình yên ở Sài Gòn.</p>
+
+ <div class="discovery-featured">
+ <div class="discovery-featured-text">
+ <div class="discovery-tag">Lấn chiếm · Tháng 3/2025</div>
+ <h3>Hàng xóm dịch rào 3 mét.<br>Chủ đất ở Hà Nội không hề biết.</h3>
+ <p>Trong lần kiểm tra định kỳ, chúng tôi phát hiện ranh giới phía Đông bị dịch chuyển khoảng 3 mét. Chúng tôi thông báo ngay trong ngày, làm việc trực tiếp với hàng xóm, và khôi phục nguyên trạng — chủ đất không cần lên tận nơi một lần nào.</p>
+ <span class="discovery-result">Xử lý xong trong 11 ngày</span>
+ </div>
+ <div class="discovery-featured-img">
+ <span class="img-pending">Ảnh thực địa</span>
+ </div>
+ </div>
+
  <div class="discovery-grid">
- <div class="discovery-card discovery-alert">
- <div class="discovery-num">01</div>
- <div class="discovery-tag">Lấn chiếm</div>
- <h3>Hàng xóm dịch rào 3 mét</h3>
- <p>Tháng 3/2025. Chúng tôi phát hiện ranh giới phía Đông bị dịch chuyển khoảng 3 mét trong quá trình kiểm tra định kỳ. Chủ đất ở Hà Nội, không biết gì. Chúng tôi thông báo ngay, làm việc với hàng xóm và khôi phục nguyên trạng — chủ đất không cần lên.</p>
- <span class="discovery-result">✓ Xử lý xong trong 11 ngày</span>
- </div>
  <div class="discovery-card discovery-warning">
- <div class="discovery-num">02</div>
  <div class="discovery-tag">Quy hoạch</div>
- <h3>Thay đổi lộ giới ảnh hưởng 1 mảnh</h3>
- <p>Tháng 8/2024. Trong lần kiểm tra tháng, chúng tôi phát hiện cập nhật quy hoạch lộ giới tuyến đường mới đi qua góc lô. Chủ đất ở TP.HCM được thông báo sớm 4 tháng trước khi có thông báo chính thức — đủ thời gian chuẩn bị.</p>
- <span class="discovery-result">✓ Thông báo sớm 4 tháng</span>
+ <h3>Lộ giới thay đổi</h3>
+ <p>Tuyến đường mới đi qua góc lô. Chủ đất ở TP.HCM được báo sớm 4 tháng trước thông báo chính thức.</p>
+ <span class="discovery-result">Báo sớm 4 tháng</span>
  </div>
  <div class="discovery-card discovery-warning">
- <div class="discovery-num">03</div>
  <div class="discovery-tag">Tình trạng đất</div>
- <h3>Đất bị ngập sau mùa mưa kéo dài</h3>
- <p>Tháng 11/2024. Mưa bất thường làm khu vực thấp bị úng nước, ảnh hưởng diện tích canh tác. Chúng tôi phát hiện, chụp ảnh chi tiết và đề xuất giải pháp thoát nước trước khi gây hư hại thêm. Chủ đất yêu cầu xử lý từ xa qua Zalo.</p>
- <span class="discovery-result">✓ Báo cáo trong 24h sau mưa</span>
+ <h3>Ngập sau mưa</h3>
+ <p>Mưa bất thường làm khu thấp úng nước. Chúng tôi phát hiện, chụp ảnh, đề xuất thoát nước kịp thời.</p>
+ <span class="discovery-result">Báo trong 24h</span>
  </div>
  <div class="discovery-card discovery-ok">
- <div class="discovery-num">04</div>
- <div class="discovery-tag">Bình thường</div>
- <h3>Và 80% trường hợp: mọi thứ ổn</h3>
- <p>Không phải lúc nào cũng có chuyện. Đại đa số báo cáo hàng tháng là: ranh giới nguyên vẹn, tình trạng tốt, không có bất thường. Và đó chính xác là thứ bạn cần biết — không phải đoán mò.</p>
- <span class="discovery-result">✓ Sự chắc chắn là sản phẩm</span>
+ <div class="discovery-tag">Phần lớn thời gian</div>
+ <h3>Mọi thứ vẫn ổn</h3>
+ <p>Đa số báo cáo: ranh giới nguyên vẹn, không bất thường. Và đó chính xác là thứ bạn trả tiền để biết — không phải đoán.</p>
+ <span class="discovery-result">Sự chắc chắn</span>
  </div>
  </div>
  </div>
@@ -1079,36 +1095,36 @@
  <div class="section-label">Chúng tôi làm gì cho bạn</div>
  <h2>Bạn sống ở xa,<br>chúng tôi ở ngay đây</h2>
  <p>Sinh ra tại Nam Ban, chúng tôi biết từng con đường, từng mốc ranh giới. Đây không chỉ là dịch vụ — đây là cam kết của người địa phương.</p>
- <div class="services-grid">
- <div class="service-card">
+ <div class="services-list">
+ <div class="service-row">
  <span class="service-num">01</span>
- <h3>Ra thực địa mỗi tháng</h3>
- <p>Chúng tôi đến tận nơi, chụp ảnh từng góc kèm tọa độ GPS. Ranh giới, hàng rào, tình trạng đất — tất cả ghi lại rõ ràng, không đoán mò.</p>
+ <div><h3>Ra thực địa mỗi tháng</h3>
+ <p>Đến tận nơi, chụp ảnh từng góc kèm tọa độ GPS. Ranh giới, hàng rào, tình trạng đất — ghi lại rõ ràng.</p></div>
  </div>
- <div class="service-card">
+ <div class="service-row">
  <span class="service-num">02</span>
- <h3>Gửi báo cáo qua Zalo</h3>
- <p>Ảnh thực, vị trí GPS, nhận xét cụ thể — gửi thẳng vào Zalo của bạn. Mở điện thoại là biết đất mình ra sao, không cần lên tận nơi.</p>
+ <div><h3>Gửi báo cáo qua Zalo</h3>
+ <p>Ảnh thực, vị trí GPS, nhận xét cụ thể — gửi thẳng vào Zalo. Mở điện thoại là biết đất mình ra sao.</p></div>
  </div>
- <div class="service-card">
+ <div class="service-row">
  <span class="service-num">03</span>
- <h3>Có chuyện — báo ngay trong 24h</h3>
- <p>Lấn chiếm, tranh chấp, quy hoạch thay đổi — bạn biết trong ngày, không phải sau vài tháng. Chúng tôi xử lý thay nếu bạn cần.</p>
+ <div><h3>Có chuyện — báo trong 24h</h3>
+ <p>Lấn chiếm, tranh chấp, quy hoạch đổi — bạn biết trong ngày. Chúng tôi xử lý thay nếu cần.</p></div>
  </div>
- <div class="service-card">
+ <div class="service-row">
  <span class="service-num">04</span>
- <h3>Đại diện tại chỗ</h3>
- <p>Cần làm việc với chính quyền, với hàng xóm, với cơ quan pháp lý? Chúng tôi ở đây, có quan hệ địa phương, xử lý thay mặt bạn.</p>
+ <div><h3>Đại diện tại chỗ</h3>
+ <p>Làm việc với chính quyền, hàng xóm, cơ quan pháp lý — chúng tôi có quan hệ địa phương, xử lý thay bạn.</p></div>
  </div>
- <div class="service-card">
+ <div class="service-row">
  <span class="service-num">05</span>
- <h3>Zalo 24/7 — người thật trả lời</h3>
- <p>Không phải chatbot, không phải trả lời mẫu. Bạn nhắn cho chính người đang trông coi đất của bạn — mọi lúc, mọi nơi.</p>
+ <div><h3>Zalo 24/7 — người thật</h3>
+ <p>Không chatbot, không trả lời mẫu. Bạn nhắn cho chính người đang trông coi đất của bạn.</p></div>
  </div>
- <div class="service-card">
+ <div class="service-row">
  <span class="service-num">06</span>
- <h3>Giá cố định, không bất ngờ</h3>
- <p>1.5 triệu/tháng cho gói cơ bản. Không phí ẩn, không phát sinh bất ngờ. Minh bạch từ ngày đầu — dừng bất kỳ lúc nào.</p>
+ <div><h3>Giá cố định</h3>
+ <p>1.5 triệu/tháng gói cơ bản. Không phí ẩn, minh bạch từ ngày đầu, dừng bất kỳ lúc nào.</p></div>
  </div>
  </div>
  </div>
