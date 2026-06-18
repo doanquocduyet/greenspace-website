@@ -602,6 +602,89 @@
  @keyframes recoFade { to { opacity: 1; } }
  .price-roi { font-size: 12px; color: var(--grey-light); font-style: italic; margin-top: 4px; }
 
+
+ /* ============================================================
+    DISTINCT SECTION PERSONALITIES — phá khuôn "đều đều"
+    ============================================================ */
+
+ /* RISKS — câu hỏi lớn căn trái, không serif-center */
+ .risks-wrap { max-width: 860px; }
+ .risks-head { margin-bottom: 8px; }
+ .risks-kicker {
+     display: inline-block; font-size: 12px; font-weight: 700;
+     letter-spacing: 2.5px; text-transform: uppercase;
+     color: #c44; margin-bottom: 18px;
+ }
+ .risks-bigq {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: clamp(30px, 5vw, 52px); font-weight: 600;
+     line-height: 1.15; color: var(--dark); text-align: left;
+     margin-bottom: 12px; max-width: 600px;
+ }
+
+ /* SERVICES — DARK background, cú giật thị giác */
+ .services { background: var(--green-dark) !important; }
+ .services .services-head {
+     display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+     align-items: end; margin-bottom: 56px;
+     padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.12);
+ }
+ .services-kicker {
+     display: inline-block; font-size: 12px; font-weight: 700;
+     letter-spacing: 2.5px; text-transform: uppercase;
+     color: var(--gold); margin-bottom: 18px;
+ }
+ .services .services-head h2 {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: clamp(28px, 4vw, 46px); font-weight: 600;
+     line-height: 1.15; color: #fff; text-align: left; margin: 0;
+ }
+ .services-head-right {
+     font-size: 14.5px; line-height: 1.8; color: rgba(255,255,255,.6);
+     margin: 0; padding-bottom: 6px;
+ }
+ .services .services-list { max-width: none; }
+ .services .service-row { border-bottom-color: rgba(255,255,255,.1); }
+ .services .service-row h3 { color: #fff; }
+ .services .service-row p { color: rgba(255,255,255,.55); }
+ .services .service-num { color: var(--gold); opacity: .85; }
+
+ /* DISCOVERIES — kicker góc, để story dẫn dắt */
+ .disc-head {
+     display: flex; justify-content: space-between; align-items: flex-end;
+     flex-wrap: wrap; gap: 16px; margin-bottom: 36px;
+     padding-bottom: 20px; border-bottom: 1px solid var(--border);
+ }
+ .disc-kicker {
+     font-size: 13px; font-weight: 700; letter-spacing: 2.5px;
+     text-transform: uppercase; color: var(--green-mid);
+ }
+ .disc-lede {
+     font-size: 15px; line-height: 1.7; color: #666;
+     max-width: 440px; margin: 0; text-align: right;
+ }
+
+ /* PRICING — gói giữa nhô CAO hẳn */
+ .pricing .price-card.featured {
+     transform: scale(1.06) translateY(-8px);
+     box-shadow: 0 24px 60px rgba(61,74,58,.22);
+     z-index: 2; border: 2px solid var(--green);
+ }
+ .pricing .price-card.featured:hover { transform: scale(1.06) translateY(-12px); }
+ .btn-outline {
+     background: transparent; color: var(--green);
+     border: 1.5px solid var(--green); width: 100%;
+ }
+ .btn-outline:hover { background: var(--green); color: #fff; }
+
+ @media (max-width: 768px) {
+     .services .services-head { grid-template-columns: 1fr; gap: 16px; }
+     .disc-head { flex-direction: column; align-items: flex-start; }
+     .disc-lede { text-align: left; }
+     .pricing .price-card.featured { transform: none; }
+     .risks-bigq { font-size: clamp(26px, 7vw, 40px); }
+ }
+
  /* ===== VISUAL HIERARCHY RESTRUCTURE ===== */
 
  /* DISCOVERIES — featured (climax) + small grid */
@@ -1005,11 +1088,11 @@
 <div class="reco-line" id="recoLine"></div>
 <!-- ===== RISKS SECTION ===== -->
 <section class="risks full-wrap">
- <div class="section-wrap">
- <div class="section-label">Rủi ro bạn đang gặp</div>
- <h2>Những chuyện thường xảy ra<br>khi đất không có người trông</h2>
- <p class="intro">Không phải chuyện hiếm. Đây là những tình huống thực tế mà chúng tôi gặp mỗi tháng khi kiểm tra đất cho khách hàng.</p>
-
+ <div class="section-wrap risks-wrap">
+ <div class="risks-head">
+ <span class="risks-kicker">Rủi ro</span>
+ <h2 class="risks-bigq">Khi đất không ai trông,<br>chuyện gì xảy ra?</h2>
+ </div>
  <div class="risks-list">
  <div class="risk-row">
  <span class="risk-number">01</span>
@@ -1048,9 +1131,10 @@
 <!-- ===== WHAT WE DISCOVERED ===== -->
 <section class="discoveries full-wrap" id="discoveries">
  <div class="section-wrap">
- <div class="section-label">Chuyện thật từ thực địa</div>
- <h2>Những chuyện đã xảy ra<br>với đất không ai trông</h2>
- <p>Không phải chuyện giả định. Đây là những gì thực sự xảy ra — trong khi chủ đất đang bình yên ở Sài Gòn.</p>
+ <div class="disc-head">
+ <span class="disc-kicker">Chuyện thật từ thực địa</span>
+ <p class="disc-lede">Không phải giả định. Đây là những gì thực sự xảy ra — trong khi chủ đất đang bình yên ở Sài Gòn.</p>
+ </div>
 
  <div class="discovery-featured">
  <div class="discovery-featured-text">
@@ -1092,9 +1176,13 @@
 <!-- ===== SERVICES SECTION ===== -->
 <section class="services full-wrap" id="services">
  <div class="section-wrap">
- <div class="section-label">Chúng tôi làm gì cho bạn</div>
+ <div class="services-head">
+ <div class="services-head-left">
+ <span class="services-kicker">Chúng tôi làm gì</span>
  <h2>Bạn sống ở xa,<br>chúng tôi ở ngay đây</h2>
- <p>Sinh ra tại Nam Ban, chúng tôi biết từng con đường, từng mốc ranh giới. Đây không chỉ là dịch vụ — đây là cam kết của người địa phương.</p>
+ </div>
+ <p class="services-head-right">Sinh ra tại Nam Ban, chúng tôi biết từng con đường, từng mốc ranh giới. Đây không chỉ là dịch vụ — đây là cam kết của người địa phương.</p>
+ </div>
  <div class="services-list">
  <div class="service-row">
  <span class="service-num">01</span>
@@ -1265,9 +1353,8 @@
  <li>Báo cáo ảnh GPS đầy đủ</li>
  <li>Cảnh báo bất thường trong 24 giờ</li>
  <li>Hỗ trợ Zalo trực tiếp</li>
- <li></li>
- </ul>
- <button class="btn btn-primary" onclick="scrollToContact()"></button>
+  </ul>
+ <button class="btn btn-outline" onclick="scrollToContact()">Chọn gói này</button>
  </div>
 
  <div class="price-card featured">
@@ -1282,9 +1369,8 @@
  <li>Theo dõi quy hoạch & pháp lý</li>
  <li>Hỗ trợ thủ tục hành chính</li>
  <li>Hotline ưu tiên 24/7</li>
- <li></li>
- </ul>
- <button class="btn btn-gold" onclick="scrollToContact()"></button>
+  </ul>
+ <button class="btn btn-gold" onclick="scrollToContact()">Chọn gói này</button>
  </div>
 
  <div class="price-card">
@@ -1298,8 +1384,7 @@
  <li>Cảnh báo 24/7 tất cả lô</li>
  <li>Dashboard tổng hợp</li>
  <li>Tư vấn đầu tư theo tháng</li>
- <li></li>
- </ul>
+  </ul>
  <button class="btn btn-primary" onclick="scrollToContact()">Tư vấn gói phù hợp</button>
  </div>
  </div>
