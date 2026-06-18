@@ -8,6 +8,7 @@
     <meta property="og:title" content="GreenSpace — Mắt và tai của bạn tại thực địa">
     <meta property="og:description" content="Quản lý bất động sản chuyên nghiệp tại Nam Ban, Lâm Hà. Kiểm tra định kỳ, báo cáo GPS, cảnh báo xâm lấn 24h.">
     <meta property="og:url" content="https://greenspacers.vn">
+    <meta property="og:image" content="https://greenspacers.vn/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <title>GreenSpace — Nơi Tài Sản Được Thở</title>
 
@@ -626,6 +627,18 @@
  cursor: pointer; transition: var(--tr); margin-top: 8px; letter-spacing: .5px;
  }
  .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,97,.35); }
+
+ /* ===== RECOGNITION ROTATION ===== */
+ .reco-line {
+     text-align: center; padding: 18px 32px;
+     font-family: 'Cormorant Garamond', serif; font-style: italic;
+     font-size: 15px; color: var(--grey-light); letter-spacing: .3px;
+     border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+     opacity: 0; animation: recoFade 1s ease .5s forwards;
+ }
+ @keyframes recoFade { to { opacity: 1; } }
+ .price-roi { font-size: 12px; color: var(--grey-light); font-style: italic; margin-top: 4px; }
+
  /* ===== CLEAN NUMBERED ICONS ===== */
  .discovery-num, .service-num {
      font-family: 'Cormorant Garamond', serif;
@@ -858,7 +871,7 @@
  <nav>
  <div class="logo-nav">
  <img src="data:image/png;base64,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" alt="GreenSpace" class="logo-mark"/>
- <div class="logo">GREENSPACE<span class="logo-sub">Your eyes & ears on the ground</span></div>
+ <div class="logo">GREENSPACE</div>
  </div>
  <div class="nav-links">
  <a href="#how">Quy trình</a>
@@ -867,7 +880,7 @@
  <a href="#faq">FAQ</a>
  <a href="#contact">Liên hệ</a>
  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-            <button class="nav-cta" onclick="scrollToContact()">Tư vấn miễn phí</button>
+            <button class="nav-cta" onclick="scrollToContact()">Tư vấn ngay</button>
  </div>
  </nav>
 </header>
@@ -891,13 +904,13 @@
  <div class="hero-left">
  <div class="hero-badge">Dành cho người sở hữu đất ở Nam Ban nhưng đang sống ở xa</div>
  <h1>Đất của bạn<em>đang ra sao?</em></h1>
- <p class="hero-sub">Câu hỏi đó xuất hiện lúc 2 giờ sáng khi bạn đang ở Sài Gòn. Đất có bị ai lấn không? Quy hoạch có thay đổi không? Không ai báo cho bạn biết cả. GreenSpace ra thực địa, chụp ảnh GPS, và gửi báo cáo thẳng vào Zalo — mỗi tháng, không cần bạn làm gì.</p>
+ <p class="hero-sub">Có thể mọi thứ vẫn ổn. Nhưng biết chắc thì yên tâm hơn.<br>GreenSpace ra thực địa mỗi tháng, chụp ảnh GPS, gửi báo cáo thẳng vào Zalo — bạn không cần lên tận nơi.</p>
  <p class="hero-promise">Chúng tôi không bán dịch vụ quản lý. Chúng tôi bán sự chắc chắn.</p>
  <div class="hero-cta">
  <button class="btn btn-primary" onclick="scrollToContact()">Kiểm tra đất của tôi →</button>
- <button class="btn btn-secondary" onclick="document.getElementById('discoveries').scrollIntoView({behavior:'smooth'})">Chúng tôi đã phát hiện gì</button>
+ <button class="btn btn-secondary" onclick="document.getElementById('sample').scrollIntoView({behavior:'smooth'})">Xem báo cáo mẫu</button>
  </div>
- <p class="hero-note">Không ký hợp đồng dài hạn · Dừng bất kỳ lúc nào</p>
+ 
  </div>
 
  <div class="hero-right">
@@ -944,6 +957,9 @@
  </div>
  </div>
 
+
+<!-- RECOGNITION ROTATION -->
+<div class="reco-line" id="recoLine"></div>
 <!-- ===== RISKS SECTION ===== -->
 <section class="risks full-wrap">
  <div class="section-wrap">
@@ -997,9 +1013,9 @@
 <!-- ===== WHAT WE DISCOVERED ===== -->
 <section class="discoveries full-wrap" id="discoveries">
  <div class="section-wrap">
- <div class="section-label">Bằng chứng thực tế</div>
- <h2>Những gì chúng tôi đã<br>phát hiện thay bạn</h2>
- <p>Không phải chuyện giả định. Đây là những gì thực sự xảy ra với đất của khách hàng — trong khi họ đang bình yên ở Sài Gòn.</p>
+ <div class="section-label">Chuyện thật từ thực địa</div>
+ <h2>Những chuyện đã xảy ra<br>với đất không ai trông</h2>
+ <p>Không phải chuyện giả định. Đây là những gì thực sự xảy ra — trong khi chủ đất đang bình yên ở Sài Gòn.</p>
  <div class="discovery-grid">
  <div class="discovery-card discovery-alert">
  <div class="discovery-num">01</div>
@@ -1204,6 +1220,7 @@
  <h3>Gói Cơ bản</h3>
  <p class="description">Phù hợp nhất cho 1 lô đất cá nhân</p>
  <div class="price">1.500.000đ</div>
+ <p class="price-roi">Ít hơn một bữa ăn ngoài — để biết chắc đất bạn an toàn</p>
  <div class="price-unit">/ tháng</div>
  <ul class="price-features">
  <li>Kiểm tra thực địa 1 lần/tháng</li>
@@ -1280,7 +1297,7 @@
  Hợp đồng tối thiểu bao lâu? Có bị ràng buộc không?
  <span class="faq-icon">+</span>
  </button>
- <div class="faq-a">Không có hợp đồng dài hạn bắt buộc. Tháng đầu tiên hoàn toàn miễn phí để bạn trải nghiệm thực tế. Sau đó bạn có thể gia hạn từng tháng, hoàn toàn chủ động — muốn dừng lúc nào cũng được, không có phí phát sinh.</div>
+ <div class="faq-a">Không có hợp đồng dài hạn bắt buộc. Bạn có thể gia hạn từng tháng, hoàn toàn chủ động — muốn dừng lúc nào cũng được, không có phí phát sinh.</div>
  </div>
  <div class="faq-item">
  <button class="faq-q" onclick="toggleFaq(this)">
@@ -1348,34 +1365,22 @@
  <p>Thứ 2 – Chủ nhật: 7:00 – 20:00<br>Zalo: 24/7 (trả lời nhanh nhất)</p>
  </div>
  <div class="contact-promise">
- <p>Chúng tôi cam kết: <strong>tháng đầu tiên miễn phí</strong>, không cần ký hợp đồng dài hạn, <strong>trả lời trong 24 giờ</strong> với lịch kiểm tra thực địa cụ thể.</p>
+ <p>Chúng tôi cam kết: <strong>trả lời trong 24 giờ</strong>, không hợp đồng dài hạn, <strong>dừng bất kỳ lúc nào</strong>.</p>
  </div>
  </div>
 
  <form id="contactForm" onsubmit="handleFormSubmit(event)">
  <div class="form-group">
- <label for="name">Họ và tên *</label>
+ <label for="name">Tên của bạn *</label>
  <input type="text" id="name" name="name" required placeholder="Nguyễn Văn A">
  </div>
  <div class="form-group">
- <label for="phone">Số điện thoại / Zalo *</label>
+ <label for="phone">Số Zalo hoặc điện thoại *</label>
  <input type="tel" id="phone" name="phone" required placeholder="0901 234 567">
  </div>
  <div class="form-group">
- <label for="email">Email</label>
- <input type="email" id="email" name="email" placeholder="email@example.com">
- </div>
- <div class="form-group">
- <label for="location">Vị trí đất *</label>
- <input type="text" id="location" name="location" required placeholder="Ví dụ: Thôn 3, Nam Ban, Lâm Hà">
- </div>
- <div class="form-group">
- <label for="worry">Điều bạn lo lắng nhất về mảnh đất này là gì? *</label>
- <textarea id="worry" name="worry" rows="3" required placeholder="Ví dụ: Không biết có ai lấn chiếm không, không ai trông coi khi mưa lũ, quy hoạch thay đổi mà không biết..."></textarea>
- </div>
- <div class="form-group">
- <label for="message">Thông tin thêm về đất (diện tích, tình trạng hiện tại)</label>
- <textarea id="message" name="message" rows="3" placeholder="Diện tích, loại đất, số lô, đang có người ở hay bỏ trống..."></textarea>
+ <label for="worry">Kể cho chúng tôi về mảnh đất của bạn *</label>
+ <textarea id="worry" name="worry" rows="4" required placeholder="Đất ở đâu, diện tích bao nhiêu, đang lo lắng gì..."></textarea>
  </div>
  <div id="formMessage"></div>
  <button type="submit" class="form-submit">Gửi yêu cầu →</button>
@@ -1391,7 +1396,7 @@
  <div class="footer-col">
  <div class="footer-brand">
  <img src="data:image/png;base64,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" alt="GreenSpace" style="width:28px;height:30px;object-fit:contain;"/>
- <div class="logo">GREENSPACE<span class="logo-sub">Your eyes & ears on the ground</span></div>
+ <div class="logo">GREENSPACE</div>
  </div>
  <p>Quản lý bất động sản chuyên nghiệp tại Nam Ban, Lâm Hà, Lâm Đồng. Nơi tài sản được thở — được nuôi dưỡng, chăm sóc và phát triển bền vững.</p>
  </div>
@@ -1418,6 +1423,7 @@
  </div>
  </div>
  <div class="footer-bottom">
+ <p style="font-size:11px;color:rgba(255,255,255,.35);font-style:italic;margin-bottom:6px;">Đang quản lý 50+ lô đất tại Nam Ban, Lâm Hà</p>
  <p>© 2025 GreenSpace. Tất cả quyền được bảo lưu.</p>
  <p>Phát triển tại Nam Ban, Lâm Đồng · Việt Nam</p>
  </div>
@@ -1445,6 +1451,17 @@
  };
  firebase.initializeApp(firebaseConfig);
  const db = firebase.firestore();
+
+ var recoLines = [
+     'Sự chắc chắn là biết đất mình vẫn ổn mà không cần lên tận nơi.',
+     '80% trường hợp mọi thứ ổn. Và đó chính xác là thứ bạn đang trả tiền để biết.',
+     'Chúng tôi không bán dịch vụ. Chúng tôi bán sự yên tâm.',
+     'Đôi khi, biết sớm 1 tháng giúp bạn tiết kiệm cả trăm triệu.',
+     'Người quen trông giúp vì tình cảm. Chúng tôi trông vì trách nhiệm.',
+     'Mảnh đất không biết nói — nhưng báo cáo thì có.',
+ ];
+ var recoEl = document.getElementById('recoLine');
+ if (recoEl) recoEl.textContent = recoLines[Math.floor(Math.random() * recoLines.length)];
 
  function toggleMenu() {
      var m = document.getElementById('mobileMenu');
