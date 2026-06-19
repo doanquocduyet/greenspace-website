@@ -37,19 +37,19 @@
  :root {
  --green: #3d4a3a;
  --green-dark: #2d3a2d;
- --green-mid: #4a7d6f;
+ --green-mid: #5a7a5f;
  --green-pale: #e8f4f0;
  --gold: #c9a961;
  --gold-light: #e8c97a;
  --bg: #f9f8f6;
  --dark: #1a1a1a;
  --grey: #666;
- --grey-light: #999;
+ --grey-light: #6e6e6e;
  --white: #ffffff;
  --border: #e8e4df;
- --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
- --shadow: 0 4px 24px rgba(0,0,0,.09);
- --shadow-lg: 0 12px 48px rgba(0,0,0,.13);
+ --shadow-sm: 0 2px 8px rgba(45,40,35,.07);
+ --shadow: 0 4px 24px rgba(45,40,35,.10);
+ --shadow-lg: 0 12px 48px rgba(45,40,35,.15);
  --radius: 10px;
  --radius-lg: 16px;
  --tr: all .3s ease;
@@ -356,7 +356,7 @@
  .risk-number {
  font-family: 'Cormorant Garamond', serif;
  font-size: 40px; font-weight: 700;
- color: var(--gold); line-height: 1; display: block; margin-bottom: 12px;
+ color: var(--green-mid); opacity: .55; line-height: 1; display: block; margin-bottom: 12px;
  }
  .risks-cta {
  background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%);
@@ -490,7 +490,7 @@
  .price {
  font-family: 'Cormorant Garamond', serif;
  font-size: clamp(30px, 3.5vw, 44px); font-weight: 700;
- color: var(--gold); line-height: 1; margin-bottom: 4px;
+ color: var(--green); line-height: 1; margin-bottom: 4px;
  }
  .price-unit { font-size: 13px; color: var(--grey-light); margin-bottom: 28px; }
  .price-features { flex: 1; margin-bottom: 28px; }
@@ -691,7 +691,7 @@
  .discovery-featured {
      display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;
      background: var(--white); border-radius: var(--radius-lg);
-     overflow: hidden; box-shadow: 0 16px 50px rgba(26,24,21,.10);
+     overflow: hidden; box-shadow: 0 16px 50px rgba(45,40,35,.12);
      margin-bottom: 28px; border: 1px solid var(--border);
  }
  .discovery-featured-text { padding: clamp(32px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; }
@@ -848,7 +848,7 @@
  width: 52px; height: 52px; border-radius: 50%;
  display: flex; align-items: center; justify-content: center;
  font-size: 20px; font-weight: 700; color: var(--white);
- box-shadow: 0 4px 20px rgba(0,0,0,.25); transition: var(--tr); text-decoration: none;
+ box-shadow: 0 4px 20px rgba(45,40,35,.28); transition: var(--tr); text-decoration: none;
  }
  .float-btn:hover { transform: scale(1.12); color: var(--white); }
  .float-zalo { background: #0068ff; }
@@ -870,7 +870,7 @@
  .hamburger.is-open span:nth-child(2) { opacity: 0; }
  .hamburger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
  .menu-overlay {
-     position: fixed; inset: 0; background: rgba(26,24,21,.28);
+     position: fixed; inset: 0; background: rgba(45,40,35,.30);
      backdrop-filter: blur(2px); z-index: 998;
      opacity: 0; visibility: hidden; transition: opacity .4s, visibility .4s;
  }
@@ -880,7 +880,7 @@
      width: 72%; max-width: 340px; height: 100dvh;
      background: rgba(249,248,246,.88); backdrop-filter: blur(22px) saturate(1.2);
      border-left: 1px solid rgba(61,74,58,.12);
-     box-shadow: -18px 0 50px rgba(26,24,21,.16);
+     box-shadow: -18px 0 50px rgba(45,40,35,.18);
      z-index: 1000; display: flex; flex-direction: column;
      align-items: flex-start; justify-content: center; padding: 0 0 0 40px;
      visibility: hidden; transform: translateX(100%);
