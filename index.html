@@ -857,11 +857,14 @@
  /* ===== MOBILE MENU ===== */
  .hamburger {
      display: none; flex-direction: column; gap: 5px;
-     background: none; border: none; cursor: pointer; z-index: 301; padding: 8px;
+     background: none; border: none; cursor: pointer; z-index: 301;
+     padding: 10px; min-width: 44px; min-height: 44px;
+     align-items: center; justify-content: center;
  }
  .hamburger span {
-     display: block; width: 22px; height: 1.5px;
-     background: var(--dark); transition: transform .3s, opacity .2s;
+     display: block; width: 24px; height: 2px;
+     background: var(--dark); border-radius: 2px;
+     transition: transform .3s, opacity .2s;
  }
  .hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
  .hamburger.is-open span:nth-child(2) { opacity: 0; }
@@ -929,6 +932,10 @@
  .sample > .section-wrap { grid-template-columns: 1fr; gap: 40px; }
  .footer-content { grid-template-columns: 1fr 1fr; }
  .proof-bar-inner { justify-content: center; gap: 24px; }
+ .proof-bar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+ .proof-divider { display: none; }
+ .proof-item { justify-content: flex-start; }
+ .proof-item strong { font-size: 24px; }
  .proof-divider { display: none; }
  section.full-wrap { padding: clamp(48px, 6vw, 72px) 24px; }
  }
@@ -1005,8 +1012,9 @@
  <a href="#pricing">Giá</a>
  <a href="#faq">FAQ</a>
  <a href="#contact">Liên hệ</a>
+ <button class="nav-cta" onclick="scrollToContact()">Tư vấn ngay</button>
+ </div>
  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-            <button class="nav-cta" onclick="scrollToContact()">Tư vấn ngay</button>
  </div>
  </nav>
 </header>
