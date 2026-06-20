@@ -1415,20 +1415,24 @@
  </div>
  </div>
 
- <form id="contactForm" onsubmit="handleFormSubmit(event)">
+ <form id="contactForm" action="https://formsubmit.co/doanquocduyet@gmail.com" method="POST">
  <div class="form-group">
  <label for="name">Tên của bạn *</label>
- <input type="text" id="name" name="name" required placeholder="Nguyễn Văn A">
+ <input type="text" id="name" name="Họ tên" required placeholder="Nguyễn Văn A">
  </div>
  <div class="form-group">
  <label for="phone">Số Zalo hoặc điện thoại *</label>
- <input type="tel" id="phone" name="phone" required placeholder="0901 234 567">
+ <input type="tel" id="phone" name="Số điện thoại" required placeholder="0901 234 567">
  </div>
  <div class="form-group">
  <label for="worry">Kể cho chúng tôi về mảnh đất của bạn *</label>
- <textarea id="worry" name="worry" rows="4" required placeholder="Đất ở đâu, diện tích bao nhiêu, đang lo lắng gì..."></textarea>
+ <textarea id="worry" name="Nội dung" rows="4" required placeholder="Đất ở đâu, diện tích bao nhiêu, đang lo lắng gì..."></textarea>
  </div>
- <div id="formMessage"></div>
+ <input type="hidden" name="_subject" value="🌱 Khách mới từ website GreenSpace">
+ <input type="hidden" name="_cc" value="nambanpanorama@gmail.com">
+ <input type="hidden" name="_template" value="table">
+ <input type="hidden" name="_next" value="https://greenspacers.vn/cam-on.html">
+ <input type="hidden" name="_captcha" value="false">
  <button type="submit" class="form-submit">Gửi yêu cầu →</button>
  <p style="font-size:12px;color:rgba(255,255,255,.45);margin-top:12px;text-align:center;">✓ Phản hồi trong 24 giờ · Không spam · Không ràng buộc</p>
  </form>

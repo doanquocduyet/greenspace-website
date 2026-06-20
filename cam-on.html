@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cảm ơn bạn — GreenSpace</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --green:#3d4a3a; --green-dark:#2d3a2d; --green-mid:#5a7a5f; --gold:#c9a961; --bg:#f9f8f6; --dark:#1a1a1a; --grey:#6e6e6e; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:'Be Vietnam Pro',sans-serif; background:var(--bg); color:var(--dark); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .card{ max-width:520px; width:100%; text-align:center; background:#fff; border:1px solid #eee; border-radius:20px; padding:clamp(36px,6vw,56px) clamp(28px,5vw,48px); box-shadow:0 18px 50px rgba(45,40,35,.10); }
+  .check{ width:64px; height:64px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+  .check svg{ width:30px; height:30px; }
+  .brand{ font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; letter-spacing:3px; color:var(--green); margin-bottom:18px; }
+  h1{ font-family:'Cormorant Garamond',serif; font-size:clamp(28px,5vw,40px); font-weight:600; color:var(--dark); line-height:1.2; margin-bottom:16px; }
+  p{ font-size:15px; line-height:1.8; color:var(--grey); margin-bottom:8px; }
+  .hours{ color:var(--green-mid); font-weight:600; }
+  .actions{ margin-top:32px; display:flex; flex-direction:column; gap:12px; }
+  .btn{ display:inline-block; padding:14px 28px; border-radius:30px; font-size:14px; font-weight:600; text-decoration:none; transition:.2s; }
+  .btn-primary{ background:var(--green); color:#fff; }
+  .btn-primary:hover{ background:var(--green-dark); }
+  .btn-ghost{ color:var(--green); border:1px solid var(--green); }
+  .btn-ghost:hover{ background:var(--green); color:#fff; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <div class="brand">GREENSPACE</div>
+    <h1>Cảm ơn bạn!</h1>
+    <p>Chúng tôi đã nhận được thông tin của bạn.</p>
+    <p class="hours">Chúng tôi sẽ liên hệ qua Zalo trong vòng 24 giờ.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://zalo.me/0978758788">Nhắn Zalo ngay (0978 758 788)</a>
+      <a class="btn btn-ghost" href="https://greenspacers.vn">← Về trang chủ</a>
+    </div>
+  </div>
+</body>
+</html>
