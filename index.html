@@ -701,7 +701,9 @@
  .discovery-featured-img {
      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
      display: flex; align-items: center; justify-content: center; min-height: 280px;
+     position: relative; overflow: hidden;
  }
+ .discovery-featured-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
  .img-pending { color: rgba(255,255,255,.4); font-size: 13px; letter-spacing: 1px; font-style: italic; }
  .discovery-featured .discovery-result {
      align-self: flex-start; background: var(--green); color: white;
@@ -1049,19 +1051,16 @@
 
  <div class="hero-right">
  <div class="field-photo">
- 
- <div class="photo-placeholder-text">Ảnh thực địa<br>sẽ được thêm vào</div>
+ <img src="images/hero-1.jpg" alt="Thực địa tại Nam Ban" loading="lazy">
+ <span class="field-photo-label">Có mặt tại thực địa</span>
+ </div>
+ <div class="field-photo">
+ <img src="images/hero-2.jpg" alt="Kiểm tra ranh giới đất" loading="lazy">
  <span class="field-photo-label">Kiểm tra ranh giới</span>
  </div>
  <div class="field-photo">
- 
- <div class="photo-placeholder-text">Ảnh GPS<br>từ thực địa</div>
+ <img src="images/hero-3.jpg" alt="Bản đồ tọa độ GPS lô đất" loading="lazy">
  <span class="field-photo-label">Tọa độ GPS</span>
- </div>
- <div class="field-photo">
- 
- <div class="photo-placeholder-text">Mẫu báo cáo<br>hàng tháng</div>
- <span class="field-photo-label">Báo cáo tháng</span>
  </div>
  </div>
  </div>
@@ -1152,7 +1151,7 @@
  <span class="discovery-result">Xử lý xong trong 11 ngày</span>
  </div>
  <div class="discovery-featured-img">
- <span class="img-pending">Ảnh thực địa</span>
+ <img src="images/discovery.jpg" alt="Đóng mốc ranh giới bê tông tại thực địa" loading="lazy">
  </div>
  </div>
 
@@ -1281,16 +1280,13 @@
  </div>
  <div class="sample-photos">
  <div class="sample-photo">
- 
- <p class="sample-photo-text">Ảnh thực địa toàn cảnh<br><em style="font-size:10px;opacity:.7;">Chú sẽ upload ảnh vào đây</em></p>
+ <img src="images/sample-large.jpg" alt="Toàn cảnh lô đất thực địa" loading="lazy">
  </div>
  <div class="sample-photo">
- 
- <p class="sample-photo-text">Tọa độ GPS ranh giới</p>
+ <img src="images/sample-1.jpg" alt="Mốc ranh giới" loading="lazy">
  </div>
  <div class="sample-photo">
- 
- <p class="sample-photo-text">Chi tiết mốc & hàng rào</p>
+ <img src="images/sample-2.jpg" alt="Hiện trạng lô đất" loading="lazy">
  </div>
  </div>
  </div>
