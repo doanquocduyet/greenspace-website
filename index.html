@@ -739,25 +739,25 @@
  .risk-row p { font-size: 14px; line-height: 1.7; color: #666; }
 
  /* SERVICES — light 2-col list */
- .services-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 48px; max-width: 900px; margin: 0 auto; }
+ .services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; max-width: 720px; margin: 0 auto; }
  .service-row {
-     display: flex; gap: 16px; align-items: center;
-     padding: 20px 0; border-bottom: 1px solid var(--border);
+     display: flex; gap: 14px; align-items: baseline;
+     padding: 16px 0; border-bottom: 1px solid var(--border);
  }
  .service-row .service-num {
-     font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600;
-     color: var(--gold); opacity: .85; flex-shrink: 0; min-width: 30px;
+     font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600;
+     color: var(--gold); opacity: .9; flex-shrink: 0; min-width: 20px;
  }
- .service-row h3 { font-size: 16.5px; font-weight: 600; color: var(--dark); margin-bottom: 0; letter-spacing: .2px; }
+ .service-row h3 { font-size: 15px; font-weight: 500; color: var(--dark); margin: 0; letter-spacing: .2px; line-height: 1.45; }
  .service-row p { font-size: 13px; line-height: 1.65; color: #777; }
 
  @media (max-width: 768px) {
-     .services-list { grid-template-columns: 1fr; gap: 0; }
+     .services-list { grid-template-columns: 1fr 1fr; gap: 0 22px; }
+     .service-row { padding: 13px 0; gap: 9px; }
+     .service-row h3 { font-size: 13px; line-height: 1.35; }
+     .service-row .service-num { font-size: 16px; min-width: 15px; }
      .risk-row { gap: 16px; }
  }
-
- /* ===== CLEAN NUMBERED ICONS ===== */
- .service-num { font-size: 24px; margin-bottom: 14px; }
 
  /* ===== DISCOVERIES SECTION ===== */
  .discoveries { background: var(--bg); }
@@ -1157,26 +1157,11 @@
  <p class="services-head-right">Sinh ra tại Nam Ban, chúng tôi biết từng con đường, từng mốc ranh giới. Đây không chỉ là dịch vụ — đây là cam kết của người địa phương.</p>
  </div>
  <div class="services-list">
- <div class="service-row">
- <span class="service-num">01</span>
- <div><h3>Ra thực địa mỗi tháng</h3></div>
- </div>
- <div class="service-row">
- <span class="service-num">02</span>
- <div><h3>Báo cáo ảnh qua Zalo</h3></div>
- </div>
- <div class="service-row">
- <span class="service-num">03</span>
- <div><h3>Cảnh báo trong 24 giờ</h3></div>
- </div>
- <div class="service-row">
- <span class="service-num">04</span>
- <div><h3>Đại diện xử lý tại chỗ</h3></div>
- </div>
- <div class="service-row">
- <span class="service-num">05</span>
- <div><h3>Giá cố định</h3></div>
- </div>
+ <div class="service-row"><span class="service-num">01</span><h3>Ra thực địa mỗi tháng</h3></div>
+ <div class="service-row"><span class="service-num">02</span><h3>Báo cáo ảnh qua Zalo</h3></div>
+ <div class="service-row"><span class="service-num">03</span><h3>Cảnh báo trong 24 giờ</h3></div>
+ <div class="service-row"><span class="service-num">04</span><h3>Đại diện xử lý tại chỗ</h3></div>
+ <div class="service-row"><span class="service-num">05</span><h3>Giá cố định</h3></div>
  </div>
  </div>
 </section>
