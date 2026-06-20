@@ -404,18 +404,12 @@
  }
  .sample-photo {
  border-radius: var(--radius); overflow: hidden;
- aspect-ratio: 4/3;
- background: linear-gradient(135deg, var(--green-pale), #c8e6dc);
- display: flex; flex-direction: column;
- align-items: center; justify-content: center;
- gap: 8px; padding: 16px;
- border: 2px dashed rgba(45,90,77,.2);
- position: relative; cursor: pointer;
- transition: var(--tr);
+ aspect-ratio: 1/1; position: relative;
+ border: 1px solid var(--border);
+ box-shadow: 0 8px 24px rgba(45,40,35,.10);
  }
  .sample-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
- .sample-photo:hover { border-color: var(--green); }
- .sample-photo:first-child { grid-column: span 2; aspect-ratio: 16/7; }
+ .sample-photo:first-child { grid-column: span 2; aspect-ratio: 3/2; }
  .sample-photo-icon { font-size: 24px; color: var(--green-mid); opacity: .6; }
  .sample-photo-text { font-size: 11px; color: var(--green-mid); text-align: center; line-height: 1.5; font-weight: 500; }
 
@@ -634,8 +628,7 @@
  .services { background: var(--green-dark) !important; }
  .services .services-head {
      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
-     align-items: end; margin-bottom: 56px;
-     padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.12);
+     align-items: end; margin-bottom: 32px;
  }
  .services-kicker {
      display: inline-block; font-size: 12px; font-weight: 700;
@@ -696,43 +689,40 @@
  /* ===== VISUAL HIERARCHY RESTRUCTURE ===== */
 
  /* DISCOVERIES — featured (climax) + small grid */
- .discovery-featured {
-     display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;
-     background: var(--white); border-radius: var(--radius-lg);
-     overflow: hidden; box-shadow: 0 16px 50px rgba(45,40,35,.12);
-     margin-bottom: 28px; border: 1px solid var(--border);
+ /* ===== DISCOVERIES — unified field log ===== */
+ .discovery-log {
+     max-width: 840px; margin: 0 auto;
+     background: var(--white); border: 1px solid var(--border);
+     border-radius: var(--radius-lg); overflow: hidden;
+     box-shadow: 0 18px 50px rgba(45,40,35,.10);
  }
- .discovery-featured-text { padding: clamp(32px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; }
- .discovery-featured-text .discovery-tag { color: #c44; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
- .discovery-featured-text h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3.2vw, 38px); font-weight: 600; line-height: 1.25; color: var(--dark); margin-bottom: 18px; }
- .discovery-featured-text p { font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 22px; }
- .discovery-featured-img {
-     background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-     display: flex; align-items: center; justify-content: center; min-height: 280px;
-     position: relative; overflow: hidden;
+ .dl-lead { display: grid; grid-template-columns: 1fr 1fr; }
+ .dl-lead-body { padding: clamp(28px, 3.6vw, 48px); display: flex; flex-direction: column; justify-content: center; }
+ .dl-lead-media { position: relative; min-height: 300px; background: var(--green-dark); }
+ .dl-lead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+ .dl-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; display: block; margin-bottom: 12px; color: #a07010; }
+ .dl-tag-alert { color: #c0492f; }
+ .dl-warn .dl-tag { color: #a07010; }
+ .dl-ok .dl-tag { color: var(--green); }
+ .dl-lead-body h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(23px, 3vw, 34px); font-weight: 600; line-height: 1.25; color: var(--dark); margin: 0 0 16px; }
+ .dl-lead-body p { font-size: 14.5px; line-height: 1.8; color: #555; margin: 0 0 20px; }
+ .dl-result { align-self: flex-start; display: inline-block; background: var(--green); color: #fff; font-size: 12.5px; font-weight: 600; padding: 7px 17px; border-radius: 22px; }
+ .dl-result-sm { background: var(--bg); color: var(--green); border: 1px solid var(--green-pale); font-size: 11.5px; padding: 5px 13px; }
+ .dl-entries { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
+ .dl-entry { display: flex; gap: 13px; padding: 26px 24px; }
+ .dl-entry:not(:last-child) { border-right: 1px solid var(--border); }
+ .dl-dot { flex-shrink: 0; width: 9px; height: 9px; border-radius: 50%; margin-top: 7px; }
+ .dl-warn .dl-dot { background: var(--gold); }
+ .dl-ok .dl-dot { background: var(--green-mid); }
+ .dl-entry-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--dark); margin: 0 0 8px; }
+ .dl-entry-body p { font-size: 13.5px; line-height: 1.7; color: #666; margin: 0 0 13px; }
+ @media (max-width: 768px) {
+     .dl-lead { grid-template-columns: 1fr; }
+     .dl-lead-media { min-height: 200px; order: -1; }
+     .dl-entries { grid-template-columns: 1fr; }
+     .dl-entry { padding: 22px 22px; }
+     .dl-entry:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
  }
- .discovery-featured-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
- .img-pending { color: rgba(255,255,255,.4); font-size: 13px; letter-spacing: 1px; font-style: italic; }
- .discovery-featured .discovery-result {
-     align-self: flex-start; background: var(--green); color: white;
-     font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 24px; border: none;
- }
-
- .discovery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
- .discovery-card {
-     padding: 28px 24px; border-radius: var(--radius); background: var(--white);
-     border: 1px solid var(--border); position: relative; transition: var(--tr);
- }
- .discovery-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
- .discovery-warning::before { background: var(--gold); }
- .discovery-ok::before { background: var(--green); }
- .discovery-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
- .discovery-card .discovery-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; display: block; margin-bottom: 8px; }
- .discovery-warning .discovery-tag { color: #a07010; }
- .discovery-ok .discovery-tag { color: var(--green); }
- .discovery-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
- .discovery-card p { font-size: 13.5px; line-height: 1.7; color: #666; margin-bottom: 14px; }
- .discovery-card .discovery-result { font-size: 11px; font-weight: 600; color: var(--green); }
 
  /* RISKS — compact vertical list (light) */
  .risks-list { max-width: 720px; margin: 0 auto; }
@@ -762,9 +752,6 @@
  .service-row p { font-size: 13px; line-height: 1.65; color: #777; }
 
  @media (max-width: 768px) {
-     .discovery-featured { grid-template-columns: 1fr; }
-     .discovery-featured-img { min-height: 180px; order: -1; }
-     .discovery-grid { grid-template-columns: 1fr; }
      .services-list { grid-template-columns: 1fr; gap: 0; }
      .risk-row { gap: 16px; }
  }
@@ -773,51 +760,9 @@
  .service-num { font-size: 24px; margin-bottom: 14px; }
 
  /* ===== DISCOVERIES SECTION ===== */
- .discoveries { background: var(--white); }
+ .discoveries { background: var(--bg); }
  .discoveries > .section-wrap > h2 { margin-bottom: 12px; }
  .discoveries > .section-wrap > p { margin-bottom: 48px; }
- .discovery-grid {
- display: grid;
- grid-template-columns: repeat(2, 1fr);
- gap: 24px;
- }
- .discovery-card {
- padding: 32px 28px;
- border-radius: var(--radius-lg);
- border: 1px solid var(--border);
- background: var(--white);
- transition: var(--tr);
- position: relative;
- overflow: hidden;
- }
- .discovery-card::before {
- content: '';
- position: absolute; top: 0; left: 0; right: 0;
- height: 4px;
- }
- .discovery-alert::before { background: #d44; }
- .discovery-warning::before { background: var(--gold); }
- .discovery-ok::before { background: var(--green); }
- .discovery-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
- .discovery-icon { font-size: 28px; margin-bottom: 12px; display: block; }
- .discovery-tag {
- display: inline-block; margin-bottom: 10px;
- font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
- text-transform: uppercase;
- }
- .discovery-alert .discovery-tag { color: #c44; }
- .discovery-warning .discovery-tag { color: #a07010; }
- .discovery-ok .discovery-tag { color: var(--green); }
- .discovery-card h3 { font-size: clamp(16px, 2vw, 22px); color: var(--dark); margin-bottom: 10px; }
- .discovery-card p { font-size: 14px; line-height: 1.75; margin-bottom: 16px; }
- .discovery-result {
- display: inline-block;
- background: var(--bg); color: var(--green);
- font-size: 12px; font-weight: 700;
- padding: 6px 14px; border-radius: 20px;
- border: 1px solid var(--green-pale);
- }
- @media (max-width: 768px) { .discovery-grid { grid-template-columns: 1fr; } }
 
  #formMessage { font-size: 13px; padding: 8px 0; min-height: 26px; }
  .success-message { color: #8fe8c0; }
@@ -829,25 +774,29 @@
  }
  .footer-content {
  max-width: 1200px; margin: 0 auto;
- display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
- gap: 40px; padding-bottom: 36px;
+ display: grid; grid-template-columns: 2.4fr 1fr 1fr;
+ gap: 56px; padding-bottom: 40px;
  border-bottom: 1px solid rgba(255,255,255,.08);
  }
+ .footer-brand-col { max-width: 380px; }
  .footer-col h4 {
- color: var(--gold); font-size: 13px; font-weight: 700;
- letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px;
+ color: var(--gold); font-size: 12px; font-weight: 700;
+ letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 20px;
  }
- .footer-col p { color: rgba(255,255,255,.5); font-size: 13px; line-height: 1.8; margin: 0; }
- .footer-col a { display: block; color: rgba(255,255,255,.5); font-size: 13px; margin-bottom: 10px; }
+ .footer-col p { color: rgba(255,255,255,.5); font-size: 13.5px; line-height: 1.85; margin: 0; }
+ .footer-col a { display: block; color: rgba(255,255,255,.55); font-size: 13.5px; margin-bottom: 12px; transition: var(--tr); }
  .footer-col a:hover { color: var(--gold); }
- .footer-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
- .footer-brand .logo { font-size: 16px; color: var(--white); }
+ .footer-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+ .footer-brand .logo { font-size: 17px; color: var(--white); letter-spacing: 3px; }
  .footer-bottom {
- max-width: 1200px; margin: 24px auto 0;
+ max-width: 1200px; margin: 28px auto 0;
  display: flex; justify-content: space-between; align-items: center;
- flex-wrap: wrap; gap: 12px;
+ flex-wrap: wrap; gap: 16px;
  }
- .footer-bottom p { color: rgba(255,255,255,.3); font-size: 12px; margin: 0; }
+ .footer-social { display: flex; align-items: center; gap: 26px; }
+ .footer-social a { color: rgba(255,255,255,.65); font-size: 13px; transition: var(--tr); }
+ .footer-social a:hover { color: var(--gold); }
+ .footer-legal { color: rgba(255,255,255,.3); font-size: 12px; margin: 0; }
 
  /* ===== FLOATING BUTTONS ===== */
  .float-buttons {
@@ -944,6 +893,7 @@
  .faq > .section-wrap { grid-template-columns: 1fr; gap: 40px; }
  .sample > .section-wrap { grid-template-columns: 1fr; gap: 40px; }
  .footer-content { grid-template-columns: 1fr 1fr; }
+ .footer-brand-col { grid-column: 1 / -1; max-width: none; }
  .proof-bar { padding: 18px 16px; }
  .proof-bar-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
  .proof-divider { display: none; }
@@ -966,13 +916,13 @@
  .map-stats { grid-template-columns: repeat(2, 1fr); }
  .pricing-grid { max-width: 100%; }
  .price-card.featured { transform: scale(1); }
- .footer-content { grid-template-columns: 1fr; gap: 28px; }
- .footer-bottom { flex-direction: column; text-align: center; }
+ .footer-content { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+ .footer-bottom { flex-direction: column; text-align: center; gap: 14px; }
+ .footer-social { justify-content: center; gap: 20px; flex-wrap: wrap; }
  .float-buttons { bottom: 16px; right: 16px; }
  section.full-wrap { padding: 40px 20px; }
  .steps { grid-template-columns: 1fr; }
- .sample-photos { grid-template-columns: 1fr; }
- .sample-photo:first-child { grid-column: auto; aspect-ratio: 16/7; }
+ .sample-photo:first-child { grid-column: span 2; aspect-ratio: 3/2; }
  }
 
  @media (max-width: 480px) {
@@ -1149,36 +1099,46 @@
  <p class="disc-lede">Không phải giả định. Đây là những gì thực sự xảy ra — trong khi chủ đất đang bình yên ở Sài Gòn.</p>
  </div>
 
- <div class="discovery-featured">
- <div class="discovery-featured-text">
- <div class="discovery-tag">Lấn chiếm · Tháng 3/2025</div>
+ <div class="discovery-log">
+ <article class="dl-lead">
+ <div class="dl-lead-body">
+ <span class="dl-tag dl-tag-alert">Lấn chiếm · Tháng 3/2025</span>
  <h3>Hàng xóm dịch rào 3 mét.<br>Chủ đất ở Hà Nội không hề biết.</h3>
  <p>Trong lần kiểm tra định kỳ, chúng tôi phát hiện ranh giới phía Đông bị dịch chuyển khoảng 3 mét. Chúng tôi thông báo ngay trong ngày, làm việc trực tiếp với hàng xóm, và khôi phục nguyên trạng — chủ đất không cần lên tận nơi một lần nào.</p>
- <span class="discovery-result">Xử lý xong trong 11 ngày</span>
+ <span class="dl-result">Xử lý xong trong 11 ngày</span>
  </div>
- <div class="discovery-featured-img">
+ <div class="dl-lead-media">
  <img src="images/discovery.jpg" alt="Đóng mốc ranh giới bê tông tại thực địa" loading="lazy">
  </div>
- </div>
-
- <div class="discovery-grid">
- <div class="discovery-card discovery-warning">
- <div class="discovery-tag">Quy hoạch</div>
- <h3>Lộ giới thay đổi</h3>
+ </article>
+ <div class="dl-entries">
+ <div class="dl-entry dl-warn">
+ <span class="dl-dot"></span>
+ <div class="dl-entry-body">
+ <span class="dl-tag">Quy hoạch</span>
+ <h4>Lộ giới thay đổi</h4>
  <p>Tuyến đường mới đi qua góc lô. Chủ đất ở TP.HCM được báo trước 4 tháng.</p>
- <span class="discovery-result">Báo sớm 4 tháng</span>
+ <span class="dl-result dl-result-sm">Báo sớm 4 tháng</span>
  </div>
- <div class="discovery-card discovery-warning">
- <div class="discovery-tag">Tình trạng đất</div>
- <h3>Ngập sau mưa</h3>
+ </div>
+ <div class="dl-entry dl-warn">
+ <span class="dl-dot"></span>
+ <div class="dl-entry-body">
+ <span class="dl-tag">Tình trạng đất</span>
+ <h4>Ngập sau mưa</h4>
  <p>Mưa lớn làm khu thấp úng nước. Phát hiện sớm, đề xuất thoát nước kịp thời.</p>
- <span class="discovery-result">Báo trong 24h</span>
+ <span class="dl-result dl-result-sm">Báo trong 24h</span>
  </div>
- <div class="discovery-card discovery-ok">
- <div class="discovery-tag">Phần lớn thời gian</div>
- <h3>Mọi thứ vẫn ổn</h3>
- <p>Đa số báo cáo: ranh giới nguyên vẹn, không bất thường. Và đó chính xác là thứ bạn trả tiền để biết — không phải đoán.</p>
- <span class="discovery-result">Sự chắc chắn</span>
+ </div>
+ <div class="dl-entry dl-ok">
+ <span class="dl-dot"></span>
+ <div class="dl-entry-body">
+ <span class="dl-tag">Phần lớn thời gian</span>
+ <h4>Mọi thứ vẫn ổn</h4>
+ <p>Đa số báo cáo: ranh giới nguyên vẹn, không bất thường. Đó chính xác là thứ bạn trả tiền để biết — không phải đoán.</p>
+ <span class="dl-result dl-result-sm">Sự chắc chắn</span>
+ </div>
+ </div>
  </div>
  </div>
  </div>
@@ -1215,11 +1175,7 @@
  </div>
  <div class="service-row">
  <span class="service-num">05</span>
- <div><h3>Zalo 24/7 — người thật</h3></div>
- </div>
- <div class="service-row">
- <span class="service-num">06</span>
- <div><h3>Giá cố định, không phí ẩn</h3></div>
+ <div><h3>Giá cố định</h3></div>
  </div>
  </div>
  </div>
@@ -1247,13 +1203,13 @@
  <div class="step">
  <div class="step-num">03</div>
  <h3>Báo cáo định kỳ</h3>
- <p>Đều đặn mỗi tháng, gửi tận điện thoại bạn.</p>
+ <p>Gửi đều đặn mỗi tháng.</p>
  <span class="step-tag">Hàng tháng</span>
  </div>
  <div class="step">
  <div class="step-num">04</div>
  <h3>Yên tâm tuyệt đối</h3>
- <p>Có bất thường, bạn biết ngay — chúng tôi xử lý thay.</p>
+ <p>Có bất thường, bạn biết ngay, cùng nhau thống nhất phương án — chúng tôi xử lý thay.</p>
  <span class="step-tag">24/7</span>
  </div>
  </div>
@@ -1457,9 +1413,6 @@
  <h4>Giờ làm việc</h4>
  <p>T2–CN: 7:00–20:00 · Zalo 24/7</p>
  </div>
- <div class="contact-promise">
- <p>Không hợp đồng dài hạn, <strong>dừng bất kỳ lúc nào</strong>.</p>
- </div>
  </div>
 
  <form id="contactForm" onsubmit="handleFormSubmit(event)">
@@ -1486,7 +1439,7 @@
 <!-- ===== FOOTER ===== -->
 <footer>
  <div class="footer-content">
- <div class="footer-col">
+ <div class="footer-col footer-brand-col">
  <div class="footer-brand">
  <img src="data:image/png;base64,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" alt="GreenSpace" style="width:28px;height:30px;object-fit:contain;"/>
  <div class="logo">GREENSPACE</div>
@@ -1507,16 +1460,14 @@
  <a href="#faq">Câu hỏi thường gặp</a>
  <a href="#contact">Liên hệ</a>
  </div>
- <div class="footer-col">
- <h4>Liên hệ ngay</h4>
+ </div>
+ <div class="footer-bottom">
+ <div class="footer-social">
  <a href="https://zalo.me/0978758788" target="_blank">Zalo: 0978 758 788</a>
  <a href="tel:0978758788">Gọi điện</a>
  <a href="https://facebook.com/doanquocduyet" target="_blank">Facebook</a>
  </div>
- </div>
- <div class="footer-bottom">
- <p>© 2025 GreenSpace</p>
- <p>Nam Ban, Lâm Đồng · Việt Nam</p>
+ <p class="footer-legal">© 2025 GreenSpace · Nam Ban, Lâm Đồng</p>
  </div>
 </footer>
 
