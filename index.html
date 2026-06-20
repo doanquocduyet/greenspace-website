@@ -751,14 +751,14 @@
  /* SERVICES — light 2-col list */
  .services-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 48px; max-width: 900px; margin: 0 auto; }
  .service-row {
-     display: flex; gap: 18px; align-items: baseline;
-     padding: 22px 0; border-bottom: 1px solid var(--border);
+     display: flex; gap: 16px; align-items: center;
+     padding: 20px 0; border-bottom: 1px solid var(--border);
  }
  .service-row .service-num {
-     font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600;
-     color: var(--gold); opacity: .7; flex-shrink: 0; min-width: 28px;
+     font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600;
+     color: var(--gold); opacity: .85; flex-shrink: 0; min-width: 30px;
  }
- .service-row h3 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 5px; }
+ .service-row h3 { font-size: 16.5px; font-weight: 600; color: var(--dark); margin-bottom: 0; letter-spacing: .2px; }
  .service-row p { font-size: 13px; line-height: 1.65; color: #777; }
 
  @media (max-width: 768px) {
@@ -944,12 +944,12 @@
  .faq > .section-wrap { grid-template-columns: 1fr; gap: 40px; }
  .sample > .section-wrap { grid-template-columns: 1fr; gap: 40px; }
  .footer-content { grid-template-columns: 1fr 1fr; }
- .proof-bar-inner { justify-content: center; gap: 24px; }
- .proof-bar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+ .proof-bar { padding: 18px 16px; }
+ .proof-bar-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
  .proof-divider { display: none; }
- .proof-item { justify-content: flex-start; }
- .proof-item strong { font-size: 24px; }
- .proof-divider { display: none; }
+ .proof-item { flex-direction: column; align-items: center; text-align: center; gap: 5px; }
+ .proof-item strong { font-size: 26px; }
+ .proof-item span { font-size: 10.5px; line-height: 1.35; }
  section.full-wrap { padding: clamp(48px, 6vw, 72px) 24px; }
  }
 
@@ -1028,7 +1028,6 @@
  <button class="nav-cta" onclick="scrollToContact()">Tư vấn ngay</button>
  </div>
  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
- </div>
  </nav>
 </header>
 
@@ -1094,12 +1093,8 @@
  <strong>24h</strong>
  <span>cảnh báo khi phát hiện<br>xâm lấn hoặc tranh chấp</span>
  </div>
- <div class="proof-divider"></div>
- <div class="proof-item">
- <strong>0</strong>
- <span>trường hợp mất ranh giới<br>trong thời gian quản lý</span>
  </div>
- </div>
+</div>
 
 
 <!-- RECOGNITION ROTATION -->
@@ -1264,8 +1259,6 @@
  </div>
  </div>
 </section>
-
-</div>
 
 <!-- ===== SAMPLE REPORT (Ảnh thực địa placeholder) ===== -->
 <section class="sample full-wrap">
