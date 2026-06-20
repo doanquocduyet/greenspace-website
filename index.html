@@ -1626,10 +1626,7 @@
  await db.collection('submissions').add({
  name: document.getElementById('name').value,
  phone: document.getElementById('phone').value,
- email: document.getElementById('email').value,
- location: document.getElementById('location').value,
  worry: document.getElementById('worry').value,
- message: document.getElementById('message').value,
  timestamp: new Date()
  });
  msg.innerHTML = '<span class="success-message">✓ Gửi thành công! Chúng tôi sẽ liên hệ bạn qua Zalo trong vòng 24 giờ.</span>';
