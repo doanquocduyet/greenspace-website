@@ -1533,11 +1533,30 @@
  const msg = document.getElementById('formMessage');
  btn.textContent = 'Đang gửi...';
  btn.disabled = true;
- try {
- await db.collection('submissions').add({
+ const data = {
  name: document.getElementById('name').value,
  phone: document.getElementById('phone').value,
- worry: document.getElementById('worry').value,
+ worry: document.getElementById('worry').value
+ };
+ // Gửi email thông báo tới chủ qua FormSubmit (song song, không chặn trải nghiệm nếu lỗi)
+ fetch('https://formsubmit.co/ajax/doanquocduyet@gmail.com', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+ body: JSON.stringify({
+ 'Tên khách': data.name,
+ 'Số Zalo / Điện thoại': data.phone,
+ 'Nội dung': data.worry,
+ _subject: '🌱 Khách mới từ website GreenSpace — ' + data.name,
+ _cc: 'nambanpanorama@gmail.com',
+ _template: 'table'
+ })
+ }).catch(function () {});
+ // Lưu vào hệ thống làm bản ghi dự phòng (quyết định thông báo thành công)
+ try {
+ await db.collection('submissions').add({
+ name: data.name,
+ phone: data.phone,
+ worry: data.worry,
  timestamp: new Date()
  });
  msg.innerHTML = '<span class="success-message">✓ Gửi thành công! Chúng tôi sẽ liên hệ bạn qua Zalo trong vòng 24 giờ.</span>';
