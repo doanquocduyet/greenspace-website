@@ -17,8 +17,16 @@
     <meta property="og:title" content="GreenSpace — Mắt và tai của bạn tại thực địa">
     <meta property="og:description" content="Quản lý bất động sản chuyên nghiệp tại Nam Ban, Lâm Hà. Kiểm tra định kỳ, báo cáo GPS, cảnh báo xâm lấn 24h.">
     <meta property="og:url" content="https://greenspacers.vn">
-    <meta property="og:image" content="https://greenspacers.vn/og-image.jpg">
+    <meta property="og:image" content="https://greenspacers.vn/images/og-image.jpg">
+    <meta property="og:image:secure_url" content="https://greenspacers.vn/images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="GreenSpace — Đất của bạn đang ra sao?">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://greenspacers.vn/images/og-image.jpg">
+    <meta name="twitter:title" content="Đất của bạn đang ra sao? — GreenSpace">
+    <meta name="twitter:description" content="Có thể mọi thứ vẫn ổn. Nhưng biết chắc thì yên tâm hơn. Giám sát đất từ xa tại Nam Ban, Lâm Hà.">
     <title>GreenSpace — Nơi Tài Sản Được Thở</title>
     <link rel="alternate" type="text/plain" title="LLM-friendly" href="https://greenspacers.vn/llms.txt">
 
@@ -921,8 +929,11 @@
 
  /* ===== RESPONSIVE ===== */
  @media (max-width: 1024px) {
- .hero-content { grid-template-columns: 1fr; gap: 48px; }
- .hero-right { display: none; }
+ .hero-content { grid-template-columns: 1fr; gap: 36px; }
+ .hero-right { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+ .hero-right .field-photo { aspect-ratio: 1/1; min-height: 0; }
+ .hero-right .field-photo:first-child { grid-row: auto; aspect-ratio: 1/1; min-height: 0; }
+ .hero-right .field-photo-label { font-size: 10px; padding: 3px 8px; bottom: 6px; left: 6px; }
  .hero { min-height: 60vh; }
  .steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
  .steps::before { display: none; }
@@ -1040,7 +1051,7 @@
  <div class="hero-left">
  <div class="hero-badge">Dành cho người sở hữu đất ở Nam Ban nhưng đang sống ở xa</div>
  <h1>Đất của bạn<em>đang ra sao?</em></h1>
- <p class="hero-sub">Có thể mọi thứ vẫn ổn. Nhưng biết chắc thì yên tâm hơn.<br>GreenSpace ra thực địa mỗi tháng, chụp ảnh GPS, gửi báo cáo thẳng vào Zalo — bạn không cần lên tận nơi.</p>
+ <p class="hero-sub">Có thể mọi thứ vẫn ổn. Nhưng biết chắc thì yên tâm hơn.<br>Mỗi tháng, GreenSpace kiểm tra tận nơi và gửi báo cáo về Zalo cho bạn.</p>
  <p class="hero-promise">Chúng tôi không bán dịch vụ quản lý. Chúng tôi bán sự chắc chắn.</p>
  <div class="hero-cta">
  <button class="btn btn-primary" onclick="scrollToContact()">Kiểm tra đất của tôi →</button>
@@ -1193,33 +1204,27 @@
  <div class="services-list">
  <div class="service-row">
  <span class="service-num">01</span>
- <div><h3>Ra thực địa mỗi tháng</h3>
- <p>Đến tận nơi, chụp ảnh từng góc kèm tọa độ GPS. Ranh giới, hàng rào, tình trạng đất — ghi lại rõ ràng.</p></div>
+ <div><h3>Ra thực địa mỗi tháng</h3></div>
  </div>
  <div class="service-row">
  <span class="service-num">02</span>
- <div><h3>Gửi báo cáo qua Zalo</h3>
- <p>Ảnh thực, vị trí GPS, nhận xét cụ thể — gửi thẳng vào Zalo. Mở điện thoại là biết đất mình ra sao.</p></div>
+ <div><h3>Báo cáo ảnh qua Zalo</h3></div>
  </div>
  <div class="service-row">
  <span class="service-num">03</span>
- <div><h3>Có chuyện — báo trong 24h</h3>
- <p>Lấn chiếm, tranh chấp, quy hoạch đổi — bạn biết trong ngày. Chúng tôi xử lý thay nếu cần.</p></div>
+ <div><h3>Cảnh báo trong 24 giờ</h3></div>
  </div>
  <div class="service-row">
  <span class="service-num">04</span>
- <div><h3>Đại diện tại chỗ</h3>
- <p>Làm việc với chính quyền, hàng xóm, cơ quan pháp lý — chúng tôi có quan hệ địa phương, xử lý thay bạn.</p></div>
+ <div><h3>Đại diện xử lý tại chỗ</h3></div>
  </div>
  <div class="service-row">
  <span class="service-num">05</span>
- <div><h3>Zalo 24/7 — người thật</h3>
- <p>Không chatbot, không trả lời mẫu. Bạn nhắn cho chính người đang trông coi đất của bạn.</p></div>
+ <div><h3>Zalo 24/7 — người thật</h3></div>
  </div>
  <div class="service-row">
  <span class="service-num">06</span>
- <div><h3>Giá cố định</h3>
- <p>1.5 triệu/tháng gói cơ bản. Không phí ẩn, minh bạch từ ngày đầu, dừng bất kỳ lúc nào.</p></div>
+ <div><h3>Giá cố định, không phí ẩn</h3></div>
  </div>
  </div>
  </div>
@@ -1235,25 +1240,25 @@
  <div class="step">
  <div class="step-num">01</div>
  <h3>Liên hệ & xác nhận</h3>
- <p>Bạn gửi thông tin đất qua form hoặc Zalo. Chúng tôi xác nhận vị trí, diện tích và thống nhất gói dịch vụ.</p>
+ <p>Gửi thông tin đất qua Zalo. Chúng tôi xác nhận và thống nhất gói.</p>
  <span class="step-tag">1–2 ngày</span>
  </div>
  <div class="step">
  <div class="step-num">02</div>
- <h3>Kiểm tra thực địa lần đầu</h3>
- <p>Chúng tôi ra thực địa ngay trong tuần đầu tiên. Ghi lại toàn bộ: ranh giới, tình trạng, tọa độ GPS, ảnh từng góc.</p>
+ <h3>Kiểm tra lần đầu</h3>
+ <p>Chúng tôi ra thực địa ngay trong tuần đầu tiên.</p>
  <span class="step-tag">Tuần 1</span>
  </div>
  <div class="step">
  <div class="step-num">03</div>
- <h3>Nhận báo cáo chi tiết</h3>
- <p>Bạn nhận báo cáo ảnh đầy đủ qua Zalo hoặc Email — ngay trên điện thoại, không cần đến tận nơi.</p>
+ <h3>Báo cáo định kỳ</h3>
+ <p>Đều đặn mỗi tháng, gửi tận điện thoại bạn.</p>
  <span class="step-tag">Hàng tháng</span>
  </div>
  <div class="step">
  <div class="step-num">04</div>
  <h3>Yên tâm tuyệt đối</h3>
- <p>Nếu có bất thường — xâm lấn, tranh chấp, thay đổi quy hoạch — bạn được thông báo trong 24 giờ và chúng tôi xử lý thay bạn.</p>
+ <p>Có bất thường, bạn biết ngay — chúng tôi xử lý thay.</p>
  <span class="step-tag">24/7</span>
  </div>
  </div>
@@ -1421,38 +1426,10 @@
  </div>
  <div class="faq-item">
  <button class="faq-q" onclick="toggleFaq(this)">
- Hợp đồng tối thiểu bao lâu? Có bị ràng buộc không?
- <span class="faq-icon">+</span>
- </button>
- <div class="faq-a">Không có hợp đồng dài hạn bắt buộc. Bạn có thể gia hạn từng tháng, hoàn toàn chủ động — muốn dừng lúc nào cũng được, không có phí phát sinh.</div>
- </div>
- <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
- Tôi có thể xem báo cáo mẫu trước khi đăng ký không?
- <span class="faq-icon">+</span>
- </button>
- <div class="faq-a">Được. Nhắn Zalo cho chúng tôi và nói muốn xem báo cáo mẫu — chúng tôi gửi ngay một báo cáo thực tế (đã che thông tin khách hàng) để bạn biết mình sẽ nhận được gì mỗi tháng.</div>
- </div>
- <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
  Đất tôi không có rào, không có mốc thì có quản lý được không?
  <span class="faq-icon">+</span>
  </button>
  <div class="faq-a">Được. Chúng tôi sẽ xác định ranh giới dựa trên sổ đỏ và khảo sát thực địa ngay trong lần kiểm tra đầu tiên. Sau đó ghi lại toàn bộ bằng tọa độ GPS để có cơ sở so sánh trong các tháng tiếp theo.</div>
- </div>
- <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
- GreenSpace quản lý đất ở những khu vực nào?
- <span class="faq-icon">+</span>
- </button>
- <div class="faq-a">Hiện tại chúng tôi chuyên sâu tại Nam Ban, Lâm Hà, Lâm Đồng và các khu vực lân cận trong tỉnh. Đây là vùng chúng tôi sinh sống và có quan hệ địa phương sâu rộng nhất — đảm bảo chất lượng dịch vụ tốt nhất cho bạn.</div>
- </div>
- <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
- Báo cáo được gửi theo hình thức nào?
- <span class="faq-icon">+</span>
- </button>
- <div class="faq-a">Chủ yếu qua Zalo — ảnh, file PDF và nhận xét đều gửi thẳng vào Zalo của bạn để dễ theo dõi. Nếu bạn muốn nhận qua email hoặc Google Drive thì chúng tôi sắp xếp được.</div>
  </div>
  <div class="faq-item">
  <button class="faq-q" onclick="toggleFaq(this)">
