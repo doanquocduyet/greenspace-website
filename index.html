@@ -1491,8 +1491,11 @@
  messagingSenderId: "317634285978",
  appId: "1:317634285978:web:a6d4e2f1c9b8h7g6f5k4"
  };
+ let db = null;
+ try {
  firebase.initializeApp(firebaseConfig);
- const db = firebase.firestore();
+ db = firebase.firestore();
+ } catch (err) { /* Firebase tùy chọn — email là kênh chính, không có Firebase cũng không sao */ }
 
  var recoLines = [
      'Sự chắc chắn là biết đất mình vẫn ổn mà không cần lên tận nơi.',
@@ -1538,8 +1541,17 @@
  phone: document.getElementById('phone').value,
  worry: document.getElementById('worry').value
  };
- // Gửi email thông báo tới chủ qua FormSubmit (song song, không chặn trải nghiệm nếu lỗi)
- fetch('https://formsubmit.co/ajax/doanquocduyet@gmail.com', {
+ // Lưu Firebase làm bản ghi dự phòng — chạy nền, KHÔNG chặn (tránh treo nếu Firestore không phản hồi)
+ if (db) {
+ try {
+ db.collection('submissions').add({
+ name: data.name, phone: data.phone, worry: data.worry, timestamp: new Date()
+ }).catch(function () {});
+ } catch (err) {}
+ }
+ // Gửi email qua FormSubmit là kênh chính — quyết định thông báo thành công
+ try {
+ await fetch('https://formsubmit.co/ajax/doanquocduyet@gmail.com', {
  method: 'POST',
  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
  body: JSON.stringify({
@@ -1550,14 +1562,6 @@
  _cc: 'nambanpanorama@gmail.com',
  _template: 'table'
  })
- }).catch(function () {});
- // Lưu vào hệ thống làm bản ghi dự phòng (quyết định thông báo thành công)
- try {
- await db.collection('submissions').add({
- name: data.name,
- phone: data.phone,
- worry: data.worry,
- timestamp: new Date()
  });
  msg.innerHTML = '<span class="success-message">✓ Gửi thành công! Chúng tôi sẽ liên hệ bạn qua Zalo trong vòng 24 giờ.</span>';
  e.target.reset();
