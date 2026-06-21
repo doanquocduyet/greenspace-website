@@ -935,6 +935,26 @@
  .risks.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
  .services.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
  .faq.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
+
+ /* ===== KIẾN THỨC / BÀI VIẾT ===== */
+ .insights { background: var(--bg); }
+ .insights.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
+ .insights-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+ .insights-kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 16px; }
+ .insights-head h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 600; color: var(--dark); line-height: 1.15; margin: 0 0 12px; }
+ .insights-head p { font-size: 15px; color: var(--grey-light); margin: 0; }
+ .insights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+ .insight-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; text-decoration: none; transition: var(--tr); }
+ .insight-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(45,40,35,.08); border-color: var(--green-mid); }
+ .insight-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--dark); line-height: 1.25; margin: 0 0 10px; }
+ .insight-card p { font-size: 13.5px; line-height: 1.7; color: var(--grey-light); margin: 0 0 16px; flex-grow: 1; }
+ .insight-link { font-size: 13px; font-weight: 600; color: var(--green); }
+ .insight-card:hover .insight-link { color: var(--green-dark); }
+ @media (max-width: 768px) {
+   .insights-grid { grid-template-columns: 1fr; gap: 14px; }
+   .insight-card { padding: 22px; }
+   .insights-head { margin-bottom: 36px; }
+ }
 </style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -1421,6 +1441,39 @@
  <button type="submit" class="form-submit">Gửi yêu cầu →</button>
  <p style="font-size:12px;color:rgba(255,255,255,.45);margin-top:12px;text-align:center;">✓ Phản hồi trong 24 giờ · Không spam · Không ràng buộc</p>
  </form>
+ </div>
+ </div>
+</section>
+
+<!-- ===== KIẾN THỨC / BÀI VIẾT ===== -->
+<section class="insights full-wrap" id="insights">
+ <div class="section-wrap">
+ <div class="insights-head">
+ <span class="insights-kicker">Kiến thức</span>
+ <h2>Hiểu đất, giữ đất</h2>
+ <p>Những điều người có đất ở xa nên biết.</p>
+ </div>
+ <div class="insights-grid">
+ <a class="insight-card" href="quan-ly-dat-nam-ban.html">
+ <h3>Quản lý đất Nam Ban cho người ở xa</h3>
+ <p>Kiểm tra hàng tháng, báo cáo GPS, cảnh báo xâm lấn cho chủ đất đang sống xa.</p>
+ <span class="insight-link">Đọc thêm →</span>
+ </a>
+ <a class="insight-card" href="kiem-tra-dat-lam-ha.html">
+ <h3>Kiểm tra đất Lâm Hà, Lâm Đồng</h3>
+ <p>Kiểm tra ranh giới, tình trạng đất, phát hiện xâm lấn sớm qua ảnh GPS.</p>
+ <span class="insight-link">Đọc thêm →</span>
+ </a>
+ <a class="insight-card" href="trong-coi-dat-o-xa.html">
+ <h3>Có đất ở tỉnh, ai trông coi khi bạn ở xa?</h3>
+ <p>Sống ở thành phố, có đất ở Lâm Đồng nhưng không ai trông — giải pháp ở đây.</p>
+ <span class="insight-link">Đọc thêm →</span>
+ </a>
+ <a class="insight-card" href="ve-greenspace.html">
+ <h3>Về GreenSpace</h3>
+ <p>Câu chuyện và cam kết của người địa phương quản lý đất tại Nam Ban.</p>
+ <span class="insight-link">Đọc thêm →</span>
+ </a>
  </div>
  </div>
 </section>
