@@ -921,7 +921,12 @@
  .footer-social { justify-content: center; gap: 20px; flex-wrap: wrap; }
  .float-buttons { bottom: 16px; right: 16px; }
  section.full-wrap { padding: 40px 20px; }
- .steps { grid-template-columns: 1fr; }
+ .steps { grid-template-columns: 1fr; gap: 24px; }
+ .step { display: grid; grid-template-columns: auto 1fr; column-gap: 15px; text-align: left; padding: 0; }
+ .step-num { grid-column: 1; grid-row: 1 / span 3; width: 52px; height: 52px; font-size: 21px; margin: 0; align-self: start; }
+ .step h3 { grid-column: 2; grid-row: 1; margin-bottom: 3px; }
+ .step p { grid-column: 2; grid-row: 2; }
+ .step-tag { grid-column: 2; grid-row: 3; justify-self: start; margin-top: 8px; }
  .sample-photo:first-child { grid-column: span 2; aspect-ratio: 3/2; }
  }
 
