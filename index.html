@@ -955,6 +955,17 @@
    .insight-card { padding: 22px; }
    .insights-head { margin-bottom: 36px; }
  }
+
+ /* ===== NGƯỜI MUA: KIỂM TRA TRƯỚC KHI MUA ===== */
+ .prebuy { background: var(--green-dark); }
+ .prebuy.full-wrap { padding-top: clamp(56px, 7vw, 80px); padding-bottom: clamp(56px, 7vw, 80px); }
+ .prebuy-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+ .prebuy-kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+ .prebuy-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 46px); font-weight: 600; color: var(--white); line-height: 1.15; margin: 0 0 20px; }
+ .prebuy-lead { font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.72); margin: 0 0 32px; }
+ .btn-light { background: var(--white); color: var(--green-dark); }
+ .btn-light:hover { background: var(--bg); color: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.25); }
+ .prebuy-bridge { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,.5); margin: 28px 0 0; }
 </style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -1350,6 +1361,19 @@
   </ul>
  <button class="btn btn-primary" onclick="scrollToContact()">Tư vấn gói phù hợp</button>
  </div>
+ </div>
+ </div>
+</section>
+
+<!-- ===== NGƯỜI MUA: KIỂM TRA TRƯỚC KHI MUA ===== -->
+<section class="prebuy full-wrap" id="prebuy">
+ <div class="section-wrap">
+ <div class="prebuy-inner">
+ <span class="prebuy-kicker">Bạn sắp mua đất?</span>
+ <h2>Hãy biết chắc bạn đang mua gì.</h2>
+ <p class="prebuy-lead">Bạn đang nhắm một lô ở Nam Ban nhưng ở xa, không xem kỹ được? GreenSpace ra tận nơi, kiểm tra đúng lô đó, gửi bạn báo cáo — để bạn quyết định bằng sự thật và số liệu.</p>
+ <button class="btn btn-light" onclick="scrollToContact()">Kiểm tra lô tôi đang cân nhắc →</button>
+ <p class="prebuy-bridge">Mua xong rồi? GreenSpace trông giữ lô đất giúp bạn quanh năm — như các gói phía trên.</p>
  </div>
  </div>
 </section>
