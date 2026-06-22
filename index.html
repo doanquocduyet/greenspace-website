@@ -983,6 +983,32 @@
  .btn-light { background: var(--white); color: var(--green-dark); }
  .btn-light:hover { background: var(--bg); color: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.25); }
  .prebuy-bridge { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,.5); margin: 28px 0 0; }
+  /* ===== Pricing comparison table ===== */
+  .ptbl-wrap{max-width:820px;margin:10px auto 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ptbl{width:100%;border-collapse:collapse;background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+  .ptbl th,.ptbl td{padding:13px 12px;text-align:center;border-bottom:1px solid var(--border)}
+  .ptbl thead th{vertical-align:bottom;padding:20px 12px 16px;background:var(--bg)}
+  .ptbl-feat{text-align:left!important;width:34%}
+  .ptbl td.ptbl-feat{color:#4a4a4a;font-size:13.5px}
+  .ptbl-name{display:block;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--green-dark);line-height:1.1}
+  .ptbl-price{display:block;font-weight:600;font-size:15px;color:var(--dark);margin-top:4px}
+  .ptbl-per{display:block;font-size:11px;color:var(--grey-light);font-weight:400;margin-top:1px}
+  .ptbl-tag{display:inline-block;background:var(--gold);color:#fff;font-size:9.5px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border-radius:10px;margin-bottom:7px}
+  .ptbl td{font-size:14px;color:#3a3a3a}
+  .ptbl td.yes{color:#4f7a45;font-weight:700;font-size:17px}
+  .ptbl td.no{color:#d2cdc2;font-weight:600;font-size:16px}
+  .ptbl-hot{background:#fbf8ef}
+  .ptbl thead th.ptbl-hot{background:#f3ecdb}
+  .ptbl tbody tr:last-child td{border-bottom:none}
+  .ptbl-note{text-align:center;font-size:13px;color:var(--grey-light);margin:14px auto 0;max-width:820px}
+  .ptbl-cta{text-align:center;margin-top:18px}
+  @media(max-width:600px){
+    .ptbl th,.ptbl td{padding:10px 6px}
+    .ptbl td.ptbl-feat{font-size:12px}
+    .ptbl-name{font-size:15px}.ptbl-price{font-size:12.5px}.ptbl-per{font-size:10px}
+    .ptbl td{font-size:12px}
+    .ptbl td.yes{font-size:15px}
+  }
 </style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -992,7 +1018,7 @@
       {"@type":"Question","name":"Có thể gặp trực tiếp người quản lý đất của tôi không?","acceptedAnswer":{"@type":"Answer","text":"Hoàn toàn được. Nếu bạn có dịp lên Lâm Đồng, chúng tôi sẵn sàng đưa bạn ra thực địa cùng — để tận mắt thấy tình trạng đất và gặp người đang trực tiếp quản lý cho bạn."}},
       {"@type":"Question","name":"Làm sao tôi biết các anh thật sự ra tận đất chứ không gửi ảnh cũ?","acceptedAnswer":{"@type":"Answer","text":"Câu hỏi rất chính đáng. Mỗi tấm ảnh chúng tôi gửi đều có tọa độ GPS và thời gian chụp ngay trên ảnh — anh chị mở ra là thấy đúng vị trí lô đất, đúng ngày giờ thật. Cảnh vật, cây cỏ, ánh nắng mỗi tháng mỗi khác, nên không thể dùng lại ảnh cũ được."}},
       {"@type":"Question","name":"Tôi đang định mua một lô, kiểm tra giúp trước khi mua được không?","acceptedAnswer":{"@type":"Answer","text":"Được. Trước khi anh chị xuống tiền, chúng tôi ra tận nơi xem giúp: ranh giới có đúng như rao không, đất có đang bị lấn không, đường vào, địa hình và tình trạng thực tế — rồi gửi ảnh GPS để anh chị quyết định bằng mắt thấy thật, chứ không chỉ nghe kể. Cứ nhắn Zalo lô anh chị đang cân nhắc, chúng tôi xem giúp."}},
-      {"@type":"Question","name":"Người trực tiếp đi kiểm tra đất của tôi là ai?","acceptedAnswer":{"@type":"Answer","text":"Là người địa phương ở Nam Ban, không phải nhân viên thuê ngoài đi cho có. Anh chị sẽ biết rõ ai đang trông đất cho mình, và nếu có dịp lên Lâm Đồng, chúng tôi sẵn sàng đưa anh chị ra thực địa gặp trực tiếp."}}
+      {"@type":"Question","name":"Người trực tiếp đi kiểm tra đất của tôi là ai?","acceptedAnswer":{"@type":"Answer","text":"Là người trong đội ngũ của chúng tôi ở ngay Nam Ban — gắn bó lâu dài, không phải thuê vãng lai mỗi lần một người. Anh chị sẽ biết rõ ai đang phụ trách đất của mình, và nếu có dịp lên Lâm Đồng, chúng tôi sẵn sàng đưa anh chị ra thực địa gặp trực tiếp."}}
     ]}
     </script>
     <script type="application/ld+json">
@@ -1049,7 +1075,7 @@
  <div class="hero-badge">Dành cho người sở hữu đất ở Nam Ban nhưng đang sống ở xa</div>
  <h1>Đất của bạn<em>đang ra sao?</em></h1>
  <p class="hero-sub">Có thể mọi thứ vẫn ổn. Nhưng biết chắc thì yên tâm hơn.<br>Mỗi tháng, GreenSpace kiểm tra tận nơi và gửi báo cáo về Zalo cho bạn.</p>
- <p class="hero-promise">Chúng tôi không bán dịch vụ quản lý. Chúng tôi bán sự chắc chắn.</p>
+ <p class="hero-promise">Dù ở đâu vẫn biết chắc đất mình ra sao.</p>
  <div class="hero-cta">
  <button class="btn btn-primary" onclick="scrollToContact()">Kiểm tra đất của tôi →</button>
  <button class="btn btn-secondary" onclick="document.getElementById('sample').scrollIntoView({behavior:'smooth'})">Xem báo cáo mẫu</button>
@@ -1202,7 +1228,7 @@
  <span class="services-kicker">Chúng tôi làm gì</span>
  <h2>Bạn sống ở xa,<br>chúng tôi ở ngay đây</h2>
  </div>
- <p class="services-head-right">Sinh ra tại Nam Ban, chúng tôi biết từng con đường, từng mốc ranh giới. Đây không chỉ là dịch vụ — đây là cam kết của người địa phương.</p>
+ <p class="services-head-right">Đội ngũ của chúng tôi ở ngay Nam Ban, thuộc từng con đường, từng mốc ranh giới. Anh chị ở xa — người của chúng tôi có mặt tận nơi, quan trọng nhất là làm cho được việc.</p>
  </div>
  <div class="services-list">
  <div class="service-row"><span class="service-num">01</span><h3>Ra thực địa mỗi tháng</h3></div>
@@ -1332,53 +1358,33 @@
  <div class="section-label">Bảng giá</div>
  <h2>Giá rõ ràng,<br>không phí ẩn</h2>
  <p>Chọn gói phù hợp với số lô bạn đang sở hữu. — không cần cam kết.</p>
- <div class="pricing-grid">
- <div class="price-card">
- <h3>Gói Cơ bản</h3>
- <p class="description">Phù hợp nhất cho 1 lô đất cá nhân</p>
- <div class="price">1.500.000đ</div>
- <p class="price-roi">Ít hơn một bữa ăn ngoài — để biết chắc đất bạn an toàn</p>
- <div class="price-unit">/ tháng</div>
- <ul class="price-features">
- <li>Kiểm tra thực địa 1 lần/tháng</li>
- <li>Báo cáo ảnh GPS đầy đủ</li>
- <li>Cảnh báo bất thường trong 24 giờ</li>
- <li>Hỗ trợ Zalo trực tiếp</li>
-  </ul>
- <button class="btn btn-outline" onclick="scrollToContact()">Chọn gói này</button>
+ <div class="ptbl-wrap">
+ <table class="ptbl">
+ <thead>
+ <tr>
+ <th class="ptbl-feat"></th>
+ <th><span class="ptbl-name">Cơ bản</span><span class="ptbl-price">1.500.000đ</span><span class="ptbl-per">/ tháng</span></th>
+ <th class="ptbl-hot"><span class="ptbl-tag">Phổ biến</span><span class="ptbl-name">Chuyên nghiệp</span><span class="ptbl-price">2.500.000đ</span><span class="ptbl-per">/ tháng</span></th>
+ <th><span class="ptbl-name">Tối ưu</span><span class="ptbl-price">2.000.000đ</span><span class="ptbl-per">/ lô / tháng</span></th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td class="ptbl-feat">Số lô áp dụng</td><td>1 lô</td><td class="ptbl-hot">1 lô</td><td>Từ 3 lô</td></tr>
+ <tr><td class="ptbl-feat">Kiểm tra thực địa</td><td>1 lần/tháng</td><td class="ptbl-hot">2 lần/tháng</td><td>1–2 lần/lô</td></tr>
+ <tr><td class="ptbl-feat">Báo cáo ảnh GPS đầy đủ</td><td class="yes">✓</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Cảnh báo bất thường 24h</td><td class="yes">✓</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Hỗ trợ Zalo trực tiếp</td><td class="yes">✓</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Phân tích chi tiết trong báo cáo</td><td class="no">—</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Theo dõi quy hoạch &amp; pháp lý</td><td class="no">—</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Hỗ trợ thủ tục hành chính</td><td class="no">—</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Ưu tiên hỗ trợ, gọi 24/7</td><td class="no">—</td><td class="yes ptbl-hot">✓</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Tổng hợp tất cả lô trong một báo cáo</td><td class="no">—</td><td class="no ptbl-hot">—</td><td class="yes">✓</td></tr>
+ <tr><td class="ptbl-feat">Tư vấn đầu tư theo tháng</td><td class="no">—</td><td class="no ptbl-hot">—</td><td class="yes">✓</td></tr>
+ </tbody>
+ </table>
  </div>
-
- <div class="price-card featured">
- <span class="featured-badge">Phổ biến nhất</span>
- <h3>Gói Chuyên nghiệp</h3>
- <p class="description">Giám sát liên tục, hỗ trợ tối đa</p>
- <div class="price">2.500.000đ</div>
- <div class="price-unit">/ tháng</div>
- <ul class="price-features">
- <li>Kiểm tra thực địa 2 lần/tháng</li>
- <li>Báo cáo ảnh + phân tích chi tiết</li>
- <li>Theo dõi quy hoạch & pháp lý</li>
- <li>Hỗ trợ thủ tục hành chính</li>
- <li>Hotline ưu tiên 24/7</li>
-  </ul>
- <button class="btn btn-gold" onclick="scrollToContact()">Chọn gói này</button>
- </div>
-
- <div class="price-card">
- <h3>Gói Tối ưu</h3>
- <p class="description">Từ 3 lô trở lên — giá ưu đãi</p>
- <div class="price">2.000.000đ</div>
- <div class="price-unit">/ lô / tháng</div>
- <ul class="price-features">
- <li>Kiểm tra 1–2 lần/tháng/lô</li>
- <li>Báo cáo đầy đủ từng lô</li>
- <li>Cảnh báo 24/7 tất cả lô</li>
- <li>Dashboard tổng hợp</li>
- <li>Tư vấn đầu tư theo tháng</li>
-  </ul>
- <button class="btn btn-primary" onclick="scrollToContact()">Tư vấn gói phù hợp</button>
- </div>
- </div>
+ <p class="ptbl-note">Giá cố định, không phí ẩn · không cần cam kết · dừng bất kỳ lúc nào.</p>
+ <div class="ptbl-cta"><button class="btn btn-primary" onclick="scrollToContact()">Nhắn Zalo để chọn gói phù hợp</button></div>
  </div>
 </section>
 
@@ -1451,7 +1457,7 @@
  Người trực tiếp đi kiểm tra đất của tôi là ai?
  <span class="faq-icon">+</span>
  </button>
- <div class="faq-a">Là người địa phương ở Nam Ban, không phải nhân viên thuê ngoài đi cho có. Anh chị sẽ biết rõ ai đang trông đất cho mình, và nếu có dịp lên Lâm Đồng, chúng tôi sẵn sàng đưa anh chị ra thực địa gặp trực tiếp.</div>
+ <div class="faq-a">Là người trong đội ngũ của chúng tôi ở ngay Nam Ban — gắn bó lâu dài, không phải thuê vãng lai mỗi lần một người. Anh chị sẽ biết rõ ai đang phụ trách đất của mình, và nếu có dịp lên Lâm Đồng, chúng tôi sẵn sàng đưa anh chị ra thực địa gặp trực tiếp.</div>
  </div>
  </div>
  </div>
@@ -1525,7 +1531,7 @@
  <img src="data:image/png;base64,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" alt="GreenSpace" class="logo-mark"/>
  <div class="logo">GREENSPACE</div>
  </div>
- <p>Đất của anh chị ở xa tại Nam Ban, Lâm Hà, Lâm Đồng — tụi tôi thay anh chị để mắt tới, chăm nom mỗi tháng như đất nhà mình.</p>
+ <p>Nơi tài sản được thở — GreenSpace thay anh chị để mắt tới, chăm nom mỗi tháng như đất nhà mình.</p>
  </div>
  <div class="footer-col">
  <h4>Dịch vụ</h4>
