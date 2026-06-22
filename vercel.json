@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/trong-coi-dat-o-xa", "destination": "/quan-ly-dat-nam-ban", "permanent": true },
+    { "source": "/trong-coi-dat-o-xa.html", "destination": "/quan-ly-dat-nam-ban", "permanent": true }
+  ]
+}
