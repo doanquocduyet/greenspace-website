@@ -690,38 +690,27 @@
 
  /* DISCOVERIES — featured (climax) + small grid */
  /* ===== DISCOVERIES — unified field log ===== */
- .discovery-log {
-     max-width: 840px; margin: 0 auto;
-     background: var(--white); border: 1px solid var(--border);
-     border-radius: var(--radius-lg); overflow: hidden;
-     box-shadow: 0 18px 50px rgba(45,40,35,.10);
- }
- .dl-lead { display: grid; grid-template-columns: 1fr 1fr; }
- .dl-lead-body { padding: clamp(28px, 3.6vw, 48px); display: flex; flex-direction: column; justify-content: center; }
- .dl-lead-media { position: relative; min-height: 300px; background: var(--green-dark); }
- .dl-lead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
- .dl-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; display: block; margin-bottom: 12px; color: #a07010; }
- .dl-tag-alert { color: #c0492f; }
- .dl-warn .dl-tag { color: #a07010; }
- .dl-ok .dl-tag { color: var(--green); }
- .dl-lead-body h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(23px, 3vw, 34px); font-weight: 600; line-height: 1.25; color: var(--dark); margin: 0 0 16px; }
- .dl-lead-body p { font-size: 14.5px; line-height: 1.8; color: #555; margin: 0 0 20px; }
- .dl-result { align-self: flex-start; display: inline-block; background: var(--green); color: #fff; font-size: 12.5px; font-weight: 600; padding: 7px 17px; border-radius: 22px; }
- .dl-result-sm { background: var(--bg); color: var(--green); border: 1px solid var(--green-pale); font-size: 11.5px; padding: 5px 13px; }
- .dl-entries { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
- .dl-entry { display: flex; gap: 13px; padding: 26px 24px; }
- .dl-entry:not(:last-child) { border-right: 1px solid var(--border); }
- .dl-dot { flex-shrink: 0; width: 9px; height: 9px; border-radius: 50%; margin-top: 7px; }
- .dl-warn .dl-dot { background: var(--gold); }
- .dl-ok .dl-dot { background: var(--green-mid); }
- .dl-entry-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--dark); margin: 0 0 8px; }
- .dl-entry-body p { font-size: 13.5px; line-height: 1.7; color: #666; margin: 0 0 13px; }
+ .discovery-log { max-width: 720px; margin: 0 auto; position: relative; padding-left: 2px; }
+ .discovery-log::before { content:''; position:absolute; left: 5px; top: 8px; bottom: 12px; width: 2px; background: linear-gradient(var(--green-pale), var(--border)); }
+ .dlog-item { position: relative; display: flex; gap: 22px; padding-bottom: 34px; }
+ .dlog-item:last-child { padding-bottom: 0; }
+ .dlog-mark { position: relative; z-index: 1; flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; margin-top: 5px; background: var(--gold); box-shadow: 0 0 0 4px var(--bg); }
+ .dlog-mark-alert { background: #c0492f; }
+ .dlog-mark-ok { background: var(--green-mid); }
+ .dlog-content { flex: 1; min-width: 0; }
+ .dlog-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; display: block; margin-bottom: 9px; color: #a07010; }
+ .dlog-tag-alert { color: #c0492f; }
+ .dlog-tag-ok { color: var(--green); }
+ .dlog-content h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.8vw, 30px); font-weight: 600; line-height: 1.25; color: var(--dark); margin: 0 0 14px; }
+ .dlog-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--dark); margin: 0 0 7px; }
+ .dlog-content p { font-size: 14px; line-height: 1.75; color: #585858; margin: 0 0 12px; }
+ .dlog-media { margin: 0 0 16px; border-radius: 10px; overflow: hidden; max-width: 440px; aspect-ratio: 3 / 2; }
+ .dlog-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .dlog-result { display: inline-block; background: var(--green); color: #fff; font-size: 12px; font-weight: 600; padding: 6px 15px; border-radius: 22px; }
+ .dlog-result-sm { background: transparent; color: var(--green); border: 1px solid var(--green-pale); font-size: 11.5px; padding: 4px 12px; }
  @media (max-width: 768px) {
-     .dl-lead { grid-template-columns: 1fr; }
-     .dl-lead-media { min-height: 200px; order: -1; }
-     .dl-entries { grid-template-columns: 1fr; }
-     .dl-entry { padding: 22px 22px; }
-     .dl-entry:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
+     .dlog-item { gap: 15px; padding-bottom: 28px; }
+     .dlog-media { max-width: 100%; }
  }
 
  /* RISKS — compact vertical list (light) */
@@ -781,6 +770,7 @@
  .footer-cta .section-label { color: rgba(255,255,255,.45); }
  .footer-cta h2 { color: var(--white); margin: 10px 0 14px; }
  .footer-cta-lead { color: rgba(255,255,255,.6); font-size: 15px; line-height: 1.7; max-width: 400px; margin: 0 0 24px; }
+ .footer-contact-mini { margin-top: 20px; }
  .footer-contact-mini a { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--gold); letter-spacing: .5px; margin-bottom: 4px; }
  .footer-contact-mini a:hover { color: var(--gold-light); }
  .footer-contact-mini p { color: rgba(255,255,255,.5); font-size: 13px; line-height: 1.65; margin: 0; }
@@ -1170,48 +1160,44 @@
  <div class="section-wrap">
  <div class="disc-head">
  <span class="disc-kicker">Chuyện thật từ thực địa</span>
- <p class="disc-lede">Không phải giả định. Đây là những gì thực sự xảy ra — trong khi chủ đất đang bình yên ở Sài Gòn.</p>
  </div>
 
  <div class="discovery-log">
- <article class="dl-lead">
- <div class="dl-lead-body">
- <span class="dl-tag dl-tag-alert">Lấn ranh · Tháng 3/2026</span>
- <h3>Ranh đất bị xê dịch 1 mét.<br>Chủ đất không hề biết.</h3>
+ <div class="dlog-item">
+ <span class="dlog-mark dlog-mark-alert"></span>
+ <div class="dlog-content">
+ <span class="dlog-tag dlog-tag-alert">Lấn ranh · Tháng 3/2026</span>
+ <h3>Ranh đất bị xê dịch 1 mét. Chủ đất không hề biết.</h3>
+ <div class="dlog-media"><img src="images/discovery.jpg" alt="Đóng mốc ranh giới bê tông tại thực địa" loading="lazy"></div>
  <p>Trong lần kiểm tra định kỳ, chúng tôi phát hiện ranh giới phía cuối đất bị dịch chuyển khoảng 1 mét. Chúng tôi đã thông báo với chủ đất ngay trong ngày, làm việc trực tiếp với hàng xóm, khôi phục lại hiện trạng và đưa về vị trí đúng — chủ đất không cần lên tận nơi một lần nào.</p>
- <span class="dl-result">Xử lý xong trong 15 ngày</span>
+ <span class="dlog-result">Xử lý xong trong 15 ngày</span>
  </div>
- <div class="dl-lead-media">
- <img src="images/discovery.jpg" alt="Đóng mốc ranh giới bê tông tại thực địa" loading="lazy">
  </div>
- </article>
- <div class="dl-entries">
- <div class="dl-entry dl-warn">
- <span class="dl-dot"></span>
- <div class="dl-entry-body">
- <span class="dl-tag">Quy hoạch</span>
+ <div class="dlog-item">
+ <span class="dlog-mark"></span>
+ <div class="dlog-content">
+ <span class="dlog-tag">Quy hoạch</span>
  <h4>Lộ giới thay đổi</h4>
  <p>Tuyến đường mới đi qua góc lô. Chủ đất ở TP.HCM được báo trước 4 tháng.</p>
- <span class="dl-result dl-result-sm">Báo sớm 4 tháng</span>
+ <span class="dlog-result dlog-result-sm">Báo sớm 4 tháng</span>
  </div>
  </div>
- <div class="dl-entry dl-warn">
- <span class="dl-dot"></span>
- <div class="dl-entry-body">
- <span class="dl-tag">Tình trạng đất</span>
+ <div class="dlog-item">
+ <span class="dlog-mark"></span>
+ <div class="dlog-content">
+ <span class="dlog-tag">Tình trạng đất</span>
  <h4>Ngập sau mưa</h4>
  <p>Mưa lớn làm khu thấp úng nước. Phát hiện sớm, đề xuất thoát nước kịp thời.</p>
- <span class="dl-result dl-result-sm">Báo trong 24h</span>
+ <span class="dlog-result dlog-result-sm">Báo trong 24h</span>
  </div>
  </div>
- <div class="dl-entry dl-ok">
- <span class="dl-dot"></span>
- <div class="dl-entry-body">
- <span class="dl-tag">Phần lớn thời gian</span>
+ <div class="dlog-item">
+ <span class="dlog-mark dlog-mark-ok"></span>
+ <div class="dlog-content">
+ <span class="dlog-tag dlog-tag-ok">Phần lớn thời gian</span>
  <h4>Mọi thứ vẫn ổn</h4>
  <p>Đa số báo cáo: ranh giới nguyên vẹn, không bất thường. Đó chính xác là thứ bạn trả tiền để biết — không phải đoán.</p>
- <span class="dl-result dl-result-sm">Sự chắc chắn</span>
- </div>
+ <span class="dlog-result dlog-result-sm">Sự chắc chắn</span>
  </div>
  </div>
  </div>
@@ -1289,7 +1275,6 @@
  <div class="sample-check">Nhận xét bất thường (nếu có)</div>
  <div class="sample-check">Kiến nghị hành động cụ thể</div>
  </div>
- <button class="btn btn-primary" onclick="scrollToContact()">Yêu cầu xem báo cáo mẫu</button>
  </div>
  <div class="sample-photos">
  <div class="sample-photo">
@@ -1309,8 +1294,8 @@
 <section class="testimonials full-wrap">
  <div class="section-wrap">
  <div class="section-label">Khách hàng nói gì</div>
- <h2>Họ đã yên tâm<br>như thế nào</h2>
- <p>Những người đang sống xa — và đang ngủ ngon mỗi đêm nhờ GreenSpace.</p>
+ <h2>Họ đã yên tâm như thế nào</h2>
+ <p>GreenSpace giúp người sở hữu đất ở xa ngủ ngon mỗi đêm.</p>
  <div class="testimonials-grid">
  <div class="testimonial-card">
  
@@ -1494,10 +1479,6 @@
  <span class="section-label">Liên hệ</span>
  <h2>Bắt đầu ngay<br>chỉ một bước</h2>
  <p class="footer-cta-lead">Điền form bên cạnh — chúng tôi sẽ liên hệ trong vòng 24 giờ để trao đổi cụ thể và sắp xếp kiểm tra thực địa đầu tiên.</p>
- <div class="footer-contact-mini">
- <a href="https://zalo.me/0978758788">0978 758 788</a>
- <p>Zalo / Điện thoại · Nam Ban, Lâm Hà, Lâm Đồng<br>T2–CN: 7:00–20:00 · Zalo 24/7</p>
- </div>
  </div>
  <form id="contactForm" action="https://formsubmit.co/1c34beb082aede897d69dde3735166c2" method="POST">
  <div class="form-group">
@@ -1528,6 +1509,10 @@
  <div class="logo">GREENSPACE</div>
  </div>
  <p>Nơi tài sản được thở — GreenSpace thay anh chị để mắt tới, chăm nom mỗi tháng như đất nhà mình.</p>
+ <div class="footer-contact-mini">
+ <a href="https://zalo.me/0978758788">0978 758 788</a>
+ <p>Zalo / Điện thoại · Nam Ban, Lâm Hà, Lâm Đồng<br>T2–CN: 7:00–20:00</p>
+ </div>
  </div>
  <div class="footer-col">
  <h4>Dịch vụ</h4>
@@ -1584,7 +1569,6 @@
  var recoLines = [
      'Sự chắc chắn là biết đất mình vẫn ổn mà không cần lên tận nơi.',
      '80% trường hợp mọi thứ ổn. Và đó chính xác là thứ bạn đang trả tiền để biết.',
-     'Chúng tôi không bán dịch vụ. Chúng tôi bán sự yên tâm.',
      'Đôi khi, biết sớm 1 tháng giúp bạn tiết kiệm cả trăm triệu.',
      'Người quen trông giúp vì tình cảm. Chúng tôi trông vì trách nhiệm.',
      'Mảnh đất không biết nói — nhưng báo cáo thì có.',
