@@ -27,7 +27,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--green:#3d4a3a;--green-dark:#2d3a2d;--gold:#c9a961;--bg:#f9f8f6;--dark:#1a1a1a;--border:rgba(61,74,58,.1);}
-body{font-family:'Be Vietnam Pro',sans-serif;color:var(--dark);background:var(--bg);line-height:1.8;font-size:15px;}
+body{font-family:'Be Vietnam Pro',sans-serif;color:var(--dark);background:var(--bg);line-height:1.65;font-size:18px;}
 a{color:var(--green);}
 .header{position:sticky;top:0;z-index:100;background:rgba(249,248,246,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
 .logo-nav{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);}
@@ -54,9 +54,29 @@ p{margin-bottom:16px;}
 .footer{text-align:center;padding:32px;font-size:12px;color:#999;border-top:1px solid var(--border);}
 .footer a{color:var(--green);}
 @media(max-width:640px){.wrap{padding:40px 18px;}}
+
+/* Reading progress bar */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:200;width:0;transition:width 80ms linear;}
+/* Smooth transitions */
+a{transition:color .3s ease;}
+.cta-box a{transition:background .3s ease,transform .2s ease;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+.cta-box a:hover{filter:brightness(1.1);transform:translateY(-1px);}
+.nav-back{padding:8px 0;min-height:44px;display:inline-flex;align-items:center;}
+/* Breadcrumb */
+.breadcrumb{max-width:720px;margin:0 auto;padding:16px 24px 0;font-size:13px;color:#999;}
+.breadcrumb a{color:var(--green);text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb .sep{margin:0 6px;color:#ccc;}
+/* Related articles */
+.related{margin:48px 0 0;padding:24px 0;border-top:1px solid var(--border);}
+.related h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin-bottom:16px;color:var(--dark);}
+.related a{display:block;padding:12px 0;color:var(--green);font-size:15px;text-decoration:none;border-bottom:1px solid rgba(61,74,58,.06);transition:color .3s ease;}
+.related a:hover{color:var(--gold);}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://greenspacers.vn/"}, {"@type": "ListItem", "position": 2, "name": "Về GreenSpace", "item": "https://greenspacers.vn/ve-greenspace"}]}</script>
 </head>
 <body>
+<div class="progress-bar" id="progressBar"></div>
 <header class="header">
     <a href="/" class="logo-nav">
         <img src="data:image/png;base64,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" alt="GreenSpace" class="logo-mark"/>
@@ -64,6 +84,7 @@ p{margin-bottom:16px;}
     </a>
     <a href="/" class="nav-back">← Trang chủ</a>
 </header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span class="sep">›</span>Về GreenSpace</nav>
 
 <main class="wrap">
     <h1>Về GreenSpace</h1>
@@ -106,6 +127,11 @@ p{margin-bottom:16px;}
     </div>
 </main>
 
+<div class="related">
+ <h3>Bài liên quan</h3>
+  <a href="/cach-giu-dat-an-toan-tu-xa">Cách giữ đất an toàn từ xa →</a>
+  <a href="/quan-ly-dat-nam-ban">Quản lý đất Nam Ban cho người ở xa →</a>
+</div>
 <footer class="footer">
     <p>© 2026 <a href="/">GreenSpace</a> · Nam Ban, Lâm Hà, Lâm Đồng</p>
 </footer>
