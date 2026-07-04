@@ -1611,7 +1611,14 @@
  _template: 'table'
  })
  });
- msg.innerHTML = '<span class="success-message">✓ Gửi thành công! Chúng tôi sẽ liên hệ bạn qua Zalo trong vòng 24 giờ.</span>';
+ msg.innerHTML = '<span class="success-message">✓ Đã gửi! Đang mở Zalo để bạn nhắn trực tiếp cho chúng tôi...</span>';
+ // Mở Zalo kèm tin soạn sẵn có nội dung khách vừa điền — khách chỉ cần bấm Gửi trong Zalo
+ var zaloMsg = 'Chào GreenSpace, tôi là ' + data.name + '.'
+ + '\nSố điện thoại/Zalo: ' + data.phone
+ + '\nVề mảnh đất của tôi: ' + data.worry
+ + '\nNhờ GreenSpace kiểm tra giúp. Cảm ơn!';
+ var zaloUrl = 'https://zalo.me/0978758788?text=' + encodeURIComponent(zaloMsg);
+ setTimeout(function () { window.open(zaloUrl, '_blank'); }, 600);
  e.target.reset();
  } catch (err) {
  msg.innerHTML = '<span class="error-message">✗ Có lỗi xảy ra. Vui lòng nhắn Zalo 0978 758 788 trực tiếp.</span>';
