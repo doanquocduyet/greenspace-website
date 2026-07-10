@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GreenSpace — Demo thẩm mỹ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1f1a;
+  --olive:#3d4a3a;
+  --olive-deep:#252e24;
+  --gold:#c9a961;
+  --paper:#f9f8f6;
+  --paper-warm:#f1eee7;
+  --mute:#8b9086;
+  --line:rgba(26,31,26,.12);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Be Vietnam Pro',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ===== 1. TYPOGRAPHY tương phản mạnh ===== */
+.display{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  line-height:.98;
+  letter-spacing:-.01em;
+}
+.eyebrow{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.32em;
+  color:var(--gold);
+  font-weight:500;
+}
+.mute{color:var(--mute);}
+
+/* ===== 2. KHOẢNG TRẮNG dám hơn ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.wrap-narrow{max-width:720px;margin:0 auto;padding:0 32px;}
+section{padding:min(18vh,160px) 0;}
+
+/* ===== HEADER tối giản ===== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 40px;
+  mix-blend-mode:difference;
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;font-size:19px;letter-spacing:.36em;color:#fff;
+}
+.nav-cta{
+  font-size:13px;letter-spacing:.04em;color:#fff;text-decoration:none;
+  position:relative;padding-bottom:3px;
+}
+.nav-cta::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:#fff;transform:scaleX(0);transform-origin:right;
+  transition:transform .5s var(--ease);
+}
+.nav-cta:hover::after{transform:scaleX(1);transform-origin:left;}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(160deg,var(--olive-deep),var(--olive));
+  color:var(--paper);
+  position:relative;
+  padding:0 40px;
+}
+.hero .eyebrow{color:var(--gold);margin-bottom:28px;}
+.hero h1{
+  font-size:clamp(52px,10vw,132px);
+  color:var(--paper);
+  max-width:15ch;
+  margin-bottom:36px;
+}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:400;}
+.hero-sub{
+  font-size:clamp(15px,2vw,18px);
+  color:rgba(249,248,246,.72);
+  max-width:44ch;font-weight:300;
+}
+.hero-scroll{
+  position:absolute;bottom:40px;left:40px;
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(249,248,246,.5);display:flex;align-items:center;gap:12px;
+}
+.hero-scroll::before{
+  content:"";width:44px;height:1px;background:var(--gold);
+  display:inline-block;animation:pull 2.6s var(--ease) infinite;transform-origin:left;
+}
+@keyframes pull{0%,100%{transform:scaleX(.4);opacity:.5;}50%{transform:scaleX(1);opacity:1;}}
+
+/* ===== 3. SCROLL-REVEAL ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.08s;}
+.reveal.d2{transition-delay:.16s;}
+.reveal.d3{transition-delay:.24s;}
+
+/* hairline vẽ dần */
+.rule{height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease);}
+.rule.in{transform:scaleX(1);}
+
+/* ===== INTRO ===== */
+.intro .display{font-size:clamp(30px,5vw,60px);max-width:20ch;line-height:1.08;}
+.intro .display span{color:var(--mute);}
+
+/* ===== 4. SỐ ĐẾM (micro-detail) ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:80px;}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,88px);font-weight:500;color:var(--olive);line-height:1;}
+.stat .lbl{font-size:13px;color:var(--mute);margin-top:12px;letter-spacing:.02em;}
+@media(max-width:680px){.stats{grid-template-columns:1fr;gap:36px;text-align:center;}}
+
+/* ===== SERVICES với ảnh zoom chậm ===== */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px;}
+.svc{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--olive-deep);cursor:pointer;}
+.svc-img{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1);transition:transform 1.4s var(--ease);opacity:.62;}
+.svc:hover .svc-img{transform:scale(1.06);opacity:.5;}
+.svc-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:36px;color:#fff;z-index:2;}
+.svc-body h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin-bottom:8px;}
+.svc-body p{font-size:14px;color:rgba(255,255,255,.75);max-width:34ch;}
+.svc-idx{position:absolute;top:32px;right:36px;font-size:12px;letter-spacing:.2em;color:var(--gold);z-index:2;}
+@media(max-width:680px){.svc-grid{grid-template-columns:1fr;}}
+
+/* ===== 6. SIGNATURE MOMENT ===== */
+.signature{
+  background:var(--olive-deep);color:var(--paper);
+  min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  position:relative;
+}
+.signature .big{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(38px,7.5vw,104px);line-height:1.05;max-width:16ch;
+}
+.signature .big em{font-style:italic;color:var(--gold);}
+.signature .sig-line{width:1px;height:64px;background:var(--gold);margin:0 auto 44px;transform:scaleY(0);transform-origin:top;transition:transform 1.1s var(--ease);}
+.signature .sig-line.in{transform:scaleY(1);}
+
+/* ===== CTA ===== */
+.cta{text-align:center;}
+.cta .display{font-size:clamp(32px,5vw,64px);max-width:18ch;margin:0 auto 40px;}
+.btn{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--olive);color:var(--paper);
+  padding:20px 40px;border-radius:2px;text-decoration:none;
+  font-size:14px;letter-spacing:.06em;
+  transition:background .5s var(--ease),transform .5s var(--ease),gap .4s var(--ease);
+}
+.btn:hover{background:var(--ink);transform:translateY(-2px);gap:20px;}
+.btn .arrow{color:var(--gold);transition:transform .4s var(--ease);}
+.btn:hover .arrow{transform:translateX(4px);}
+
+footer{padding:48px 40px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--mute);}
+
+/* focus a11y */
+a:focus-visible,.svc:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* ===== reduced motion ===== */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  .reveal{opacity:1;transform:none;}
+  .rule,.sig-line{transform:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">GREENSPACE</div>
+  <a href="#" class="nav-cta">Kiểm tra đất của tôi</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Nam Ban · Lâm Hà · Lâm Đồng</div>
+  <h1 class="display">Đất của bạn đang ra sao <em>khi bạn không ở đây?</em></h1>
+  <p class="hero-sub">Hơn bốn năm, chúng tôi thay những người ở xa để mắt tới từng lô đất — lặng lẽ, đều đặn, không bỏ sót một tháng nào.</p>
+  <div class="hero-scroll">Cuộn xuống</div>
+</section>
+
+<!-- INTRO + STATS -->
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow reveal">Vì sao có chúng tôi</div>
+    <p class="display reveal d1" style="margin-top:24px;">Đất là tài sản duy nhất người ta mua rồi <span>để mặc ngoài trời</span> — trong khi nó là thứ ai cũng đụng tới được.</p>
+    <div class="stats">
+      <div class="stat reveal d1"><div class="num" data-count="4">0</div><div class="lbl">năm giữ đất cho người ở xa</div></div>
+      <div class="stat reveal d2"><div class="num" data-count="50" data-suffix="+">0</div><div class="lbl">lô đang được quản lý</div></div>
+      <div class="stat reveal d3"><div class="num" data-count="0">0</div><div class="lbl">trường hợp mất ranh giới</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="rule"></div>
+    <div style="margin-top:64px;" class="eyebrow reveal">Chúng tôi làm gì mỗi tháng</div>
+    <div class="svc-grid">
+      <div class="svc reveal" tabindex="0">
+        <div class="svc-img" style="background-image:linear-gradient(120deg,#3d4a3a,#252e24);"></div>
+        <div class="svc-idx">01</div>
+        <div class="svc-body"><h3>Ra tận đất</h3><p>Mỗi tháng một lần, chụp ảnh gắn tọa độ, ngày giờ — không ngồi nhà đoán.</p></div>
+      </div>
+      <div class="svc reveal d1" tabindex="0">
+        <div class="svc-img" style="background-image:linear-gradient(120deg,#4a5744,#2e382d);"></div>
+        <div class="svc-idx">02</div>
+        <div class="svc-body"><h3>Canh ranh mốc</h3><p>So với hồ sơ gốc, phát hiện xê dịch từng centimet trước khi thành chuyện.</p></div>
+      </div>
+      <div class="svc reveal" tabindex="0">
+        <div class="svc-img" style="background-image:linear-gradient(120deg,#454f3e,#28311f);"></div>
+        <div class="svc-idx">03</div>
+        <div class="svc-body"><h3>Cảnh báo trong 24 giờ</h3><p>Có người lấn, có chòi dựng, đất ngập — bạn biết ngay trong ngày.</p></div>
+      </div>
+      <div class="svc reveal d1" tabindex="0">
+        <div class="svc-img" style="background-image:linear-gradient(120deg,#3a463a,#232b22);"></div>
+        <div class="svc-idx">04</div>
+        <div class="svc-body"><h3>Báo cáo tận tay</h3><p>Một bản mỗi tháng, rõ ràng — bạn đọc năm phút là nắm được lô mình.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE MOMENT -->
+<section class="signature">
+  <div class="wrap-narrow">
+    <div class="sig-line"></div>
+    <p class="big">Đất không mất trong một ngày. Nó mất <em>dần</em> — cho tới lúc bạn về thì đã khác.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap-narrow">
+    <div class="eyebrow reveal">Bắt đầu</div>
+    <p class="display reveal d1" style="margin-top:24px;">Gửi cho chúng tôi lô đất của bạn. Phần còn lại để chúng tôi lo.</p>
+    <a href="#" class="btn reveal d2">Nhắn Zalo 0978 758 788 <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer>© 2026 GreenSpace · Nam Ban, Lâm Hà, Lâm Đồng · Demo thẩm mỹ</footer>
+
+<script>
+// scroll-reveal
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.18});
+document.querySelectorAll('.reveal,.rule,.sig-line').forEach(el=>io.observe(el));
+
+// đếm số
+const co=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'';
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=end+suf;co.unobserve(el);return;}
+    let cur=0,step=Math.max(1,Math.round(end/40));
+    const t=setInterval(()=>{cur+=step;if(cur>=end){cur=end;clearInterval(t);}el.textContent=cur+suf;},28);
+    co.unobserve(el);
+  });
+},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+</script>
+</body>
+</html>

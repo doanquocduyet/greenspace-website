@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GreenSpace — Demo (1+4+6)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1f1a;
+  --green:#3d4a3a;
+  --green-deep:#252e24;
+  --gold:#c9a961;
+  --bg:#f9f8f6;
+  --mute:#8b9086;
+  --line:rgba(26,31,26,.12);
+  --ease:cubic-bezier(.22,1,.36,1);   /* điểm 4: motion "đắt" */
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+/* ===== cỡ chữ GIỮ như web hiện tại (không phóng to — đã bỏ điểm 3) ===== */
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5vw,44px);line-height:1.15;color:var(--green);}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,3.5vw,30px);color:var(--ink);}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);font-weight:500;}
+.mute{color:var(--mute);}
+
+/* ===== khoảng trắng GIỮ như hiện tại (không gấp đôi — đã bỏ điểm 2) ===== */
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.wrap-narrow{max-width:720px;margin:0 auto;padding:0 24px;}
+section{padding:88px 0;}
+
+/* header */
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(249,248,246,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;letter-spacing:.3em;color:var(--green);}
+.nav-cta{font-size:13px;color:var(--green);text-decoration:none;}
+
+/* hero — cỡ vừa phải */
+.hero{background:linear-gradient(160deg,var(--green-deep),var(--green));color:var(--bg);padding:120px 32px 96px;}
+.hero .eyebrow{color:var(--gold);margin-bottom:20px;}
+.hero h1{color:var(--bg);max-width:20ch;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:400;}
+.hero-sub{font-size:16px;color:rgba(249,248,246,.72);max-width:46ch;font-weight:300;}
+
+/* ===== ĐIỂM 1: scroll-reveal ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.08s;}
+.reveal.d2{transition-delay:.16s;}
+.reveal.d3{transition-delay:.24s;}
+
+/* stats — cỡ chữ vừa, KHÔNG số đếm nhảy (đã bỏ điểm 5) */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,52px);font-weight:600;color:var(--green);line-height:1;}
+.stat .lbl{font-size:13px;color:var(--mute);margin-top:8px;}
+@media(max-width:640px){.stats{grid-template-columns:1fr;gap:24px;text-align:center;}}
+
+/* services — card, ảnh KHÔNG zoom hover (đã bỏ điểm 5) */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px;}
+.svc{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;transition:transform .5s var(--ease),box-shadow .5s var(--ease);}
+.svc:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,31,26,.06);}
+.svc .idx{font-size:12px;letter-spacing:.2em;color:var(--gold);}
+.svc h2{font-size:22px;margin:12px 0 8px;}
+.svc p{font-size:14px;color:var(--mute);}
+
+/* ===== ĐIỂM 6: signature moment ===== */
+.signature{background:var(--green-deep);color:var(--bg);min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;}
+.signature .big{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,6vw,72px);line-height:1.1;max-width:18ch;}
+.signature .big em{font-style:italic;color:var(--gold);}
+.sig-line{width:1px;height:56px;background:var(--gold);margin:0 auto 36px;transform:scaleY(0);transform-origin:top;transition:transform 1s var(--ease);}
+.sig-line.in{transform:scaleY(1);}
+
+/* cta */
+.cta{text-align:center;}
+.cta h1{margin:0 auto 28px;max-width:20ch;}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:var(--bg);padding:16px 34px;border-radius:4px;text-decoration:none;font-size:14px;letter-spacing:.04em;transition:background .5s var(--ease),transform .5s var(--ease);}
+.btn:hover{background:var(--ink);transform:translateY(-2px);}
+.btn .arrow{color:var(--gold);}
+
+footer{padding:40px 32px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--mute);}
+a:focus-visible,.svc:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  .reveal{opacity:1!important;transform:none!important;}
+  .sig-line{transform:none!important;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">GREENSPACE</div>
+  <a href="#" class="nav-cta">Kiểm tra đất của tôi →</a>
+</header>
+
+<!-- HERO (cỡ giữ như hiện tại) -->
+<section class="hero">
+  <div class="eyebrow">Nam Ban · Lâm Hà · Lâm Đồng</div>
+  <h1>Đất của bạn đang ra sao <em>khi bạn không ở đây?</em></h1>
+  <p class="hero-sub">Hơn bốn năm, chúng tôi thay những người ở xa để mắt tới từng lô đất — lặng lẽ, đều đặn, không bỏ sót một tháng nào.</p>
+</section>
+
+<!-- INTRO + STATS (có reveal, không số đếm) -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">Vì sao có chúng tôi</div>
+    <h2 class="reveal d1" style="margin-top:16px;max-width:24ch;">Đất là tài sản duy nhất người ta mua rồi để mặc ngoài trời — trong khi nó là thứ ai cũng đụng tới được.</h2>
+    <div class="stats">
+      <div class="stat reveal d1"><div class="num">4</div><div class="lbl">năm giữ đất cho người ở xa</div></div>
+      <div class="stat reveal d2"><div class="num">50+</div><div class="lbl">lô đang được quản lý</div></div>
+      <div class="stat reveal d3"><div class="num">0</div><div class="lbl">trường hợp mất ranh giới</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (reveal, không ảnh zoom) -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="eyebrow reveal">Chúng tôi làm gì mỗi tháng</div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="idx">01</div><h2>Ra tận đất</h2><p>Mỗi tháng một lần, chụp ảnh gắn tọa độ, ngày giờ — không ngồi nhà đoán.</p></div>
+      <div class="svc reveal d1"><div class="idx">02</div><h2>Canh ranh mốc</h2><p>So với hồ sơ gốc, phát hiện xê dịch trước khi thành chuyện.</p></div>
+      <div class="svc reveal d2"><div class="idx">03</div><h2>Cảnh báo 24 giờ</h2><p>Có người lấn, có chòi dựng, đất ngập — bạn biết ngay trong ngày.</p></div>
+      <div class="svc reveal d3"><div class="idx">04</div><h2>Báo cáo tận tay</h2><p>Một bản mỗi tháng, rõ ràng — đọc năm phút là nắm được lô mình.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ĐIỂM 6: SIGNATURE -->
+<section class="signature">
+  <div class="wrap-narrow">
+    <div class="sig-line"></div>
+    <p class="big">Đất không mất trong một ngày. Nó mất <em>dần</em> — cho tới lúc bạn về thì đã khác.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap-narrow">
+    <div class="eyebrow reveal">Bắt đầu</div>
+    <h1 class="reveal d1" style="margin-top:16px;">Gửi cho chúng tôi lô đất của bạn. Phần còn lại để chúng tôi lo.</h1>
+    <a href="#" class="btn reveal d2">Nhắn Zalo 0978 758 788 <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer>© 2026 GreenSpace · Nam Ban, Lâm Hà, Lâm Đồng · Demo 1+4+6</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.16});
+document.querySelectorAll('.reveal,.sig-line').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
