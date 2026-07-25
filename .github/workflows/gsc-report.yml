@@ -1,0 +1,44 @@
+name: Báo cáo index Google Search Console
+
+on:
+  schedule:
+    # Thứ Hai hàng tuần, 02:00 UTC = 09:00 giờ VN
+    - cron: '0 2 * * 1'
+  workflow_dispatch:   # cho phép bấm "Run workflow" chạy thủ công
+
+permissions:
+  contents: write
+
+jobs:
+  gsc-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cài thư viện
+        run: pip install --quiet google-auth requests
+
+      - name: Chạy báo cáo GSC
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          # Đổi thành 'https://greenspacers.vn/' nếu property là kiểu "tiền tố URL"
+          GSC_PROPERTY: ${{ vars.GSC_PROPERTY }}
+        run: python scripts/gsc-report.py
+
+      - name: Commit báo cáo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/gsc-status.md
+          if git diff --staged --quiet; then
+            echo "Không có thay đổi."
+          else
+            git commit -m "Cập nhật báo cáo index GSC ($(date -u +%Y-%m-%d))"
+            git push
+          fi
