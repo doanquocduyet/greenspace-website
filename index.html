@@ -1060,6 +1060,7 @@
  <h1>Đất của bạn<em>đang ra sao?</em></h1>
  <p class="hero-sub">Có thể mọi thứ vẫn ổn. Nhưng biết chắc thì yên tâm hơn.<br>Mỗi tháng, GreenSpace kiểm tra tận nơi và gửi báo cáo về Zalo cho bạn.</p>
  <p class="hero-promise">Dù ở đâu vẫn biết chắc đất mình ra sao.</p>
+ <p style="margin-top:10px;font-size:14px;color:#3d4a3a;font-weight:600;display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.09);padding:7px 14px;border-radius:100px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.22);display:inline-block;"></span><span id="gs-live">Đang nhận lô mới</span></p>
  <div class="hero-cta">
  <button class="btn btn-primary" onclick="scrollToContact()">Kiểm tra đất của tôi →</button>
  <button class="btn btn-secondary" onclick="document.getElementById('sample').scrollIntoView({behavior:'smooth'})">Xem báo cáo mẫu</button>
@@ -1504,7 +1505,7 @@
  <textarea id="worry" name="Nội dung" rows="4" required placeholder="Đất ở đâu, diện tích bao nhiêu, đang lo lắng gì..."></textarea>
  </div>
  <input type="hidden" name="_subject" value="🌱 Khách mới từ website GreenSpace">
- <input type="hidden" name="_cc" value="nambanpanorama@gmail.com">
+ <input type="hidden" name="_cc" value="greenspacers.ss@gmail.com">
  <input type="hidden" name="_template" value="table">
  <input type="hidden" name="_next" value="https://greenspacers.vn/cam-on.html">
  <input type="hidden" name="_captcha" value="false">
@@ -1540,7 +1541,7 @@
  </div>
  </div>
  <div class="footer-bottom">
- <p class="footer-legal">© 2026 GreenSpace · Nam Ban, Lâm Đồng</p>
+ <p class="footer-legal">© <span id="gs-year">2026</span> GreenSpace · Nam Ban, Lâm Đồng</p>
  <div class="footer-social">
  <a href="https://zalo.me/0978758788" target="_blank">Zalo: 0978 758 788</a>
  <a href="tel:0978758788">Gọi điện</a>
@@ -1616,7 +1617,7 @@
  'Số Zalo / Điện thoại': data.phone,
  'Nội dung': data.worry,
  _subject: '🌱 Khách mới từ website GreenSpace — ' + data.name,
- _cc: 'nambanpanorama@gmail.com',
+ _cc: 'greenspacers.ss@gmail.com',
  _template: 'table'
  }),
  signal: ctrl.signal
@@ -1660,6 +1661,16 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   els.forEach(function(el){io.observe(el);});
   setTimeout(function(){els.forEach(function(el){el.classList.add('in');});},3500);
+})();
+</script>
+<script>
+// Tín hiệu "còn hoạt động" — tự cập nhật theo tháng hiện tại (không bao giờ cũ)
+(function(){
+  var d=new Date(), m=d.getMonth()+1, y=d.getFullYear();
+  var live=document.getElementById('gs-live');
+  if(live) live.textContent='Đang nhận lô cho kỳ kiểm tra tháng '+m+'/'+y;
+  var yr=document.getElementById('gs-year');
+  if(yr) yr.textContent=y;
 })();
 </script>
 </body>
