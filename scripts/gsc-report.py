@@ -58,10 +58,11 @@ def load_urls():
 def main():
     sa_json = os.environ.get("GSC_SA_JSON", "").strip()
     if not sa_json:
-        sys.exit(
-            "Chưa có GSC_SA_JSON. Thêm service-account JSON vào GitHub secret tên "
-            "GSC_SA_JSON (xem hướng dẫn trong docs/gsc-status.md)."
-        )
+        # Chưa cấu hình key = trạng thái bình thường trước khi setup.
+        # Thoát ÊM (mã 0) để workflow không báo đỏ/spam email mỗi tuần.
+        print("Chưa có GSC_SA_JSON — bỏ qua báo cáo tuần này. "
+              "Thêm service-account JSON vào GitHub secret 'GSC_SA_JSON' để bật.")
+        return
     prop = os.environ.get("GSC_PROPERTY", "").strip() or "sc-domain:greenspacers.vn"
 
     try:
