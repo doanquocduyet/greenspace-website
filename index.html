@@ -956,6 +956,27 @@ header nav > .logo-nav{margin-right:auto;}
  .services.full-wrap { padding-top: clamp(44px, 6vw, 64px); padding-bottom: clamp(44px, 6vw, 64px); }
  .faq.full-wrap { padding-top: clamp(44px, 6vw, 64px); padding-bottom: clamp(44px, 6vw, 64px); }
 
+ /* ===== CẬP NHẬT ===== */
+ .updates { background: var(--bg); }
+ .updates.full-wrap { padding-top: clamp(44px, 6vw, 64px); padding-bottom: clamp(44px, 6vw, 64px); }
+ .updates-inner { max-width: 780px; margin: 0 auto; }
+ .updates-head { text-align: center; margin: 0 auto 40px; }
+ .updates-kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 16px; }
+ .updates-head h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 600; color: var(--dark); line-height: 1.15; margin: 0 0 12px; }
+ .updates-head p { font-size: 15px; color: var(--grey-light); margin: 0; line-height: 1.7; }
+ .update-list { list-style: none; padding: 0; margin: 0; }
+ .update-item { display: grid; grid-template-columns: 92px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--border); }
+ .update-item:first-child { border-top: 0; padding-top: 0; }
+ .update-date { font-size: 13px; font-weight: 700; color: var(--green-mid); font-variant-numeric: tabular-nums; padding-top: 3px; }
+ .update-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--dark); line-height: 1.3; margin: 0 0 8px; }
+ .update-body p { font-size: 14.5px; line-height: 1.7; color: var(--grey-light); margin: 0 0 10px; }
+ .update-src { font-size: 13px; font-weight: 600; color: var(--green); text-decoration: none; }
+ .update-src:hover { color: var(--green-dark); text-decoration: underline; }
+ @media (max-width: 768px) {
+   .update-item { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+   .update-date { padding-top: 0; }
+ }
+
  /* ===== KIẾN THỨC / BÀI VIẾT ===== */
  .insights { background: var(--bg); }
  .insights.full-wrap { padding-top: clamp(44px, 6vw, 64px); padding-bottom: clamp(44px, 6vw, 64px); }
@@ -1425,6 +1446,45 @@ header nav > .logo-nav{margin-right:auto;}
  </div>
  </div>
  <a href="/cau-hoi-thuong-gap" class="faq-more" data-en="See all FAQs →">Xem tất cả câu hỏi thường gặp →</a>
+ </div>
+</section>
+
+<!-- ===== CẬP NHẬT ===== -->
+<section class="updates full-wrap" id="updates" data-en-hide="1">
+ <div class="updates-inner">
+  <div class="updates-head">
+   <span class="updates-kicker">Cập nhật</span>
+   <h2>Tin mới cho người có đất ở xa</h2>
+   <p>Chúng tôi theo dõi những thay đổi về pháp lý, quy hoạch và rủi ro mùa vụ ảnh hưởng tới người có đất ở xa. Cập nhật vài ngày một lần.</p>
+  </div>
+  <ul class="update-list">
+   <!-- GS-UPDATES:START (routine chèn tin mới NGAY dưới dòng này; giữ tối đa 6 mục) -->
+   <li class="update-item">
+    <time class="update-date" datetime="2026-01-01">01/2026</time>
+    <div class="update-body">
+     <h3>Giảm 70% tiền chuyển đất nông nghiệp lên thổ cư (từ 1/1/2026)</h3>
+     <p>Chuyển đất vườn, ao trong cùng thửa đã có đất ở lên thổ cư giờ chỉ nộp 30–50% tiền chênh lệch thay vì 100%. Ai có đất nông nghiệp ở Nam Ban đang tính lên thổ cư nên nắm mốc này trước khi làm thủ tục.</p>
+     <a class="update-src" href="https://luatvietnam.vn/dat-dai/tu-1-1-2026-giam-tien-chuyen-dat-nong-nghiep-len-tho-cu-653-106167-article.html" target="_blank" rel="noopener">Nguồn: LuatVietnam →</a>
+    </div>
+   </li>
+   <li class="update-item">
+    <time class="update-date" datetime="2026-01-01">01/2026</time>
+    <div class="update-body">
+     <h3>Nới điều kiện tách thửa, hợp thửa từ 1/1/2026</h3>
+     <p>Theo Nghị quyết 254/2025/QH15, điều kiện tách và hợp thửa được nới; chuyển mục đích một phần thửa không còn bắt buộc tách thửa. Đất ở xa muốn tách hay gộp lô nên kiểm tra lại điều kiện mới trước khi nộp hồ sơ.</p>
+     <a class="update-src" href="https://xaydungchinhsach.chinhphu.vn/noi-dieu-kien-tach-thua-hop-thua-mo-rong-cac-truong-hop-duoc-cap-so-do-lan-dau-119251225154829281.htm" target="_blank" rel="noopener">Nguồn: Chinhphu.vn →</a>
+    </div>
+   </li>
+   <li class="update-item">
+    <time class="update-date" datetime="2026-01-01">01/2026</time>
+    <div class="update-body">
+     <h3>Bảng giá đất mới áp dụng từ đầu 2026</h3>
+     <p>Nhiều nơi công bố bảng giá đất mới hiệu lực từ 1/1/2026, ảnh hưởng tiền sử dụng đất, thuế và phí khi chuyển nhượng hoặc chuyển mục đích. Chủ đất ở xa nên rà lại giá đất khu mình trước khi giao dịch.</p>
+     <a class="update-src" href="https://luatvietnam.vn/dat-dai/luat-dat-dai-moi-nhat-2026-va-van-ban-huong-dan-luat-dat-dai-653-104911-article.html" target="_blank" rel="noopener">Nguồn: LuatVietnam →</a>
+    </div>
+   </li>
+   <!-- GS-UPDATES:END -->
+  </ul>
  </div>
 </section>
 
