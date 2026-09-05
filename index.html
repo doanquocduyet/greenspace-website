@@ -788,6 +788,16 @@ header nav > .logo-nav{margin-right:auto;}
  .footer-contact-mini a { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--gold); letter-spacing: .5px; margin-bottom: 4px; }
  .footer-contact-mini a:hover { color: var(--gold-light); }
  .footer-contact-mini p { color: rgba(255,255,255,.5); font-size: 13px; line-height: 1.65; margin: 0; }
+ /* Zalo-first contact card (thay cho form) */
+ .footer-zalo { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); padding: clamp(24px, 3vw, 34px); }
+ .footer-zalo-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+ .footer-zalo-lead { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.7; margin: 0 0 22px; }
+ .footer-zalo-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 17px 20px; background: var(--gold); color: var(--dark); border-radius: 8px; font-weight: 700; font-size: 15px; letter-spacing: .4px; text-decoration: none; min-height: 52px; transition: var(--tr); }
+ .footer-zalo-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,97,.35); color: var(--dark); }
+ .footer-zalo-alt { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+ .footer-zalo-alt a { color: rgba(255,255,255,.7); font-size: 14px; text-decoration: none; transition: var(--tr); min-height: 24px; }
+ .footer-zalo-alt a:hover { color: var(--gold); }
+ .footer-zalo-note { font-size: 12px; color: rgba(255,255,255,.4); margin: 18px 0 0; text-align: center; }
  .footer-content {
  display: grid; grid-template-columns: 2.4fr 1fr 1fr;
  gap: 56px; padding: clamp(40px, 5vw, 50px) 0 38px;
@@ -1636,29 +1646,18 @@ header nav > .logo-nav{margin-right:auto;}
  <div class="footer-cta-text">
  <span class="section-label" data-en="Contact">Liên hệ</span>
  <h2 data-en-html="Get started&lt;br&gt;in one step">Bắt đầu ngay<br>chỉ một bước</h2>
- <p class="footer-cta-lead" data-en="Fill in the form — we&#39;ll get back to you within 24 hours to go over the details and arrange the first on-site inspection.">Điền form bên cạnh — chúng tôi sẽ liên hệ trong vòng 24 giờ để trao đổi cụ thể và sắp xếp kiểm tra thực địa đầu tiên.</p>
+ <p class="footer-cta-lead" data-en="Message us on Zalo — tell us where your land (and house or garden) in Nam Ban is. We reply within 24 hours, go over the details and arrange the first on-site inspection.">Nhắn Zalo cho chúng tôi — cho biết đất (và nhà, vườn nếu có) ở Nam Ban chỗ nào. Chúng tôi phản hồi trong 24 giờ, trao đổi cụ thể và sắp xếp kiểm tra thực địa đầu tiên.</p>
  </div>
- <form id="contactForm" action="https://formsubmit.co/1c34beb082aede897d69dde3735166c2" method="POST">
- <div class="form-group">
- <label for="name" data-en="Your name *">Tên của bạn *</label>
- <input type="text" id="name" name="Họ tên" required placeholder="Nguyễn Văn A" data-en-ph="e.g. John Smith">
+ <div class="footer-zalo">
+ <span class="footer-zalo-eyebrow" data-en="Fastest way">Nhanh nhất</span>
+ <p class="footer-zalo-lead" data-en="Send your Nam Ban land location and a few photos over Zalo — a real person reads it and replies. No forms, no waiting.">Gửi vị trí đất Nam Ban và vài tấm ảnh qua Zalo — có người thật đọc và trả lời. Không form, không chờ đợi.</p>
+ <a class="footer-zalo-btn" href="https://zalo.me/0978758788" target="_blank" rel="noopener" data-en="Chat on Zalo now →">Nhắn Zalo ngay →</a>
+ <div class="footer-zalo-alt">
+ <a href="tel:0978758788" data-en="Or call 0978 758 788">Hoặc gọi 0978 758 788</a>
+ <a href="mailto:greenspacers.ss@gmail.com?subject=Kh%C3%A1ch%20m%E1%BB%9Bi%20t%E1%BB%AB%20website%20GreenSpace" data-en="Prefer email? Write to us">Ngại nhắn? Gửi email cho chúng tôi</a>
  </div>
- <div class="form-group">
- <label for="phone" data-en="Zalo or phone number *">Số Zalo hoặc điện thoại *</label>
- <input type="tel" id="phone" name="Số điện thoại" required placeholder="0901 234 567">
+ <p class="footer-zalo-note" data-en="✓ Reply within 24 hours · No spam · No commitment">✓ Phản hồi trong 24 giờ · Không spam · Không ràng buộc</p>
  </div>
- <div class="form-group">
- <label for="worry" data-en="Tell us about your land *">Kể cho chúng tôi về mảnh đất của bạn *</label>
- <textarea id="worry" name="Nội dung" rows="4" required placeholder="Đất ở đâu, diện tích bao nhiêu, đang lo lắng gì..." data-en-ph="Where is the land, how big, what are you worried about..."></textarea>
- </div>
- <input type="hidden" name="_subject" value="🌱 Khách mới từ website GreenSpace">
- <input type="hidden" name="_cc" value="greenspacers.ss@gmail.com">
- <input type="hidden" name="_template" value="table">
- <input type="hidden" name="_next" value="https://greenspacers.vn/cam-on.html">
- <input type="hidden" name="_captcha" value="false">
- <button type="submit" class="form-submit" data-en="Send request →">Gửi yêu cầu →</button>
- <p style="font-size:12px;color:rgba(255,255,255,.45);margin-top:12px;text-align:center;" data-en="✓ Reply within 24 hours · No spam · No commitment">✓ Phản hồi trong 24 giờ · Không spam · Không ràng buộc</p>
- </form>
  </div>
  <div class="footer-content">
  <div class="footer-col footer-brand-col">
@@ -1748,48 +1747,6 @@ header nav > .logo-nav{margin-right:auto;}
 
  function scrollToContact() {
  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
- }
-
- async function handleFormSubmit(e) {
- e.preventDefault();
- const btn = e.target.querySelector('.form-submit');
- const msg = document.getElementById('formMessage');
- btn.textContent = 'Đang gửi...';
- btn.disabled = true;
- const data = {
- name: document.getElementById('name').value,
- phone: document.getElementById('phone').value,
- worry: document.getElementById('worry').value
- };
- // 1. Gửi email qua FormSubmit — chạy NỀN, có timeout 8s, fail im lặng (KHÔNG chặn UX, vì Zalo mới là kênh chính)
- try {
- var ctrl = new AbortController();
- var to = setTimeout(function () { ctrl.abort(); }, 8000);
- fetch('https://formsubmit.co/ajax/doanquocduyet@gmail.com', {
- method: 'POST',
- headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
- body: JSON.stringify({
- 'Tên khách': data.name,
- 'Số Zalo / Điện thoại': data.phone,
- 'Nội dung': data.worry,
- _subject: '🌱 Khách mới từ website GreenSpace — ' + data.name,
- _cc: 'greenspacers.ss@gmail.com',
- _template: 'table'
- }),
- signal: ctrl.signal
- }).then(function () { clearTimeout(to); }).catch(function () { clearTimeout(to); });
- } catch (err) {}
- // 3. Zalo = KÊNH CHÍNH, mở NGAY trong thao tác bấm (không phụ thuộc FormSubmit, tránh popup-block)
- var zaloMsg = 'Chào GreenSpace, tôi là ' + data.name + '.'
- + '\nSố điện thoại/Zalo: ' + data.phone
- + '\nVề mảnh đất của tôi: ' + data.worry
- + '\nNhờ GreenSpace kiểm tra giúp. Cảm ơn!';
- var zaloUrl = 'https://zalo.me/0978758788?text=' + encodeURIComponent(zaloMsg);
- window.open(zaloUrl, '_blank');
- msg.innerHTML = '<span class="success-message">✓ Đã ghi nhận! Đang mở Zalo để bạn nhắn trực tiếp — chỉ cần bấm Gửi.</span>';
- e.target.reset();
- btn.textContent = 'Gửi yêu cầu →';
- btn.disabled = false;
  }
 
  function toggleFaq(btn) {
