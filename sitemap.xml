@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://greenspacers.vn/</loc>
     <lastmod>2026-09-05</lastmod>
     <priority>1.0</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/hero-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://greenspacers.vn/images/sample-large.jpg</image:loc></image:image>
+    <image:image><image:loc>https://greenspacers.vn/images/discovery.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/ban-dat-o-xa-duoc-gia</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/ban-dat-o-xa-duoc-gia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/cach-giu-dat-an-toan-tu-xa</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/cach-giu-dat-an-toan-tu-xa.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/cau-hoi-thuong-gap</loc>
@@ -29,21 +38,29 @@
     <loc>https://greenspacers.vn/dat-nam-ban-gia-re</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/dat-nam-ban-gia-re.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/dat-nam-ban-view-dep</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/dat-nam-ban-view-dep.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/dat-nen-phan-lo-nam-ban</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/dat-nen-phan-lo-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/dat-vuon-nam-ban-ai-trong</loc>
     <lastmod>2026-07-17</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/dat-vuon-nam-ban-ai-trong.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/gia-trong-coi-dat-bao-nhieu</loc>
@@ -59,11 +76,15 @@
     <loc>https://greenspacers.vn/kiem-tra-dat-lam-ha</loc>
     <lastmod>2026-07-25</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/kiem-tra-dat-lam-ha.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/quan-ly-dat-nam-ban</loc>
     <lastmod>2026-07-25</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/quan-ly-dat-nam-ban.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/quan-ly-tai-san-dat-tu-xa</loc>
@@ -94,6 +115,8 @@
     <loc>https://greenspacers.vn/ve-greenspace</loc>
     <lastmod>2026-07-25</lastmod>
     <priority>0.8</priority>
+  
+    <image:image><image:loc>https://greenspacers.vn/images/articles/ve-greenspace.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://greenspacers.vn/xu-ly-lan-chiem-dat-tu-xa</loc>
