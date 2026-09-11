@@ -1,0 +1,44 @@
+name: Auto đăng Facebook (Nam Ban)
+
+on:
+  schedule:
+    # Mỗi ngày 01:00 UTC = 08:00 giờ VN. Script chỉ đăng bài đã tới ngày trong
+    # hàng đợi, nên cuối tuần không có bài lịch thì tự động bỏ qua.
+    - cron: '0 1 * * *'
+  workflow_dispatch:   # bấm "Run workflow" để chạy tay / xem thử (dry-run)
+
+permissions:
+  contents: write
+
+jobs:
+  fb-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cài thư viện
+        run: pip install --quiet requests
+
+      - name: Đăng bài tới hạn
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: python scripts/fb-post.py
+
+      - name: Commit hàng đợi (nếu có bài vừa đăng)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f fb-queue/posts.json
+          if git diff --staged --quiet; then
+            echo "Không có thay đổi hàng đợi."
+          else
+            git commit -m "FB: đánh dấu bài đã đăng ($(date -u +%Y-%m-%d))"
+            git push
+          fi
