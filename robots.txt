@@ -35,7 +35,29 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+# AI agents mới 2026
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 Sitemap: https://greenspacers.vn/sitemap.xml
