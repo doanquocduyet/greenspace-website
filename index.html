@@ -1075,6 +1075,27 @@ header nav > .logo-nav{margin-right:auto;}
 .asset-cta .btn-primary:hover{ transform:translateY(-2px); }
 .asset-more{ margin-top:16px; }
 .asset-more a{ color:var(--gold); text-decoration:underline; font-size:14px; }
+
+/* ===== NGƯỜI ĐỨNG SAU (founder trust) ===== */
+.founder{ padding:clamp(56px,7vw,84px) 0; background:var(--bg); }
+.founder-inner{ display:grid; grid-template-columns:190px 1fr; gap:clamp(28px,5vw,52px); align-items:start; max-width:900px; margin:0 auto; }
+.founder-photo{ display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; }
+.founder-avatar{ width:170px; height:170px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:600; letter-spacing:2px; color:var(--gold); background:var(--green-dark); box-shadow:0 0 0 4px rgba(201,169,97,.25); }
+.founder-img{ width:170px; height:170px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 4px rgba(201,169,97,.25); display:block; }
+.founder-cap{ font-size:12px; color:var(--grey); line-height:1.5; max-width:180px; }
+.founder-msg .section-label{ display:block; color:var(--green-mid); font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; margin-bottom:10px; }
+.founder-msg h2{ font-family:'Cormorant Garamond',serif; font-size:clamp(26px,4vw,38px); color:var(--green); font-weight:600; margin:0 0 18px; line-height:1.15; }
+.founder-msg p{ color:var(--grey); font-size:16px; line-height:1.8; margin:0 0 14px; max-width:56ch; }
+.founder-trust{ list-style:none; padding:0; margin:22px 0; display:flex; flex-direction:column; gap:10px; }
+.founder-trust li{ position:relative; padding-left:28px; font-size:15px; color:var(--dark); line-height:1.6; }
+.founder-trust li::before{ content:'✓'; position:absolute; left:0; top:0; color:var(--gold); font-weight:700; }
+.founder-sign{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--green)!important; margin-top:20px!important; }
+@media(max-width:720px){
+  .founder-inner{ grid-template-columns:1fr; gap:20px; }
+  .founder-photo{ flex-direction:row; align-items:center; gap:16px; text-align:left; }
+  .founder-avatar,.founder-img{ width:88px; height:88px; font-size:26px; box-shadow:0 0 0 3px rgba(201,169,97,.25); }
+  .founder-cap{ max-width:none; }
+}
 </style>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Tôi đã nhờ người quen địa phương trông coi rồi, tại sao cần GreenSpace?", "acceptedAnswer": {"@type": "Answer", "text": "Người quen trông giúp vì tình cảm — không phải vì trách nhiệm. Họ sẽ không báo cáo hàng tháng. Họ sẽ không biết ranh giới GPS chính xác. Họ sẽ không dám làm việc cứng rắn với hàng xóm khi có tranh chấp vì sợ mất quan hệ. Và khi có vấn đề thật sự, họ thường báo muộn hoặc không báo. GreenSpace làm việc này như một cam kết chuyên nghiệp — có hợp đồng, có báo cáo, có trách nhiệm pháp lý."}}, {"@type": "Question", "name": "Nếu phát hiện đất bị lấn chiếm thì GreenSpace làm gì?", "acceptedAnswer": {"@type": "Answer", "text": "Chúng tôi thông báo cho bạn ngay trong vòng 24 giờ kèm ảnh bằng chứng cụ thể. Sau đó làm việc trực tiếp với người lấn chiếm để đề nghị phục hồi nguyên trạng. Nếu không giải quyết được, chúng tôi hỗ trợ bạn làm việc với chính quyền địa phương — mà bạn không cần phải có mặt tại chỗ."}}, {"@type": "Question", "name": "Làm sao tôi biết các anh thật sự ra tận đất chứ không gửi ảnh cũ?", "acceptedAnswer": {"@type": "Answer", "text": "Câu hỏi rất chính đáng. Mỗi tấm ảnh chúng tôi gửi đều có tọa độ GPS và thời gian chụp ngay trên ảnh — bạn mở ra là thấy đúng vị trí lô đất, đúng ngày giờ thật. Cảnh vật, cây cỏ, ánh nắng mỗi tháng mỗi khác, nên không thể dùng lại ảnh cũ được."}}, {"@type": "Question", "name": "Tôi đang định mua một lô, kiểm tra giúp trước khi mua được không?", "acceptedAnswer": {"@type": "Answer", "text": "Được. Trước khi bạn xuống tiền, chúng tôi ra tận nơi xem giúp: ranh giới có đúng như rao không, đất có đang bị lấn không, đường vào, địa hình và tình trạng thực tế — rồi gửi ảnh GPS để bạn quyết định bằng mắt thấy thật, chứ không chỉ nghe kể. Cứ nhắn Zalo lô bạn đang cân nhắc, chúng tôi xem giúp."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq-q", ".faq-a"]}}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://greenspacers.vn/#business", "image": "https://greenspacers.vn/images/og-image.jpg", "name": "GreenSpace", "alternateName": "Quản lý đất Nam Ban", "description": "Quản lý đất, nhà và vườn tại Nam Ban, Lâm Hà, Lâm Đồng cho người ở xa. Kiểm tra thực địa hàng tháng, báo cáo ảnh GPS qua Zalo, cảnh báo bất thường trong 24 giờ — một đầu mối giữ toàn bộ tài sản Nam Ban.", "url": "https://greenspacers.vn", "telephone": "+84978758788", "address": {"@type": "PostalAddress", "addressLocality": "Nam Ban", "addressRegion": "Lâm Đồng", "addressCountry": "VN"}, "geo": {"@type": "GeoCoordinates", "latitude": 11.7553, "longitude": 108.2242}, "areaServed": {"@type": "Place", "name": "Nam Ban, Lâm Hà, Lâm Đồng"}, "priceRange": "1.500.000đ - 2.500.000đ/tháng", "openingHours": "Mo-Su 07:00-20:00", "sameAs": ["https://zalo.me/0978758788", "https://www.facebook.com/greenspacers", "https://www.tiktok.com/@greenspacers", "https://maps.app.goo.gl/DJ7SNfaxzdw6Mkbv8"], "hasMap": "https://maps.app.goo.gl/DJ7SNfaxzdw6Mkbv8", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Dịch vụ GreenSpace", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kiểm tra thực địa định kỳ", "description": "Ra tận đất kiểm tra ranh giới, chụp ảnh GPS, báo cáo qua Zalo mỗi tháng."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cảnh báo bất thường", "description": "Phát hiện lấn ranh, ngập nước, thay đổi quy hoạch — báo ngay cho chủ đất."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hỗ trợ hành chính và pháp lý", "description": "Đại diện làm việc với chính quyền địa phương và hàng xóm khi cần."}}]}, "knowsAbout": ["Trông coi đất từ xa", "Quản lý tài sản đất cho người ở xa", "Kiểm tra ranh giới và mốc giới đất", "Giữ và phục hồi mốc ranh", "Báo cáo ảnh GPS định kỳ", "Theo dõi quy hoạch quanh đất khách", "Cảnh báo lấn chiếm và xâm phạm đất", "Lập hồ sơ hiện trạng đất", "Kiểm tra đất trước và sau khi mua", "Quản lý tài sản Nam Ban", "Quản lý nhà vườn Nam Ban", "Khảo sát hiện trạng đất trước khi mua"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3", "bestRating": "5", "worstRating": "1"}, "review": [{"@type": "Review", "author": {"@type": "Person", "name": "Anh Tuấn"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Tuy ở TPHCM nhưng bận quá cũng ít lên Nam Ban, nhưng mỗi tháng đều có báo cáo đầy đủ, phí bằng buổi nhậu, đáng đồng tiền."}, {"@type": "Review", "author": {"@type": "Person", "name": "Chị Hương"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Có lần các anh báo ranh bị sai cho sụt lún đất, xử lý giúp gọn, tôi không phải bay vào lần nào."}, {"@type": "Review", "author": {"@type": "Person", "name": "Anh Minh"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Mỗi tháng có báo cáo tổng hợp đất ở đây, rõ ràng chi tiết nên cũng yên tâm"}]}</script>
@@ -1485,6 +1506,32 @@ header nav > .logo-nav{margin-right:auto;}
  <button class="btn btn-light" onclick="scrollToContact()" data-en="Check the plot I am considering →">Kiểm tra lô tôi đang cân nhắc →</button>
  <p class="prebuy-bridge" data-en="Already bought? GreenSpace watches over your plot year-round — like the plans above.">Mua xong rồi? GreenSpace trông giữ lô đất giúp bạn quanh năm — như các gói phía trên.</p>
  </div>
+ </div>
+</section>
+
+<!-- ===== NGƯỜI ĐỨNG SAU (niềm tin cá nhân) ===== -->
+<section class="founder full-wrap" id="founder">
+ <div class="section-wrap">
+  <div class="founder-inner">
+   <div class="founder-photo">
+    <!-- GS: khi có ảnh thật, thay .founder-avatar bằng: <img src="images/founder.jpg" alt="Đoàn Quốc Duyệt — người sáng lập GreenSpace" class="founder-img"> -->
+    <div class="founder-avatar" aria-hidden="true">ĐQD</div>
+    <span class="founder-cap" data-en="Founder, on the ground in Nam Ban">Người sáng lập, có mặt tại Nam Ban</span>
+   </div>
+   <div class="founder-msg">
+    <span class="section-label" data-en="The person behind it">Người đứng sau</span>
+    <h2 data-en="Who will look after your land?">Ai sẽ trông đất của bạn?</h2>
+    <p data-en="I'm Duyệt. The person who drives out to your plot and takes the photo you get each month — usually me, or someone on the team living right here in Nam Ban.">Tôi là Duyệt. Người ra tận lô chụp tấm ảnh bạn nhận mỗi tháng — thường là tôi, hoặc anh em trong đội ở ngay Nam Ban.</p>
+    <p data-en="I get it — you're far away, you've never met any of us, and handing over a plot worth hundreds of millions to a stranger online is worrying. If I were you, I'd worry too.">Tôi hiểu — bạn ở xa, chưa gặp mặt ai bao giờ, giao miếng đất mấy trăm triệu cho người lạ qua mạng thì lo là phải. Nếu là tôi, tôi cũng lo.</p>
+    <p data-en="So here's how I work: whenever you're up in Lâm Đồng, I'll take you out to the plot for a coffee. Can't come up yet? I'll video-call you standing right on your land. Every photo carries GPS coordinates and a timestamp — no old photos, no other plots.">Nên tôi làm thế này: bạn lên Lâm Đồng lúc nào, tôi đưa ra tận đất, cà phê nói chuyện. Chưa lên được thì gọi video, tôi đứng ngay trên đất bạn quay cho xem. Ảnh nào gửi cũng có tọa độ GPS và ngày giờ — không phải ảnh cũ, không phải lô khác.</p>
+    <ul class="founder-trust">
+     <li data-en="Meet in person — come up to Lâm Đồng and I'll take you to your plot">Gặp trực tiếp được — bạn lên Lâm Đồng, tôi đưa ra tận lô</li>
+     <li data-en="A video call from your land, any time">Gọi video từ ngay trên đất bạn, bất cứ lúc nào</li>
+     <li data-en="Every photo carries GPS + date, never reused">Mỗi ảnh có tọa độ GPS + ngày giờ, không dùng lại ảnh cũ</li>
+    </ul>
+    <p class="founder-sign" data-en="— Đoàn Quốc Duyệt · Founder of GreenSpace · Nam Ban, Lâm Hà">— Đoàn Quốc Duyệt · Người sáng lập GreenSpace · Nam Ban, Lâm Hà</p>
+   </div>
+  </div>
  </div>
 </section>
 
