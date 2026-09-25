@@ -7,6 +7,7 @@
     <priority>1.0</priority>
   
     <image:image><image:loc>https://greenspacers.vn/images/hero-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://greenspacers.vn/images/founder.jpg</image:loc></image:image>
     <image:image><image:loc>https://greenspacers.vn/images/sample-large.jpg</image:loc></image:image>
     <image:image><image:loc>https://greenspacers.vn/images/discovery.jpg</image:loc></image:image>
   </url>
