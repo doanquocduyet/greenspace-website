@@ -83,10 +83,31 @@ for f in PAGES:
             if qn not in t: L('B02', f'{f}: câu hỏi schema không hiện trên trang: {qn[:60]}')
             elif an not in t: L('B02', f'{f}: câu trả lời schema lệch chữ hiển thị: {qn[:60]}')
 
-# ---------- B03 Luật link: không nhắc/link Panorama ở bất kỳ đâu ----------
-for p in PAGES + ['llms.txt', 'feed.xml', 'sitemap.xml', 'robots.txt'] + [os.path.relpath(x, ROOT) for x in glob.glob(os.path.join(ROOT, 'fb-queue', '*.json'))]:
-    if os.path.exists(os.path.join(ROOT, p)) and re.search(r'panorama', rd(p), re.I):
-        L('B03', f'{p}: có chữ "panorama" (luật link: GreenSpace không nhắc/link Panorama)')
+# ---------- B03 Luật link: không nhắc/link web thứ ba của chủ ở bất kỳ đâu ----------
+# Tên bị cấm KHÔNG viết thẳng ra trong repo công khai — ghép ngược để bẫy vẫn dò được.
+CAM = 'amaronap'[::-1]
+def file_trong_repo():
+    r = subprocess.run(['git', '-C', ROOT, 'ls-files', '--cached', '--others', '--exclude-standard'], capture_output=True, text=True)
+    if r.returncode == 0 and r.stdout.strip(): return r.stdout.split('\n')
+    return [os.path.relpath(os.path.join(d, x), ROOT) for d, _, fs in os.walk(ROOT) if '/.git' not in d + '/' for x in fs]
+for p in file_trong_repo():
+    q = os.path.join(ROOT, p)
+    if not p or not os.path.isfile(q): continue
+    b = open(q, 'rb').read()
+    if CAM.encode() in b.lower():
+        L('B03', f'{p}: có tên web thứ ba bị cấm (kể cả metadata ảnh) — luật link')
+
+# ---------- B32 Ảnh không mang metadata (GPS, bản quyền lạ, tên máy) ----------
+for p in file_trong_repo():
+    if not p.startswith('images/') or not p.lower().endswith(('.jpg', '.jpeg', '.webp', '.png')): continue
+    b = open(os.path.join(ROOT, p), 'rb').read()
+    if b'Exif\x00\x00' in b or b'EXIF' in b[:64] or b'<x:xmpmeta' in b or b'GPSLatitude' in b:
+        L('B32', f'{p}: ảnh còn metadata EXIF/XMP — xoá trước khi đưa lên (có thể lộ GPS, tên, bản quyền web khác)')
+
+# ---------- B33 Tài liệu/code nội bộ không lên web ----------
+vi = open(os.path.join(ROOT, '.vercelignore'), encoding='utf-8').read().split() if os.path.exists(os.path.join(ROOT, '.vercelignore')) else []
+for m in ('CLAUDE.md', 'docs/', 'scripts/', 'data/', 'fb-queue/', '.github/'):
+    if m not in vi: L('B33', f'.vercelignore thiếu "{m}" — file nội bộ sẽ công khai trên greenspacers.vn')
 
 # ---------- B04 Không chữ máy móc trong chữ khách đọc ----------
 MAY = re.compile(r'\b(script|scripts|tự động|auto|bot|chatbot|nhập tay|thuật toán|automation)\b', re.I)
