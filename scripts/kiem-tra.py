@@ -97,12 +97,31 @@ for p in file_trong_repo():
     if CAM.encode() in b.lower():
         L('B03', f'{p}: có tên web thứ ba bị cấm (kể cả metadata ảnh) — luật link')
 
-# ---------- B32 Ảnh không mang metadata (GPS, bản quyền lạ, tên máy) ----------
+# ---------- B32 Ảnh mang dấu bản quyền GreenSpace, không GPS ----------
+# Đóng dấu: python3 scripts/dong-dau-anh.py (chèn thẳng vào file, không nén lại).
+def exif_tiff(b, p):
+    """Lấy khối TIFF của EXIF trong JPEG (APP1) hoặc WebP (chunk EXIF)."""
+    if p.lower().endswith(('.jpg', '.jpeg')):
+        k = b.find(b'Exif\x00\x00'); return b[k + 6:] if k >= 0 else None
+    k = b.find(b'EXIF', 12)
+    if k < 0: return None
+    t = b[k + 8:k + 8 + int.from_bytes(b[k + 4:k + 8], 'little')]
+    return t[6:] if t.startswith(b'Exif\x00\x00') else t
+def co_gps(t):
+    if not t or t[:2] not in (b'MM', b'II'): return False
+    e = '>' if t[:2] == b'MM' else '<'
+    try:
+        o = int.from_bytes(t[4:8], 'big' if e == '>' else 'little'); n = int.from_bytes(t[o:o + 2], 'big' if e == '>' else 'little')
+        return any(int.from_bytes(t[o + 2 + 12 * i:o + 4 + 12 * i], 'big' if e == '>' else 'little') == 0x8825 for i in range(n))
+    except Exception: return False
 for p in file_trong_repo():
-    if not p.startswith('images/') or not p.lower().endswith(('.jpg', '.jpeg', '.webp', '.png')): continue
-    b = open(os.path.join(ROOT, p), 'rb').read()
-    if b'Exif\x00\x00' in b or b'EXIF' in b[:64] or b'<x:xmpmeta' in b or b'GPSLatitude' in b:
-        L('B32', f'{p}: ảnh còn metadata EXIF/XMP — xoá trước khi đưa lên (có thể lộ GPS, tên, bản quyền web khác)')
+    if not p.startswith('images/') or not p.lower().endswith(('.jpg', '.jpeg', '.webp')): continue
+    b = open(os.path.join(ROOT, p), 'rb').read(); t = exif_tiff(b, p)
+    xmp = b[b.find(b'<x:xmpmeta'):] if b'<x:xmpmeta' in b else b''
+    if not t or b'greenspacers.vn' not in t or b'greenspacers.vn' not in xmp:
+        L('B32', f'{p}: ảnh thiếu dấu bản quyền GreenSpace (EXIF + XMP) — chạy python3 scripts/dong-dau-anh.py')
+    if co_gps(t) or b'GPSLatitude' in b:
+        L('B32', f'{p}: ảnh có toạ độ GPS — lộ vị trí, phải xoá')
 
 # ---------- B33 Tài liệu/code nội bộ không lên web ----------
 vi = open(os.path.join(ROOT, '.vercelignore'), encoding='utf-8').read().split() if os.path.exists(os.path.join(ROOT, '.vercelignore')) else []

@@ -10,10 +10,12 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 KT = os.path.join(ROOT, 'scripts', 'kiem-tra.py')
 
 def sua(path, old, new, regex=False):
-    if regex == 'exif':   # phá ảnh: gắn metadata vào
+    if regex in ('strip', 'gps'):   # phá ảnh: xoá dấu bản quyền / gắn GPS
         from PIL import Image
-        im = Image.open(path); ex = Image.Exif(); ex[0x8298] = 'test'
-        im.save(path, exif=ex.tobytes()); return
+        im = Image.open(path); ex = Image.Exif()
+        if regex == 'gps':
+            ex = im.getexif(); ex[0x8825] = {1: 'N', 2: (11.0, 50.0, 0.0), 3: 'E', 4: (108.0, 20.0, 0.0)}
+        im.save(path, exif=ex.tobytes(), **({'xmp': im.info['xmp']} if regex == 'gps' and 'xmp' in im.info else {})); return
     s = open(path, encoding='utf-8').read()
     s2 = re.sub(old, new, s, count=1, flags=re.S) if regex else s.replace(old, new, 1)
     assert s2 != s, f'mẫu phá không khớp: {path}: {old[:50]!r}'
@@ -25,7 +27,8 @@ PHA = [
  ('B01', A, r'("@type": "BreadcrumbList".*?)\}\]\}</script>', r'\1}]</script>', True),
  ('B02', A, 'Để không thì đất không tự mất, nhưng', 'Để không thì đất chẳng tự mất, nhưng', False),
  ('B03', 'llms.txt', 'GreenSpace', 'GreenSpace (xem namban' + 'amaronap'[::-1] + '.com)', False),
- ('B32', 'images/founder.jpg', b'', b'', 'exif'),
+ ('B32', 'images/founder.jpg', b'', b'', 'strip'),
+ ('B32', 'images/hero-1.jpg', b'', b'', 'gps'),
  ('B33', '.vercelignore', 'CLAUDE.md\n', '', False),
  ('B04', A, '<p>Giao dịch khép lại', '<p>Script tự động lo hết. Giao dịch khép lại', False),
  ('B05', A, 'và cách theo dõi từ xa.">', 'và cách theo dõi từ xa, cách lập hồ sơ gốc, cách giữ mốc ranh, cách nhờ người trông khi ở xa">', False),
@@ -86,7 +89,7 @@ try:
                 shutil.copy2(os.path.join(ROOT, rel), os.path.join(d, rel))
         sua(os.path.join(d, f), old, new, rx)
         out = chay(d).stdout
-        ok = f'[{ma}]' in out
+        ok = f'[{ma}]' in out and (rx != 'gps' or 'GPS' in out)   # phá GPS phải nổ đúng lý do GPS
         hong += not ok
         print(('✓ nổ ' if ok else '✗ KHÔNG NỔ ') + f'{ma}  ({f}: {old[:45]!r})')
     print('Tất cả bẫy đều nổ.' if not hong else f'{hong} bẫy không nổ — bẫy viết sai, phải sửa.')

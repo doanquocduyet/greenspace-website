@@ -2,7 +2,7 @@
 
 Sổ lỗi thật của greenspacers.vn. Mỗi lỗi: **đã làm · vì sao · cách kiểm (mã bẫy)**.
 Bẫy nằm trong `scripts/kiem-tra.py`, chạy trên CI mỗi lần push (`.github/workflows/kiem-tra.yml`).
-Thử phá: `python3 scripts/thu-pha-bay.py` (44 lần phá, 31 bẫy — tất cả phải nổ).
+Thử phá: `python3 scripts/thu-pha-bay.py` (45 lần phá, 31 bẫy — tất cả phải nổ).
 
 ## Đợt 25/9/2026 — áp bàn giao đợt 2 của Nam Ban Villas + các lỗi cùng họ
 
@@ -40,6 +40,11 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (44 lần phá, 31 bẫy — tất 
 - B02 báo 4 câu FAQ lệch chữ — do bóc thẻ `<a>` chèn thêm dấu cách → thẻ trong dòng bỏ không chèn cách.
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
+
+## Đợt 25/9/2026 (tối) — đóng dấu bản quyền ảnh (theo cách Nam Ban Villas)
+- 54 ảnh trước đó trống thông tin chủ ảnh. `scripts/dong-dau-anh.py` chèn EXIF (Artist, Copyright, ImageDescription — chỉ ASCII) + XMP chuẩn IPTC (dc:rights "© 2026 GreenSpace — greenspacers.vn", creator, WebStatement, UsageTerms, Credit, Licensor, liên hệ) **thẳng vào file JPEG/WebP, không nén lại**.
+- Đã kiểm: 54/54 ảnh giữ nguyên từng điểm ảnh; chạy lại không đổi thêm (idempotent); XMP đọc được bằng trình phân tích XML; Chromium hiển thị 54/54; mọi trang tải đủ ảnh. Thêm ~1,8 KB/ảnh. Không ghi GPS.
+- B32 đổi từ "không metadata" → "phải có dấu GreenSpace, không GPS". Thử phá: xoá dấu → nổ; gắn GPS (giữ nguyên XMP) → nổ đúng lý do GPS.
 
 ## Đợt 25/9/2026 (chiều) — lộ tên web thứ ba + file nội bộ công khai
 
@@ -91,7 +96,7 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (44 lần phá, 31 bẫy — tất 
 | B01 | JSON-LD đọc được |
 | B02 | FAQ schema = chữ hiển thị (nguyên văn) |
 | B03 | Không có tên web thứ ba ở mọi file trong repo (kể cả metadata ảnh) |
-| B32 | Ảnh không còn metadata EXIF/XMP |
+| B32 | Ảnh mang dấu bản quyền GreenSpace (EXIF + XMP), không GPS |
 | B33 | .vercelignore giữ file nội bộ không lên web |
 | B04 | Không chữ máy móc (thân, khung, llms.txt) |
 | B05 | Mô tả ≤160, hết câu, ngoặc đủ, có "Nam Ban" (meta/og/twitter/JSON-LD) |
