@@ -1,0 +1,18 @@
+{
+  "_ghi_chu": "Nguồn số liệu duy nhất. Đổi giá/số lô/số năm thì sửa ở đây TRƯỚC, rồi sửa mọi chỗ trên web; scripts/kiem-tra.py (bẫy B06) chặn chỗ nào lệch.",
+  "gia_trieu_thang": ["1,5", "2", "2,5", "2,49"],
+  "gia_dong_thang": ["1.500.000đ", "2.000.000đ", "2.500.000đ", "2.490.000đ"],
+  "so_lo_dang_theo": "50+",
+  "so_nam_lam": "4",
+  "trang_dich_vu": [
+    "quan-ly-dat-nam-ban.html",
+    "kiem-tra-dat-lam-ha.html",
+    "gia-trong-coi-dat-bao-nhieu.html",
+    "khao-sat-hien-trang-dat-truoc-khi-mua.html",
+    "quan-ly-tai-san-dat-tu-xa.html",
+    "quan-ly-tai-san-nha-vuon-nam-ban.html",
+    "thue-dat-hang-nam-nop-ho.html",
+    "trich-luc-thua-dat-lam-ho.html",
+    "xu-ly-lan-chiem-dat-tu-xa.html"
+  ]
+}
