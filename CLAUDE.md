@@ -8,7 +8,7 @@ Liên hệ duy nhất: Zalo / điện thoại **0978 758 788**. Người sáng l
 - Repo GitHub **public**: mọi file commit ai cũng đọc được. Không đưa bí mật, token, tên web thứ ba.
 - `.vercelignore` giữ CLAUDE.md, docs/, scripts/, data/, fb-queue/, .github/ **không lên greenspacers.vn** (bẫy B33).
 - `docs/` bị `.gitignore` — tài liệu nội bộ chỉ nằm máy; muốn đưa lên repo thì `git add -f` và soát chữ trước.
-- Ảnh đưa lên phải **xoá metadata** (EXIF/XMP có thể chứa GPS, tên, bản quyền web khác) — bẫy B32.
+- Ảnh đưa lên: chạy `python3 scripts/dong-dau-anh.py` — xoá metadata cũ (GPS, tên, bản quyền web khác) và **đóng dấu bản quyền GreenSpace** (EXIF + XMP chuẩn IPTC: © GreenSpace, greenspacers.vn, Zalo 0978 758 788, không dùng lại khi chưa đồng ý). Chèn thẳng, không nén lại. Bẫy B32 chặn ảnh thiếu dấu hoặc có GPS.
 
 ## Trước khi đẩy bất cứ thứ gì
 ```
