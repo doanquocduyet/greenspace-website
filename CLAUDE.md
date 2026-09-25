@@ -24,7 +24,10 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 9. **FAQ:** chữ trong FAQPage schema = chữ hiển thị, nguyên văn từng chữ.
 10. **Ngày:** `datePublished` = ngày đăng thật (không lùi). `dateModified` = `lastmod` trong sitemap, chỉ tiến, chỉ đổi khi chữ khách đọc thật sự đổi.
 11. **Ảnh:** đường dẫn tuyệt đối `/images/…`; alt chỉ tả cái thấy trong khung (mở ảnh ra xem rồi mới viết); ảnh đầu bài có srcset 640/900/1200 (`images/articles/<slug>-640.webp`, `-900.webp`).
-12. **Nói đúng sự thật trên trang:** chỉ đưa tin có nguồn chính thức; tin đồn (sáp nhập, quy hoạch…) chưa có văn bản thì không đưa.
+12. **FAQ mở sẵn** (đáp án hiện thẳng, vẫn gập được). **Bậc tiêu đề không nhảy cóc** (h1→h2→h3). Mỗi trang ≥ 3 link vào; khối "Bài liên quan" dùng chữ neo là **câu hỏi** bài đích trả lời, cấm "xem thêm / tại đây".
+13. **Chữ trong chuỗi JS (câu xoay vòng, bản dịch) cũng là chữ khách đọc** — cùng luật số liệu, chữ máy móc, địa danh.
+14. **Sửa hàng loạt:** JSON-LD sửa bằng `json.loads` → sửa cây → `json.dumps`, không regex. Khối HTML cắt bằng chỉ số (thẻ mở → thẻ đóng đúng), không `.*?` mù. Thay chữ hàng loạt xong thì chạy bẫy (lặp từ B29, ngoặc B05). Sửa một thứ thì kiểm **cả loại đó trên mọi trang**.
+15. **Nói đúng sự thật trên trang:** chỉ đưa tin có nguồn chính thức; tin đồn (sáp nhập, quy hoạch…) chưa có văn bản thì không đưa.
 
 ## Khuôn một trang bài / dịch vụ mới (phiếu cho ô đăng bài)
 Chép từ một bài đang chạy (vd `xu-ly-lan-chiem-dat-tu-xa.html`) — giữ đủ:

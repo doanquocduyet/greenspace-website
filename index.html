@@ -395,7 +395,7 @@ header nav > .logo-nav{margin-right:auto;}
  font-family: 'Cormorant Garamond', serif;
  font-size: 18px; font-weight: 700; color: white; flex-shrink: 0;
  }
- .author-info h4 { color: var(--white); font-size: 14px; margin-bottom: 2px; }
+ .author-info h3 { color: var(--white); font-size: 14px; font-weight: 600; font-family: inherit; line-height: 1.4; margin: 0 0 2px; }
  .author-info p { color: rgba(255,255,255,.75); font-size: 12px; margin: 0; }
  .testimonial-tag {
  display: inline-block; margin-top: 16px;
@@ -442,7 +442,7 @@ header nav > .logo-nav{margin-right:auto;}
  transition: max-height .4s ease, padding .3s ease;
  font-size: 14px; color: var(--grey); line-height: 1.8;
  }
- .faq-a.open { max-height: 300px; padding-bottom: 20px; }
+ .faq-a.open { max-height: none; padding-bottom: 20px; }
  .faq-more { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:13px 26px; border:1px solid var(--green); border-radius:8px; color:var(--green); text-decoration:none; font-size:14px; font-weight:500; transition:background .3s ease,color .3s ease; min-height:44px; }
  .faq-more:hover { background:var(--green); color:#fff; }
  label {
@@ -553,7 +553,7 @@ header nav > .logo-nav{margin-right:auto;}
  .dlog-tag-alert { color: #c0492f; }
  .dlog-tag-ok { color: var(--green); }
  .dlog-content h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.8vw, 30px); font-weight: 600; line-height: 1.25; color: var(--dark); margin: 0 0 14px; }
- .dlog-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--dark); margin: 0 0 7px; }
+ .dlog-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--dark); margin: 0 0 7px; }
  .dlog-content p { font-size: 14px; line-height: 1.75; color: #585858; margin: 0 0 12px; }
  .dlog-media { margin: 0 0 16px; border-radius: 10px; overflow: hidden; max-width: 440px; aspect-ratio: 3 / 2; }
  .dlog-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -637,7 +637,7 @@ header nav > .logo-nav{margin-right:auto;}
  border-bottom: 1px solid rgba(255,255,255,.08);
  }
  .footer-brand-col { max-width: 380px; }
- .footer-col h4 {
+ .footer-col h3 {
  color: var(--gold); font-size: 12px; font-weight: 700;
  letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 20px;
  }
@@ -959,7 +959,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <a href="#contact" data-en="Contact">Liên hệ</a>
  <a class="nav-cta" href="https://zalo.me/0978758788" target="_blank" rel="noopener" data-en="Get advice">Tư vấn ngay</a>
  </div>
- <div class="lang" role="group" aria-label="Language"><button class="lang-opt is-active" data-lang="vi" type="button">VI</button><span class="lang-sep"></span><button class="lang-opt" data-lang="en" type="button">EN</button></div>
+ <div class="lang" role="group" aria-label="Language"><button class="lang-opt is-active" data-lang="vi" type="button" aria-pressed="true">VI</button><span class="lang-sep"></span><button class="lang-opt" data-lang="en" type="button" aria-pressed="false">EN</button></div>
  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
  </nav>
 </header>
@@ -1102,7 +1102,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <span class="dlog-mark"></span>
  <div class="dlog-content">
  <span class="dlog-tag" data-en="Zoning">Quy hoạch</span>
- <h4 data-en="Road boundary changed">Lộ giới thay đổi</h4>
+ <h3 data-en="Road boundary changed">Lộ giới thay đổi</h3>
  <p data-en="A new road passes the corner of the plot. The owner in HCMC was warned 4 months ahead.">Tuyến đường mới đi qua góc lô. Chủ đất ở TP.HCM được báo trước 4 tháng.</p>
  <span class="dlog-result dlog-result-sm" data-en="Alerted 4 months in advance">Báo sớm 4 tháng</span>
  </div>
@@ -1111,7 +1111,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <span class="dlog-mark"></span>
  <div class="dlog-content">
  <span class="dlog-tag" data-en="Land condition">Tình trạng đất</span>
- <h4 data-en="Flooding after rain">Ngập sau mưa</h4>
+ <h3 data-en="Flooding after rain">Ngập sau mưa</h3>
  <p data-en="Heavy rain waterlogged the low-lying area. Spotted early, drainage proposed in time.">Mưa lớn làm khu thấp úng nước. Phát hiện sớm, đề xuất thoát nước kịp thời.</p>
  <span class="dlog-result dlog-result-sm" data-en="Reported within 24h">Báo trong 24h</span>
  </div>
@@ -1120,7 +1120,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <span class="dlog-mark dlog-mark-ok"></span>
  <div class="dlog-content">
  <span class="dlog-tag dlog-tag-ok" data-en="Most of the time">Phần lớn thời gian</span>
- <h4 data-en="Everything is fine">Mọi thứ vẫn ổn</h4>
+ <h3 data-en="Everything is fine">Mọi thứ vẫn ổn</h3>
  <p data-en="Most reports: boundaries intact, nothing unusual. That is exactly what you pay to know — not to guess.">Đa số báo cáo: ranh giới nguyên vẹn, không bất thường. Đó chính xác là thứ bạn trả tiền để biết — không phải đoán.</p>
  <span class="dlog-result dlog-result-sm" data-en="Certainty">Sự chắc chắn</span>
  </div>
@@ -1252,7 +1252,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <div class="testimonial-author">
  <div class="author-avatar">T</div>
  <div class="author-info">
- <h4>Anh Tuấn</h4>
+ <h3>Anh Tuấn</h3>
  <p data-en="HCMC · 280m² plot">TP.HCM · lô 280m²</p>
  </div>
  </div>
@@ -1264,7 +1264,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <div class="testimonial-author">
  <div class="author-avatar">H</div>
  <div class="author-info">
- <h4>Chị Hương</h4>
+ <h3>Chị Hương</h3>
  <p data-en="Hanoi · Đông Thanh plot">Hà Nội · lô đất Đông Thanh</p>
  </div>
  </div>
@@ -1276,7 +1276,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <div class="testimonial-author">
  <div class="author-avatar">M</div>
  <div class="author-info">
- <h4>Anh Minh</h4>
+ <h3>Anh Minh</h3>
  <p data-en="Hải Phòng · 3 plots, 1,500m²">Hải Phòng · 3 lô 1.500m²</p>
  </div>
  </div>
@@ -1381,32 +1381,32 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  </div>
  <div class="faq-list">
  <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
+ <button class="faq-q open" onclick="toggleFaq(this)" aria-expanded="true">
  <span data-en="I already have someone local looking after my land. Why do I need GreenSpace?">Tôi đã nhờ người quen địa phương trông coi rồi, tại sao cần GreenSpace?</span>
  <span class="faq-icon">+</span>
  </button>
- <div class="faq-a" data-en="A friend helps out of goodwill — not duty. They won&#39;t report monthly. They won&#39;t know the exact GPS boundary. They won&#39;t take a firm stance with neighbors in a dispute for fear of straining the relationship. And when something real happens, they often report late or not at all. GreenSpace does this as a professional commitment — with a contract, reports and accountability.">Người quen trông giúp vì tình cảm — không phải vì trách nhiệm. Họ sẽ không báo cáo hàng tháng. Họ sẽ không biết ranh giới GPS chính xác. Họ sẽ không dám làm việc cứng rắn với hàng xóm khi có tranh chấp vì sợ mất quan hệ. Và khi có vấn đề thật sự, họ thường báo muộn hoặc không báo. GreenSpace làm việc này như một cam kết chuyên nghiệp — có hợp đồng, có báo cáo, có trách nhiệm pháp lý.</div>
+ <div class="faq-a open" data-en="A friend helps out of goodwill — not duty. They won&#39;t report monthly. They won&#39;t know the exact GPS boundary. They won&#39;t take a firm stance with neighbors in a dispute for fear of straining the relationship. And when something real happens, they often report late or not at all. GreenSpace does this as a professional commitment — with a contract, reports and accountability.">Người quen trông giúp vì tình cảm — không phải vì trách nhiệm. Họ sẽ không báo cáo hàng tháng. Họ sẽ không biết ranh giới GPS chính xác. Họ sẽ không dám làm việc cứng rắn với hàng xóm khi có tranh chấp vì sợ mất quan hệ. Và khi có vấn đề thật sự, họ thường báo muộn hoặc không báo. GreenSpace làm việc này như một cam kết chuyên nghiệp — có hợp đồng, có báo cáo, có trách nhiệm pháp lý.</div>
  </div>
  <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
+ <button class="faq-q open" onclick="toggleFaq(this)" aria-expanded="true">
  <span data-en="What does GreenSpace do if you find an encroachment?">Nếu phát hiện đất bị lấn chiếm thì GreenSpace làm gì?</span>
  <span class="faq-icon">+</span>
  </button>
- <div class="faq-a" data-en="We notify you within 24 hours with concrete photo evidence. Then we work directly with the encroaching party to request restoration. If that fails, we help you engage the local authorities — all without you needing to be there.">Chúng tôi thông báo cho bạn ngay trong vòng 24 giờ kèm ảnh bằng chứng cụ thể. Sau đó làm việc trực tiếp với người lấn chiếm để đề nghị phục hồi nguyên trạng. Nếu không giải quyết được, chúng tôi hỗ trợ bạn làm việc với chính quyền địa phương — mà bạn không cần phải có mặt tại chỗ.</div>
+ <div class="faq-a open" data-en="We notify you within 24 hours with concrete photo evidence. Then we work directly with the encroaching party to request restoration. If that fails, we help you engage the local authorities — all without you needing to be there.">Chúng tôi thông báo cho bạn ngay trong vòng 24 giờ kèm ảnh bằng chứng cụ thể. Sau đó làm việc trực tiếp với người lấn chiếm để đề nghị phục hồi nguyên trạng. Nếu không giải quyết được, chúng tôi hỗ trợ bạn làm việc với chính quyền địa phương — mà bạn không cần phải có mặt tại chỗ.</div>
  </div>
  <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
+ <button class="faq-q open" onclick="toggleFaq(this)" aria-expanded="true">
  <span data-en="How do I know you actually visit my land and aren&#39;t sending old photos?">Làm sao tôi biết các anh thật sự ra tận đất chứ không gửi ảnh cũ?</span>
  <span class="faq-icon">+</span>
  </button>
- <div class="faq-a" data-en="A fair question. Every photo we send has GPS coordinates and a capture time stamped on it — you open it and see the exact plot location and the real date and time. The scenery, vegetation and light differ each month, so old photos simply can&#39;t be reused.">Câu hỏi rất chính đáng. Mỗi tấm ảnh chúng tôi gửi đều có tọa độ GPS và thời gian chụp ngay trên ảnh — bạn mở ra là thấy đúng vị trí lô đất, đúng ngày giờ thật. Cảnh vật, cây cỏ, ánh nắng mỗi tháng mỗi khác, nên không thể dùng lại ảnh cũ được.</div>
+ <div class="faq-a open" data-en="A fair question. Every photo we send has GPS coordinates and a capture time stamped on it — you open it and see the exact plot location and the real date and time. The scenery, vegetation and light differ each month, so old photos simply can&#39;t be reused.">Câu hỏi rất chính đáng. Mỗi tấm ảnh chúng tôi gửi đều có tọa độ GPS và thời gian chụp ngay trên ảnh — bạn mở ra là thấy đúng vị trí lô đất, đúng ngày giờ thật. Cảnh vật, cây cỏ, ánh nắng mỗi tháng mỗi khác, nên không thể dùng lại ảnh cũ được.</div>
  </div>
  <div class="faq-item">
- <button class="faq-q" onclick="toggleFaq(this)">
+ <button class="faq-q open" onclick="toggleFaq(this)" aria-expanded="true">
  <span data-en="I&#39;m considering buying a plot. Can you inspect it before I buy?">Tôi đang định mua một lô, kiểm tra giúp trước khi mua được không?</span>
  <span class="faq-icon">+</span>
  </button>
- <div class="faq-a" data-en="Yes. Before you buy, we go on-site and check for you: whether the boundary matches the listing, whether it&#39;s being encroached, the access road, terrain and real condition — then send GPS photos so you decide by what you actually see, not just what you&#39;re told. Just message the plot you&#39;re considering on Zalo and we&#39;ll check it.">Được. Trước khi bạn xuống tiền, chúng tôi ra tận nơi xem giúp: ranh giới có đúng như rao không, đất có đang bị lấn không, đường vào, địa hình và tình trạng thực tế — rồi gửi ảnh GPS để bạn quyết định bằng mắt thấy thật, chứ không chỉ nghe kể. Cứ nhắn Zalo lô bạn đang cân nhắc, chúng tôi xem giúp.</div>
+ <div class="faq-a open" data-en="Yes. Before you buy, we go on-site and check for you: whether the boundary matches the listing, whether it&#39;s being encroached, the access road, terrain and real condition — then send GPS photos so you decide by what you actually see, not just what you&#39;re told. Just message the plot you&#39;re considering on Zalo and we&#39;ll check it.">Được. Trước khi bạn xuống tiền, chúng tôi ra tận nơi xem giúp: ranh giới có đúng như rao không, đất có đang bị lấn không, đường vào, địa hình và tình trạng thực tế — rồi gửi ảnh GPS để bạn quyết định bằng mắt thấy thật, chứ không chỉ nghe kể. Cứ nhắn Zalo lô bạn đang cân nhắc, chúng tôi xem giúp.</div>
  </div>
  </div>
  <a href="/cau-hoi-thuong-gap" class="faq-more" data-en="See all FAQs →">Xem tất cả câu hỏi thường gặp →</a>
@@ -1597,7 +1597,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  </div>
  </div>
  <div class="footer-col">
- <h4 data-en="Services">Dịch vụ</h4>
+ <h3 data-en="Services">Dịch vụ</h3>
  <a href="#services" data-en="On-site inspection">Kiểm tra thực địa</a>
  <a href="#services" data-en="GPS photo reports">Báo cáo ảnh GPS</a>
  <a href="#services" data-en="Encroachment alerts">Cảnh báo xâm lấn</a>
@@ -1605,7 +1605,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  <a href="/quan-ly-tai-san-nha-vuon-nam-ban" data-en="Nam Ban house &amp; garden management">Quản lý nhà vườn Nam Ban</a>
  </div>
  <div class="footer-col">
- <h4 data-en="Information">Thông tin</h4>
+ <h3 data-en="Information">Thông tin</h3>
  <a href="#how" data-en="How it works">Quy trình làm việc</a>
  <a href="#pricing" data-en="Pricing">Bảng giá</a>
  <a href="#faq" data-en="Frequently asked questions">Câu hỏi thường gặp</a>
@@ -1637,14 +1637,14 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
 <script>
  window.recoVI = [
      'Sự chắc chắn là biết đất mình vẫn ổn mà không cần lên tận nơi.',
-     '80% trường hợp mọi thứ ổn. Và đó chính xác là thứ bạn đang trả tiền để biết.',
+     'Phần lớn các lần kiểm tra, mọi thứ vẫn ổn. Và đó chính xác là thứ bạn đang trả tiền để biết.',
      'Đôi khi, biết sớm 1 tháng giúp bạn tiết kiệm cả trăm triệu.',
      'Người quen trông giúp vì tình cảm. Chúng tôi trông vì trách nhiệm.',
      'Mảnh đất không biết nói — nhưng báo cáo thì có.',
  ];
  window.recoEN = [
      'Certainty is knowing your land is fine without having to travel out to it.',
-     '80% of the time everything is fine. And that is exactly what you are paying to know.',
+     'Most checks find everything fine. And that is exactly what you are paying to know.',
      'Sometimes knowing a month early saves you hundreds of millions.',
      'Friends look after your land as a favour. We do it as a responsibility.',
      'Your land cannot speak — but the reports can.',
@@ -1678,16 +1678,10 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
  }
 
  function toggleFaq(btn) {
- const answer = btn.nextElementSibling;
- const isOpen = btn.classList.contains('open');
- document.querySelectorAll('.faq-q').forEach(b => {
- b.classList.remove('open');
- b.nextElementSibling.classList.remove('open');
- });
- if (!isOpen) {
- btn.classList.add('open');
- answer.classList.add('open');
- }
+ var open = !btn.classList.contains('open');
+ btn.classList.toggle('open', open);
+ btn.nextElementSibling.classList.toggle('open', open);
+ btn.setAttribute('aria-expanded', open ? 'true' : 'false');
  }
 </script>
 
@@ -1726,7 +1720,7 @@ a.btn,a.nav-cta{text-decoration:none;display:inline-flex;align-items:center;just
     var live=document.getElementById('gs-live');
     if(live) live.textContent = en ? ('Now onboarding — '+m+'/'+y+' cycle') : ('Đang nhận lô cho kỳ kiểm tra tháng '+m+'/'+y);
     var yr=document.getElementById('gs-year'); if(yr) yr.textContent=y;
-    document.querySelectorAll('.lang-opt').forEach(function(b){ b.classList.toggle('is-active', (b.getAttribute('data-lang')==='en')===en); });
+    document.querySelectorAll('.lang-opt').forEach(function(b){ var on=(b.getAttribute('data-lang')==='en')===en; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on?'true':'false'); });
     var reco=document.getElementById('recoLine');
     if(reco && window.recoVI) reco.textContent=(en?window.recoEN:window.recoVI)[window.recoIdx||0];
     document.querySelectorAll('[data-en-hide]').forEach(function(el){ el.style.display = en ? 'none' : ''; });

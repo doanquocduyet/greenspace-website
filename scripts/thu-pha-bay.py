@@ -47,6 +47,19 @@ PHA = [
  ('B19', 'dat-nen-phan-lo-nam-ban.html', r'srcset="/images/articles/dat-nen-phan-lo-nam-ban-640\.webp 640w, [^"]*"', 'srcset="/images/articles/dat-nen-phan-lo-nam-ban.webp"', True),
  ('B20', 'kiem-tra-dat-lam-ha.html', 'tình trạng đất tại Nam Ban, Lâm Hà, Lâm Đồng.', 'tình trạng đất tại Lâm Hà, Lâm Đồng.', False),
  ('B21', A, '<link rel="canonical" href="https://greenspacers.vn/dat-mua-roi-de-do-tu-xa">', '<link rel="canonical" href="https://greenspacers.vn/">', False),
+ ('B22', A, '<p class="subtitle">', '<p class="subtitle-moi">', False),
+ ('B23', 'index.html', 'onclick="toggleFaq(this)"', 'onclick="moFaq(this)"', False),
+ ('B23', 'index.html', 'id="mobileMenu"', 'id="mobileMenu2"', False),
+ ('B24', A, '<h2>"Mua xong là xong?"', '<h3>"Mua xong là xong?"', False),
+ ('B25', A, 'class="faq-item open" onclick', 'class="faq-item" onclick', False),
+ ('B25', 'index.html', '<button class="faq-q open"', '<button class="faq-q"', False),
+ ('B26', 'index.html', 'data-lang="en" type="button" aria-pressed="false"', 'data-lang="en" type="button"', False),
+ ('B27', A, '<p>Giao dịch khép lại', '<p>Đất ở huyện Lâm Hà. Giao dịch khép lại', False),
+ ('B28', 'index.html', "'Phần lớn các lần kiểm tra, mọi thứ vẫn ổn.", "'80% trường hợp mọi thứ ổn.", False),
+ ('B28', A, '<p>Giao dịch khép lại', '<p>Theo thống kê, ai cũng vậy. Giao dịch khép lại', False),
+ ('B04', 'index.html', "'Mảnh đất không biết nói", "'Hệ thống tự động báo cáo. Mảnh đất không biết nói", False),
+ ('B29', A, 'Việc cần làm là', 'Việc cần làm là là', False),
+ ('B30', 'dat-nam-ban-view-dep.html', '<a href="/dat-nen-phan-lo-nam-ban">Đất nền, phân lô Nam Ban — "rõ ranh" tới khi nào? →</a>', '', False),
 ]
 
 def chay(root):
