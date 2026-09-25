@@ -211,7 +211,7 @@ for f in IDX + ['404.html']:
     s = SRC.get(f, '')
     if 'class="skip-link"' not in s: L('B13', f'{f}: thiếu skip link')
     if not re.search(r'<main[^>]*\bid="main"', s): L('B13', f'{f}: thiếu <main id="main">')
-    if 'class="faq-item" onclick' in s and "setAttribute('role','button')" not in s:
+    if re.search(r'class="faq-item[^"]*" onclick', s) and "setAttribute('role','button')" not in s:
         L('B13', f'{f}: FAQ chỉ mở bằng chuột (thiếu script bàn phím)')
     if re.search(r'user-scalable=no|maximum-scale=1', s): L('B13', f'{f}: viewport chặn phóng to')
     for m in re.finditer(r'<table', s):
@@ -276,6 +276,82 @@ for f in PAGES:
     for m in re.finditer(r'<picture>(.*?)</picture>', SRC[f], re.S):
         if 'article-hero' in m.group(1) and not re.search(r'srcset="[^"]*\s\d+w', m.group(1)):
             L('B19', f'{f}: ảnh đầu bài không có srcset nhiều cỡ (điện thoại tải ảnh 1200px)')
+
+# ---------- B22 Lớp CSS dùng mà trang không định nghĩa (bài học gốc: chép tay nhiều trang thì có trang sai) ----------
+LOP_KHONG_CAN_CSS = {'services-head-left', 'footer-cta-text', 'in', 'open', 'is-active', 'is-open', 'yes', 'no'}  # vỏ bọc/trạng thái JS — đã soát tay
+for f in PAGES:
+    s = SRC[f]; css = ' '.join(re.findall(r'<style[^>]*>(.*?)</style>', s, re.S))
+    js = ' '.join(re.findall(r'<script(?![^>]*ld\+json)[^>]*>(.*?)</script>', s, re.S))
+    than = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', s, flags=re.S)
+    thieu = set()
+    for cl in re.findall(r'class="([^"]+)"', than):
+        for c in cl.split():
+            if c in LOP_KHONG_CAN_CSS or c in js: continue
+            if not re.search(r'\.' + re.escape(c) + r'(?![\w-])', css): thieu.add(c)
+    for c in sorted(thieu): L('B22', f'{f}: dùng class "{c}" nhưng trang không có CSS cho nó')
+
+# ---------- B23 Nút gọi hàm JS / id phải có thật trên trang ----------
+for f in PAGES:
+    s = SRC[f]; js = ' '.join(re.findall(r'<script(?![^>]*(?:ld\+json|speculationrules))[^>]*>(.*?)</script>', s, re.S))
+    for fn in set(re.findall(r'\son\w+="\s*([A-Za-z_]\w*)\(', s)):
+        if not re.search(r'function\s+' + fn + r'\b|\b' + fn + r'\s*=\s*function', js): L('B23', f'{f}: onclick gọi {fn}() nhưng trang không có hàm đó (nút bấm không ăn)')
+    for i in set(re.findall(r"getElementById\('([^']+)'\)", js)):
+        if f'id="{i}"' not in s: L('B23', f'{f}: JS tìm id "{i}" không có trên trang')
+
+# ---------- B24 Bậc tiêu đề không nhảy cóc ----------
+for f in PAGES:
+    s = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', SRC[f], flags=re.S); t = 0
+    for m in re.finditer(r'<h([1-6])\b', s):
+        h = int(m.group(1))
+        if t and h > t + 1: L('B24', f'{f}: tiêu đề nhảy h{t}→h{h}'); break
+        t = h
+
+# ---------- B25 Câu hỏi FAQ mở sẵn (đáp án hiện thẳng cho khách, Google, AI) ----------
+for f in PAGES:
+    s = SRC[f]
+    dong = len(re.findall(r'class="faq-item" onclick', s)) + len(re.findall(r'<button class="faq-q"(?! open)', s)) + len(re.findall(r'<details(?![^>]*\bopen)', s))
+    if dong: L('B25', f'{f}: {dong} câu hỏi đang đóng — phải mở sẵn')
+
+# ---------- B26 Nút bật/tắt có aria-pressed ----------
+for f in PAGES:
+    for m in re.finditer(r'<button[^>]*class="[^"]*lang-opt[^"]*"[^>]*>', SRC[f]):
+        if 'aria-pressed=' not in m.group(0): L('B26', f'{f}: nút đổi ngôn ngữ thiếu aria-pressed')
+
+def chu_js(s):
+    """Chữ khách đọc nằm trong chuỗi JS (câu xoay vòng, bản dịch…): chuỗi có dấu tiếng Việt hoặc ≥4 từ."""
+    out = []
+    for js in re.findall(r'<script(?![^>]*(?:ld\+json|speculationrules))[^>]*>(.*?)</script>', s, re.S):
+        for q in re.findall(r"'((?:[^'\\\n]|\\.){12,})'|\"((?:[^\"\\\n]|\\.){12,})\"", js):
+            t = q[0] or q[1]
+            if re.search(r'[à-ỹđ]', t) or len(t.split()) >= 4: out.append(t)
+    return ' '.join(out)
+
+# ---------- B27 Tên hành chính đã bỏ từ 1/7/2025 ----------
+for f in IDX:
+    t = chu(SRC[f]) + ' ' + khung(SRC[f]) + ' ' + chu_js(SRC[f])
+    for m in re.finditer(r'\b(huyện|thị trấn)\b', t, re.I):
+        L('B27', f'{f}: "{m.group(0)}" — cấp huyện/thị trấn đã bỏ từ 1/7/2025 — …{t[max(0, m.start()-40):m.end()+30]}…')
+
+# ---------- B28 Số thống kê không nguồn (cả trong chuỗi JS) ----------
+for f in IDX:
+    t = chu(SRC[f]) + ' ' + khung(SRC[f]) + ' ' + chu_js(SRC[f])
+    for m in re.finditer(r'(Khảo sát của|Theo số liệu|Theo thống kê|chuyên gia cho rằng|nhiều người cho rằng|\d{1,3}\s*%\s*(?:trường hợp|khách|chủ đất|người|nhà đầu tư|of the time|of cases))', t, re.I):
+        L('B28', f'{f}: số thống kê không nguồn "{m.group(0)}" — gỡ, đừng làm mềm câu')
+    for m in MAY.finditer(chu_js(SRC[f])): L('B04', f'{f} (chuỗi JS): chữ máy móc "{m.group(0)}"')
+
+# ---------- B29 Lặp từ gõ nhầm (sau mỗi lần thay hàng loạt) ----------
+LAP = re.compile(r'\b(nên|của|là|và|thì|đã|được|cho|với|trong|trung tâm|các|những|một) \1\b', re.I)
+for f in PAGES:
+    t = chu(SRC[f]) + ' ' + khung(SRC[f])
+    for m in LAP.finditer(t): L('B29', f'{f}: lặp từ "{m.group(0)}" — …{t[max(0, m.start()-30):m.end()+30]}…')
+
+# ---------- B30 Bài không lẻ loi: mỗi bài có ≥ 3 link vào từ trang khác ----------
+VAO = {f: set() for f in IDX}
+for g in IDX:   # chỉ đếm link từ trang lập chỉ mục (trang noindex như anh-da-dung không tính)
+    for h in set(re.findall(r'href="/([a-z0-9-]+)"', SRC[g])):
+        if h + '.html' in VAO and h + '.html' != g: VAO[h + '.html'].add(g)
+for f, v in VAO.items():
+    if f != 'index.html' and len(v) < 3: L('B30', f'{f}: chỉ {len(v)} trang trỏ vào — nối vào khối "Bài liên quan" của bài cùng cụm (chữ neo là câu hỏi)')
 
 # ---------- B21 canonical / og:url đúng địa chỉ ----------
 for f in IDX:
