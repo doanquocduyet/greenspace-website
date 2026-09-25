@@ -2,7 +2,7 @@
 
 Sổ lỗi thật của greenspacers.vn. Mỗi lỗi: **đã làm · vì sao · cách kiểm (mã bẫy)**.
 Bẫy nằm trong `scripts/kiem-tra.py`, chạy trên CI mỗi lần push (`.github/workflows/kiem-tra.yml`).
-Thử phá: `python3 scripts/thu-pha-bay.py` (45 lần phá, 31 bẫy — tất cả phải nổ).
+Thử phá: `python3 scripts/thu-pha-bay.py` (50 lần phá, 34 bẫy — tất cả phải nổ).
 
 ## Đợt 25/9/2026 — áp bàn giao đợt 2 của Nam Ban Villas + các lỗi cùng họ
 
@@ -40,6 +40,18 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (45 lần phá, 31 bẫy — tất 
 - B02 báo 4 câu FAQ lệch chữ — do bóc thẻ `<a>` chèn thêm dấu cách → thẻ trong dòng bỏ không chèn cách.
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
+
+## Đợt 25/9/2026 (khuya) — học từ đề xuất của Nam Ban Villas
+| # | Lỗi / việc | Đã làm | Bẫy |
+|---|---|---|---|
+| 30 | 5 trang (trang chủ, hỏi đáp, 2 trang dịch vụ, về GreenSpace) thiếu người viết + ngày cập nhật trong JSON-LD. | Thêm WebPage/AboutPage có author = người sáng lập, dateModified = lastmod sitemap. **Không ghi datePublished**: repo clone nông, ngày trong git chỉ là ngày nhập kho, không phải ngày đăng thật. | B34, B11 |
+| 31 | 19/20 trang không khai RSS trong `<head>`. | Thêm `<link rel="alternate" type="application/rss+xml">`. | B34 |
+| 32 | Chưa có `llms-full.txt`. | Script sinh từ trang thật (title, mô tả, đoạn trả lời, 103 câu hỏi đáp) + giá từ data/so-lieu.json; llms.txt trỏ sang. | B35 |
+| 33 | **Schema trang chủ tự chấm 5 sao cho 3 lời khách** (khách không chấm sao) + aggregateRating 5/5 — số bịa, và Google cấm doanh nghiệp tự khai đánh giá về mình. | Gỡ khỏi JSON-LD; 3 lời khách vẫn hiện trên trang. | B37 |
+| 34 | Cụm dịch vụ/giá thiếu 7 chiều link ngược. | Nối, chữ neo là câu hỏi. | (B30) |
+| 35 | **Lỗi tự gây, thử phá bắt được:** bẫy B35 gọi script sinh llms-full, gặp JSON hỏng thì sập cả bộ kiểm → B01 không báo nữa. | Script bỏ qua JSON hỏng; B35 bọc try — một bẫy lỗi không được làm sập cả bộ. | — |
+
+Không làm: Dataset (GreenSpace không có dữ liệu gốc như bảng giá tuần của Villas — không bịa); Core Web Vitals (đo điện thoại: trang chủ ~500 KB, bài ≤170 KB, DOM ≤614 thẻ — không có gì phải sửa).
 
 ## Đợt 25/9/2026 (tối) — đóng dấu bản quyền ảnh (theo cách Nam Ban Villas)
 - 54 ảnh trước đó trống thông tin chủ ảnh. `scripts/dong-dau-anh.py` chèn EXIF (Artist, Copyright, ImageDescription — chỉ ASCII) + XMP chuẩn IPTC (dc:rights "© 2026 GreenSpace — greenspacers.vn", creator, WebStatement, UsageTerms, Credit, Licensor, liên hệ) **thẳng vào file JPEG/WebP, không nén lại**.
@@ -98,6 +110,9 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (45 lần phá, 31 bẫy — tất 
 | B03 | Không có tên web thứ ba ở mọi file trong repo (kể cả metadata ảnh) |
 | B32 | Ảnh mang dấu bản quyền GreenSpace (EXIF + XMP), không GPS |
 | B33 | .vercelignore giữ file nội bộ không lên web |
+| B34 | Mỗi trang: RSS trong head, author, dateModified |
+| B35 | llms-full.txt khớp bản sinh từ trang thật |
+| B37 | Không sao/đánh giá tự khai trong JSON-LD |
 | B04 | Không chữ máy móc (thân, khung, llms.txt) |
 | B05 | Mô tả ≤160, hết câu, ngoặc đủ, có "Nam Ban" (meta/og/twitter/JSON-LD) |
 | B06 | Giá /tháng, "N+ lô", "hơn N năm" khớp `data/so-lieu.json` |

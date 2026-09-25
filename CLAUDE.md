@@ -51,6 +51,9 @@ Chép từ một bài đang chạy (vd `xu-ly-lan-chiem-dat-tu-xa.html`) — gi�
 - FAQ `faq-item` + script bàn phím (role=button, Enter/Space) như bài mẫu; 3 JSON-LD: BlogPosting + FAQPage + BreadcrumbList (2 cấp, mỗi mục có `item`).
 - Bảng bọc `<div class="tbl-wrap">`.
 - Cập nhật: `sitemap.xml` (lastmod = dateModified), `llms.txt`, `feed.xml`, 1 `insight-card` ở `#insights` trang chủ.
+- `<link rel="alternate" type="application/rss+xml" …feed.xml>` trong `<head>`; JSON-LD có `author` (người sáng lập) + `dateModified` (bẫy B34).
+- Sửa bất kỳ trang nào xong: chạy `python3 scripts/tao-llms-full.py` (bẫy B35 chặn nếu `llms-full.txt` lệch trang).
+- **Không khai sao/đánh giá trong JSON-LD** (aggregateRating, review): khách không chấm sao, Google cấm doanh nghiệp tự khai đánh giá về mình (bẫy B37). Lời khách chỉ để ở phần hiển thị.
 
 ## Ô "Cập nhật" trên trang chủ (khối `GS-UPDATES`)
 Chèn mục mới ngay dưới `<!-- GS-UPDATES:START -->`, đúng mẫu `<li class="update-item">…`. **Không xoá mục cũ.** Cập nhật `lastmod` trang chủ trong sitemap.

@@ -134,9 +134,9 @@ for f in IDX:
     for nguon, t in (('thân trang', chu(SRC[f])), ('khung', khung(SRC[f]))):
         for m in list(MAY.finditer(t)) + list(re.finditer(r'\bAI\b', t)):
             L('B04', f'{f} ({nguon}): chữ máy móc "{m.group(0)}" — …{t[max(0, m.start()-40):m.end()+20]}…')
-if os.path.exists(os.path.join(ROOT, 'llms.txt')):
-    t = rd('llms.txt')
-    for m in MAY.finditer(t): L('B04', f'llms.txt: chữ máy móc "{m.group(0)}"')
+for _l in ('llms.txt', 'llms-full.txt'):
+    if os.path.exists(os.path.join(ROOT, _l)):
+        for m in MAY.finditer(rd(_l)): L('B04', f'{_l}: chữ máy móc "{m.group(0)}"')
 
 # ---------- B05 Mô tả: ≤160 ký tự, hết câu, có "Nam Ban"; og không cụt ----------
 for f in IDX:
@@ -220,6 +220,8 @@ for sl in LM:
     if (sl + '.html' if sl else 'index.html') not in IDX: L('B11', f'sitemap có /{sl} nhưng không phải trang lập chỉ mục')
 for f in IDX:
     for d in ld(SRC[f]):
+        if d.get('@type') in ('WebPage', 'AboutPage') and 'dateModified' in d and slug(f) in LM and LM[slug(f)] != d['dateModified']:
+            L('B11', f'{f}: {d["@type"]} dateModified {d["dateModified"]} ≠ sitemap lastmod {LM[slug(f)]}')
         if d.get('@type') == 'BlogPosting':
             dp, dm = d.get('datePublished', ''), d.get('dateModified', '')
             if dm < dp: L('B11', f'{f}: dateModified {dm} < datePublished {dp}')
@@ -392,6 +394,28 @@ for g in IDX:   # chỉ đếm link từ trang lập chỉ mục (trang noindex 
         if h + '.html' in VAO and h + '.html' != g: VAO[h + '.html'].add(g)
 for f, v in VAO.items():
     if f != 'index.html' and len(v) < 3: L('B30', f'{f}: chỉ {len(v)} trang trỏ vào — nối vào khối "Bài liên quan" của bài cùng cụm (chữ neo là câu hỏi)')
+
+# ---------- B34 Mỗi trang: khai RSS, có người viết, có ngày cập nhật ----------
+for f in IDX:
+    s = SRC[f]; ds = ld(s)
+    if 'type="application/rss+xml"' not in s: L('B34', f'{f}: thiếu <link rel="alternate" type="application/rss+xml"> trong <head>')
+    if not any('author' in d for d in ds): L('B34', f'{f}: JSON-LD chưa có người viết (author)')
+    if not any('dateModified' in d for d in ds): L('B34', f'{f}: JSON-LD chưa có ngày cập nhật (dateModified)')
+
+# ---------- B35 llms-full.txt khớp bản sinh từ trang thật ----------
+import importlib.util as _iu
+try:   # một bẫy lỗi không được làm sập cả bộ kiểm tra
+    _sp = _iu.spec_from_file_location('tlf', os.path.join(ROOT, 'scripts', 'tao-llms-full.py')); _tlf = _iu.module_from_spec(_sp); _sp.loader.exec_module(_tlf)
+    if not os.path.exists(os.path.join(ROOT, 'llms-full.txt')) or rd('llms-full.txt') != _tlf.sinh(ROOT):
+        L('B35', 'llms-full.txt cũ/lệch so với trang — chạy python3 scripts/tao-llms-full.py')
+except Exception as e:
+    L('B35', f'không sinh được llms-full.txt để so ({type(e).__name__}: {e})')
+
+# ---------- B37 Không tự chấm sao cho mình (Google cấm đánh giá tự khai; khách không chấm sao) ----------
+for f in PAGES:
+    for d in ld(SRC[f]):
+        if 'aggregateRating' in d or 'review' in d or d.get('@type') in ('Review', 'AggregateRating'):
+            L('B37', f'{f}: JSON-LD có đánh giá/sao tự khai ({d.get("@type")}) — gỡ, giữ lời khách ở phần hiển thị')
 
 # ---------- B21 canonical / og:url đúng địa chỉ ----------
 for f in IDX:
