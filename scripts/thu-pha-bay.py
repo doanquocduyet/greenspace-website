@@ -69,6 +69,11 @@ PHA = [
  ('B04', 'index.html', "'Mảnh đất không biết nói", "'Hệ thống tự động báo cáo. Mảnh đất không biết nói", False),
  ('B29', A, 'Việc cần làm là', 'Việc cần làm là là', False),
  ('B30', 'dat-nam-ban-view-dep.html', '<a href="/dat-nen-phan-lo-nam-ban">Đất nền, phân lô Nam Ban — "rõ ranh" tới khi nào? →</a>', '', False),
+ ('B34', A, '<link rel="alternate" type="application/rss+xml" title="GreenSpace — Bài mới" href="https://greenspacers.vn/feed.xml">\n', '', False),
+ ('B34', 'kiem-tra-dat-lam-ha.html', r'"author": \{[^}]*\}, ', '', True),
+ ('B35', 'cau-hoi-thuong-gap.html', 'Giải đáp thắc mắc về trông coi', 'Giải đáp mọi thắc mắc về trông coi', False),
+ ('B37', 'index.html', '"priceRange":', '"aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3"}, "priceRange":', False),
+ ('B11', 'quan-ly-dat-nam-ban.html', r'("@type": "WebPage".*?"dateModified": ")[0-9-]+', r'\g<1>2026-01-01', True),
 ]
 
 def chay(root):
