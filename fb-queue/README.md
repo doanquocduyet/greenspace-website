@@ -22,11 +22,7 @@ Vào **GitHub repo → Settings → Secrets and variables → Actions → New re
 | `FB_PAGE_TOKEN` | Page Access Token, quyền `pages_manage_posts` |
 
 ### Lấy Page Access Token (một lần)
-1. Vào **developers.facebook.com** → tạo App (loại *Business*).
-2. Thêm sản phẩm **Facebook Login** hoặc dùng **Graph API Explorer**.
-3. Trong **Graph API Explorer**: chọn App → chọn Page của mình → cấp quyền `pages_manage_posts`, `pages_read_engagement` → **Generate Access Token**.
-4. Token đó là token ngắn hạn. Đổi sang **token dài hạn (60 ngày)** hoặc token vĩnh viễn qua System User (Business Settings) để khỏi hết hạn.
-5. Dán token vào secret `FB_PAGE_TOKEN`, Page ID vào `FB_PAGE_ID`.
+Làm theo từng bước trong **docs/HUONG-DAN-KET-NOI.md** (mục 2): tạo app → token người dùng → đổi dài hạn → lấy token Trang vĩnh viễn qua `me/accounts` → cất vào secret → Run workflow để kiểm (script in `✅ Token OK` mà không đăng bài).
 
 > Sau khi có token, bài trong hàng đợi tới ngày là tự đăng. Muốn thử ngay: đổi `scheduled` một bài về hôm nay rồi bấm **Run workflow**.
 

@@ -6,7 +6,7 @@
   "posts": [
     {
       "id": "w1-t2-duong-di",
-      "scheduled": "2026-09-15",
+      "scheduled": "2026-09-29",
       "status": "queued",
       "pillar": "Dạy",
       "audience": "Người mới tò mò Nam Ban",
@@ -17,7 +17,7 @@
     },
     {
       "id": "w1-t3-3-cho-it-ai-ghe",
-      "scheduled": "2026-09-16",
+      "scheduled": "2026-09-30",
       "status": "queued",
       "pillar": "Kéo",
       "audience": "Tò mò / du lịch",
@@ -28,7 +28,7 @@
     },
     {
       "id": "w1-t4-sang-o-namban",
-      "scheduled": "2026-09-17",
+      "scheduled": "2026-10-01",
       "status": "queued",
       "pillar": "Kể",
       "audience": "Định cư / cảm xúc",
@@ -39,7 +39,7 @@
     },
     {
       "id": "w1-t5-xu-dau-tam",
-      "scheduled": "2026-09-18",
+      "scheduled": "2026-10-02",
       "status": "queued",
       "pillar": "Hỏi",
       "audience": "Tò mò",
@@ -50,7 +50,7 @@
     },
     {
       "id": "w1-t6-cuoi-tuan-mot-ngay",
-      "scheduled": "2026-09-19",
+      "scheduled": "2026-10-03",
       "status": "queued",
       "pillar": "Mở",
       "audience": "Weekend / tìm vùng",

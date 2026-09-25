@@ -80,6 +80,15 @@ def main():
     token = os.environ.get("FB_PAGE_TOKEN")
     page = os.environ.get("FB_PAGE_ID")
 
+    # Có token -> kiểm token trước (chỉ ĐỌC tên Trang, không đăng gì).
+    # Token sai / hết hạn thì báo đỏ ngay, không im lặng.
+    if token and page:
+        chk = requests.get(f"{GRAPH}/{page}", params={"fields": "name", "access_token": token}, timeout=30)
+        if chk.status_code != 200:
+            print(f"❌ Token hoặc Page ID không dùng được ({chk.status_code}): {chk.text}")
+            return 1
+        print(f"✅ Token OK — Trang: {chk.json().get('name', page)}")
+
     # Không có bài tới hạn -> xem trước bài kế
     if not due:
         nxt = queued[0]
