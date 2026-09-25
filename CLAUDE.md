@@ -4,6 +4,12 @@ Web tĩnh (HTML/CSS/JS nội tuyến) trên Vercel, `cleanUrls`. Nhánh `main` =
 Dịch vụ: trông coi / quản lý đất, nhà, vườn tại **Nam Ban, Lâm Hà, Lâm Đồng** cho người ở xa.
 Liên hệ duy nhất: Zalo / điện thoại **0978 758 788**. Người sáng lập & CEO: Đoàn Quốc Duyệt.
 
+## Repo công khai + web tĩnh
+- Repo GitHub **public**: mọi file commit ai cũng đọc được. Không đưa bí mật, token, tên web thứ ba.
+- `.vercelignore` giữ CLAUDE.md, docs/, scripts/, data/, fb-queue/, .github/ **không lên greenspacers.vn** (bẫy B33).
+- `docs/` bị `.gitignore` — tài liệu nội bộ chỉ nằm máy; muốn đưa lên repo thì `git add -f` và soát chữ trước.
+- Ảnh đưa lên phải **xoá metadata** (EXIF/XMP có thể chứa GPS, tên, bản quyền web khác) — bẫy B32.
+
 ## Trước khi đẩy bất cứ thứ gì
 ```
 python3 scripts/kiem-tra.py --base-ref origin/main   # phải ra ✓ Sạch
@@ -13,7 +19,7 @@ trừ khi soát tay thấy bẫy báo nhầm (khi đó sửa bẫy + ghi vào do
 Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng phá vào `scripts/thu-pha-bay.py`, chạy thử phá, thấy nổ mới commit.
 
 ## Luật cứng
-1. **Không nhắc / không link Panorama (nambanpanorama)** ở bất kỳ đâu — kể cả comment, meta, schema, fb-queue. Được link nambanvillas.vn khi hợp ngữ cảnh.
+1. **Luật link: không nhắc / không link web thứ ba của chủ web** ở bất kỳ đâu — kể cả comment, meta, schema, fb-queue, **metadata ảnh**. Tên web đó không viết ra trong repo (repo công khai); bẫy B03 giữ tên ở dạng ghép ngược. Được link nambanvillas.vn khi hợp ngữ cảnh.
 2. **Giọng:** "chúng tôi" = đội GreenSpace; "tôi" = người sáng lập, chỉ khi kể trải nghiệm thật; khách = "bạn". Không xưng "em". Không ngôi ba lạnh.
 3. **Không chữ máy móc** trong mọi chữ khách đọc (thân trang, title, meta, alt, JSON-LD, llms.txt): script, tự động, auto, bot, AI, nhập tay, thuật toán. Viết "đội ngũ tổng hợp…". Thành ngữ "không tự động là…" → "không mặc nhiên là…".
 4. **Không bịa số, không nói quá.** Giá / số lô / số năm lấy từ `data/so-lieu.json` (một nguồn). Số mới phải đối chiếu với bài có sẵn trên site trước khi viết. Không "hàng đầu", "số 1", "tốt nhất", "duy nhất", "100%…".

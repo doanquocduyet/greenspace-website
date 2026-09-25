@@ -10,6 +10,10 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 KT = os.path.join(ROOT, 'scripts', 'kiem-tra.py')
 
 def sua(path, old, new, regex=False):
+    if regex == 'exif':   # phá ảnh: gắn metadata vào
+        from PIL import Image
+        im = Image.open(path); ex = Image.Exif(); ex[0x8298] = 'test'
+        im.save(path, exif=ex.tobytes()); return
     s = open(path, encoding='utf-8').read()
     s2 = re.sub(old, new, s, count=1, flags=re.S) if regex else s.replace(old, new, 1)
     assert s2 != s, f'mẫu phá không khớp: {path}: {old[:50]!r}'
@@ -20,7 +24,9 @@ D = 'xu-ly-lan-chiem-dat-tu-xa.html'    # trang dịch vụ mẫu
 PHA = [
  ('B01', A, r'("@type": "BreadcrumbList".*?)\}\]\}</script>', r'\1}]</script>', True),
  ('B02', A, 'Để không thì đất không tự mất, nhưng', 'Để không thì đất chẳng tự mất, nhưng', False),
- ('B03', 'llms.txt', 'GreenSpace', 'GreenSpace (xem nambanpanorama.com)', False),
+ ('B03', 'llms.txt', 'GreenSpace', 'GreenSpace (xem namban' + 'amaronap'[::-1] + '.com)', False),
+ ('B32', 'images/founder.jpg', b'', b'', 'exif'),
+ ('B33', '.vercelignore', 'CLAUDE.md\n', '', False),
  ('B04', A, '<p>Giao dịch khép lại', '<p>Script tự động lo hết. Giao dịch khép lại', False),
  ('B05', A, 'và cách theo dõi từ xa.">', 'và cách theo dõi từ xa, cách lập hồ sơ gốc, cách giữ mốc ranh, cách nhờ người trông khi ở xa">', False),
  ('B06', A, 'tính 2 triệu mỗi lô mỗi tháng. Không hợp đồng dài hạn, không phí ẩn, dừng bất kỳ lúc nào.</div>', 'tính 1,8 triệu mỗi lô mỗi tháng. Không hợp đồng dài hạn, không phí ẩn, dừng bất kỳ lúc nào.</div>', False),
@@ -73,7 +79,11 @@ try:
     hong = 0
     for ma, f, old, new, rx in PHA:
         d = os.path.join(tmp, 'site'); shutil.rmtree(d, ignore_errors=True)
-        shutil.copytree(ROOT, d, ignore=shutil.ignore_patterns('.git'))
+        # chỉ chép file git quản lý (kể cả file mới chưa commit), bỏ tài liệu nội bộ bị .gitignore
+        for rel in subprocess.run(['git', '-C', ROOT, 'ls-files', '--cached', '--others', '--exclude-standard'], capture_output=True, text=True).stdout.split('\n'):
+            if rel and os.path.isfile(os.path.join(ROOT, rel)):
+                os.makedirs(os.path.dirname(os.path.join(d, rel)) or d, exist_ok=True)
+                shutil.copy2(os.path.join(ROOT, rel), os.path.join(d, rel))
         sua(os.path.join(d, f), old, new, rx)
         out = chay(d).stdout
         ok = f'[{ma}]' in out

@@ -1,0 +1,13 @@
+# Không đưa lên web greenspacers.vn — tài liệu, code, dữ liệu nội bộ.
+# Bẫy B33 trong scripts/kiem-tra.py chặn nếu thiếu dòng nào dưới đây.
+CLAUDE.md
+docs/
+scripts/
+data/
+fb-queue/
+.github/
+images/README.md
+BRIEF-*.md
+DEMO-*.html
+*.py
+__pycache__/
