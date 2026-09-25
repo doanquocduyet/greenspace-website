@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://greenspacers.vn/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <priority>1.0</priority>
   
     <image:image><image:loc>https://greenspacers.vn/images/hero-1.jpg</image:loc></image:image>
@@ -31,7 +31,7 @@
   </url>
   <url>
     <loc>https://greenspacers.vn/dat-mua-roi-de-do-tu-xa</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
