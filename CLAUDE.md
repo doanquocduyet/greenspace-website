@@ -35,6 +35,11 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 14. **Sửa hàng loạt:** JSON-LD sửa bằng `json.loads` → sửa cây → `json.dumps`, không regex. Khối HTML cắt bằng chỉ số (thẻ mở → thẻ đóng đúng), không `.*?` mù. Thay chữ hàng loạt xong thì chạy bẫy (lặp từ B29, ngoặc B05). Sửa một thứ thì kiểm **cả loại đó trên mọi trang**.
 15. **Nói đúng sự thật trên trang:** chỉ đưa tin có nguồn chính thức; tin đồn (sáp nhập, quy hoạch…) chưa có văn bản thì không đưa.
 
+## Vai của từng trang (chủ web chốt 25/9 — trùng chữ thì cùng lên, KHÔNG gộp)
+- `/quan-ly-dat-nam-ban` = trang **dịch vụ** (gói, cách làm, chi phí, liên hệ).
+- `/ve-greenspace` = trang **góc nhìn / GreenSpace là ai** (đội ngũ, điều chúng tôi tin, số liệu). Mô tả viết theo vai này, không viết như trang dịch vụ.
+- Trang chủ và các bài khác trùng chữ với hai trang trên cũng giữ riêng; chỉ cần mỗi trang nói đúng vai và nối link qua lại.
+
 ## Khuôn một trang bài / dịch vụ mới (phiếu cho ô đăng bài)
 Chép từ một bài đang chạy (vd `xu-ly-lan-chiem-dat-tu-xa.html`) — giữ đủ:
 - GA4 `G-TLZVX26QHR` đầu `<head>`, canonical + og:url = `https://greenspacers.vn/<slug>`, `speculationrules`.

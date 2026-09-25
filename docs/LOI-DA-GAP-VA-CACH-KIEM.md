@@ -78,8 +78,8 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (45 lần phá, 31 bẫy — tất 
 - Độ sâu bấm: mọi trang cách trang chủ 1 lần bấm; không trang mồ côi.
 - #7, #8, #10, #11, #20–23, #26, #27: web không có danh sách hàng / bộ lọc / hub sản phẩm.
 
-### Tự cắn từ khoá — để chủ web quyết (không tự gộp: trang đang có thứ hạng)
-Đo title + mô tả + H2 (bỏ từ chung "đất, Nam Ban, Lâm Đồng…"): "Về GreenSpace" ↔ "Quản lý đất Nam Ban" 41%, ↔ "Kiểm tra đất Lâm Hà" 34%. Hướng đề xuất: trang Về GreenSpace nói về con người/đội ngũ, bớt lặp chữ dịch vụ.
+### Tự cắn từ khoá — chủ web đã quyết (25/9): trùng thì cùng lên, không gộp
+"Về GreenSpace" ↔ "Quản lý đất Nam Ban" trùng 41% chữ (title + mô tả + H2). Chủ web chốt: `/ve-greenspace` là trang **góc nhìn / GreenSpace là ai**, `/quan-ly-dat-nam-ban` là trang **dịch vụ**. Đã viết lại mô tả (meta/og/twitter) của trang Về GreenSpace theo vai góc nhìn; title/H1 giữ nguyên (luật trang đang có thứ hạng). Luật ghi trong CLAUDE.md.
 
 ### Bẫy tự viết sai trong đợt (đã sửa trước khi tin)
 - B30 đếm cả link từ trang noindex `anh-da-dung` → tưởng đủ link vào; đếm đúng thì 2 trang còn thiếu.
