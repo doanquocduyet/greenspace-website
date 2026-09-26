@@ -41,6 +41,15 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 - `/ve-greenspace` = trang **góc nhìn / GreenSpace là ai** (đội ngũ, điều chúng tôi tin, số liệu). Mô tả viết theo vai này, không viết như trang dịch vụ.
 - Trang chủ và các bài khác trùng chữ với hai trang trên cũng giữ riêng; chỉ cần mỗi trang nói đúng vai và nối link qua lại.
 
+## Làm theo từ khoá (một key một trang — chốt 26/9)
+- Mỗi câu khách gõ chỉ có **một trang đích**. Trước khi viết trang mới: tìm trong repo xem đã có trang nào nhắm câu đó chưa → có thì làm dày trang đó, không đẻ trang trùng.
+- Trang mới: title **bắt đầu đúng câu khách gõ**; FAQ đầu tiên là câu đó (hoặc biến thể có "giá/bao nhiêu"); trả lời các câu "Mọi người cũng hỏi" bằng H2 dạng câu hỏi.
+- Trang đang chạy: không đổi title/H1 (luật 7) — chỉ thêm FAQ, thêm mục H2 bên dưới.
+- Số lấy ở web khác (lương, giá thị trường) phải có nguồn + tháng/năm ngay trong câu, và ghi vào `data/so-lieu.json` → `gia_tham_chieu_ngoai` kèm `_nguon` (bẫy B06).
+- Đọc phần tóm tắt AI của Google cho câu đó: thấy nói sai về GreenSpace (giá, địa danh cũ) thì viết đoạn nói đúng, có nguồn.
+- **Khoá title tới 26/10/2026** (đang chờ Google đọc lại): `/thue-nguoi-trong-coi-dat-nam-ban`, `/gia-trong-coi-dat-bao-nhieu`, `/quan-ly-dat-nam-ban`.
+- Nhắc tên hành chính cũ chỉ khi ghi rõ "cũ" ngay sau ("thị trấn Nam Ban cũ") — bẫy B27 cho qua đúng dạng đó.
+
 ## Khuôn một trang bài / dịch vụ mới (phiếu cho ô đăng bài)
 Chép từ một bài đang chạy (vd `xu-ly-lan-chiem-dat-tu-xa.html`) — giữ đủ:
 - GA4 `G-TLZVX26QHR` đầu `<head>`, canonical + og:url = `https://greenspacers.vn/<slug>`, `speculationrules`.

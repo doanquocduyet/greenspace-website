@@ -64,6 +64,8 @@ PHA = [
  ('B25', 'index.html', '<button class="faq-q open"', '<button class="faq-q"', False),
  ('B26', 'index.html', 'data-lang="en" type="button" aria-pressed="false"', 'data-lang="en" type="button"', False),
  ('B27', A, '<p>Giao dịch khép lại', '<p>Đất ở huyện Lâm Hà. Giao dịch khép lại', False),
+ ('B27', 'quan-ly-dat-nam-ban.html', 'kèm cấp huyện cũ.', 'kèm cấp huyện.', False),   # bỏ chữ "cũ" thì phải nổ lại
+ ('B06', 'thue-nguoi-trong-coi-dat-nam-ban.html', 'khoảng 6–12 triệu đồng/tháng', 'khoảng 6–15 triệu đồng/tháng', False),   # giá ngoài chưa ghi nguồn
  ('B28', 'index.html', "'Phần lớn các lần kiểm tra, mọi thứ vẫn ổn.", "'80% trường hợp mọi thứ ổn.", False),
  ('B28', A, '<p>Giao dịch khép lại', '<p>Theo thống kê, ai cũng vậy. Giao dịch khép lại', False),
  ('B04', 'index.html', "'Mảnh đất không biết nói", "'Hệ thống tự động báo cáo. Mảnh đất không biết nói", False),

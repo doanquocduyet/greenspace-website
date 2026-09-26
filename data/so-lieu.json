@@ -13,6 +13,11 @@
     "quan-ly-tai-san-nha-vuon-nam-ban.html",
     "thue-dat-hang-nam-nop-ho.html",
     "trich-luc-thua-dat-lam-ho.html",
-    "xu-ly-lan-chiem-dat-tu-xa.html"
-  ]
+    "xu-ly-lan-chiem-dat-tu-xa.html",
+    "thue-nguoi-trong-coi-dat-nam-ban.html"
+  ],
+  "gia_tham_chieu_ngoai": {
+    "_nguon": "https://muaban.net/tags/nguoi-trong-coi-nha — bảng lương người trông coi nhà, cập nhật 9/2026",
+    "gia_trieu_thang": ["6", "6,5", "7", "8", "10", "12"]
+  }
 }

@@ -149,7 +149,7 @@ Hỏi đáp:
 - Trả lời nhanh: Gói tham khảo từ 1,5 đến 2,5 triệu đồng một tháng cho một lô, tùy vị trí và diện tích. Từ 3 lô trở lên tính 2 triệu mỗi lô mỗi tháng. Giá đã gồm kiểm tra định kỳ, báo cáo ảnh gắn tọa độ GPS và cảnh báo bất thường trong 24 giờ. Không hợp đồng dài hạn, không phí ẩn, dừng bất kỳ lúc nào.
 
 Hỏi đáp:
-- **Giá thuê trông coi đất bao nhiêu một tháng?** Gói tham khảo từ 1,5 đến 2,5 triệu đồng một tháng cho một lô, tùy vị trí và diện tích. Từ 3 lô trở lên tính 2 triệu mỗi lô mỗi tháng. Giá đã gồm kiểm tra định kỳ, báo cáo ảnh có tọa độ GPS và cảnh báo bất thường trong 24 giờ.
+- **Giá thuê người trông đất Nam Ban bao nhiêu một tháng?** Gói tham khảo từ 1,5 đến 2,5 triệu đồng một tháng cho một lô, tùy vị trí và diện tích. Từ 3 lô trở lên tính 2 triệu mỗi lô mỗi tháng. Giá đã gồm kiểm tra định kỳ, báo cáo ảnh có tọa độ GPS và cảnh báo bất thường trong 24 giờ. Nếu cần người ở lại trên đất thì lương theo tin tuyển tháng 9/2026 khoảng 6–12 triệu đồng/tháng, thường kèm ăn ở.
 - **Có nhiều lô thì trông coi có rẻ hơn không?** Có. Từ 3 lô trở lên, mức tính là 2 triệu mỗi lô mỗi tháng — rẻ hơn so với gọi lẻ từng lô, vì gom chung một lịch kiểm tra và một đầu mối báo cáo.
 - **Giá đó đã gồm phí khảo sát lần đầu chưa?** Gói tháng gồm kiểm tra định kỳ, báo cáo ảnh GPS và cảnh báo bất thường. Việc lập hồ sơ hiện trạng lần đầu thì trao đổi cụ thể theo từng lô — bạn nhắn Zalo kể lô của bạn ở đâu là được báo rõ, không có phí ẩn.
 - **Có bắt ký hợp đồng dài hạn không, muốn dừng thì sao?** Không có hợp đồng dài hạn và không có phí ẩn. Bạn dùng thấy hợp thì tiếp, thấy không hợp thì dừng bất kỳ lúc nào. Cách làm này để bạn yên tâm thử trước, không bị ràng buộc.
@@ -184,10 +184,11 @@ Hỏi đáp:
 ### Quản lý đất Nam Ban cho người ở xa — GreenSpace
 
 - URL: https://greenspacers.vn/quan-ly-dat-nam-ban
-- Cập nhật: 2026-07-25
+- Cập nhật: 2026-09-26
 - Tóm tắt: Dịch vụ quản lý đất tại Nam Ban, Lâm Hà cho chủ đất đang sống ở Sài Gòn, Hà Nội. Kiểm tra hàng tháng, báo cáo GPS, cảnh báo xâm lấn 24h.
 
 Hỏi đáp:
+- **Cơ quan nào quản lý đất đai ở Nam Ban?** Từ 1/7/2025, thị trấn Nam Ban cũ cùng các xã Đông Thanh, Mê Linh, Gia Lâm được sắp xếp thành xã Nam Ban Lâm Hà (Nghị quyết 1671/NQ-UBTVQH15 ngày 16/6/2025). Thủ tục đất đai ở cơ sở nộp tại bộ phận một cửa của UBND xã; đăng ký đất đai, cấp giấy chứng nhận do Văn phòng đăng ký đất đai của tỉnh và chi nhánh phụ trách; cấp tỉnh là Sở Nông nghiệp và Môi trường Lâm Đồng. GreenSpace không phải cơ quan nhà nước mà là đội ngũ người địa phương trông coi đất giúp chủ đất ở xa.
 - **GreenSpace quản lý đất ở đâu?** Chuyên sâu tại Nam Ban, Lâm Hà, Lâm Đồng và các khu vực lân cận.
 - **Chi phí quản lý đất Nam Ban bao nhiêu?** Gói cơ bản 1.500.000đ/tháng. Giá cố định, không phí ẩn, dừng bất kỳ lúc nào.
 - **Có cần ký hợp đồng dài hạn không?** Không. Gia hạn từng tháng, hoàn toàn chủ động.
@@ -247,6 +248,20 @@ Hỏi đáp:
 - **Đất vườn, đất nông nghiệp có phải nộp thuế hàng năm không?** Đất nông nghiệp hiện được miễn thuế sử dụng đất nông nghiệp theo chính sách của Nhà nước. Tuy nhiên nếu đất đã chuyển sang đất ở thì phải nộp thuế sử dụng đất phi nông nghiệp như đất thổ cư.
 - **Quên nộp thuế đất nhiều năm có sao không?** Có phát sinh tiền chậm nộp tính theo ngày, cộng dồn nhiều năm thành khoản đáng kể. Quan trọng hơn, khi muốn sang tên hay giao dịch, cơ quan thuế thường yêu cầu hoàn thành nghĩa vụ thuế trước, nên quên lâu dễ gây kẹt đúng lúc cần giao dịch.
 - **Tôi ở xa, có nhờ nộp thuế đất hộ được không?** Được. GreenSpace nhận nhắc hạn và nộp hộ thuế đất hàng năm cho khách đang trông coi đất ở Nam Ban, Lâm Hà tại Nam Ban — bạn không phải nhớ, không phải về tận nơi, biên lai được gửi lại cho bạn.
+
+### Thuê người trông coi đất Nam Ban: ở lại hay ghé định kỳ? | GreenSpace
+
+- URL: https://greenspacers.vn/thue-nguoi-trong-coi-dat-nam-ban
+- Cập nhật: 2026-09-26
+- Tóm tắt: Thuê người trông coi đất Nam Ban: người ở lại tốn 6–12 triệu/tháng theo tin tuyển 9/2026; dịch vụ ghé định kỳ từ 1,5 triệu. So sánh, rủi ro, cách chọn.
+- Trả lời nhanh: Thuê người trông coi đất Nam Ban có hai cách: thuê người ở lại — lương theo tin tuyển tháng 9/2026 khoảng 6–12 triệu đồng/tháng, thường kèm ăn ở — hoặc thuê người ghé kiểm tra định kỳ, chụp ảnh gắn tọa độ, báo khi có bất thường. Gói GreenSpace ở Nam Ban, Lâm Hà: 1,5–2,5 triệu đồng/tháng.
+
+Hỏi đáp:
+- **Thuê người trông coi đất Nam Ban giá bao nhiêu?** Thuê người ở lại trông coi, theo bảng lương tin tuyển người trông coi nhà tháng 9/2026, khoảng 6–12 triệu đồng/tháng tùy kinh nghiệm và công việc, thường kèm ăn ở. Nếu chỉ cần người ghé kiểm tra định kỳ, chụp ảnh gắn tọa độ và báo khi có bất thường, gói tham khảo của GreenSpace ở Nam Ban, Lâm Hà từ 1,5 đến 2,5 triệu đồng một tháng cho một lô.
+- **Nên thuê người ở lại hay chỉ cần người ghé kiểm tra định kỳ?** Đất trống, đất nền, đất chờ lên giá thì thường chỉ cần người ghé kiểm tra định kỳ và giữ bằng chứng hiện trạng. Có nhà, có vườn cần chăm mỗi ngày hoặc tài sản giá trị cao thì mới cần người ở lại; khi đó vẫn nên có người kiểm tra độc lập để biết người ở lại làm đúng việc.
+- **Người trông coi đất làm những việc gì?** Ra tận lô kiểm tra mốc ranh và hàng rào, phát hiện sớm lấn chiếm, đổ đất, dựng chòi trái phép, chụp ảnh hiện trạng có ngày giờ, báo cho chủ đất khi có bất thường, và làm việc với hàng xóm hay chính quyền xã khi có chuyện. Chăm vườn hằng ngày là việc của người làm vườn, khác với việc trông coi.
+- **Cho người ở nhờ để trông đất có rủi ro gì?** Rủi ro lớn nhất là lúc đòi lại đất: người ở nhờ lâu năm có trồng cây, cải tạo đất, dựng nhà thì dễ phát sinh tranh chấp về công sức và tài sản trên đất. Nên làm hợp đồng mượn hoặc thuê có thời hạn, ghi rõ tài sản và mốc ranh, và giữ hồ sơ hiện trạng gốc có ảnh ngày giờ.
+- **Tìm người trông coi đất ở Nam Ban ở đâu?** Nếu cần người ở lại: đăng tin trên các trang việc làm hoặc hội nhóm địa phương, gặp trực tiếp và làm hợp đồng rõ ràng. Nếu cần người ghé kiểm tra định kỳ: đội GreenSpace là người địa phương ở Nam Ban, Lâm Hà — nhắn Zalo 0978 758 788.
 
 ### Trích lục thửa đất là gì, xin ở đâu? | GreenSpace
 
