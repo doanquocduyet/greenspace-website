@@ -41,10 +41,22 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (52 lần phá, 36 bẫy — tất 
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
 
+## Đợt 26/9/2026 (rà tổng) — SEO/AEO/GEO + bảo mật
+| # | Thấy gì | Làm gì | Bẫy |
+|---|---|---|---|
+| 1 | Tọa độ LocalBusiness 11.7553, 108.2242 (gần Đinh Văn) lệch ghim Google Maps R9HF+47 Nam Ban (~11.8278, 108.3732) khoảng 17 km. | Sửa geo theo ghim Maps. | — |
+| 2 | `/trang/` (có gạch chéo cuối) trả 200 — trang trùng. | `"trailingSlash": false` trong vercel.json. | B43 |
+| 3 | 9 bài có ảnh đầu bài riêng nhưng og:image vẫn ảnh chung. | og/twitter:image = ảnh bài 1280×720. | — |
+| 4 | 6 trang (5 bài tản văn + trang quản lý đất) không có đoạn trả lời thẳng dưới H1; 3 trang đoạn trả lời > 60 chữ. | Thêm / rút đoạn trả lời 40–62 chữ. | — |
+| 5 | llms.txt thiếu gói nhà vườn và câu định vị. | Thêm. | — |
+| 6 | Thiếu Cross-Origin-Opener-Policy. | Thêm same-origin. | — |
+| — | Soát thêm, không lỗi: file nội bộ đều 404 trên web; http→https, www→gốc, .html→sạch đều 308; header CSP/HSTS preload/nosniff đủ; mọi trang ≥ 3 link vào. | | |
+
 ## Đợt 26/9/2026 (khuya) — định vị: trông coi là chính, việc khác kết nối
 | # | Thấy gì | Làm gì | Bẫy |
 |---|---|---|---|
-| 1 | Trang nhà vườn ghi GreenSpace tự "tưới cây, dọn lá, xử lý cỏ, chăm cây cảnh" — ngược lời chủ web "không ôm đồm". | Viết lại: GreenSpace kiểm tra; chăm vườn, canh tác, sửa chữa do người địa phương có chuyên môn làm — GreenSpace kết nối, báo giá trước, kiểm tra lại. | B42 |
+| 1 | Trang nhà vườn ghi GreenSpace tự "tưới cây, dọn lá, xử lý cỏ, chăm cây cảnh" — ngược lời chủ web "không ôm đồm". | Viết lại: GreenSpace kiểm tra; chăm vườn, canh tác, sửa chữa do người địa phương có chuyên môn làm — GreenSpace kết nối, báo giá trước, kiểm tra lại. | B43 | vercel.json có cleanUrls + trailingSlash:false (một trang một địa chỉ) |
+| B42 |
 | 2 | FAQ "có chăm vườn thuê không" trả lời lửng ("trao đổi thêm"). | Trả lời thẳng: không tự chăm, kết nối người địa phương + kiểm tra. | B42 |
 | 3 | /ve-greenspace: "chăm sóc đất" dễ hiểu là canh tác. | "trông coi đất". | — |
 
