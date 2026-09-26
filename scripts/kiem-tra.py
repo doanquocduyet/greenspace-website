@@ -475,6 +475,11 @@ for f in IDX:
     for m in re.finditer(r'\b(GreenSpace|[Cc]húng tôi)\s+(?:sẽ\s+|cũng\s+|nhận\s+|trực tiếp\s+|tự\s+)?(%s)\b' % VIEC_NGOAI, t):
         L('B42', f'{f}: "{m.group(0)}" — GreenSpace chỉ trông coi, quản lý đất; việc này viết là "kết nối người địa phương…" — …{t[max(0, m.start()-40):m.end()+40]}…')
 
+# ---------- B43 Một trang một địa chỉ: /trang/ phải chuyển về /trang ----------
+VJ = json.loads(rd('vercel.json'))
+if not VJ.get('cleanUrls') or VJ.get('trailingSlash') is not False:
+    L('B43', 'vercel.json phải có "cleanUrls": true và "trailingSlash": false — không thì /trang/ và /trang.html thành bản trùng của /trang')
+
 if LOI:
     print(f'✗ {len(LOI)} lỗi:')
     for x in LOI: print('  ' + x)

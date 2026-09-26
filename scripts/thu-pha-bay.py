@@ -82,6 +82,7 @@ PHA = [
  ('B40', A, '<title>Mua đất xong', '<title>Trông coi đất ở xa: mua đất xong', False),
  ('B41', 'kiem-tra-dat-lam-ha.html', '<title>Kiểm tra đất Lâm Hà', '<title>Kiểm tra đất Nam Ban Lâm Hà', False),
  ('B42', 'quan-ly-tai-san-nha-vuon-nam-ban.html', 'chúng tôi kết nối, hẹn lịch', 'chúng tôi chăm vườn, hẹn lịch', False),
+ ('B43', 'vercel.json', '  "trailingSlash": false,\n', '', False),
  ('B39', 've-greenspace.html', '<h2>Tóm tắt</h2>', '<h2>Tóm tắt</h2><p>' + 'Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban. ' * 2 + '</p>', False),
 ]
 
