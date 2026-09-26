@@ -468,6 +468,13 @@ if TK.get('khoa_title_toi') and __import__('datetime').date.today().isoformat() 
             if x and y and norm(x.group(1)) != norm(y.group(1)):
                 L('B41', f'{f}: đổi {tag} khi đang khoá tới {TK["khoa_title_toi"]} ("{norm(y.group(1))}" → "{norm(x.group(1))}")')
 
+# ---------- B42 Định vị: GreenSpace trông coi, quản lý đất; việc khác thì KẾT NỐI người địa phương ----------
+VIEC_NGOAI = r'chăm vườn|chăm sóc vườn|làm vườn|cắt cỏ|tỉa cây|trồng mới|trồng cây|canh tác|sửa mái|sửa điện|sửa nhà|xây'
+for f in IDX:
+    t = chu(SRC[f]) + ' ' + ' '.join(json.dumps(d, ensure_ascii=False) for d in ld(SRC[f]))
+    for m in re.finditer(r'\b(GreenSpace|[Cc]húng tôi)\s+(?:sẽ\s+|cũng\s+|nhận\s+|trực tiếp\s+|tự\s+)?(%s)\b' % VIEC_NGOAI, t):
+        L('B42', f'{f}: "{m.group(0)}" — GreenSpace chỉ trông coi, quản lý đất; việc này viết là "kết nối người địa phương…" — …{t[max(0, m.start()-40):m.end()+40]}…')
+
 if LOI:
     print(f'✗ {len(LOI)} lỗi:')
     for x in LOI: print('  ' + x)

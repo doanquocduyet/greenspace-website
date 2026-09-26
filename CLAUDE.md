@@ -36,6 +36,11 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 16. **Nói dịch vụ phải nói ở đâu** (chủ web chốt 26/9): câu mô tả việc GreenSpace làm, giá gói, lời mời liên hệ phải gắn "Nam Ban, Lâm Hà" tự nhiên trong câu — không viết chung chung "GreenSpace kiểm tra hàng tháng". Khối lời mời cuối trang bắt buộc có (bẫy B38). **Không nhồi**: "Nam Ban" ≤ 4% số chữ trang (bẫy B39); tiêu đề mục ("Tại sao là GreenSpace"), câu mà câu kề đã có địa danh thì để nguyên.
 15. **Nói đúng sự thật trên trang:** chỉ đưa tin có nguồn chính thức; tin đồn (sáp nhập, quy hoạch…) chưa có văn bản thì không đưa.
 
+## Định vị dịch vụ (chủ web chốt 26/9 — không ôm đồm)
+- **Việc chính của GreenSpace: trông coi, quản lý đất hằng tháng** ở Nam Ban, Lâm Hà — ra thực địa, ảnh GPS, báo cáo Zalo, cảnh báo, đại diện xử lý tại chỗ.
+- **Mọi việc khác** (làm vườn, canh tác, trồng mới, chăm vườn hoa, sửa chữa, thợ) = **kết nối người địa phương có chuyên môn**, báo giá trước, GreenSpace kiểm tra lại sau khi làm. Không viết như GreenSpace tự làm (bẫy B42).
+- Trang về việc ngoài chuyên môn (giá làm vườn, trồng cà phê, bơ…) chỉ trả lời giá thị trường có nguồn + lời mời kết nối và kiểm tra — không mời "dịch vụ làm vườn của GreenSpace".
+
 ## Vai của từng trang (chủ web chốt 25/9 — trùng chữ thì cùng lên, KHÔNG gộp)
 - `/quan-ly-dat-nam-ban` = trang **dịch vụ** (gói, cách làm, chi phí, liên hệ).
 - `/ve-greenspace` = trang **góc nhìn / GreenSpace là ai** (đội ngũ, điều chúng tôi tin, số liệu). Mô tả viết theo vai này, không viết như trang dịch vụ.

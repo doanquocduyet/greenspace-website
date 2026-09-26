@@ -41,6 +41,13 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (52 lần phá, 36 bẫy — tất 
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
 
+## Đợt 26/9/2026 (khuya) — định vị: trông coi là chính, việc khác kết nối
+| # | Thấy gì | Làm gì | Bẫy |
+|---|---|---|---|
+| 1 | Trang nhà vườn ghi GreenSpace tự "tưới cây, dọn lá, xử lý cỏ, chăm cây cảnh" — ngược lời chủ web "không ôm đồm". | Viết lại: GreenSpace kiểm tra; chăm vườn, canh tác, sửa chữa do người địa phương có chuyên môn làm — GreenSpace kết nối, báo giá trước, kiểm tra lại. | B42 |
+| 2 | FAQ "có chăm vườn thuê không" trả lời lửng ("trao đổi thêm"). | Trả lời thẳng: không tự chăm, kết nối người địa phương + kiểm tra. | B42 |
+| 3 | /ve-greenspace: "chăm sóc đất" dễ hiểu là canh tác. | "trông coi đất". | — |
+
 ## Đợt 26/9/2026 (tối) — 3 key tiếp + đủ "Nam Ban, Lâm Hà, Lâm Đồng"
 | # | Thấy gì | Làm gì | Bẫy |
 |---|---|---|---|
@@ -147,6 +154,7 @@ Không làm: Dataset (GreenSpace không có dữ liệu gốc như bảng giá t
 | B39 | "Nam Ban" ≤ 4% số chữ trang |
 | B40 | Key → trang: FAQ đầu đủ chữ câu, đoạn mở có "Nam Ban, Lâm Hà, Lâm Đồng", không trang khác giành title |
 | B41 | Khoá title/H1 trang key tới ngày chốt |
+| B42 | Không viết GreenSpace / chúng tôi tự chăm vườn, trồng, canh tác, sửa chữa — viết "kết nối người địa phương" |
 | B04 | Không chữ máy móc (thân, khung, llms.txt) |
 | B05 | Mô tả ≤160, hết câu, ngoặc đủ, có "Nam Ban" (meta/og/twitter/JSON-LD) |
 | B06 | Giá /tháng, "N+ lô", "hơn N năm" khớp `data/so-lieu.json` |
