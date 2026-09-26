@@ -16,6 +16,18 @@
     "xu-ly-lan-chiem-dat-tu-xa.html",
     "thue-nguoi-trong-coi-dat-nam-ban.html"
   ],
+  "tu_khoa": {
+    "_ghi_chu": "Một câu khách gõ = một trang đích. Trang đích: FAQ đầu chứa đủ chữ của câu, đoạn mở (H1 → H2 đầu) có đủ 'Nam Ban, Lâm Hà, Lâm Đồng', không trang khác mở title bằng câu đó (B40). Title/H1 khoá tới khoa_title_toi (B41).",
+    "khoa_title_toi": "2026-10-26",
+    "trang": {
+      "thuê người trông coi đất nam ban": "thue-nguoi-trong-coi-dat-nam-ban.html",
+      "quản lý đất nam ban": "quan-ly-dat-nam-ban.html",
+      "giá thuê người trông đất nam ban": "gia-trong-coi-dat-bao-nhieu.html",
+      "đất bị lấn chiếm khi ở xa": "xu-ly-lan-chiem-dat-tu-xa.html",
+      "trông coi đất ở xa": "cach-giu-dat-an-toan-tu-xa.html",
+      "kiểm tra đất nam ban lâm hà": "kiem-tra-dat-lam-ha.html"
+    }
+  },
   "gia_tham_chieu_ngoai": {
     "_nguon": "https://muaban.net/tags/nguoi-trong-coi-nha — bảng lương người trông coi nhà, cập nhật 9/2026",
     "gia_trieu_thang": ["6", "6,5", "7", "8", "10", "12"]
