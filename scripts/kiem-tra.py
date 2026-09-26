@@ -417,6 +417,20 @@ for f in PAGES:
         if 'aggregateRating' in d or 'review' in d or d.get('@type') in ('Review', 'AggregateRating'):
             L('B37', f'{f}: JSON-LD có đánh giá/sao tự khai ({d.get("@type")}) — gỡ, giữ lời khách ở phần hiển thị')
 
+# ---------- B38 Nói dịch vụ phải nói ở đâu (chủ web chốt 26/9): lời mời cuối trang có Nam Ban / Lâm Hà ----------
+for f in IDX + ['404.html']:
+    s = SRC.get(f, '')
+    if '<div class="cta-box">' not in s: continue
+    i = s.index('<div class="cta-box">'); blk = s[i:s.index('</div>', i)]
+    if not re.search('Nam Ban|Lâm Hà', re.sub(r'<a [^>]*>.*?</a>', '', blk, flags=re.S)):
+        L('B38', f'{f}: khối lời mời cuối trang (cta-box) nói dịch vụ chung chung — thêm "Nam Ban" / "Lâm Hà" tự nhiên vào câu')
+
+# ---------- B39 Không nhồi địa danh: "Nam Ban" ≤ 4% số chữ trên trang ----------
+for f in IDX:
+    t = chu(SRC[f]); w = len(t.split()); n = len(re.findall(r'Nam Ban', t))
+    if w and n * 2 / w > 0.04:
+        L('B39', f'{f}: "Nam Ban" chiếm {100 * n * 2 / w:.1f}% số chữ ({n} lần / {w} chữ) — quá dày, Google coi là nhồi từ khoá')
+
 # ---------- B21 canonical / og:url đúng địa chỉ ----------
 for f in IDX:
     want = 'https://greenspacers.vn/' + slug(f)

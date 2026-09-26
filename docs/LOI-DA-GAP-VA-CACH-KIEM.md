@@ -2,7 +2,7 @@
 
 Sổ lỗi thật của greenspacers.vn. Mỗi lỗi: **đã làm · vì sao · cách kiểm (mã bẫy)**.
 Bẫy nằm trong `scripts/kiem-tra.py`, chạy trên CI mỗi lần push (`.github/workflows/kiem-tra.yml`).
-Thử phá: `python3 scripts/thu-pha-bay.py` (50 lần phá, 34 bẫy — tất cả phải nổ).
+Thử phá: `python3 scripts/thu-pha-bay.py` (52 lần phá, 36 bẫy — tất cả phải nổ).
 
 ## Đợt 25/9/2026 — áp bàn giao đợt 2 của Nam Ban Villas + các lỗi cùng họ
 
@@ -40,6 +40,11 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (50 lần phá, 34 bẫy — tất 
 - B02 báo 4 câu FAQ lệch chữ — do bóc thẻ `<a>` chèn thêm dấu cách → thẻ trong dòng bỏ không chèn cách.
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
+
+## Đợt 26/9/2026 — nói dịch vụ phải nói ở đâu (chủ web chốt)
+- 27 câu có "GreenSpace" mà không có địa danh → sửa 17 câu dịch vụ (việc làm, giá gói) + 12 khối lời mời cuối trang ("Cứ nhắn cho tôi, kể về mảnh đất của anh chị" → "…ở Nam Ban"). Sửa cả chữ hiện lẫn JSON-LD cho khớp (B02 sạch). Để nguyên: tiêu đề mục, câu mà câu kề đã có địa danh, "Tôi là Duyệt…".
+- 3 trang vốn đã đậm "Nam Ban" (3,2–3,6%) chỉ thêm vào câu dịch vụ cốt lõi. Mật độ cao nhất sau sửa không đổi: 3,58%.
+- Bẫy B38 (lời mời cuối trang có Nam Ban/Lâm Hà), B39 (không nhồi: "Nam Ban" ≤ 4% số chữ).
 
 ## Đợt 26/9/2026 — quét tin theo kinh nghiệm bộ đo chỉ số giá
 - `scripts/quet-tin.py` + `.github/workflows/quet-tin.yml` (06:00 VN): RSS báo chính thống → `data/tin-ung-vien.json`, không tự đăng.
@@ -120,6 +125,8 @@ Không làm: Dataset (GreenSpace không có dữ liệu gốc như bảng giá t
 | B34 | Mỗi trang: RSS trong head, author, dateModified |
 | B35 | llms-full.txt khớp bản sinh từ trang thật |
 | B37 | Không sao/đánh giá tự khai trong JSON-LD |
+| B38 | Lời mời cuối trang có Nam Ban/Lâm Hà |
+| B39 | "Nam Ban" ≤ 4% số chữ trang |
 | B04 | Không chữ máy móc (thân, khung, llms.txt) |
 | B05 | Mô tả ≤160, hết câu, ngoặc đủ, có "Nam Ban" (meta/og/twitter/JSON-LD) |
 | B06 | Giá /tháng, "N+ lô", "hơn N năm" khớp `data/so-lieu.json` |
