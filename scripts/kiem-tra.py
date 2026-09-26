@@ -154,7 +154,7 @@ for f in IDX:
             L('B05', f'{f}: JSON-LD {dd["@type"]} description thiếu "Nam Ban"')
 
 # ---------- B06 Giá và số liệu phải khớp một nguồn (data/so-lieu.json) ----------
-GIA_OK = set(SO['gia_trieu_thang']) | set(SO['gia_dong_thang'])
+GIA_OK = set(SO['gia_trieu_thang']) | set(SO['gia_dong_thang']) | set(SO.get('gia_tham_chieu_ngoai', {}).get('gia_trieu_thang', []))   # giá ngoài có nguồn ghi trong so-lieu
 for f in PAGES:
     t = chu(SRC[f]) + ' ' + khung(SRC[f])
     for m in re.finditer(r'(\d{1,3}(?:[.,]\d{1,3})*)\s*(triệu|tr|đ)(?!\w)(?=[^.;:]{0,30}?tháng)', t):
@@ -371,7 +371,8 @@ def chu_js(s):
 # ---------- B27 Tên hành chính đã bỏ từ 1/7/2025 ----------
 for f in IDX:
     t = chu(SRC[f]) + ' ' + khung(SRC[f]) + ' ' + chu_js(SRC[f])
-    for m in re.finditer(r'\b(huyện|thị trấn)\b', t, re.I):
+    # được nhắc tên cũ khi nói rõ là cũ ngay sau đó ("thị trấn Nam Ban cũ", "cấp huyện cũ")
+    for m in re.finditer(r'\b(huyện|thị trấn)\b(?![^.;:!?]{0,25}\bcũ\b)', t, re.I):
         L('B27', f'{f}: "{m.group(0)}" — cấp huyện/thị trấn đã bỏ từ 1/7/2025 — …{t[max(0, m.start()-40):m.end()+30]}…')
 
 # ---------- B28 Số thống kê không nguồn (cả trong chuỗi JS) ----------

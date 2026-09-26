@@ -41,6 +41,15 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (52 lần phá, 36 bẫy — tất 
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
 
+## Đợt 26/9/2026 (chiều) — 3 từ khoá theo cách làm một key một trang
+| # | Thấy gì | Làm gì | Bẫy |
+|---|---|---|---|
+| 1 | "thuê người trông coi đất nam ban": không trang nào nhắm đúng câu; top Google toàn tin tuyển người ở lại. | Trang mới `/thue-nguoi-trong-coi-dat-nam-ban`: title bắt đầu đúng câu, FAQ1 = câu + "giá bao nhiêu", bảng so sánh 4 cách trông (lương người ở lại lấy Muaban.net 9/2026, ghi nguồn). | B06 (giá ngoài phải nằm ở `gia_tham_chieu_ngoai`) |
+| 2 | "quản lý đất nam ban": Google hiểu là cơ quan nhà nước, tóm tắt AI còn ghi thị trấn/huyện cũ. | Trang dịch vụ thêm mục "Cơ quan nhà nước nào quản lý đất đai?" + FAQ1 "Cơ quan nào quản lý đất đai ở Nam Ban?" — NQ 1671 khoản 14, UBND xã, VP đăng ký đất đai tỉnh, Sở NN&MT; nói rõ GreenSpace không phải cơ quan nhà nước. Không đổi title/H1. | B27 (cho qua "… cũ") |
+| 3 | "giá thuê người trông đất nam ban": tóm tắt AI trích GreenSpace nhưng ghi giá 1–2 triệu (đúng: 1,5–2,5). | FAQ1 trang giá đổi đúng câu khách gõ, thêm mục so với thuê người ở lại. Không đổi title/H1. | — |
+| 4 | **Suýt tự gây:** câu hỏi FAQ trang giá trùng chữ title/og/headline — thay chữ cả trang sẽ đổi title (phạm luật 7). | Chỉ thay trong khối FAQ hiển thị + sửa FAQPage bằng json. | (B01 khớp FAQ) |
+| 5 | **Suýt nhồi:** thêm mục mới làm "Nam Ban" 4,9% trang quản lý đất. | Viết lại: "thị trấn cũ", "UBND xã", bỏ địa danh ở câu kề đã có. | B39 |
+
 ## Đợt 26/9/2026 — nói dịch vụ phải nói ở đâu (chủ web chốt)
 - 27 câu có "GreenSpace" mà không có địa danh → sửa 17 câu dịch vụ (việc làm, giá gói) + 12 khối lời mời cuối trang ("Cứ nhắn cho tôi, kể về mảnh đất của anh chị" → "…ở Nam Ban"). Sửa cả chữ hiện lẫn JSON-LD cho khớp (B02 sạch). Để nguyên: tiêu đề mục, câu mà câu kề đã có địa danh, "Tôi là Duyệt…".
 - 3 trang vốn đã đậm "Nam Ban" (3,2–3,6%) chỉ thêm vào câu dịch vụ cốt lõi. Mật độ cao nhất sau sửa không đổi: 3,58%.
@@ -149,7 +158,7 @@ Không làm: Dataset (GreenSpace không có dữ liệu gốc như bảng giá t
 | B24 | Bậc tiêu đề không nhảy cóc |
 | B25 | Câu hỏi FAQ mở sẵn |
 | B26 | Nút bật/tắt có aria-pressed |
-| B27 | Không "huyện/thị trấn" (bỏ từ 1/7/2025) — thân, khung, chuỗi JS |
+| B27 | Không "huyện/thị trấn" (bỏ từ 1/7/2025) — thân, khung, chuỗi JS; được khi ghi rõ "cũ" ngay sau |
 | B28 | Không số thống kê không nguồn — thân, khung, chuỗi JS |
 | B29 | Không lặp từ gõ nhầm |
 | B30 | Mỗi trang ≥ 3 link vào từ trang lập chỉ mục khác |

@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://greenspacers.vn/quan-ly-dat-nam-ban</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <priority>0.8</priority>
   
     <image:image><image:loc>https://greenspacers.vn/images/articles/quan-ly-dat-nam-ban.jpg</image:loc></image:image>
@@ -118,6 +118,11 @@
     <priority>0.8</priority>
   
     <image:image><image:loc>https://greenspacers.vn/images/articles/ve-greenspace.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://greenspacers.vn/thue-nguoi-trong-coi-dat-nam-ban</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://greenspacers.vn/xu-ly-lan-chiem-dat-tu-xa</loc>
