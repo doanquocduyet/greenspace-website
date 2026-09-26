@@ -51,5 +51,6 @@
         }
       ]
     }
-  ]
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)data' ':(exclude)scripts' ':(exclude)docs' ':(exclude).github' ':(exclude)fb-queue' ':(exclude)CLAUDE.md'"
 }

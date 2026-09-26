@@ -26,5 +26,8 @@ jobs:
             echo "ref=origin/main" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Tự kiểm bộ lọc quét tin
+        run: python3 scripts/quet-tin.py --tu-kiem
+
       - name: Chạy bẫy
         run: python3 scripts/kiem-tra.py --base-ref "${{ steps.base.outputs.ref }}"

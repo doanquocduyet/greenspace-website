@@ -41,6 +41,13 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (50 lần phá, 34 bẫy — tất 
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
 
+## Đợt 26/9/2026 — quét tin theo kinh nghiệm bộ đo chỉ số giá
+- `scripts/quet-tin.py` + `.github/workflows/quet-tin.yml` (06:00 VN): RSS báo chính thống → `data/tin-ung-vien.json`, không tự đăng.
+- Bẫy của chính bộ lọc (phát hiện khi soát tay lần quét đầu, 16 tin → chỉ 3 đúng việc): **tỉnh Lâm Đồng mới gồm Đắk Nông, Bình Thuận cũ** → tin Hàm Thắng, Gia Nghĩa, Đắk Mil, đèo Gia Bắc lọt vào; bản tin tổng hợp "Lâm Đồng hôm nay"; thiên tai ngoài Nam Ban. Sửa: thiên tai chỉ nhận khi đúng Nam Ban/Lâm Hà, tin cấp tỉnh chỉ nhận chính sách đất, loại vùng Đắk Nông/Bình Thuận cũ. **Tên thôn Nam Ban trùng tên Hà Nội** (Mê Linh, Gia Lâm, Thanh Trì, Từ Liêm) → chỉ tính khi kèm Nam Ban/Lâm Hà/Lâm Đồng. 19 phép thử bộ lọc + 5 phép thử đọc ngày (cổng Chính phủ ghi ngày kiểu "9/26/2026 9:20:00 AM") chạy trong CI.
+- Không dùng Google News RSS: robots.txt `Disallow: /`. Báo Lâm Đồng có lúc chặn máy chủ → ghi lại, bỏ, không vượt chặn.
+- Ghi chú trong khối GS-UPDATES còn "giữ tối đa 6 mục" (lịch đọc được) → sửa "KHÔNG xoá mục cũ".
+- `ignoreCommand` trong vercel.json: commit chỉ đổi data/scripts/docs/.github/fb-queue/CLAUDE.md không deploy (thử trên 3 commit mẫu).
+
 ## Đợt 25/9/2026 (khuya) — học từ đề xuất của Nam Ban Villas
 | # | Lỗi / việc | Đã làm | Bẫy |
 |---|---|---|---|
