@@ -41,6 +41,15 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (52 lần phá, 36 bẫy — tất 
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
 
+## Đợt 26/9/2026 (tối) — 3 key tiếp + đủ "Nam Ban, Lâm Hà, Lâm Đồng"
+| # | Thấy gì | Làm gì | Bẫy |
+|---|---|---|---|
+| 1 | "đất bị lấn chiếm khi ở xa": tóm tắt AI của Google còn ghi "tòa án cấp huyện" (bỏ từ 1/7/2025). | Trang xử lý lấn chiếm: bảng bước thêm "hòa giải ở xã" (Đ235 k2 Luật ĐĐ 2024) và "tòa án khu vực" (NQ 81/2025); mục lấn khác chiếm (Đ3); phạt theo NĐ 123/2024 (không ghi mức tiền vì có đề xuất sửa); 3 FAQ. | B40, B41 |
+| 2 | "trông coi đất ở xa": không trang nào mở bằng câu này. | Giao cho `/cach-giu-dat-an-toan-tu-xa` (không đẻ trang mới): đoạn mở, mục camera, mục giữ sổ đỏ / ủy quyền đúng việc, FAQ đầu đúng câu. | B40 |
+| 3 | "kiểm tra đất nam ban lâm hà": tóm tắt AI chỉ tới UBND thị trấn, phòng TN&MT huyện — tên cũ. | Trang kiểm tra đất: mục "tra giấy tờ ở đâu" theo tên mới, FAQ đầu đúng câu, lời mời có Nam Ban. | B27 |
+| 4 | Chủ web: "nhớ thêm key Nam Ban Lâm Hà Lâm Đồng". | Cả 6 trang key có đủ cụm ở đoạn mở + meta keywords; bản đồ key → trang vào so-lieu.json. | B40 (mới) |
+| 5 | Tên tòa khu vực phụ trách Lâm Hà: chỉ thấy ở trang luật sư, văn bản gốc không mở được. | Không ghi tên tòa cụ thể. | (luật 15) |
+
 ## Đợt 26/9/2026 (chiều) — 3 từ khoá theo cách làm một key một trang
 | # | Thấy gì | Làm gì | Bẫy |
 |---|---|---|---|
@@ -136,6 +145,8 @@ Không làm: Dataset (GreenSpace không có dữ liệu gốc như bảng giá t
 | B37 | Không sao/đánh giá tự khai trong JSON-LD |
 | B38 | Lời mời cuối trang có Nam Ban/Lâm Hà |
 | B39 | "Nam Ban" ≤ 4% số chữ trang |
+| B40 | Key → trang: FAQ đầu đủ chữ câu, đoạn mở có "Nam Ban, Lâm Hà, Lâm Đồng", không trang khác giành title |
+| B41 | Khoá title/H1 trang key tới ngày chốt |
 | B04 | Không chữ máy móc (thân, khung, llms.txt) |
 | B05 | Mô tả ≤160, hết câu, ngoặc đủ, có "Nam Ban" (meta/og/twitter/JSON-LD) |
 | B06 | Giá /tháng, "N+ lô", "hơn N năm" khớp `data/so-lieu.json` |

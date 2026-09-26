@@ -77,6 +77,10 @@ PHA = [
  ('B37', 'index.html', '"priceRange":', '"aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3"}, "priceRange":', False),
  ('B11', 'quan-ly-dat-nam-ban.html', r'("@type": "WebPage".*?"dateModified": ")[0-9-]+', r'\g<1>2026-01-01', True),
  ('B38', D, 'đội ở Nam Ban ra kiểm tra', 'chúng tôi ra kiểm tra', False),
+ ('B40', D, 'Lô ở Nam Ban, Lâm Hà, Lâm Đồng có người', 'Lô ở Nam Ban có người', False),
+ ('B40', 'cach-giu-dat-an-toan-tu-xa.html', 'faq-q">Trông coi đất ở xa cần làm gì?', 'faq-q">Cần làm gì?', False),
+ ('B40', A, '<title>Mua đất xong', '<title>Trông coi đất ở xa: mua đất xong', False),
+ ('B41', 'kiem-tra-dat-lam-ha.html', '<title>Kiểm tra đất Lâm Hà', '<title>Kiểm tra đất Nam Ban Lâm Hà', False),
  ('B39', 've-greenspace.html', '<h2>Tóm tắt</h2>', '<h2>Tóm tắt</h2><p>' + 'Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban. ' * 2 + '</p>', False),
 ]
 

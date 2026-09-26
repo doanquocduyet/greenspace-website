@@ -441,6 +441,33 @@ for f in IDX:
     if o and o != want: L('B21', f'{f}: og:url {o} ≠ {want}')
     if len(re.findall(r'<h1\b', SRC[f])) != 1: L('B21', f'{f}: phải có đúng 1 thẻ H1')
 
+# ---------- B40 Một key một trang + đủ địa danh (data/so-lieu.json → tu_khoa) ----------
+TK = SO.get('tu_khoa', {})
+def gon(t): return re.sub(r'\s+', ' ', re.sub(r'[^\w\s]', ' ', norm(t).lower())).strip()
+for key, f in TK.get('trang', {}).items():
+    if f not in SRC: L('B40', f'câu "{key}" trỏ tới {f} không có'); continue
+    s = SRC[f]
+    q = re.search(r'<div class="faq-q">(.*?)</div>', s, re.S)
+    if not q or not set(gon(key).split()) <= set(gon(re.sub(r'<[^>]+>', '', q.group(1))).split()):
+        L('B40', f'{f}: câu hỏi FAQ đầu phải chứa đủ chữ của câu khách gõ "{key}" — đang là "{norm(q.group(1)) if q else "không có FAQ"}"')
+    i = s.find('<h1'); j = s.find('<h2', i)
+    if 'Nam Ban, Lâm Hà, Lâm Đồng' not in chu(s[i:j]):
+        L('B40', f'{f}: đoạn mở (H1 → H2 đầu) thiếu cụm "Nam Ban, Lâm Hà, Lâm Đồng" cho câu "{key}"')
+    for g in IDX:
+        t = re.search(r'<title>(.*?)</title>', SRC[g], re.S)
+        if g != f and t and gon(t.group(1)).startswith(gon(key)):
+            L('B40', f'{g}: title mở bằng "{key}" — câu này đã giao cho {f} (một key một trang)')
+
+# ---------- B41 Khoá title/H1 trang theo key tới ngày chốt ----------
+if TK.get('khoa_title_toi') and __import__('datetime').date.today().isoformat() < TK['khoa_title_toi']:
+    for f in TK.get('trang', {}).values():
+        b = base(f)
+        if not b or f not in SRC: continue
+        for tag in ('title', 'h1'):
+            x = re.search(r'<%s\b[^>]*>(.*?)</%s>' % (tag, tag), SRC[f], re.S); y = re.search(r'<%s\b[^>]*>(.*?)</%s>' % (tag, tag), b, re.S)
+            if x and y and norm(x.group(1)) != norm(y.group(1)):
+                L('B41', f'{f}: đổi {tag} khi đang khoá tới {TK["khoa_title_toi"]} ("{norm(y.group(1))}" → "{norm(x.group(1))}")')
+
 if LOI:
     print(f'✗ {len(LOI)} lỗi:')
     for x in LOI: print('  ' + x)
