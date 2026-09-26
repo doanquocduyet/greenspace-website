@@ -79,5 +79,10 @@ Chép từ một bài đang chạy (vd `xu-ly-lan-chiem-dat-tu-xa.html`) — gi�
 - **Đăng:** lấy tin `cho_kiem` → mở nguồn gốc kiểm ngày, nội dung → viết 2–3 câu đúng luật (nói rõ nếu mới là dự thảo/định hướng) → chèn ngay dưới `<!-- GS-UPDATES:START -->`, đúng mẫu `<li class="update-item">…` → đổi trạng thái tin thành `da_dang` hoặc `bo` + `ghi_chu` lý do. **Không xoá mục cũ.** Cập nhật `lastmod` trang chủ + `dateModified` WebPage trang chủ (bằng nhau), chạy `tao-llms-full.py`.
 - Commit chỉ đổi `data/`, `scripts/`, `docs/`, `.github/`, `fb-queue/`, `CLAUDE.md` → Vercel **bỏ qua deploy** (`ignoreCommand` trong vercel.json) — không tốn lượt deploy.
 
+## Lượt triển khai Vercel (gói miễn phí có hạn mức/ngày — 26/9 đã hết lượt)
+- Nhánh `claude/*` **không** tạo bản xem trước (`git.deploymentEnabled` trong vercel.json, bẫy B43) — chỉ `main` tốn lượt.
+- Gom việc thành ít lần merge. Sau khi merge, kiểm tra web thật (curl trang mới / chữ mới). Trạng thái Vercel trên PR ghi "rate limited" = **chưa lên web** → báo chủ web, không báo "xong".
+- Hết lượt rồi thì lần merge sau khi hồi lượt sẽ đưa toàn bộ main lên. Nếu merge đó chỉ đổi file nội bộ (bị `ignoreCommand` bỏ qua) thì chủ web bấm **Redeploy** bản main mới nhất trong Vercel.
+
 ## Báo cáo cho chủ web
 Push / tạo PR / merge không thành → báo rõ **THẤT BẠI** kèm lỗi. Không bao giờ báo "xong" khi chưa thấy commit trên remote.
