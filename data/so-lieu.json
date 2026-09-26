@@ -14,7 +14,8 @@
     "thue-dat-hang-nam-nop-ho.html",
     "trich-luc-thua-dat-lam-ho.html",
     "xu-ly-lan-chiem-dat-tu-xa.html",
-    "thue-nguoi-trong-coi-dat-nam-ban.html"
+    "thue-nguoi-trong-coi-dat-nam-ban.html",
+    "hop-tac-canh-tac-dat-nam-ban.html"
   ],
   "tu_khoa": {
     "_ghi_chu": "Một câu khách gõ = một trang đích. Trang đích: FAQ đầu chứa đủ chữ của câu, đoạn mở (H1 → H2 đầu) có đủ 'Nam Ban, Lâm Hà, Lâm Đồng', không trang khác mở title bằng câu đó (B40). Title/H1 khoá tới khoa_title_toi (B41).",
@@ -25,7 +26,8 @@
       "giá thuê người trông đất nam ban": "gia-trong-coi-dat-bao-nhieu.html",
       "đất bị lấn chiếm khi ở xa": "xu-ly-lan-chiem-dat-tu-xa.html",
       "trông coi đất ở xa": "cach-giu-dat-an-toan-tu-xa.html",
-      "kiểm tra đất nam ban lâm hà": "kiem-tra-dat-lam-ha.html"
+      "kiểm tra đất nam ban lâm hà": "kiem-tra-dat-lam-ha.html",
+      "hợp tác canh tác đất nam ban": "hop-tac-canh-tac-dat-nam-ban.html"
     }
   },
   "gia_tham_chieu_ngoai": {

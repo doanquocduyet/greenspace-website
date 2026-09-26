@@ -47,7 +47,7 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 - Trang đang chạy: không đổi title/H1 (luật 7) — chỉ thêm FAQ, thêm mục H2 bên dưới.
 - Số lấy ở web khác (lương, giá thị trường) phải có nguồn + tháng/năm ngay trong câu, và ghi vào `data/so-lieu.json` → `gia_tham_chieu_ngoai` kèm `_nguon` (bẫy B06).
 - Đọc phần tóm tắt AI của Google cho câu đó: thấy nói sai về GreenSpace (giá, địa danh cũ) thì viết đoạn nói đúng, có nguồn.
-- **Bản đồ key → trang** nằm ở `data/so-lieu.json` → `tu_khoa.trang` (6 câu, chốt 26/9). Thêm key mới thì thêm vào đó trước.
+- **Bản đồ key → trang** nằm ở `data/so-lieu.json` → `tu_khoa.trang` (chốt 26/9; thêm câu nào thì ghi vào đó). Thêm key mới thì thêm vào đó trước.
 - Trang đích của key: FAQ đầu chứa đủ chữ của câu; đoạn mở (H1 → H2 đầu) có đủ cụm **"Nam Ban, Lâm Hà, Lâm Đồng"**; meta keywords có biến thể "… Nam Ban Lâm Hà Lâm Đồng"; không trang khác mở title bằng câu đó (bẫy B40).
 - **Khoá title/H1 tới 26/10/2026** cho mọi trang trong `tu_khoa.trang` (bẫy B41 so với bản gốc).
 - Luật đất đai / tòa án: chỉ viết điều có văn bản gốc (Luật Đất đai 2024, NĐ 123/2024, NQ 81/2025, NQ 1671). Tên tòa khu vực cụ thể chưa đọc được văn bản gốc → ghi "tòa án nhân dân khu vực nơi có đất".
