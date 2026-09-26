@@ -15,7 +15,9 @@
     "trich-luc-thua-dat-lam-ho.html",
     "xu-ly-lan-chiem-dat-tu-xa.html",
     "thue-nguoi-trong-coi-dat-nam-ban.html",
-    "hop-tac-canh-tac-dat-nam-ban.html"
+    "hop-tac-canh-tac-dat-nam-ban.html",
+    "thue-nguoi-lam-vuon-nam-ban.html",
+    "trong-ca-phe-nam-ban.html"
   ],
   "tu_khoa": {
     "_ghi_chu": "Một câu khách gõ = một trang đích. Trang đích: FAQ đầu chứa đủ chữ của câu, đoạn mở (H1 → H2 đầu) có đủ 'Nam Ban, Lâm Hà, Lâm Đồng', không trang khác mở title bằng câu đó (B40). Title/H1 khoá tới khoa_title_toi (B41).",
@@ -27,8 +29,14 @@
       "đất bị lấn chiếm khi ở xa": "xu-ly-lan-chiem-dat-tu-xa.html",
       "trông coi đất ở xa": "cach-giu-dat-an-toan-tu-xa.html",
       "kiểm tra đất nam ban lâm hà": "kiem-tra-dat-lam-ha.html",
-      "hợp tác canh tác đất nam ban": "hop-tac-canh-tac-dat-nam-ban.html"
+      "hợp tác canh tác đất nam ban": "hop-tac-canh-tac-dat-nam-ban.html",
+      "thuê người làm vườn nam ban": "thue-nguoi-lam-vuon-nam-ban.html",
+      "trồng cà phê nam ban": "trong-ca-phe-nam-ban.html"
     }
+  },
+  "trang_ket_noi": {
+    "_ghi_chu": "Trang về việc GreenSpace KẾT NỐI người địa phương làm (không phải việc chính): không ghi giá nào — mời gọi, nhắn Zalo, báo giá sau (chủ web chốt 26/9; bẫy B44).",
+    "trang": ["thue-nguoi-lam-vuon-nam-ban.html", "trong-ca-phe-nam-ban.html"]
   },
   "gia_tham_chieu_ngoai": {
     "_nguon": "https://muaban.net/tags/nguoi-trong-coi-nha — bảng lương người trông coi nhà, cập nhật 9/2026",

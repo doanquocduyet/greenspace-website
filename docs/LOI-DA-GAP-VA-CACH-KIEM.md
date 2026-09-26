@@ -41,11 +41,19 @@ Thử phá: `python3 scripts/thu-pha-bay.py` (52 lần phá, 36 bẫy — tất 
 - B15 bắt "cách rẻ nhất để giữ" (câu tự nhiên trong tin) → bỏ "rẻ nhất" khỏi danh sách.
 - Tự gây: chọn màu `›` #767676 tính trên nền trắng (4,54) nhưng nền trang là kem #f9f8f6 (4,28) — bẫy B14 bắt → đổi #6b6b6b.
 
+## Đợt 26/9/2026 (tối muộn) — trang kết nối không ghi giá, nhiều web cùng key
+| # | Thấy gì | Làm gì | Bẫy |
+|---|---|---|---|
+| 1 | Chủ web: GreenSpace làm dịch vụ, việc kết nối không ghi giá — gọi, báo giá sau. | 2 trang mới `/thue-nguoi-lam-vuon-nam-ban`, `/trong-ca-phe-nam-ban` viết góc dịch vụ, không một con số giá; danh sách `trang_ket_noi`. | B44 |
+| 2 | Chủ web: các web cùng key, góc nhìn riêng, viết độc lập. | Ghi vào CLAUDE.md (không nêu tên web kia). | — |
+| 3 | Link neo mới làm trang nhà vườn vượt 4% "Nam Ban". | Neo ở trang đó bỏ chữ "Nam Ban". | B39 |
+
 ## Đợt 26/9/2026 (rà tổng) — SEO/AEO/GEO + bảo mật
 | # | Thấy gì | Làm gì | Bẫy |
 |---|---|---|---|
 | 1 | Tọa độ LocalBusiness 11.7553, 108.2242 (gần Đinh Văn) lệch ghim Google Maps R9HF+47 Nam Ban (~11.8278, 108.3732) khoảng 17 km. | Sửa geo theo ghim Maps. | — |
-| 2 | `/trang/` (có gạch chéo cuối) trả 200 — trang trùng. | `"trailingSlash": false` trong vercel.json. | B43 |
+| 2 | `/trang/` (có gạch chéo cuối) trả 200 — trang trùng. | `"trailingSlash": false` trong vercel.json. | B44 | Trang trong `trang_ket_noi` không có con số giá (đ, nghìn, triệu…) |
+| B43 |
 | 3 | 9 bài có ảnh đầu bài riêng nhưng og:image vẫn ảnh chung. | og/twitter:image = ảnh bài 1280×720. | — |
 | 4 | 6 trang (5 bài tản văn + trang quản lý đất) không có đoạn trả lời thẳng dưới H1; 3 trang đoạn trả lời > 60 chữ. | Thêm / rút đoạn trả lời 40–62 chữ. | — |
 | 5 | llms.txt thiếu gói nhà vườn và câu định vị. | Thêm. | — |

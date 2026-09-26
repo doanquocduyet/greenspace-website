@@ -120,6 +120,16 @@
     <image:image><image:loc>https://greenspacers.vn/images/articles/ve-greenspace.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://greenspacers.vn/thue-nguoi-lam-vuon-nam-ban</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greenspacers.vn/trong-ca-phe-nam-ban</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://greenspacers.vn/hop-tac-canh-tac-dat-nam-ban</loc>
     <lastmod>2026-09-26</lastmod>
     <priority>0.8</priority>

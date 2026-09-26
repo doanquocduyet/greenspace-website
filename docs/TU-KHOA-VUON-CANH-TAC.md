@@ -6,11 +6,13 @@ số liệu đã tìm được có nguồn, và **những gì còn thiếu phả
 > Giới hạn: phiên này không mở được trang kết quả Google. Như đợt trước, chủ web dán kết quả Google
 > (cả phần tóm tắt AI) của từng câu gốc thì mới biết đối thủ và chỗ tóm tắt AI nói sai để sửa.
 
-## 0. Chủ web chốt (26/9)
-Chủ web nói rõ (26/9, sau): **việc chính là trông coi, quản lý đất hằng tháng; mọi việc khác đều kết nối người địa phương làm — không ôm đồm.**
-- `/hop-tac-canh-tac-dat-nam-ban` = trang kết nối người canh tác, đã lên 26/9.
-- Trang làm vườn / công nhật, cà phê, bơ: trả lời giá thị trường (số thật của đội) + lời mời **kết nối người địa phương và kiểm tra lại** — không viết GreenSpace tự làm (B42).
-- Key "làm vườn hoa nam ban": **giữ lại** (sửa quyết định trước) — làm mục H2 + FAQ trong `/quan-ly-tai-san-nha-vuon-nam-ban` theo cách kết nối, khi có giá thật.
+## 0. Chủ web chốt (26/9) — bản mới nhất, thay mọi ghi chú cũ bên dưới
+- **Việc chính: trông coi, quản lý đất hằng tháng; mọi việc khác kết nối người địa phương làm — không ôm đồm.**
+- **GreenSpace không ghi giá** cho việc kết nối: khách gọi / nhắn Zalo, báo giá sau (bẫy B44). Mục 3–5 bên dưới (số liệu, số cần hỏi đội) **không dùng cho GreenSpace nữa** — chỉ còn giá trị tham khảo.
+- Nhiều web cùng key được: mỗi web góc nhìn, nhiệm vụ riêng, viết độc lập. Web thông tin chính của chủ web lo minh bạch giá; GreenSpace góc dịch vụ.
+- Trang đã viết (26/9, chờ Vercel hồi lượt): `/hop-tac-canh-tac-dat-nam-ban`, `/thue-nguoi-lam-vuon-nam-ban` (gồm công nhật, khoán, vườn hoa), `/trong-ca-phe-nam-ban` (gồm trồng xen bơ).
+- Bơ: không mở trang riêng — là mục + FAQ trong trang cà phê.
+- Đã kiểm (cổng Chính phủ): Nam Ban Lâm Hà **không** có trong danh sách vùng III của Lâm Đồng (có "Đinh Văn Lâm Hà") → thuộc "các xã còn lại" = **vùng IV, 3.700.000đ/tháng** từ 1/1/2026 (Nghị định 293/2025). Nguồn: https://xaydungchinhsach.chinhphu.vn/danh-muc-dia-ban-ap-dung-muc-luong-toi-thieu-tu-01-01--2026-11925111017422725.htm
 
 ## 1. Sáu câu gốc → mở rộng + ý định
 
