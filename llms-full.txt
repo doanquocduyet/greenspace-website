@@ -17,7 +17,7 @@
 ### GreenSpace — Quản lý đất & tài sản Nam Ban cho người ở xa
 
 - URL: https://greenspacers.vn/
-- Cập nhật: 2026-09-25
+- Cập nhật: 2026-09-26
 - Tóm tắt: Quản lý đất, nhà và vườn tại Nam Ban cho người ở xa. GreenSpace kiểm tra thực địa hàng tháng, báo cáo ảnh GPS qua Zalo, cảnh báo bất thường trong 24 giờ.
 
 Hỏi đáp:

@@ -1,0 +1,31 @@
+name: Quét tin liên quan GreenSpace (hàng đợi, không tự đăng)
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 06:00 giờ VN mỗi ngày
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  quet:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Ho_Chi_Minh
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tự kiểm bộ lọc (phải đúng hết mới quét)
+        run: python3 scripts/quet-tin.py --tu-kiem
+
+      - name: Quét báo (robots.txt, nghỉ 1,5 giây, bị chặn thì bỏ — không vượt chặn)
+        run: python3 scripts/quet-tin.py
+
+      - name: Lưu hàng đợi tin (commit chỉ đổi data/ → Vercel bỏ qua deploy)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tin-ung-vien.json
+          if git diff --staged --quiet; then echo "Không có tin mới."; else
+            git commit -m "Tin ứng viên: quét $(date +%Y-%m-%d)"; git push; fi

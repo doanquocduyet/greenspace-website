@@ -55,8 +55,11 @@ Chép từ một bài đang chạy (vd `xu-ly-lan-chiem-dat-tu-xa.html`) — gi�
 - Sửa bất kỳ trang nào xong: chạy `python3 scripts/tao-llms-full.py` (bẫy B35 chặn nếu `llms-full.txt` lệch trang).
 - **Không khai sao/đánh giá trong JSON-LD** (aggregateRating, review): khách không chấm sao, Google cấm doanh nghiệp tự khai đánh giá về mình (bẫy B37). Lời khách chỉ để ở phần hiển thị.
 
-## Ô "Cập nhật" trên trang chủ (khối `GS-UPDATES`)
-Chèn mục mới ngay dưới `<!-- GS-UPDATES:START -->`, đúng mẫu `<li class="update-item">…`. **Không xoá mục cũ.** Cập nhật `lastmod` trang chủ trong sitemap.
+## Ô "Cập nhật" trên trang chủ (khối `GS-UPDATES`) + quét tin
+- **Nguồn tin:** `.github/workflows/quet-tin.yml` chạy 06:00 VN mỗi ngày → `scripts/quet-tin.py` đọc RSS báo chính thống (Báo Lâm Đồng, cổng Chính phủ, báo lớn), lọc đúng việc GreenSpace (lấn chiếm, ranh, quy hoạch, pháp lý đất; thiên tai chỉ khi đúng Nam Ban/Lâm Hà) → `data/tin-ung-vien.json` (trạng thái `cho_kiem`). **Không tự đăng lên web.** Không quét tin rao bán, không quét mạng xã hội/trang sau đăng nhập; robots.txt cấm thì bỏ, bị chặn thì bỏ — không vượt chặn.
+- Tên thôn cũ của Nam Ban trùng tên Hà Nội (Mê Linh, Gia Lâm, Thanh Trì, Từ Liêm, Ba Đình, Thăng Long) → chỉ tính khi kèm Nam Ban/Lâm Hà/Lâm Đồng. Tỉnh Lâm Đồng mới gồm cả Đắk Nông, Bình Thuận cũ → tin vùng đó loại. Sửa bộ lọc thì thêm phép thử vào `--tu-kiem` (CI chạy).
+- **Đăng:** lấy tin `cho_kiem` → mở nguồn gốc kiểm ngày, nội dung → viết 2–3 câu đúng luật (nói rõ nếu mới là dự thảo/định hướng) → chèn ngay dưới `<!-- GS-UPDATES:START -->`, đúng mẫu `<li class="update-item">…` → đổi trạng thái tin thành `da_dang` hoặc `bo` + `ghi_chu` lý do. **Không xoá mục cũ.** Cập nhật `lastmod` trang chủ + `dateModified` WebPage trang chủ (bằng nhau), chạy `tao-llms-full.py`.
+- Commit chỉ đổi `data/`, `scripts/`, `docs/`, `.github/`, `fb-queue/`, `CLAUDE.md` → Vercel **bỏ qua deploy** (`ignoreCommand` trong vercel.json) — không tốn lượt deploy.
 
 ## Báo cáo cho chủ web
 Push / tạo PR / merge không thành → báo rõ **THẤT BẠI** kèm lỗi. Không bao giờ báo "xong" khi chưa thấy commit trên remote.
