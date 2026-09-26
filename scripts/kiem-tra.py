@@ -479,6 +479,8 @@ for f in IDX:
 VJ = json.loads(rd('vercel.json'))
 if not VJ.get('cleanUrls') or VJ.get('trailingSlash') is not False:
     L('B43', 'vercel.json phải có "cleanUrls": true và "trailingSlash": false — không thì /trang/ và /trang.html thành bản trùng của /trang')
+if VJ.get('git', {}).get('deploymentEnabled', {}).get('claude/*') is not False:
+    L('B43', 'vercel.json phải tắt bản xem trước cho nhánh claude/* ("git": {"deploymentEnabled": {"claude/*": false}}) — mỗi lần đẩy nhánh tốn một lượt triển khai, hết lượt thì main không lên web')
 
 if LOI:
     print(f'✗ {len(LOI)} lỗi:')
