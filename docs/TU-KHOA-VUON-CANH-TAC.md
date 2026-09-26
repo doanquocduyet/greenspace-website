@@ -7,10 +7,10 @@ số liệu đã tìm được có nguồn, và **những gì còn thiếu phả
 > (cả phần tóm tắt AI) của từng câu gốc thì mới biết đối thủ và chỗ tóm tắt AI nói sai để sửa.
 
 ## 0. Chủ web chốt (26/9)
-GreenSpace **chỉ làm: kết nối người canh tác** (cho mượn / cho thuê / ăn chia). Không làm: thuê giúp người làm vườn, trồng mới trọn gói, vườn hoa.
-- `/hop-tac-canh-tac-dat-nam-ban` = trang dịch vụ, đã lên 26/9.
-- Trang làm vườn / công nhật, cà phê, bơ: chỉ trả lời giá thị trường (không mời dịch vụ) — chờ số thật của đội.
-- Key "làm vườn hoa nam ban": **bỏ** (không phải dịch vụ, không có số).
+Chủ web nói rõ (26/9, sau): **việc chính là trông coi, quản lý đất hằng tháng; mọi việc khác đều kết nối người địa phương làm — không ôm đồm.**
+- `/hop-tac-canh-tac-dat-nam-ban` = trang kết nối người canh tác, đã lên 26/9.
+- Trang làm vườn / công nhật, cà phê, bơ: trả lời giá thị trường (số thật của đội) + lời mời **kết nối người địa phương và kiểm tra lại** — không viết GreenSpace tự làm (B42).
+- Key "làm vườn hoa nam ban": **giữ lại** (sửa quyết định trước) — làm mục H2 + FAQ trong `/quan-ly-tai-san-nha-vuon-nam-ban` theo cách kết nối, khi có giá thật.
 
 ## 1. Sáu câu gốc → mở rộng + ý định
 
@@ -58,7 +58,7 @@ Câu mở rộng:
 | thuê người làm vườn nam ban giá bao nhiêu | **Trang mới** `/thue-nguoi-lam-vuon-nam-ban` | công nhật 1 ngày, khoán, theo tháng, hái cà phê theo kg | **Cần bảng giá thật của đội** |
 | trồng cà phê nam ban chi phí bao nhiêu | **Trang mới** `/trong-ca-phe-nam-ban-chi-phi` | số cây/ha, mấy năm cho trái, ai chăm khi ở xa | Cần giá cây giống + công trồng thật |
 | trồng bơ nam ban chi phí bao nhiêu | **Trang mới** `/trong-bo-nam-ban-chi-phi` hoặc mục H2 trong trang cà phê nếu số liệu mỏng | trồng xen bơ trong cà phê, mấy năm cho trái | Như trên |
-| làm vườn hoa nam ban giá bao nhiêu | Mục H2 + FAQ trong `/quan-ly-tai-san-nha-vuon-nam-ban` (không đẻ trang) nếu GreenSpace làm việc này; không làm thì **bỏ key** | chăm sân vườn homestay, cắt cỏ | Hỏi đội có làm không |
+| làm vườn hoa nam ban giá bao nhiêu | Mục H2 + FAQ trong `/quan-ly-tai-san-nha-vuon-nam-ban` (không đẻ trang), theo cách kết nối người làm vườn | chăm sân vườn homestay, cắt cỏ | Cần giá thật |
 
 Nối với trang có sẵn: `/thue-nguoi-trong-coi-dat-nam-ban` (người ở lại ≠ người làm vườn), `/dat-vuon-nam-ban-ai-trong` (vườn có sẵn cây), `/gia-trong-coi-dat-bao-nhieu`.
 Trùng với web anh em: trước khi viết trang cà phê / bơ, hỏi web anh em đã có trang nhắm câu đó chưa (một key một trang, tính cả các web).
