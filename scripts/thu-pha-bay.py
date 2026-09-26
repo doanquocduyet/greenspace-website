@@ -74,6 +74,8 @@ PHA = [
  ('B35', 'cau-hoi-thuong-gap.html', 'Giải đáp thắc mắc về trông coi', 'Giải đáp mọi thắc mắc về trông coi', False),
  ('B37', 'index.html', '"priceRange":', '"aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3"}, "priceRange":', False),
  ('B11', 'quan-ly-dat-nam-ban.html', r'("@type": "WebPage".*?"dateModified": ")[0-9-]+', r'\g<1>2026-01-01', True),
+ ('B38', D, 'đội ở Nam Ban ra kiểm tra', 'chúng tôi ra kiểm tra', False),
+ ('B39', 've-greenspace.html', '<h2>Tóm tắt</h2>', '<h2>Tóm tắt</h2><p>' + 'Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban. ' * 2 + '</p>', False),
 ]
 
 def chay(root):

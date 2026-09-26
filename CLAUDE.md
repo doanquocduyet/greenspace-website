@@ -33,6 +33,7 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 12. **FAQ mở sẵn** (đáp án hiện thẳng, vẫn gập được). **Bậc tiêu đề không nhảy cóc** (h1→h2→h3). Mỗi trang ≥ 3 link vào; khối "Bài liên quan" dùng chữ neo là **câu hỏi** bài đích trả lời, cấm "xem thêm / tại đây".
 13. **Chữ trong chuỗi JS (câu xoay vòng, bản dịch) cũng là chữ khách đọc** — cùng luật số liệu, chữ máy móc, địa danh.
 14. **Sửa hàng loạt:** JSON-LD sửa bằng `json.loads` → sửa cây → `json.dumps`, không regex. Khối HTML cắt bằng chỉ số (thẻ mở → thẻ đóng đúng), không `.*?` mù. Thay chữ hàng loạt xong thì chạy bẫy (lặp từ B29, ngoặc B05). Sửa một thứ thì kiểm **cả loại đó trên mọi trang**.
+16. **Nói dịch vụ phải nói ở đâu** (chủ web chốt 26/9): câu mô tả việc GreenSpace làm, giá gói, lời mời liên hệ phải gắn "Nam Ban, Lâm Hà" tự nhiên trong câu — không viết chung chung "GreenSpace kiểm tra hàng tháng". Khối lời mời cuối trang bắt buộc có (bẫy B38). **Không nhồi**: "Nam Ban" ≤ 4% số chữ trang (bẫy B39); tiêu đề mục ("Tại sao là GreenSpace"), câu mà câu kề đã có địa danh thì để nguyên.
 15. **Nói đúng sự thật trên trang:** chỉ đưa tin có nguồn chính thức; tin đồn (sáp nhập, quy hoạch…) chưa có văn bản thì không đưa.
 
 ## Vai của từng trang (chủ web chốt 25/9 — trùng chữ thì cùng lên, KHÔNG gộp)
