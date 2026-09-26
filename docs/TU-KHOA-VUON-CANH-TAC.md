@@ -6,6 +6,12 @@ số liệu đã tìm được có nguồn, và **những gì còn thiếu phả
 > Giới hạn: phiên này không mở được trang kết quả Google. Như đợt trước, chủ web dán kết quả Google
 > (cả phần tóm tắt AI) của từng câu gốc thì mới biết đối thủ và chỗ tóm tắt AI nói sai để sửa.
 
+## 0. Chủ web chốt (26/9)
+GreenSpace **chỉ làm: kết nối người canh tác** (cho mượn / cho thuê / ăn chia). Không làm: thuê giúp người làm vườn, trồng mới trọn gói, vườn hoa.
+- `/hop-tac-canh-tac-dat-nam-ban` = trang dịch vụ, đã lên 26/9.
+- Trang làm vườn / công nhật, cà phê, bơ: chỉ trả lời giá thị trường (không mời dịch vụ) — chờ số thật của đội.
+- Key "làm vườn hoa nam ban": **bỏ** (không phải dịch vụ, không có số).
+
 ## 1. Sáu câu gốc → mở rộng + ý định
 
 ### A. "hợp tác giữ đất / trông coi / canh tác đất nam ban"
