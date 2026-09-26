@@ -39,7 +39,11 @@ Sửa một lỗi mới → thêm bẫy vào `scripts/kiem-tra.py` + thêm dòng
 ## Định vị dịch vụ (chủ web chốt 26/9 — không ôm đồm)
 - **Việc chính của GreenSpace: trông coi, quản lý đất hằng tháng** ở Nam Ban, Lâm Hà — ra thực địa, ảnh GPS, báo cáo Zalo, cảnh báo, đại diện xử lý tại chỗ.
 - **Mọi việc khác** (làm vườn, canh tác, trồng mới, chăm vườn hoa, sửa chữa, thợ) = **kết nối người địa phương có chuyên môn**, báo giá trước, GreenSpace kiểm tra lại sau khi làm. Không viết như GreenSpace tự làm (bẫy B42).
-- Trang về việc ngoài chuyên môn (giá làm vườn, trồng cà phê, bơ…) chỉ trả lời giá thị trường có nguồn + lời mời kết nối và kiểm tra — không mời "dịch vụ làm vườn của GreenSpace".
+- Trang về việc kết nối (làm vườn, trồng cà phê, bơ, vườn hoa… — danh sách ở `data/so-lieu.json` → `trang_ket_noi`) viết theo **góc dịch vụ**: việc gồm gì, giao việc và nghiệm thu thế nào, GreenSpace kết nối ai và kiểm tra ra sao. **Không ghi giá nào** (không giá thị trường, không giá công): khách gọi / nhắn Zalo, **báo giá sau** (bẫy B44). Giá gói trông coi của chính GreenSpace thì vẫn ghi như cũ.
+
+## Nhiều web cùng key (chủ web chốt 26/9)
+- Các web của chủ web **cùng viết chủ đề, cùng giành key** — nhưng mỗi web **góc nhìn và nhiệm vụ riêng, viết độc lập**: không chép bài, số liệu, bố cục của web kia; không phải một bài đăng hai nơi. Không link, không nhắc tên nhau (luật 1).
+- Web thông tin chính của chủ web lo phần minh bạch giá, số liệu thị trường. **GreenSpace = dịch vụ**: trông coi, quản lý đất hằng tháng + kết nối người địa phương + kiểm tra; khách cần gì thì gọi, báo giá sau.
 
 ## Vai của từng trang (chủ web chốt 25/9 — trùng chữ thì cùng lên, KHÔNG gộp)
 - `/quan-ly-dat-nam-ban` = trang **dịch vụ** (gói, cách làm, chi phí, liên hệ).

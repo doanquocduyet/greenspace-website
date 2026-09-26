@@ -84,6 +84,7 @@ PHA = [
  ('B42', 'quan-ly-tai-san-nha-vuon-nam-ban.html', 'chúng tôi kết nối, hẹn lịch', 'chúng tôi chăm vườn, hẹn lịch', False),
  ('B43', 'vercel.json', '  "trailingSlash": false,\n', '', False),
  ('B43', 'vercel.json', '"claude/*": false', '"claude/*": true', False),
+ ('B44', 'trong-ca-phe-nam-ban.html', 'GreenSpace không đăng giá chung: bạn', 'Khoảng 150 triệu một ha: bạn', False),
  ('B39', 've-greenspace.html', '<h2>Tóm tắt</h2>', '<h2>Tóm tắt</h2><p>' + 'Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban Nam Ban. ' * 2 + '</p>', False),
 ]
 

@@ -482,6 +482,13 @@ if not VJ.get('cleanUrls') or VJ.get('trailingSlash') is not False:
 if VJ.get('git', {}).get('deploymentEnabled', {}).get('claude/*') is not False:
     L('B43', 'vercel.json phải tắt bản xem trước cho nhánh claude/* ("git": {"deploymentEnabled": {"claude/*": false}}) — mỗi lần đẩy nhánh tốn một lượt triển khai, hết lượt thì main không lên web')
 
+# ---------- B44 Trang kết nối (việc người địa phương làm) không ghi giá — gọi, nhắn Zalo, báo giá sau ----------
+for f in SO.get('trang_ket_noi', {}).get('trang', []):
+    if f not in SRC: L('B44', f'{f} có trong trang_ket_noi nhưng không có file'); continue
+    t = chu(SRC[f]) + ' ' + khung(SRC[f]) + ' ' + ' '.join(json.dumps(d, ensure_ascii=False) for d in ld(SRC[f]))
+    for m in re.finditer(r'\d[\d.,]*\s*(?:đồng|đ|nghìn|ngàn|triệu|tr|k)(?!\w)', t):
+        L('B44', f'{f}: "{m.group(0)}" — trang kết nối không ghi giá (chủ web chốt 26/9), mời nhắn Zalo để báo giá — …{t[max(0, m.start()-40):m.end()+30]}…')
+
 if LOI:
     print(f'✗ {len(LOI)} lỗi:')
     for x in LOI: print('  ' + x)
